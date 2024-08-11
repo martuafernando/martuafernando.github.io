@@ -1,11 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+
+import LinkData from "@/domain/entities/link-data";
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isDrawerOpen]);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -29,16 +43,13 @@ export default function Navbar() {
       </div>
       <div className="sm:hidden relative flex flex-row my-4">
         <MobileMenuButton open={isDrawerOpen} onClick={toggleDrawer} />
-        <MobileDrawer
-          isOpen={isDrawerOpen}
-          links={links}
-        />
+        <MobileDrawer isOpen={isDrawerOpen} links={links} />
       </div>
     </>
   );
 }
 
-function DesktopNavLinks({ links }: { links: LinkData[] }) {
+function DesktopNavLinks({ links }: { readonly links: LinkData[] }) {
   return (
     <ul className="flex gap-4">
       {links.map((link) => (
@@ -57,8 +68,8 @@ function MobileDrawer({
   isOpen,
   links,
 }: {
-  isOpen: boolean;
-  links: LinkData[];
+  readonly isOpen: boolean;
+  readonly links: readonly LinkData[];
 }) {
   return (
     <div
@@ -84,17 +95,12 @@ function MobileMenuButton({
   open,
   onClick,
 }: {
-  open: boolean;
-  onClick: () => void;
+  readonly open: boolean;
+  readonly onClick: () => void;
 }) {
   return (
     <button onClick={onClick}>
-      { open ? <FaTimes size={24} /> : <FaBars size={24} /> }
+      {open ? <FaTimes size={24} /> : <FaBars size={24} />}
     </button>
   );
-}
-
-interface LinkData {
-  href: string;
-  label: string;
 }

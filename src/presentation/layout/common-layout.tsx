@@ -9,7 +9,7 @@ export default function CommonLayout({
   return (
     <>
       <Header />
-      <main className="mt-16">
+      <main className="my-16 bg-white rounded-3xl">
         {children}
       </main>
       <Footer />
