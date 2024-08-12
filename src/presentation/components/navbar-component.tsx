@@ -51,13 +51,15 @@ export default function Navbar() {
 
 function DesktopNavLinks({ links }: { readonly links: LinkData[] }) {
   return (
-    <ul className="flex gap-4">
+    <ul className="flex gap-8">
       {links.map((link) => (
-        <li
-          key={link.href}
-          className="text-xl hover:text-blue-900 hover:font-semibold"
-        >
-          <Link href={link.href}>{link.label}</Link>{" "}
+        <li key={link.href}>
+          <Link
+            className="relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+            href={link.href}
+          >
+            {link.label}
+          </Link>
         </li>
       ))}
     </ul>
@@ -73,17 +75,19 @@ function MobileDrawer({
 }) {
   return (
     <div
-      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-300 transform ${
+      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-1000 transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <ul className="flex flex-col justify-center items-center gap-4">
+      <ul className="flex flex-col justify-center items-center gap-8">
         {links.map((link) => (
-          <li
-            key={link.href}
-            className="text-3xl hover:text-blue-900 hover:font-semibold"
-          >
-            <Link href={link.href}>{link.label}</Link>
+          <li key={link.href} className="text-3xl">
+            <Link
+              className="relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+              href={link.href}
+            >
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
 
 export default function Footer({ className }: { readonly className?: string }) {
@@ -12,33 +13,33 @@ export default function Footer({ className }: { readonly className?: string }) {
           height={64}
         />
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 w-fit mx-auto mt-8 text-xl">
-        <a
+        <Link
           href="https://linkedin.com/in/martuafernando"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center"
+          className="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
         >
           <span className="ml-2">LinkedIn</span>
           <FiExternalLink size={16} className="ml-2" />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://github.com/martuafernando"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center"
+          className="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
         >
           <span className="ml-2">GitHub</span>
           <FiExternalLink size={16} className="ml-2" />
-        </a>
-        <a
+        </Link>
+        <Link
           href="https://instagram.com/martuafernando"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center"
+          className="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
         >
           Instagram
           <FiExternalLink size={16} className="ml-2" />
-        </a>
+        </Link>
       </div>
       <p className="text-center mt-8">&copy; 2024 Martua Fernando</p>
     </footer>
