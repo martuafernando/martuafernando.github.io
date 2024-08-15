@@ -2,14 +2,13 @@
 
 import CommonLayout from "@/presentation/layout/common-layout";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaInstagramSquare, FaLongArrowAltDown } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
-import { useEffect, useRef } from "react";
-import useWindowWidth from "@/presentation/hooks/useWindowWidth";
+import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import { FiExternalLink, FiArrowDown } from "react-icons/fi";
+import { useEffect, useRef } from "react"
 import Link from "next/link";
+import ProjectList from "@/presentation/components/project-list";
 
 export default function Home() {
-  const isMobile = useWindowWidth() < 640;
   const imagesRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
@@ -17,6 +16,7 @@ export default function Home() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            console.log('testing::', entry.target);
             entry.target.classList.add("focused");
           } else {
             entry.target.classList.remove("focused");
@@ -102,25 +102,8 @@ export default function Home() {
 
       <section className="py-8 max-w-5xl mx-auto">
         <h3 className="text-5xl font-bold text-center">Projects</h3>
-
-        <Link
-          href="/projects"
-          className="block rounded-lg mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out py-8 overflow-hidden"
-          ref={(el) => {
-            imagesRef.current[0] = el!;
-          }}
-        >
-          <Image
-            className="mx-auto duration-1000"
-            src={isMobile ? "/images/potrait.png" : "/images/landscape.jpg"}
-            alt="project-1"
-            width={1200}
-            height={900}
-            layout="responsive"
-          />
-          <h4 className="mt-4 text-3xl font-semibold">Project 1</h4>
-          <p className="mt-2 text-gray-500">Web and App Illustration</p>
-        </Link>
+        <FiArrowDown size={48} className="mx-auto mt-8 animate-upDown" />
+        <ProjectList />
       </section>
     </CommonLayout>
   );

@@ -27,11 +27,11 @@ export default function Navbar() {
 
   const links = [
     {
-      href: "/",
+      href: "/project",
       label: "Project",
     },
     {
-      href: "/",
+      href: "/contact",
       label: "Contact",
     },
   ];
@@ -75,7 +75,7 @@ function MobileDrawer({
 }) {
   return (
     <div
-      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-1000 transform ${
+      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-500 ease-in-out transform ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

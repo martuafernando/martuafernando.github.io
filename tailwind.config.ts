@@ -21,6 +21,15 @@ const config: Config = {
         'background': '#fffffff',
       }
     },
+    keyframes: {
+      upDown: {
+        '0%, 100%': { transform: 'translateY(0)' },
+        '50%': { transform: 'translateY(-12px)' },
+      },
+    },
+    animation: {
+      upDown: 'upDown 3s infinite ease-in-out', // Change duration to 3 seconds
+    },
   },
   plugins: [],
 };
