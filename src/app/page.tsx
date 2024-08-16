@@ -4,39 +4,10 @@ import CommonLayout from "@/presentation/layout/common-layout";
 import Image from "next/image";
 import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
 import { FiExternalLink, FiArrowDown } from "react-icons/fi";
-import { useEffect, useRef } from "react"
 import Link from "next/link";
 import ProjectList from "@/presentation/components/project-list";
 
 export default function Home() {
-  const imagesRef = useRef<HTMLElement[]>([]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            console.log('testing::', entry.target);
-            entry.target.classList.add("focused");
-          } else {
-            entry.target.classList.remove("focused");
-          }
-        });
-      },
-      { threshold: 1.0 }
-    );
-
-    imagesRef.current.forEach((image) => {
-      if (image) observer.observe(image);
-    });
-
-    return () => {
-      imagesRef.current.forEach((image) => {
-        if (image) observer.unobserve(image);
-      });
-    };
-  }, []);
-
   return (
     <CommonLayout>
       <section className="py-8 md:p-24 max-w-5xl mx-auto">

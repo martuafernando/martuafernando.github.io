@@ -40,7 +40,7 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
         }
         priority={true}
       />
-      <h4 className="mt-12 text-3xl font-semibold">{props.project.title}</h4>
+      <h4 className="mt-8 text-3xl font-semibold">{props.project.title}</h4>
       <p className="mt-2 text-gray-500">{props.project.category}</p>
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
     </Link>

@@ -13,7 +13,6 @@ const ProjectList: React.FC = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          console.log('testing::MASUK')
           if (entry.isIntersecting) {
             entry.target.classList.add("focused");
           } else {
@@ -21,7 +20,7 @@ const ProjectList: React.FC = () => {
           }
         });
       },
-      { threshold: 1.0 }
+      { threshold: 0.8 }
     );
 
     imagesRef.current.forEach((image) => {
@@ -33,7 +32,7 @@ const ProjectList: React.FC = () => {
         if (image) observer.unobserve(image);
       });
     };
-  }, []);
+  }, [projects]);
 
   if (loading) {
     return <div>Loading...</div>;
