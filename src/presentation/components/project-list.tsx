@@ -3,7 +3,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useProjects } from "@/presentation/contexts/project-context";
-import ProjectThumbnail from "@/presentation/components/project-thumbnail";
+import { ProjectThumbnail, ProjectThumbnailSkeleton } from "@/presentation/components/project-thumbnail";
 
 const ProjectList: React.FC = () => {
   const { projects, loading } = useProjects();
@@ -35,7 +35,13 @@ const ProjectList: React.FC = () => {
   }, [projects]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <ProjectThumbnailSkeleton />
+        <ProjectThumbnailSkeleton />
+        <ProjectThumbnailSkeleton />
+      </>
+    );
   }
 
   return (

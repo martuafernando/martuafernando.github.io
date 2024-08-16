@@ -18,7 +18,7 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
     <Link
       ref={ref}
       href={props.href}
-      className="block rounded-lg mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out py-8 overflow-hidden relative group"
+      className="block rounded-lg mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out pb-8 overflow-hidden relative group"
     >
       <Image
         className="mx-auto duration-1000 scale-95"
@@ -47,4 +47,12 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
   );
 });
 
-export default ProjectThumbnail;
+const ProjectThumbnailSkeleton = () => (
+  <div className="animate-pulse rounded-lg mt-8 text-center pb-8 overflow-hidden">
+    <div className="bg-gray-300 h-96 w-full"></div>
+    <div className="mt-8 bg-gray-300 h-8 w-3/4 mx-auto"></div>
+    <div className="mt-2 bg-gray-300 h-6 w-1/2 mx-auto"></div>
+  </div>
+);
+
+export {ProjectThumbnail, ProjectThumbnailSkeleton};

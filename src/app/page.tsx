@@ -2,10 +2,11 @@
 
 import CommonLayout from "@/presentation/layout/common-layout";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaInstagramSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagramSquare, FaEnvelope } from "react-icons/fa";
 import { FiExternalLink, FiArrowDown } from "react-icons/fi";
 import Link from "next/link";
 import ProjectList from "@/presentation/components/project-list";
+import CallToActionComponent from "@/presentation/components/call-to-action-component";
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap mt-8 gap-x-8 gap-y-4 font-bold text-lg">
           <Link
+            key="linkedin"
             href="https://linkedin.com/in/martuafernando"
             className="flex items-center"
             target="_blank"
@@ -75,6 +77,24 @@ export default function Home() {
         <h3 className="text-5xl font-bold text-center">Projects</h3>
         <FiArrowDown size={48} className="mx-auto mt-8 animate-upDown" />
         <ProjectList />
+      </section>
+
+      <section className="py-8 max-w-5xl mx-auto">
+        <CallToActionComponent
+          title="Let's work together"
+          links={[
+            <Link
+              key="email"
+              href="mailto:mailto:fernandosibarani45@gmail.com"
+              className="flex items-center outline outline-1 p-4 rounded-lg bg-black text-white"
+            >
+              <FaEnvelope size={24} />
+              <span className="flex items-center ml-2 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+                Email Me <FiExternalLink size={16} />
+              </span>
+            </Link>,
+          ]}
+        />
       </section>
     </CommonLayout>
   );

@@ -13,22 +13,30 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
+        'blue-100': '#cce7ff',
+        'blue-200': '#99cfff',
+        'blue-300': '#66b8ff',
+        'blue-400': '#33a0ff',
+        'blue-500': '#0088FF',
+        'blue-600': '#006dcc',
+        'blue-700': '#005299',
+        'blue-800': '#001b33',
         'black': '#303030',
         'black-400': '#5e5e5e',
         'white': '#ffffff',
         'primary': '#333333',
         'secondary': '#708090',
         'background': '#fffffff',
-      }
-    },
-    keyframes: {
-      upDown: {
-        '0%, 100%': { transform: 'translateY(0)' },
-        '50%': { transform: 'translateY(-12px)' },
       },
-    },
-    animation: {
-      upDown: 'upDown 3s infinite ease-in-out', // Change duration to 3 seconds
+      keyframes: {
+        upDown: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' },
+        },
+      },
+      animation: {
+        upDown: 'upDown 3s infinite ease-in-out',
+      },
     },
   },
   plugins: [],
