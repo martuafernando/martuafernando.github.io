@@ -11,7 +11,7 @@ import CallToActionComponent from "@/presentation/components/call-to-action-comp
 export default function Home() {
   return (
     <CommonLayout>
-      <section className="py-8 md:p-24 max-w-5xl mx-auto">
+      <section className="mt-4 py-8 md:p-24 max-w-5xl mx-auto">
         <div className="sm:flex items-center gap-16">
           <div>
             <h2 className="text-5xl font-bold">Hi, I'm Martua Fernando</h2>
@@ -73,13 +73,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 max-w-5xl mx-auto">
+      <section className="mt-4 py-8 max-w-5xl mx-auto">
         <h3 className="text-5xl font-bold text-center">Projects</h3>
         <FiArrowDown size={48} className="mx-auto mt-8 animate-upDown" />
         <ProjectList />
       </section>
 
-      <section className="py-8 max-w-5xl mx-auto">
+      <section className="mt-4 py-8 max-w-5xl mx-auto">
         <CallToActionComponent
           title="Let's work together"
           links={[
