@@ -27,7 +27,7 @@ export default function Navbar() {
 
   const links = [
     {
-      href: "/project",
+      href: "/projects",
       label: "Project",
     },
     {

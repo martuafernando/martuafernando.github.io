@@ -32,7 +32,7 @@ export default function Header() {
 
   return (
     <header
-      className={`flex items-center z-50 justify-between max-w-5xl px-4 xl:px-0 mx-auto sm:py-4 fixed left-0 right-0 h-fit bg-white transition-all duration-1000 ease-in-out ${
+      className={`flex items-center z-50 justify-between max-w-5xl px-4 xl:px-0 mx-auto py-2 sm:py-4 fixed left-0 right-0 h-fit bg-white transition-all duration-1000 ease-in-out ${
         isVisible ? "top-0" : "-top-24"
       }`}
     >

@@ -17,7 +17,7 @@ export default function Home() {
             <h2 className="text-5xl font-bold">Hi, I'm Martua Fernando</h2>
             <p className="text-3xl mt-2 text-black-400">Software Engineer</p>
             <p className="mt-4 text-black-400">
-              I'm a Software Engineer from Indonesia with over a year of
+              I'm a Software Engineer from Indonesia with over two years of professional
               experience. Since 2022, I've been working at eHealth. I'm
               passionate about exploring new opportunities that allow me to
               expand my horizons and gain new experiences.
