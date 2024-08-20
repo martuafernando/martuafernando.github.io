@@ -10,14 +10,9 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const handleScroll = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      setLastScrollY(window.scrollY);
-    }
+    const currentScrollY = window.scrollY;
+    setIsVisible(currentScrollY <= lastScrollY || currentScrollY === 0);
+    setLastScrollY(currentScrollY);
   };
 
   useEffect(() => {
@@ -32,14 +27,16 @@ export default function Header() {
 
   return (
     <header
-      className={`flex items-center z-50 justify-between max-w-5xl px-4 xl:px-0 mx-auto py-2 sm:py-4 fixed left-0 right-0 h-fit bg-white transition-all duration-1000 ease-in-out ${
+      className={`fixed left-0 right-0 h-fit z-50 bg-white transition-all duration-1000 ease-in-out ${
         isVisible ? "top-0" : "-top-24"
       }`}
     >
-      <Link href="/">
-        <Image src="/logo.svg" alt="Logo" width={36} height={36} />
-      </Link>
-      <Navbar />
+      <div className="flex items-center justify-between max-w-5xl px-4 xl:px-0 mx-auto py-2 sm:py-4">
+        <Link href="/">
+          <Image src="/logo.svg" alt="Logo" width={36} height={36} />
+        </Link>
+        <Navbar />
+      </div>
     </header>
   );
 }

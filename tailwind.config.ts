@@ -35,7 +35,7 @@ const config: Config = {
         },
       },
       animation: {
-        upDown: 'upDown 3s infinite ease-in-out',
+        upDown: 'upDown 2s infinite ease-in-out',
       },
     },
   },

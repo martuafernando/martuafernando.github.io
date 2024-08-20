@@ -1,24 +1,35 @@
-'use client';
+"use client";
 
-import React, { createContext, useContext, useState, useEffect, useMemo } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+} from "react";
 import Project from "@/domain/entities/project";
 import ProjectRepositoryImpl from "@/data/repositories/project-repository-impl";
+import GetProjects from "@/domain/use-cases/get-projects";
 
 interface ProjectContextProps {
   projects: Project[];
   loading: boolean;
 }
 
-const ProjectContext = createContext<ProjectContextProps | undefined>(undefined);
+const ProjectContext = createContext<ProjectContextProps | undefined>(
+  undefined
+);
 
-export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export function ProjectProvider({ children }: { children: React.ReactNode }) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchProjects = async () => {
       const projectRepository = new ProjectRepositoryImpl();
-      const projects = await projectRepository.getProjects();
+      const getProjects = new GetProjects(projectRepository);
+
+      const projects = await getProjects.execute();
       setProjects(projects);
       setLoading(false);
     };
@@ -26,12 +37,15 @@ export const ProjectProvider: React.FC<{ children: React.ReactNode }> = ({ child
     fetchProjects();
   }, []);
 
-  return useMemo(() => (
+  return useMemo(
+    () => (
       <ProjectContext.Provider value={{ projects, loading }}>
         {children}
       </ProjectContext.Provider>
-    ), [projects, loading]);
-};
+    ),
+    [projects, loading]
+  );
+}
 
 export const useProjects = (): ProjectContextProps => {
   const context = useContext(ProjectContext);

@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { useProjects } from "@/presentation/contexts/project-context";
 import { ProjectThumbnail, ProjectThumbnailSkeleton } from "@/presentation/components/project-thumbnail";
 
-const ProjectList: React.FC = () => {
+export default function ProjectList() {
   const { projects, loading } = useProjects();
   const imagesRef = useRef<HTMLElement[]>([]);
 
@@ -53,11 +53,9 @@ const ProjectList: React.FC = () => {
           ref={(el) => {
             imagesRef.current[i] = el!;
           }}
-          href={`/project/${project.id}`}
+          href={`/projects/${project.id}`}
         />
       ))}
     </>
   );
 };
-
-export default ProjectList;
