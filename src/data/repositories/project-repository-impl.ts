@@ -17,7 +17,7 @@ const projects = [
   {
     id: "cari-resto",
     title: "Cari Resto",
-    description: "Cari Resto is a web application that helps users find restaurants based on their preferences. The goal of this project is to fulfill the requirements of the Front-End Web Developer Expert class from Dicoding.",
+    description: "The goal of this project is to fulfill the requirements of the Front-End Web Developer Expert class from Dicoding. Cari Resto is a web application that helps users find restaurants based on their preferences.",
     projectUrl: "https://martuafernando.github.io/katalog-restoran/",
     role: "Developer",
     tools: ["HTML", "CSS", "JavaScript"],

@@ -2,7 +2,7 @@ export default interface ProjectDetail {
   readonly id: string;
   readonly title: string;
   readonly description: string;
-  readonly projectUrl: string;
+  readonly projectUrl?: string;
 
   readonly role: string;
   readonly tools: string[];
