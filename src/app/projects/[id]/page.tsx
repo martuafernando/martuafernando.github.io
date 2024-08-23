@@ -1,44 +1,45 @@
-"use client";
-
-import { useProjectDetail } from "@/presentation/contexts/project-detail-context";
-import useWindowWidth from "@/presentation/hooks/useWindowWidth";
-import Image from "next/image";
+import { getProjectById } from "@/data/repositories/projects-repository";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import Project from "@/domain/entities/project";
+import { breakpoint } from "@/presentation/constant/breakpoint";
 
-export default function ProjectPage() {
-  const isMobile = useWindowWidth() < 768;
-  const { projectDetail, loading } = useProjectDetail();
-
-  if (!projectDetail || loading) {
-    return <ProjectPageSkeleton />;
-  }
+export default function ProjectPage({
+  params,
+}: {
+  readonly params: { id: string };
+}) {
+  const project: Project = getProjectById(params.id)!;
+  const {
+    props: { srcSet: desktop },
+  } = getImageProps({
+    className: "w-full object-contain",
+    alt: project.thumbnailAlt,
+    width: project.desktopThumbnailWidth,
+    height: project.desktopThumbnailHeight,
+    src: project.desktopThumbnailUrl,
+  });
 
   return (
     <>
-      {isMobile ? (
-        <Image
+      <picture>
+        <source media={`(min-width: ${breakpoint.sm}px)`} srcSet={desktop} />
+        <img
           className="w-full object-contain"
-          src={projectDetail.mobileThumbnailUrl}
-          alt={projectDetail.thumbnailAlt}
-          width={projectDetail.mobileThumbnailWidth}
-          height={projectDetail.mobileThumbnailHeight}
+          src={project.mobileThumbnailUrl}
+          width={project.mobileThumbnailWidth}
+          height={project.mobileThumbnailHeight}
+          alt={project.thumbnailAlt}
         />
-      ) : (
-        <Image
-          className="w-full object-contain"
-          src={projectDetail.desktopThumbnailUrl}
-          alt={projectDetail.thumbnailAlt}
-          width={projectDetail.desktopThumbnailWidth}
-          height={projectDetail.desktopThumbnailHeight}
-        />
-      )}
+      </picture>
 
       <div className="max-w-3xl mx-auto p-4 lg:p-0">
         <section className="mt-16">
-          <h1 className="text-5xl font-bold">{projectDetail?.title}</h1>
-          {projectDetail?.projectUrl && (
+          <h1 className="text-5xl font-bold">{project?.title}</h1>
+          {project?.projectUrl && (
             <Link
               href="https://martuafernando.github.io/katalog-restoran/"
               className="flex items-center"
@@ -52,26 +53,27 @@ export default function ProjectPage() {
 
           <div className="mt-2 ml-1 flex flex-wrap gap-2">
             <p className="text-gray-500">
-              <span className="font-bold">Role:</span> {projectDetail.role}
+              <span className="font-bold">Role:</span> {project.role}
             </p>
             <span className="hidden sm:block text-gray-500">•</span>
             <p className="text-gray-500">
-              <span className="font-bold">Category:</span>{" "}
-              {projectDetail.category}
+              <span className="font-bold">Category:</span> {project.category}
             </p>
           </div>
 
-          <ToolsIcon tools={projectDetail.tools} className="mt-8 ml-1" />
+          <ToolsIcon tools={project.tools} className="mt-8 ml-1" />
         </section>
 
-        {projectDetail?.description && (
+        {project?.description && (
           <section className="mt-16">
             <h2 className="text-3xl font-bold">Project Description</h2>
-            <p className="text-lg text-gray-500 mt-4">
-              {projectDetail.description}
-            </p>
+            <p className="text-lg text-gray-500 mt-4">{project.description}</p>
           </section>
         )}
+
+        <article className="mt-16 prose prose-headings:text-black prose-h1:text-5xl prose-h2:text-3xl">
+          <MDXRemote source={project.content} />
+        </article>
       </div>
     </>
   );
@@ -120,44 +122,6 @@ function ToolsIcon({
             return null;
         }
       })}
-    </div>
-  );
-}
-
-function ProjectPageSkeleton() {
-  return (
-    <div className="animate-pulse">
-      <div className="bg-gray-200 w-full h-[300px]"></div>
-      <div className="max-w-3xl mx-auto p-4 lg:p-0">
-        <section className="mt-16 flex flex-wrap justify-between gap-y-4">
-          <div>
-            <h1 className="text-5xl font-bold bg-gray-200 h-12 w-3/4"></h1>
-            <div className="mt-2 ml-1 flex flex-wrap gap-2">
-              <p className="text-gray-500 bg-gray-200 h-5 w-1/4"></p>
-              <span className="hidden sm:block text-gray-500">•</span>
-              <p className="text-gray-500 bg-gray-200 h-5 w-1/4"></p>
-            </div>
-          </div>
-          <div className="flex gap-2 justify-between">
-            <div className="flex flex-col gap-1 items-center">
-              <div className="bg-gray-200 h-12 w-12"></div>
-              <span className="text-xs bg-gray-200 h-5 w-1/4"></span>
-            </div>
-            <div className="flex flex-col gap-1 items-center">
-              <div className="bg-gray-200 h-12 w-12"></div>
-              <span className="text-xs bg-gray-200 h-5 w-1/4"></span>
-            </div>
-            <div className="flex flex-col gap-1 items-center">
-              <div className="bg-gray-200 h-12 w-12"></div>
-              <span className="text-xs bg-gray-200 h-5 w-1/4"></span>
-            </div>
-          </div>
-        </section>
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold bg-gray-200 h-12 w-1/2"></h2>
-          <p className="text-lg text-gray-500 mt-4 bg-gray-200 h-12 w-full"></p>
-        </section>
-      </div>
     </div>
   );
 }

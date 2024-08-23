@@ -1,12 +1,14 @@
-
 'use client';
 
 import React, { useEffect, useRef } from "react";
-import { useProjects } from "@/presentation/contexts/project-context";
-import { ProjectThumbnail, ProjectThumbnailSkeleton } from "@/presentation/components/project-thumbnail";
+import { ProjectThumbnail } from "@/presentation/components/project-thumbnail";
+import Project from "@/domain/entities/project";
 
-export default function ProjectList() {
-  const { projects, loading } = useProjects();
+export default function ProjectList({
+  projects,
+}: {
+  readonly projects: Project[];
+}) {
   const imagesRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
@@ -33,16 +35,6 @@ export default function ProjectList() {
       });
     };
   }, [projects]);
-
-  if (loading) {
-    return (
-      <>
-        <ProjectThumbnailSkeleton />
-        <ProjectThumbnailSkeleton />
-        <ProjectThumbnailSkeleton />
-      </>
-    );
-  }
 
   return (
     <>

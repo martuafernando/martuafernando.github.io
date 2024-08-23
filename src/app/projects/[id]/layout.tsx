@@ -9,8 +9,6 @@ export default function ProjectLayout({
   readonly children: React.ReactNode;
 }>) {
   return (
-    <ProjectDetailProvider id={id}>
-      <CommonLayout>{children}</CommonLayout>
-    </ProjectDetailProvider>
+    <CommonLayout>{children}</CommonLayout>
   );
 }
