@@ -4,7 +4,6 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   output: 'export',
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-  basePath: "/martuafernando.github.io",
   images: {
     unoptimized: true,
   }
