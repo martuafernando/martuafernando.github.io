@@ -1,5 +1,7 @@
-import { getProjectById } from "@/data/repositories/projects-repository";
-import Image, { getImageProps } from "next/image";
+import {
+  getAllProjects,
+  getProjectById,
+} from "@/data/repositories/projects-repository";
 import Link from "next/link";
 import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
@@ -12,21 +14,18 @@ export default function ProjectPage({
 }: {
   readonly params: { id: string };
 }) {
+  console.log("testings::", params);
   const project: Project = getProjectById(params.id)!;
-  const {
-    props: { srcSet: desktop },
-  } = getImageProps({
-    className: "w-full object-contain",
-    alt: project.thumbnailAlt,
-    width: project.desktopThumbnailWidth,
-    height: project.desktopThumbnailHeight,
-    src: project.desktopThumbnailUrl,
-  });
 
   return (
     <>
       <picture>
-        <source media={`(min-width: ${breakpoint.sm}px)`} srcSet={desktop} />
+        <source
+          media={`(min-width: ${breakpoint.sm}px)`}
+          srcSet={project.desktopThumbnailUrl}
+          width={project.desktopThumbnailWidth}
+          height={project.desktopThumbnailHeight}
+        />
         <img
           className="w-full object-contain"
           src={project.mobileThumbnailUrl}
@@ -124,4 +123,18 @@ function ToolsIcon({
       })}
     </div>
   );
+}
+
+export function generateStaticParams() {
+  const projects = getAllProjects();
+
+  if (!projects || projects.length === 0) {
+    return [{ id: "" }];
+  }
+
+  const params = projects.map((project) => ({
+    id: project.id,
+  }));
+
+  return params;
 }

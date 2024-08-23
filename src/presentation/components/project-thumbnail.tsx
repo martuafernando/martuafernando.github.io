@@ -1,4 +1,3 @@
-import { getImageProps } from "next/image";
 import React, { forwardRef, RefAttributes } from "react";
 import Link from "next/link";
 import Project from "@/domain/entities/project";
@@ -15,17 +14,8 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
   project,
   href,
 }, ref) => {
-  const {
-    props: { srcSet: desktop },
-  } = getImageProps({
-    className: "w-full object-contain scale-95 duration-1000 ease-in-out",
-    alt: project.thumbnailAlt,
-    width: project.desktopThumbnailWidth,
-    height: project.desktopThumbnailHeight,
-    src: project.desktopThumbnailUrl,
-  });
 
-  return (
+  return (  
     <Link
       ref={ref}
       href={href}
@@ -34,7 +24,9 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
       <picture>
         <source
           media={`(min-width: ${breakpoint.sm}px)`}
-          srcSet={desktop}
+          srcSet={project.desktopThumbnailUrl}
+          width={project.desktopThumbnailWidth}
+          height={project.desktopThumbnailHeight}
         />
         <img
           className="w-full object-contain scale-95 duration-1000 ease-in-out"
@@ -51,12 +43,6 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
   );
 });
 
-const ProjectThumbnailSkeleton = () => (
-  <div className="animate-pulse rounded-lg mt-8 text-center pb-8 overflow-hidden">
-    <div className="bg-gray-300 h-96 w-full"></div>
-    <div className="mt-8 bg-gray-300 h-8 w-3/4 mx-auto"></div>
-    <div className="mt-2 bg-gray-300 h-6 w-1/2 mx-auto"></div>
-  </div>
-);
+ProjectThumbnail.displayName = "ProjectThumbnail";
 
-export {ProjectThumbnail, ProjectThumbnailSkeleton};
+export default ProjectThumbnail;

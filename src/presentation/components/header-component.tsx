@@ -9,13 +9,13 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    setIsVisible(currentScrollY <= lastScrollY || currentScrollY === 0);
-    setLastScrollY(currentScrollY);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY <= lastScrollY || currentScrollY === 0);
+      setLastScrollY(currentScrollY);
+    };
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
 

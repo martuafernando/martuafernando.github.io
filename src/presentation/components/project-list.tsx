@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from "react";
-import { ProjectThumbnail } from "@/presentation/components/project-thumbnail";
+import ProjectThumbnail from "@/presentation/components/project-thumbnail";
 import Project from "@/domain/entities/project";
 
 export default function ProjectList({
@@ -12,6 +12,8 @@ export default function ProjectList({
   const imagesRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
+    const currentImagesRef = imagesRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -25,12 +27,12 @@ export default function ProjectList({
       { threshold: 0.8 }
     );
 
-    imagesRef.current.forEach((image) => {
+    currentImagesRef.forEach((image) => {
       if (image) observer.observe(image);
     });
 
     return () => {
-      imagesRef.current.forEach((image) => {
+      currentImagesRef.forEach((image) => {
         if (image) observer.unobserve(image);
       });
     };
@@ -42,7 +44,7 @@ export default function ProjectList({
         <ProjectThumbnail
           key={project.id}
           project={project}
-          ref={(el) => {
+          ref={(el: HTMLElement | null) => {
             imagesRef.current[i] = el!;
           }}
           href={`/projects/${project.id}`}

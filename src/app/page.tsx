@@ -20,12 +20,12 @@ export default function Home() {
       <section className="mt-4 py-8 max-w-5xl mx-auto">
         <div className="sm:flex items-center gap-16">
           <div>
-            <h2 className="text-5xl font-bold">Hi, I'm Martua Fernando</h2>
+            <h2 className="text-5xl font-bold">Hi, I&apos;m Martua Fernando</h2>
             <p className="text-3xl mt-2 text-black-400">Software Engineer</p>
             <p className="mt-4 text-black-400">
-              I'm a Software Engineer from Indonesia with over two years of
-              professional experience. Since 2022, I've been working at eHealth.
-              I'm passionate about exploring new opportunities that allow me to
+              I&apos;m a Software Engineer from Indonesia with over two years of
+              professional experience. Since 2022, I&apos;ve been working at eHealth.
+              I&apos;m passionate about exploring new opportunities that allow me to
               expand my horizons and gain new experiences.
             </p>
           </div>
