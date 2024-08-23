@@ -19,7 +19,7 @@ export default function Footer({ className }: { readonly className?: string }) {
           rel="noopener noreferrer"
           className="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
         >
-          <span className="ml-2">LinkedIn</span>
+          <span>LinkedIn</span>
           <FiExternalLink size={16} className="ml-2" />
         </Link>
         <Link
@@ -28,7 +28,7 @@ export default function Footer({ className }: { readonly className?: string }) {
           rel="noopener noreferrer"
           className="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
         >
-          <span className="ml-2">GitHub</span>
+          <span>GitHub</span>
           <FiExternalLink size={16} className="ml-2" />
         </Link>
         <Link

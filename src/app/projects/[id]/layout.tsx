@@ -1,4 +1,3 @@
-import { ProjectDetailProvider } from "@/presentation/contexts/project-detail-context";
 import CommonLayout from "@/presentation/layout/common-layout";
 
 export default function ProjectLayout({
