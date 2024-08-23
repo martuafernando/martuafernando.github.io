@@ -18,7 +18,7 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
   const {
     props: { srcSet: desktop },
   } = getImageProps({
-    className: "w-full object-contain",
+    className: "w-full object-contain scale-95 duration-1000 ease-in-out",
     alt: project.thumbnailAlt,
     width: project.desktopThumbnailWidth,
     height: project.desktopThumbnailHeight,
@@ -37,7 +37,7 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
           srcSet={desktop}
         />
         <img
-          className="w-full object-contain"
+          className="w-full object-contain scale-95 duration-1000 ease-in-out"
           src={project.mobileThumbnailUrl}
           width={project.mobileThumbnailWidth}
           height={project.mobileThumbnailHeight}

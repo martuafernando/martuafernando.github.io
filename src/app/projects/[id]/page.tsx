@@ -61,7 +61,7 @@ export default function ProjectPage({
             </p>
           </div>
 
-          <ToolsIcon tools={project.tools} className="mt-8 ml-1" />
+          <ToolsIcon tools={project.tools ?? []} className="mt-8 ml-1" />
         </section>
 
         {project?.description && (
