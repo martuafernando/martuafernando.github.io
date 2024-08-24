@@ -14,8 +14,8 @@ import { getAllProjects } from "@/data/repositories/projects-repository";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Martua Fernando",
-  description: "Martua Fernando's personal website",
+  title: "M.Fernando N.Sibarani",
+  description: "M.Fernando N.Sibarani's personal website",
 };
 
 export default function Home() {

@@ -12,7 +12,7 @@ import ToolsIcon from "@/presentation/components/tools-icon-component";
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const project: Project = getProjectById(params.id)!;
   return {
-    title: `${project.title} - Martua Fernando`,
+    title: `${project.title} - M.Fernando N.Sibarani`,
     description: project.description,
   };
 }
