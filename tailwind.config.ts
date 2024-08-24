@@ -40,7 +40,7 @@ const config: Config = {
       },
       animation: {
         upDown: 'upDown 2s infinite ease-in-out',
-        scaleDown: 'scaleDown 1s ease-in-out',
+        scaleDown: 'scaleDown 1s forwards ease-in-out',
       },
     },
   },

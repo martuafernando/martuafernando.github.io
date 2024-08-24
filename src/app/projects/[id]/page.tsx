@@ -8,7 +8,14 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Project from "@/domain/entities/project";
 import { breakpoint } from "@/presentation/constant/breakpoint";
 import ToolsIcon from "@/presentation/components/tools-icon-component";
-import Head from "next/head";
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const project: Project = getProjectById(params.id)!;
+  return {
+    title: `${project.title} - Martua Fernando`,
+    description: project.description,
+  };
+}
 
 export default function ProjectPage({
   params,
@@ -19,10 +26,6 @@ export default function ProjectPage({
 
   return (
     <>
-      <Head>
-        <title>{project.title} - Martua Fernando</title>
-        <meta name="description" content={project.description} />
-      </Head>
       <div className="relative z-10">
         <picture>
           <source
