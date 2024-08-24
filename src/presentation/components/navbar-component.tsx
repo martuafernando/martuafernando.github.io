@@ -80,7 +80,7 @@ function MobileDrawer({
 
   return (
     <div
-      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-500 ease-in-out transform ${
+      className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-500 ease-in-out transform-gpu ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >

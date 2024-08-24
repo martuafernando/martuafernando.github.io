@@ -11,6 +11,12 @@ import ProjectList from "@/presentation/components/project-list";
 import CallToActionComponent from "@/presentation/components/call-to-action-component";
 import CommonLayout from "@/presentation/layout/common-layout";
 import { getAllProjects } from "@/data/repositories/projects-repository";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Martua Fernando",
+  description: "Martua Fernando's personal website",
+};
 
 export default function Home() {
   const projects = getAllProjects();
@@ -24,9 +30,9 @@ export default function Home() {
             <p className="text-3xl mt-2 text-black-400">Software Engineer</p>
             <p className="mt-4 text-black-400">
               I&apos;m a Software Engineer from Indonesia with over two years of
-              professional experience. Since 2022, I&apos;ve been working at eHealth.
-              I&apos;m passionate about exploring new opportunities that allow me to
-              expand my horizons and gain new experiences.
+              professional experience. Since 2022, I&apos;ve been working at
+              eHealth. I&apos;m passionate about exploring new opportunities
+              that allow me to expand my horizons and gain new experiences.
             </p>
           </div>
           <div className="hidden sm:block">

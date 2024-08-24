@@ -5,6 +5,11 @@ import { breakpoint } from "@/presentation/constant/breakpoint";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
+export const metadata = {
+  title: "Projects",
+  description: "Projects created by Martua Fernando",
+};
+
 export default function ProjectsPage() {
   const projects = getAllProjects();
 
@@ -25,7 +30,7 @@ function Card({ project }: { readonly project: Project }) {
     <Link
       href={`/projects/${project.id}`}
       key={project.id}
-      className="flex flex-col gap-4 shadow-xl rounded-lg overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105"
+      className="flex flex-col gap-4 shadow-xl rounded-lg overflow-hidden transition-all duration-300 ease-in-out transform-gpu hover:scale-105"
     >
       <picture>
         <source
