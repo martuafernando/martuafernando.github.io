@@ -14,26 +14,27 @@ export default function ProjectPage({
 }: {
   readonly params: { id: string };
 }) {
-  console.log("testings::", params);
   const project: Project = getProjectById(params.id)!;
 
   return (
     <>
-      <picture>
-        <source
-          media={`(min-width: ${breakpoint.sm}px)`}
-          srcSet={project.desktopThumbnailUrl}
-          width={project.desktopThumbnailWidth}
-          height={project.desktopThumbnailHeight}
-        />
-        <img
-          className="w-full object-contain"
-          src={project.mobileThumbnailUrl}
-          width={project.mobileThumbnailWidth}
-          height={project.mobileThumbnailHeight}
-          alt={project.thumbnailAlt}
-        />
-      </picture>
+      <div className="relative z-10">
+        <picture>
+          <source
+            media={`(min-width: ${breakpoint.sm}px)`}
+            srcSet={project.desktopThumbnailUrl}
+            width={project.desktopThumbnailWidth}
+            height={project.desktopThumbnailHeight}
+          />
+          <img
+            className="w-full object-contain transform-gpu box-border animate-scaleDown"
+            src={project.mobileThumbnailUrl}
+            width={project.mobileThumbnailWidth}
+            height={project.mobileThumbnailHeight}
+            alt={project.thumbnailAlt}
+          />
+        </picture>
+      </div>
 
       <div className="max-w-3xl mx-auto p-4 lg:p-0">
         <section className="mt-16">

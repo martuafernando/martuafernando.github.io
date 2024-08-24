@@ -11,7 +11,7 @@ export default function CommonLayout({
   return (
     <>
       <Header />
-      <main className={`my-20 bg-white rounded-3xl ${className}`}>
+      <main className={`my-20 bg-white ${className}`}>
         {children}
       </main>
       <Footer />

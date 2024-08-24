@@ -33,9 +33,14 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
         },
+        scaleDown: {
+          '0%': { transform: 'scale(2)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
       animation: {
         upDown: 'upDown 2s infinite ease-in-out',
+        scaleDown: 'scaleDown 1s ease-in-out',
       },
     },
   },

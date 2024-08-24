@@ -8,6 +8,6 @@ export default function ProjectLayout({
   readonly children: React.ReactNode;
 }>) {
   return (
-    <CommonLayout>{children}</CommonLayout>
+    <CommonLayout className="overflow-x-hidden">{children}</CommonLayout>
   );
 }
