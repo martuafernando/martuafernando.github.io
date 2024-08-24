@@ -3,11 +3,11 @@ import {
   getProjectById,
 } from "@/data/repositories/projects-repository";
 import Link from "next/link";
-import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Project from "@/domain/entities/project";
 import { breakpoint } from "@/presentation/constant/breakpoint";
+import ToolsIcon from "@/presentation/components/tools-icon-component";
 
 export default function ProjectPage({
   params,
@@ -76,53 +76,6 @@ export default function ProjectPage({
         </article>
       </div>
     </>
-  );
-}
-
-function ToolsIcon({
-  tools,
-  className,
-}: {
-  readonly tools: string[];
-  readonly className?: string;
-}) {
-  return (
-    <div className={`flex gap-2 ${className}`}>
-      {tools.map((tool) => {
-        switch (tool) {
-          case "HTML":
-            return (
-              <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaHtml5 size={32} className="text-red-500" />
-                <span className="text-xs">HTML</span>
-              </div>
-            );
-          case "CSS":
-            return (
-              <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaCss3Alt size={32} className="text-blue-500" />
-                <span className="text-xs">CSS</span>
-              </div>
-            );
-          case "JavaScript":
-            return (
-              <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaNodeJs size={32} className="text-yellow-500" />
-                <span className="text-xs">JavaScript</span>
-              </div>
-            );
-          case "React":
-            return (
-              <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaReact size={32} className="text-blue-500" />
-                <span className="text-xs">React</span>
-              </div>
-            );
-          default:
-            return null;
-        }
-      })}
-    </div>
   );
 }
 

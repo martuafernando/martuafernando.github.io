@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 import LinkData from "@/domain/entities/link-data";
 
@@ -48,12 +49,16 @@ export default function Navbar() {
 }
 
 function DesktopNavLinks({ links }: { readonly links: LinkData[] }) {
+  const pathname = usePathname();
+
   return (
     <ul className="flex gap-8">
       {links.map((link) => (
         <li key={link.href}>
           <Link
-            className="relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+            className={`${
+              pathname === link.href ? "after:scale-x-100" : ""
+            } relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
             href={link.href}
           >
             {link.label}
@@ -71,6 +76,8 @@ function MobileDrawer({
   readonly isOpen: boolean;
   readonly links: readonly LinkData[];
 }) {
+  const pathname = usePathname();
+
   return (
     <div
       className={`fixed flex flex-col justify-center items-center top-0 right-0 h-full w-full -z-10 bg-white text-black transition-transform duration-500 ease-in-out transform ${
@@ -81,7 +88,9 @@ function MobileDrawer({
         {links.map((link) => (
           <li key={link.href} className="text-3xl">
             <Link
-              className="relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+              className={`${
+                pathname === link.href ? "after:scale-x-100" : ""
+              } relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
               href={link.href}
             >
               {link.label}

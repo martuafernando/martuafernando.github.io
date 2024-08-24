@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <CommonLayout className="px-4 xl:px-0">
-      <section className="mt-4 py-8 max-w-5xl mx-auto">
+      <section className="mt-4 py-8 max-w-3xl mx-auto">
         <div className="sm:flex items-center gap-16">
           <div>
             <h2 className="text-5xl font-bold">Hi, I&apos;m Martua Fernando</h2>

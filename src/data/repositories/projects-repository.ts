@@ -23,7 +23,7 @@ function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): string[] {
 export function getAllProjects(): Project[] {
   const files = getAllFiles(projectsDirectory);
   const projects = files.map((file) => {
-    const id = RegExp(/[^\\\/]+$/).exec(file)![0].replace(/\.md$/, "");
+    const id = RegExp(/[^\\]+$/).exec(file)![0].replace(/\.md$/, "");
     const fileContents = fs.readFileSync(file, "utf8");
     const { data } = matter(fileContents);
 
