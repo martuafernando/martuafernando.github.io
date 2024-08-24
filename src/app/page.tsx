@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <CommonLayout>
-      <main className="px-4 xl:px-0">
+      <main className="my-24 px-4 xl:px-0">
         <section className="mt-4 py-8 max-w-3xl mx-auto">
           <div className="sm:flex items-center gap-16">
             <div>
