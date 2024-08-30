@@ -53,7 +53,7 @@ export default function ProjectPage({
               className="flex items-center"
               target="_blank"
             >
-              <span className="text-blue-500  flex items-center ml-1 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+              <span className="text-blue-500  flex items-center ml-1 gap-1 hover-underline-animation">
                 Visit Website <FiExternalLink size={16} />
               </span>
             </Link>

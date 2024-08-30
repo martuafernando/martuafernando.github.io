@@ -63,7 +63,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <FaLinkedin size={36} />
-              <span className="flex items-center ml-2 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+              <span className="flex items-center ml-2 gap-1 hover-underline-animation">
                 LinkedIn <FiExternalLink size={16} />
               </span>
             </Link>
@@ -74,7 +74,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <FaGithub size={36} />
-              <span className="flex items-center ml-2 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+              <span className="flex items-center ml-2 gap-1 hover-underline-animation">
                 GitHub <FiExternalLink size={16} />
               </span>
             </Link>
@@ -85,7 +85,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <FaInstagramSquare size={36} />
-              <span className="flex items-center ml-2 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+              <span className="flex items-center ml-2 gap-1 hover-underline-animation">
                 Instagram <FiExternalLink size={16} />
               </span>
             </Link>
@@ -108,7 +108,7 @@ export default function Home() {
           </div>
           <Link
             href="/experience"
-            className="mt-4 mx-auto block text-center text-blue-500"
+            className="mt-4 mx-auto block text-center text-blue-500 outline outline-1 p-4 rounded-lg hover:bg-blue-500 hover:text-white duration-300"
           >
             Read More
           </Link>
@@ -124,7 +124,7 @@ export default function Home() {
                 className="flex items-center outline outline-1 p-4 rounded-lg bg-black text-white"
               >
                 <FaEnvelope size={24} />
-                <span className="flex items-center ml-2 gap-1 relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-black after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300">
+                <span className="flex items-center ml-2 gap-1 hover-underline-animation after:bg-white">
                   Email Me <FiExternalLink size={16} />
                 </span>
               </Link>,

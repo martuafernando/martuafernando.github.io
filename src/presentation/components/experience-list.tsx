@@ -14,7 +14,7 @@ export default function ExperienceList({
         <ExperienceItem
           key={experience.companyName}
           experience={experience}
-          className="border-t first:border-none py-8 sm:p-8"
+          className="border-t first:border-none py-8"
         />
       ))}
     </div>
