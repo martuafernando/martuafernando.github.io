@@ -12,6 +12,8 @@ import CallToActionComponent from "@/presentation/components/call-to-action-comp
 import CommonLayout from "@/presentation/layout/common-layout";
 import { getAllProjects } from "@/data/repositories/projects-repository";
 import { Metadata } from "next";
+import { getAllExperience } from "@/data/repositories/experience-repository";
+import ExperienceList from "@/presentation/components/experience-list";
 
 export const metadata: Metadata = {
   title: "M.Fernando N.Sibarani",
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   const projects = getAllProjects();
+  const experience = getAllExperience();
 
   return (
     <CommonLayout>
@@ -93,6 +96,22 @@ export default function Home() {
           <h3 className="text-5xl font-bold text-center">Projects</h3>
           <FiArrowDown size={48} className="mx-auto mt-8 animate-upDown" />
           <ProjectList projects={projects} />
+        </section>
+
+        <section className="mt-4 py-8 max-w-5xl mx-auto">
+          <h3 className="text-5xl font-bold text-center">Experience</h3>
+          <div className="relative mt-8 max-h-96 overflow-hidden">
+            <div className="experience-list">
+              <ExperienceList experience={experience} />
+            </div>
+            <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+          </div>
+          <Link
+            href="/experience"
+            className="mt-4 mx-auto block text-center text-blue-500"
+          >
+            Read More
+          </Link>
         </section>
 
         <section className="mt-4 py-8 max-w-5xl mx-auto">

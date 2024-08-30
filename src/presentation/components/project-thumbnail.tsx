@@ -2,6 +2,7 @@ import React, { forwardRef, RefAttributes } from "react";
 import Link from "next/link";
 import Project from "@/domain/entities/project";
 import { breakpoint } from "../constant/breakpoint";
+import ToolsIcon from "./tools-icon-component";
 
 interface ProjectThumbnailProps {
   project: Project;
@@ -38,6 +39,7 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
       </picture>
       <h4 className="mt-8 text-3xl font-semibold">{project.title}</h4>
       <p className="mt-2 text-gray-500">{project.category}</p>
+      <ToolsIcon tools={project.tools ?? []} className="mt-4 mx-auto w-fit" />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
     </Link>
   );

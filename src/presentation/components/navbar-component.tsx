@@ -28,6 +28,9 @@ export default function Navbar() {
     {
       href: "/projects",
       label: "Project",
+    }, {
+      href: "/experience",
+      label: "Experience",    
     }
   ];
 
