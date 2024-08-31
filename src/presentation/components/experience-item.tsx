@@ -43,7 +43,7 @@ export default function ExperienceItem({
             <p className="text-sm text-black-400">{experienceDuration}</p>
           </div>
         </div>
-        <p className="text-sm mt-2 text-gray-500">
+        <p className="text-sm mt-2 text-black-400">
           {experience.companyDescription}
         </p>
       </Link>
@@ -82,9 +82,9 @@ function PositionCard({
   return (
     <div className={className}>
       <h4 className="text-lg font-semibold text-black">{position.title} </h4>
-      <p className="text-sm text-gray-500">{position.employmentType}</p>
-      <p className="text-sm text-gray-500">{`${position.location} (${position.locationType})`}</p>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-black-400">{position.employmentType}</p>
+      <p className="text-sm text-black-400">{`${position.location} (${position.locationType})`}</p>
+      <p className="text-sm text-black-400">
         <span>
           {`${position.startDate} - ${
             position.endDate ? position.endDate : "Present"
@@ -93,7 +93,7 @@ function PositionCard({
         <span className="mx-2">•</span>
         <span>{duration}</span>
       </p>
-      <ul className="list-disc list-outside ml-4 mt-2 text-gray-700">
+      <ul className="list-disc list-outside ml-4 mt-2 text-black">
         {position.descriptionPoints.map((point) => (
           <li key={point}>{point}</li>
         ))}
