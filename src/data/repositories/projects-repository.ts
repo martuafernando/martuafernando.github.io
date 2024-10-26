@@ -1,29 +1,30 @@
 import matter from "gray-matter";
 import fs from "fs";
 import { join } from "path";
-import Project from "@/domain/entities/project";
+import type Project from "@/domain/entities/project";
 
 const projectsDirectory = join(process.cwd(), "/src/data/content/projects/");
 
 function getAllFiles(dirPath: string, arrayOfFiles: string[] = []): string[] {
   const files = fs.readdirSync(dirPath);
+  const filesResult = [];
 
-  files.forEach((file) => {
+  for (const file of files) {
     const fullPath = join(dirPath, file);
     if (fs.statSync(fullPath).isDirectory()) {
-      arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+      filesResult.push(...getAllFiles(fullPath, arrayOfFiles));
     } else {
-      arrayOfFiles.push(fullPath);
+      filesResult.push(fullPath);
     }
-  });
+  }
 
-  return arrayOfFiles;
+  return filesResult;
 }
 
 export function getAllProjects(): Project[] {
   const files = getAllFiles(projectsDirectory);
   const projects = files.map((file) => {
-    const id = RegExp(/[^\\/]+$/).exec(file)![0].replace(/\.md$/, "");
+    const id = RegExp(/[^\\/]+$/).exec(file)?.[0].replace(/\.md$/, "");
     const fileContents = fs.readFileSync(file, "utf8");
     const { data } = matter(fileContents);
 
@@ -39,5 +40,5 @@ export function getProjectById(id: string): Project | null {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  return { ...data, content } as Project ?? null;
+  return { ...data, content } as Project;
 }
