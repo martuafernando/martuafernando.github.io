@@ -16,7 +16,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${poppins.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${poppins.className} overflow-x-hidden bg-[#f7f9f9]`}>{children}</body>
     </html>
   );
 }

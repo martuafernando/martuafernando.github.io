@@ -39,7 +39,7 @@ export default function ProjectList({
   }, [projects]);
 
   return (
-    <>
+    <div className='md:w-2/3 mx-auto'>
       {projects.map((project, i) => (
         <ProjectThumbnail
           key={project.id}
@@ -50,6 +50,6 @@ export default function ProjectList({
           href={`/projects/${project.id}`}
         />
       ))}
-    </>
+    </div>
   );
 };
