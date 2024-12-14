@@ -2,7 +2,8 @@
 companyName: "Information Technology, ITS"
 companyDescription: "Information Technology is one of the majors at Institut Teknologi Sepuluh Nopember, focusing on Cyber Security, Internet of Things, System Integration, and Cloud Computing"
 companyUrl: "https://www.its.ac.id/it/"
-companyLogoUrl: "/images/brands/information-technology-its.jpg"
+companyLogoUrl: "/images/brands/logo-dti.png"
+companyLogoHorizontalUrl: "/images/brands/logo-dti.png"
 position:
   - title: "Praticum Assistant of Computer Networking"
     employmentType: "Seasonal"

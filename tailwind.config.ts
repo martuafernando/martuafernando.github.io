@@ -36,11 +36,16 @@ const config: Config = {
         fadeIn: {
           '0%': { opacity: "0" },
           '100%': { opacity: "1" },
-        }
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-46.5%)' },
+        },
       },
       animation: {
         scaleDown: 'scaleDown 1s forwards ease-in-out',
         fadeIn: 'fadeIn 1s forwards ease-in-out',
+        marquee: 'marquee 10s linear infinite',
       },
     },
   },

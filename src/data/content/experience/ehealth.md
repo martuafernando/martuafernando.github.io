@@ -4,6 +4,7 @@ companyDescription: "eHealth is a digital medical record application for private
 services for managing medical records, pharmacies, and hospitals using the FHIR Health Level 7 (HL7) standard"
 companyUrl: "https://ehealth.co.id/"
 companyLogoUrl: "/images/brands/ehealth.jpeg"
+companyLogoHorizontalUrl: "/images/brands/ehealth-horizontal.svg"
 position:
   - title: "Software Engineer"
     employmentType: "Internship"

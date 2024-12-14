@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaInstagramSquare } from "react-icons/fa";
-import { FiArrowDown, FiExternalLink } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
 interface AboveTheFoldSectionProps {
   className?: string;
@@ -14,7 +14,7 @@ export default function AboveTheFoldSection(
 
   return (
     <section
-      className={`flex flex-col items-center justify-center bg-[#f7f9f9] ${className}`}
+      className={`flex flex-col items-center justify-center ${className}`}
     >
       <Image
         className="mx-auto"
