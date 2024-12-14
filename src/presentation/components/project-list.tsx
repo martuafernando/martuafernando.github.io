@@ -1,29 +1,30 @@
-'use client';
+"use client";
 
 import React, { useEffect, useRef } from "react";
 import ProjectThumbnail from "@/presentation/components/project-thumbnail";
 import Project from "@/domain/entities/project";
+import useWindowSize from "../hook/useWindowSize";
 
 interface ProjectListProps {
-  projects: Project[],
-  className?: string,
+  projects: Project[];
+  className?: string;
 }
 
 export default function ProjectList(props: Readonly<ProjectListProps>) {
-  const { projects, className } = props
+  const { projects, className } = props;
   const imagesRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
     const currentImagesRef = imagesRef.current;
-
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.setAttribute('focus', 'true')
-          } else {
-            entry.target.setAttribute('focus', 'false')
-          }
+          const eventType = entry.isIntersecting ? "mouseover" : "mouseout";
+          const event = new MouseEvent(eventType, {
+            bubbles: true,
+            cancelable: true,
+          });
+          entry.target.dispatchEvent(event);
         }
       },
       { threshold: 0.8 }
@@ -54,4 +55,4 @@ export default function ProjectList(props: Readonly<ProjectListProps>) {
       ))}
     </div>
   );
-};
+}
