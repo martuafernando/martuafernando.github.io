@@ -20,27 +20,32 @@ const ProjectThumbnail: React.ForwardRefExoticComponent<
     <Link
       ref={ref}
       href={href}
-      className="block rounded-lg mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out pb-8 overflow-hidden relative group"
+      className="block mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out group"
     >
-      <picture>
-        <source
-          media={`(min-width: ${breakpoint.sm}px)`}
-          srcSet={project.desktopThumbnailUrl}
-          width={project.desktopThumbnailWidth}
-          height={project.desktopThumbnailHeight}
-        />
-        <img
-          className="w-full object-contain scale-95 duration-1000 ease-in-out"
-          src={project.mobileThumbnailUrl}
-          width={project.mobileThumbnailWidth}
-          height={project.mobileThumbnailHeight}
-          alt={project.thumbnailAlt}
-        />
-      </picture>
-      <h4 className="mt-8 text-3xl font-semibold">{project.title}</h4>
-      <p className="mt-2 text-gray-500">{project.category}</p>
-      <ToolsIcon tools={project.tools ?? []} className="mt-4 mx-auto w-fit" />
-      <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+      <div className="relative rounded-lg overflow-hidden">
+        <picture>
+          <source
+            media={`(min-width: ${breakpoint.sm}px)`}
+            srcSet={project.desktopThumbnailUrl}
+            width={project.desktopThumbnailWidth}
+            height={project.desktopThumbnailHeight}
+          />
+          <img
+            className="w-full object-contain duration-1000 ease-in-out"
+            src={project.mobileThumbnailUrl}
+            width={project.mobileThumbnailWidth}
+            height={project.mobileThumbnailHeight}
+            alt={project.thumbnailAlt}
+          />
+        </picture>
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+          <h4 className="absolute inset-x-0 group-hover:bottom-8 transition-all text-xl text-white font-semibold">{project.title}</h4>
+      </div>
+      <ToolsIcon
+        className="mt-4 justify-center"
+        tools={project.tools ?? []}
+        iconSize={24}
+      />
     </Link>
   );
 });

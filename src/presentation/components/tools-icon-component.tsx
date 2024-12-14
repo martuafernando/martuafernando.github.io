@@ -9,46 +9,48 @@ import {
 export default function ToolsIcon({
   tools,
   className,
+  iconSize = 32,
 }: {
   readonly tools: string[];
   readonly className?: string;
+  readonly iconSize?: number;
 }) {
   return (
-    <div className={`flex gap-2 ${className}`}>
+    <div className={`flex gap-4 ${className}`}>
       {tools.map((tool) => {
         switch (tool) {
           case "HTML":
             return (
               <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaHtml5 size={32} className="text-red-500" />
+                <FaHtml5 size={iconSize} className="text-red-500" />
                 <span className="text-xs">HTML</span>
               </div>
             );
           case "CSS":
             return (
               <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaCss3Alt size={32} className="text-blue-500" />
+                <FaCss3Alt size={iconSize} className="text-blue-500" />
                 <span className="text-xs">CSS</span>
               </div>
             );
           case "JavaScript":
             return (
               <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaNodeJs size={32} className="text-yellow-500" />
+                <FaNodeJs size={iconSize} className="text-yellow-500" />
                 <span className="text-xs">JavaScript</span>
               </div>
             );
           case "React":
             return (
               <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaReact size={32} className="text-blue-500" />
+                <FaReact size={iconSize} className="text-blue-500" />
                 <span className="text-xs">React</span>
               </div>
             );
           case "Python":
             return (
               <div key={tool} className="flex flex-col gap-1 items-center">
-                <FaPython size={32} className="text-blue-500" />
+                <FaPython size={iconSize} className="text-blue-500" />
                 <span className="text-xs">Python</span>
               </div>
             );
@@ -63,7 +65,7 @@ export default function ToolsIcon({
                   x="0px"
                   y="0px"
                   width="43px"
-                  height="32px"
+                  height={`${iconSize}px`}
                   viewBox="0 0 800 600"
                   enableBackground="new 0 0 800 600"
                   xmlSpace="preserve"

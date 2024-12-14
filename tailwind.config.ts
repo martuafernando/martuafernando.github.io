@@ -29,10 +29,6 @@ const config: Config = {
         'background': '#fffffff',
       },
       keyframes: {
-        upDown: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-12px)' },
-        },
         scaleDown: {
           '0%': { transform: 'scale(2)' },
           '100%': { transform: 'scale(1)' },
@@ -43,7 +39,6 @@ const config: Config = {
         }
       },
       animation: {
-        upDown: 'upDown 2s infinite ease-in-out',
         scaleDown: 'scaleDown 1s forwards ease-in-out',
         fadeIn: 'fadeIn 1s forwards ease-in-out',
       },

@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
 
-export default function Footer({ className }: { readonly className?: string }) {
+export interface FooterProps {
+  className?: string
+}
+
+export default function Footer(props: Readonly<FooterProps>) {
+  const { className } = props
+
   return (
     <footer className={`bg-black text-white py-16 ` + className}>
       <Image

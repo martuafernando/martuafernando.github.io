@@ -4,11 +4,13 @@ import React, { useEffect, useRef } from "react";
 import ProjectThumbnail from "@/presentation/components/project-thumbnail";
 import Project from "@/domain/entities/project";
 
-export default function ProjectList({
-  projects,
-}: {
-  readonly projects: Project[];
-}) {
+interface ProjectListProps {
+  projects: Project[],
+  className?: string,
+}
+
+export default function ProjectList(props: Readonly<ProjectListProps>) {
+  const { projects, className } = props
   const imagesRef = useRef<HTMLElement[]>([]);
 
   useEffect(() => {
@@ -16,30 +18,30 @@ export default function ProjectList({
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        for (const entry of entries) {
           if (entry.isIntersecting) {
-            entry.target.classList.add("focused");
+            entry.target.setAttribute('focus', 'true')
           } else {
-            entry.target.classList.remove("focused");
+            entry.target.setAttribute('focus', 'false')
           }
-        });
+        }
       },
       { threshold: 0.8 }
     );
 
-    currentImagesRef.forEach((image) => {
+    for (const image of currentImagesRef) {
       if (image) observer.observe(image);
-    });
+    }
 
     return () => {
-      currentImagesRef.forEach((image) => {
+      for (const image of currentImagesRef) {
         if (image) observer.unobserve(image);
-      });
+      }
     };
   }, [projects]);
 
   return (
-    <div className='md:w-2/3 mx-auto'>
+    <div className={`mx-auto ${className}`}>
       {projects.map((project, i) => (
         <ProjectThumbnail
           key={project.id}

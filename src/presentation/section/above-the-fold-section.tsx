@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaInstagramSquare } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiArrowDown, FiExternalLink } from "react-icons/fi";
 
 interface AboveTheFoldSectionProps {
   className?: string;

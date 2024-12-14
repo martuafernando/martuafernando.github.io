@@ -18,7 +18,7 @@ export default function Home() {
     <CommonLayout>
       <main className="mb-24">
         <AboveTheFoldSection className="w-full h-[calc(100vh-72px)] rounded-b-[64px] sm:rounded-b-[120px]" />
-        <ProjectsSection className="mt-4 py-8 max-w-3xl mx-auto" />
+        <ProjectsSection className="mt-12 w-4/5 mx-auto container" />
         <ExperiencesSection className="mt-4 py-8 max-w-3xl mx-auto" />
 
         <section className="mt-4 py-8 max-w-5xl mx-auto">

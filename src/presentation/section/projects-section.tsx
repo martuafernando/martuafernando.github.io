@@ -1,4 +1,3 @@
-import { FiArrowDown } from "react-icons/fi";
 import ProjectList from "../components/project-list";
 import { getAllProjects } from "@/data/repositories/projects-repository";
 
@@ -13,8 +12,7 @@ export default function ProjectsSection(props: Readonly<ProjectsSectionProps>) {
   return (
     <section className={className}>
       <h3 className="text-5xl font-bold text-center">Projects</h3>
-      <FiArrowDown size={48} className="mx-auto mt-8 animate-upDown" />
-      <ProjectList projects={projects} />
+      <ProjectList className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-16" projects={projects} />
     </section>
   );
 }
