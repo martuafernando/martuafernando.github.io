@@ -51,5 +51,5 @@ export function getExperienceById(id: string): Experience | null {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data } = matter(fileContents);
 
-  return { ...data } as Experience ?? null;
+  return data as Experience ?? null;
 }

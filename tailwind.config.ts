@@ -39,7 +39,7 @@ const config: Config = {
         },
         marquee: {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-46.5%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       animation: {
