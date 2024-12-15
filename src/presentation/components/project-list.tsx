@@ -3,7 +3,6 @@
 import React, { useEffect, useRef } from "react";
 import ProjectThumbnail from "@/presentation/components/project-thumbnail";
 import Project from "@/domain/entities/project";
-import useWindowSize from "../hook/useWindowSize";
 
 interface ProjectListProps {
   projects: Project[];
