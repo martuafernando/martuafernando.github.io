@@ -15,6 +15,10 @@ export default function RootLayout({
 }>) {
   const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID
 
+  if (process.env.NODE_ENV !== 'production' && !googleAnalyticsId) {
+    console.warn("Google Analytics ID is not exists")
+  }
+
   return (
     <html lang="id">
       <head>

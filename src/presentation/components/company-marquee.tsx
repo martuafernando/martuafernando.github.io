@@ -4,6 +4,7 @@ import Experience from "@/domain/entities/experience";
 import Image from "next/image";
 import useWindowSize from "../hook/useWindowSize";
 import { breakpoint } from "../constant/breakpoint";
+import React from "react";
 
 interface CompanyMarqueeComonentProps {
   className?: string;
@@ -25,8 +26,8 @@ export default function CompanyMarqueeComonent(props: Readonly<CompanyMarqueeCom
         }}
       >
         {experience.map((experience, index) => (
-          <div key={`experience-${experience.id}-${index}`}>
-            <div className="flex-1">
+          <React.Fragment key={`experience-${experience.id}-${index}`}>
+            <div className="flex-1" key={`experience-${experience.id}-${index}`}>
               <Image
                 className="w-fit mx-auto h-12 block grayscale hover:grayscale-0 transition-all duration-300"
                 width={48}
@@ -36,7 +37,7 @@ export default function CompanyMarqueeComonent(props: Readonly<CompanyMarqueeCom
               />
             </div>
             <div className="flex-0 w-4"></div>
-          </div>
+          </React.Fragment>
         ))}
       </div>
   );
