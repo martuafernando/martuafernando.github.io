@@ -1,4 +1,6 @@
 import { Poppins } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
+
 import "./globals.css";
 
 const poppins = Poppins({
@@ -11,12 +13,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID
+
   return (
     <html lang="id">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${poppins.className} overflow-x-hidden`}>{children}</body>
+      { googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} /> }
     </html>
   );
 }

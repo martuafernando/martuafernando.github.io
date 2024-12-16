@@ -25,8 +25,8 @@ export default function CompanyMarqueeComonent(props: Readonly<CompanyMarqueeCom
         }}
       >
         {experience.map((experience, index) => (
-          <>
-            <div className="flex-1" key={`experience-${experience.id}-${index}`}>
+          <div key={`experience-${experience.id}-${index}`}>
+            <div className="flex-1">
               <Image
                 className="w-fit mx-auto h-12 block grayscale hover:grayscale-0 transition-all duration-300"
                 width={48}
@@ -36,7 +36,7 @@ export default function CompanyMarqueeComonent(props: Readonly<CompanyMarqueeCom
               />
             </div>
             <div className="flex-0 w-4"></div>
-          </>
+          </div>
         ))}
       </div>
   );
