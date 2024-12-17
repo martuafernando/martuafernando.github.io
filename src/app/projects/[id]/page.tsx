@@ -8,12 +8,6 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import Project from "@/domain/entities/project";
 import { breakpoint } from "@/presentation/constant/breakpoint";
 import ToolsIcon from "@/presentation/components/tools-icon-component";
-import { Source_Serif_4 } from "next/font/google";
-
-const sourceSerif4 = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const project: Project = getProjectById(params.id)!;
@@ -80,12 +74,12 @@ export default function ProjectPage({
 
         {project?.description && (
           <section className="mt-16 prose">
-            <h2 className="text-3xl font-bold">Project Description</h2>
-            <p className={`text-xl text-gray-600 mt-4 leading-relaxed ${sourceSerif4.className}`}>{project.description}</p>
+            <h2 className="text-3xl font-bold font-sans">Project Description</h2>
+            <p className={`text-xl text-gray-700 mt-4 leading-relaxed font-serif`}>{project.description}</p>
           </section>
         )}
 
-        <article className={`mt-16 prose prose-headings:text-black prose-h1:text-5xl prose-h2:text-3xl prose-p:text-gray-600 prose-p:text-xl prose-p:leading-relaxed prose-p:${sourceSerif4.className}`}>
+        <article className={`prose prose-headings:mt-16 prose-headings:text-black prose-headings:font-sans prose-h1:text-5xl prose-h2:text-3xl text-gray-700 text-xl leading-relaxed font-serif`}>
           <MDXRemote source={project.content} />
         </article>
       </div>
