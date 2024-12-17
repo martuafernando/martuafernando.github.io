@@ -57,7 +57,7 @@ function DesktopNavLinks({ links }: { readonly links: LinkData[] }) {
           <Link
             className={`${
               pathname === link.href ? "after:scale-x-100" : ""
-            } relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
+            } relative font-medium text-teal-500 hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-teal-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
             href={link.href}
           >
             {link.label}
@@ -89,7 +89,7 @@ function MobileDrawer({
             <Link
               className={`${
                 pathname === link.href ? "after:scale-x-100" : ""
-              } relative font-medium text-blue-500 hover:text-blue-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-blue-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
+              } relative font-medium text-teal-500 hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-teal-900 after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300`}
               href={link.href}
             >
               {link.label}

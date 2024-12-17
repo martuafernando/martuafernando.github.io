@@ -21,7 +21,7 @@ export default function ExperiencesSection(props: Readonly<ExperiencesSectionPro
       </div>
       <Link
         href="/experience"
-        className="mt-4 mx-auto block text-center text-blue-500 outline outline-1 p-4 rounded-lg hover:bg-blue-500 hover:text-white duration-300"
+        className="mt-4 mx-auto block text-center text-teal-500 outline outline-1 p-4 rounded-lg hover:bg-teal-500 hover:text-white duration-300"
       >
         Read More
       </Link>
