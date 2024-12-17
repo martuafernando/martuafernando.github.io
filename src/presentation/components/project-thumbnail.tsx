@@ -1,9 +1,6 @@
-import React, { forwardRef, RefAttributes, useState  } from "react";
+import React, { forwardRef, RefAttributes } from "react";
 import Link from "next/link";
 import Project from "@/domain/entities/project";
-import { breakpoint } from "../constant/breakpoint";
-import ToolsIcon from "./tools-icon-component";
-import useWindowSize from "../hook/useWindowSize";
 
 interface ProjectThumbnailProps {
   project: Project;
@@ -13,81 +10,19 @@ interface ProjectThumbnailProps {
 const ProjectThumbnail: React.ForwardRefExoticComponent<
   ProjectThumbnailProps & RefAttributes<HTMLAnchorElement>
 > = forwardRef<HTMLAnchorElement, ProjectThumbnailProps>(
-  ({ project, href }, ref) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const window = useWindowSize()
-
-    if (window.width < breakpoint.sm) {
-      return (
-        <Link
-          ref={ref}
-          href={href}
-          className="block mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out group hover"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div className="relative rounded-lg overflow-hidden">
-            <picture>
-              <source
-                media={`(min-width: ${breakpoint.sm}px)`}
-                srcSet={project.desktopThumbnailUrl}
-                width={project.desktopThumbnailWidth}
-                height={project.desktopThumbnailHeight}
-              />
-              <img
-                className="w-full object-contain duration-1000 ease-in-out"
-                src={project.mobileThumbnailUrl}
-                width={project.mobileThumbnailWidth}
-                height={project.mobileThumbnailHeight}
-                alt={project.thumbnailAlt}
-              />
-            </picture>
-            <div className={`absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black transition-opacity duration-300 ${isHovered ? 'opacity-80' : 'opacity-0'}`}></div>
-            <h4 className={`absolute inset-x-0 transition-all text-xl px-2 text-white font-semibold ${isHovered ? 'bottom-8' : '-bottom-16'}`}>
-              {project.title}
-            </h4>
-          </div>
-          <ToolsIcon
-            className="mt-4 justify-center"
-            tools={project.tools ?? []}
-            iconSize={24}
-          />
-        </Link>
-      );
-    }
-
+  ({ project, href }) => {
     return (
-      <Link
-        ref={ref}
-        href={href}
-        className="block mt-8 text-center transition-all cursor-pointer duration-1000 ease-in-out group hover"
-      >
-        <div className="relative rounded-lg overflow-hidden">
-          <picture>
-            <source
-              media={`(min-width: ${breakpoint.sm}px)`}
-              srcSet={project.desktopThumbnailUrl}
-              width={project.desktopThumbnailWidth}
-              height={project.desktopThumbnailHeight}
-            />
-            <img
-              className="w-full object-contain duration-1000 ease-in-out"
-              src={project.mobileThumbnailUrl}
-              width={project.mobileThumbnailWidth}
-              height={project.mobileThumbnailHeight}
-              alt={project.thumbnailAlt}
-            />
-          </picture>
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-          <h4 className="absolute inset-x-0 group-hover:bottom-8 transition-all text-xl text-white font-semibold">
-            {project.title}
-          </h4>
+      <Link href={href} className="block mt-8 text-center cursor-pointer group hover">
+        <div className="relative rounded-lg overflow-hidden" style={{ paddingTop: '75%' }}>
+          <img
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={project.desktopThumbnailUrl}
+            width={project.desktopThumbnailWidth}
+            height={project.desktopThumbnailHeight}
+            alt={project.thumbnailAlt}
+          />
+          <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
         </div>
-        <ToolsIcon
-          className="mt-4 justify-center"
-          tools={project.tools ?? []}
-          iconSize={24}
-        />
       </Link>
     );
   }

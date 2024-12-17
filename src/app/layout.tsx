@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${poppins.className} overflow-x-hidden`}>{children}</body>
+      <body className={`${poppins.className} bg-[#f7f9f9] overflow-x-hidden`}>{children}</body>
       { googleAnalyticsId && <GoogleAnalytics gaId={googleAnalyticsId} /> }
     </html>
   );
