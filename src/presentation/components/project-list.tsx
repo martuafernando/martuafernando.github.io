@@ -6,6 +6,7 @@ import Project from "@/domain/entities/project";
 import SelectComponent from "./select-component";
 import useWindowSize from "../hook/useWindowSize";
 import { breakpoint } from "../constant/breakpoint";
+import useLangHref from "../hook/useLangHref";
 
 interface ProjectListProps {
   projects: Project[];
@@ -17,6 +18,7 @@ export default function ProjectList(props: Readonly<ProjectListProps>) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeFilterTools, setActiveFilterTools] = useState("All Technology");
   const window = useWindowSize();
+  const generateHref = useLangHref()
 
   const categoryList = [
     "All",
@@ -81,7 +83,7 @@ export default function ProjectList(props: Readonly<ProjectListProps>) {
             <ProjectThumbnail
               key={project.id}
               project={project}
-              href={`/projects/${project.id}`}
+              href={generateHref(`/projects/${project.id}`)}
             />
           ))}
       </div>

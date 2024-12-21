@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from "react";
 import SelectedProjectThumbnail from "@/presentation/components/selected-project-thumbnail";
 import Project from "@/domain/entities/project";
+import useLangHref from "../hook/useLangHref";
 
 interface SelectedProjectListProps {
   projects: Project[];
@@ -12,6 +13,7 @@ interface SelectedProjectListProps {
 export default function SelectedProjectList(props: Readonly<SelectedProjectListProps>) {
   const { projects, className } = props;
   const imagesRef = useRef<HTMLElement[]>([]);
+  const generateHref = useLangHref()
 
   useEffect(() => {
     const currentImagesRef = imagesRef.current;
@@ -49,7 +51,7 @@ export default function SelectedProjectList(props: Readonly<SelectedProjectListP
           ref={(el: HTMLElement | null) => {
             imagesRef.current[i] = el!;
           }}
-          href={`/projects/${project.id}`}
+          href={generateHref(`/projects/${project.id}`)}
         />
       ))}
     </div>
