@@ -16,7 +16,7 @@ export default function RootLayout({
   const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID
 
   return (
-    <html lang="id">
+    <html lang='id'>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>

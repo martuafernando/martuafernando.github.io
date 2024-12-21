@@ -7,7 +7,7 @@ export default function ProjectLayout({
 }>) {
   return (
     <CommonLayout>
-      <main className={`my-20 bg-white px-4 max-w-5xl mx-auto`}>
+      <main className={`my-20 px-4 max-w-5xl mx-auto`}>
         {children}
       </main>
     </CommonLayout>

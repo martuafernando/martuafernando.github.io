@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import ProjectThumbnail from "@/presentation/components/project-thumbnail";
 import Project from "@/domain/entities/project";
+import SelectComponent from "./select-component";
+import useWindowSize from "../hook/useWindowSize";
+import { breakpoint } from "../constant/breakpoint";
 
 interface ProjectListProps {
   projects: Project[];
@@ -11,6 +14,9 @@ interface ProjectListProps {
 
 export default function ProjectList(props: Readonly<ProjectListProps>) {
   const { projects, className } = props;
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeFilterTools, setActiveFilterTools] = useState("All Technology");
+  const window = useWindowSize();
 
   const categoryList = [
     "All",
@@ -19,21 +25,44 @@ export default function ProjectList(props: Readonly<ProjectListProps>) {
       .filter((value, index, array) => array.indexOf(value) === index),
   ];
 
-  const [activeCategory, setActiveCategory] = useState("All");
+  const toolsFilterOptions = [
+    "All Technology",
+    ...projects.flatMap((it) => it.tools.map((it) => it)),
+  ];
+
+  function onOrderFilterChage(event: CustomEvent) {
+    setActiveFilterTools(event.detail.value);
+  }
 
   return (
     <div className={`mx-auto max-w-screen-2xl w-[95vw] ${className ?? ""}`}>
-      <div className="flex gap-4 overflow-auto whitespace-nowrap py-6">
-        {categoryList.map((category) => (
-          <ButtonChip
-            key={category}
-            label={category}
-            isActive={activeCategory === category}
-            onClick={() => setActiveCategory(category)}
+      <div className="flex justify-between items-center">
+        <div className="flex gap-4 overflow-auto whitespace-nowrap py-6">
+          {categoryList.map((category) => (
+            <ButtonChip
+              key={category}
+              label={category}
+              isActive={activeCategory === category}
+              onClick={() => setActiveCategory(category)}
+            />
+          ))}
+        </div>
+        {window.width >= breakpoint.sm && (
+          <SelectComponent
+            items={toolsFilterOptions}
+            onChange={onOrderFilterChage}
           />
-        ))}
+        )}
       </div>
       <hr className="block container mx-auto" />
+
+      {window.width < breakpoint.sm && (
+          <SelectComponent
+            className="mt-6"
+            items={toolsFilterOptions}
+            onChange={onOrderFilterChage}
+          />
+        )}
 
       <div
         className={
@@ -43,7 +72,10 @@ export default function ProjectList(props: Readonly<ProjectListProps>) {
         {projects
           .filter(
             (project) =>
-              activeCategory === "All" || project.category === activeCategory
+              (activeCategory === "All" ||
+                project.category === activeCategory) &&
+              (activeFilterTools === "All Technology" ||
+                project.tools.some((it) => it === activeFilterTools))
           )
           .map((project) => (
             <ProjectThumbnail

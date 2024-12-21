@@ -7,6 +7,7 @@ import LinkData from "@/domain/entities/link-data";
 
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isDrawerOpen) {
@@ -24,12 +25,19 @@ export default function Navbar() {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  function extractLangFromPath() {
+    const parts = pathname.split("/").filter(Boolean);
+    return parts[0];
+  };
+  const lang = extractLangFromPath();
+  const generateHref = (segment: string) => `/${lang}/${segment}`;
+
   const links = [
     {
-      href: "/projects",
+      href: generateHref('projects'),
       label: "Project",
     }, {
-      href: "/experience",
+      href: generateHref("experience"),
       label: "Experience",    
     }
   ];
