@@ -1,16 +1,18 @@
 <script>
-	import FloatingBottomNavigationBar from '$lib/components/Floating-Bottom-Navigation-Bar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import BrandMarquee from '$lib/sections/brand-marquee.svelte';
 	import HeroSection from '$lib/sections/hero-section.svelte';
+
+	export let data;
 </script>
 
-<slot />
-<HeroSection />
-<BrandMarquee />
+<HeroSection class="w-full h-[calc(100vh-72px)] relative z-10 bg-background rounded-b-[64px] sm:rounded-b-[120px]" />
+<BrandMarquee experience={[
+	...data.experiences,
+	...data.experiences,
+	...data.experiences,
+]} class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[120px] overflow-hidden bg-white"/>
 <div class="h-screen"></div>
-<FloatingBottomNavigationBar />
-
 <Footer />
 
 <style lang="postcss">
@@ -22,5 +24,7 @@
 
 	:global(html) {
 		background-color: theme(--color-background);
+		max-width: 100%;
+		overflow-x: hidden;
 	}
 </style>

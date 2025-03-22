@@ -1,9 +1,11 @@
 <script lang="ts">
 	import type Experience from '$lib/models/Experience';
 	import { onMount } from 'svelte';
+	import type { ClassValue } from 'svelte/elements';
 
-	export let experience: Experience;
-	export let className: string = '';
+	const props: { class?: ClassValue; experience: Experience } = $props();
+
+	const { experience } = props;
 
 	function getReadableDuration(startDate: string, endDate?: string): string {
 		const start = new Date(startDate);
@@ -29,7 +31,7 @@
 		return duration;
 	}
 
-	let experienceDuration: string = '';
+	let experienceDuration: string = $state('');
 
 	onMount(() => {
 		const totalMonth = experience.position.reduce((acc, position) => {
@@ -45,7 +47,7 @@
 	});
 </script>
 
-<div class={className}>
+<div class={props.class}>
 	<a href={experience.companyUrl} class="block hover:opacity-80">
 		<div class="flex items-center space-x-4">
 			<img

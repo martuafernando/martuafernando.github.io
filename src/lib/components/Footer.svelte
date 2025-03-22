@@ -1,5 +1,7 @@
 <script lang="ts">
-  export const className: string = '';
+	import type { ClassValue } from "svelte/elements";
+
+  const props: { class?: ClassValue } = $props();
 
   const socialLinks = [
     { href: "https://linkedin.com/in/martuafernando", label: "LinkedIn" },
@@ -8,7 +10,7 @@
   ];
 </script>
 
-<footer class="bg-black text-white py-16 rounded-t-4xl {className}">
+<footer class="bg-black text-white py-16 rounded-t-4xl {props.class}">
   <a href="/" class="block mx-auto w-fit">
     <img src="/logos/logo-white.svg" alt="Logo" width="64" height="64" />
   </a>

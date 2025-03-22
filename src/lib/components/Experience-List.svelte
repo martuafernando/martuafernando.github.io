@@ -1,16 +1,14 @@
 <script lang="ts">
-	import type Experience from "$lib/models/Experience";
-	import ExperienceItem from "./Experience-Item.svelte";
+	import type Experience from '$lib/models/Experience';
+	import type { ClassValue } from 'svelte/elements';
+	import ExperienceItem from './Experience-Item.svelte';
 
-  export let experience: Experience[] = [];
-  export let className = "";
+	const props: { class?: ClassValue; experience: Experience[] } = $props();
+	const { experience } = props;
 </script>
 
-<div class={className}>
-  {#each experience as exp}
-    <ExperienceItem 
-      experience={exp}
-      className="border-t first:border-none py-8"
-    />
-  {/each}
+<div class={props.class}>
+	{#each experience as exp}
+		<ExperienceItem experience={exp} class="border-t first:border-none py-8" />
+	{/each}
 </div>
