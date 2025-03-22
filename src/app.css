@@ -6,3 +6,39 @@
   --color-background: oklch(98.26% 0.0095 299.24);
   --color-black: oklch(30.92% 0 0);
 }
+
+@layer base {
+
+  .hover-underline-white-animation,
+  .hover-underline-black-animation {
+    position: relative;
+  }
+
+  .hover-underline-white-animation::after,
+  .hover-underline-black-animation::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+
+    bottom: -4px;
+    transform: scaleX(0);
+    transition: transform 300ms;
+    transform-origin: right;
+  }
+
+  .hover-underline-white-animation:hover::after,
+  .hover-underline-black-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hover-underline-white-animation::after {
+    background-color: white;
+  }
+
+  .hover-underline-black-animation::after {
+    background-color: var(--color-black);
+  }
+}

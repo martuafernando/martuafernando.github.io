@@ -29,7 +29,7 @@
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        class="relative font-bold after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300"
+        class="hover-underline-white-animation"
       >
         <span>{link.label}</span>
         <span class="icon-[lets-icons--external] text-lg"></span>

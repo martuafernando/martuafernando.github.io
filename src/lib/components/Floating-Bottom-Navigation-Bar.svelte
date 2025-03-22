@@ -8,7 +8,7 @@
 </script>
 
 <div
-	class="fixed bottom-4 left-4 right-4 max-w-96 mx-auto flex items-center overflow-auto bg-black border-background shadow-lg rounded-full px-4 py-3 z-50"
+	class="fixed bottom-4 left-4 right-4 max-w-96 mx-auto flex items-center overflow-auto bg-black border-background border-2 shadow-lg rounded-full px-4 py-3 z-50"
 >
 	{#each menus as menu}
 		<button
