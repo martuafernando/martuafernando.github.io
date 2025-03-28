@@ -20,7 +20,7 @@
 	></div>
 
 	<div
-		class="absolute top-6 flex items-center overflow-x-auto gap-4 p-4 snap-x snap-mandatory"
+		class="absolute flex items-center overflow-x-auto gap-4 p-4 snap-x snap-mandatory"
 		bind:this={container}
 		onscroll={updateBackground}
 	>
@@ -29,7 +29,7 @@
 				alt={project.title}
 				title={project.title}
 				src={project.mobileThumbnailUrl}
-				class="flex-shrink-0 w-[80vw] h-[65vh] rounded-2xl shadow-lg text-2xl font-bold snap-center bg-cover bg-center transition-all duration-500 will-change-transform object-cover"
+				class="flex-shrink-0 w-[80vw] h-[65vh] rounded-2xl shadow-2xl my-16 text-2xl font-bold snap-center bg-cover bg-center transition-all duration-500 will-change-transform object-cover"
 				class:h-[75vh]={indexActive === index}
 				class:cursor-pointer={indexActive === index}
 			/>

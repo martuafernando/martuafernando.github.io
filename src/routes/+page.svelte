@@ -29,6 +29,6 @@
 		background-color: theme(--color-background);
 		max-width: 100%;
 		overflow-x: hidden;
-		/* scroll-snap-type: y proximity; */
+		scroll-snap-type: y proximity;
 	}
 </style>
