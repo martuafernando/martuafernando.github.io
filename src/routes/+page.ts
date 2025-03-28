@@ -1,20 +1,30 @@
-const meta = import.meta.glob('../content/experiences/*.svx');
+const metaExperiences = import.meta.glob('../content/experiences/*.svx');
+const metaProjects = import.meta.glob('../content/projects/**/*.svx');
 
 export async function load() {
+	const [ experiences, projects ] = await Promise.all([
+		extractData(metaExperiences),
+		extractData(metaProjects)
+	])
+
+	return { experiences, projects };
+}
+
+async function extractData(meta: Record<string, () => Promise<unknown>>) {
 	const files = Object.entries(meta);
 
-	const experiences = await Promise.all(
+	const result = await Promise.all(
 		files.map(async ([path, importer]) => {
-			const experience: any = await importer();
+			const item: any = await importer();
 			return {
 				path,
-				...experience.metadata,
-				content: experience.default,
+				...item.metadata,
+				content: item.default,
 			};
 		})
 	);
 
-	return { experiences };
+	return result;
 }
 
 export const prerender = true;
