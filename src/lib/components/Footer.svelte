@@ -10,7 +10,7 @@
   ];
 </script>
 
-<footer class="bg-black text-white py-16 {props.class}">
+<footer class="bg-black text-white pt-16 pb-32 {props.class}">
   <a href="/" class="block mx-auto w-fit">
     <img src="/logos/logo-white.svg" alt="Logo" width="64" height="64" />
   </a>

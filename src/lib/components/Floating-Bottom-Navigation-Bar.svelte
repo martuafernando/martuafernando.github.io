@@ -7,7 +7,7 @@
 	const props: { class?: ClassValue } = $props();
 	const menus = [
 		{ id: 'home', label: 'Home', icon: 'icon-[mdi--home]', value: '/' },
-		{ id: 'experiences', label: 'Projects', icon: 'icon-[mdi--folder]', value: '/experiences' },
+		{ id: 'experiences', label: 'Projects', icon: 'icon-[mdi--folder]', value: '/projects' },
 		{ id: 'about', label: 'About', icon: 'icon-[mdi--information]', value: '/' }
 	];
 </script>
