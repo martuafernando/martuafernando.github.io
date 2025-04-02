@@ -39,5 +39,5 @@
     {/each}
   </div>
 
-  <p class="text-center mt-8">&copy; 2024 Martua Fernando</p>
+  <p class="text-center mt-8">&copy; {new Date().getFullYear()} Martua Fernando</p>
 </footer>

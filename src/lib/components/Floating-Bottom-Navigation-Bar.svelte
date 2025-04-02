@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
 	import type { ClassValue } from 'svelte/elements';
 
-	let activeTab = $state('home');
+	let currentPage = $derived(page.url.pathname.split('/')[1])
+	let activeTab = $derived(currentPage === '' ? 'home' : currentPage);
 
 	const props: { class?: ClassValue } = $props();
 	const menus = [
@@ -22,7 +24,6 @@
 			class:text-white={activeTab !== menu.id}
 			class:bg-white={activeTab === menu.id}
 			onclick={() => {
-				activeTab = menu.id;
 				goto(menu.value);
 			}}
 		>
