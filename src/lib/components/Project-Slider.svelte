@@ -25,14 +25,18 @@
 		onscroll={updateBackground}
 	>
 		{#each projects as project, index}
-			<img
-				alt={project.title}
-				title={project.title}
-				src={project.mobileThumbnailUrl}
-				class="flex-shrink-0 w-[85vw] h-[65vh] rounded-2xl shadow-2xl text-2xl font-bold snap-center bg-cover bg-center transition-all duration-500 will-change-transform object-cover"
-				class:h-[75vh]={indexActive === index}
-				class:cursor-pointer={indexActive === index}
-			/>
+			<a
+				class="block flex-shrink-0 text-2xl font-bold snap-center"
+				href="/projects/{project.id}"
+			>
+				<img
+					alt={project.title}
+					title={project.title}
+					src={project.mobileThumbnailUrl}
+					class="w-[85vw] h-[65vh] rounded-2xl shadow-2xl transition-all duration-500 will-change-transform object-cover"
+					class:h-[75vh]={indexActive === index}
+				/>
+			</a>
 		{/each}
 	</div>
 </div>

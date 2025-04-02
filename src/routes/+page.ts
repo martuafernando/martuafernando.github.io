@@ -18,6 +18,7 @@ async function extractData(meta: Record<string, () => Promise<unknown>>) {
 			const item: any = await importer();
 			return {
 				path,
+				id: RegExp(/[^\\/]+$/).exec(path)?.[0].replace(/\.svx$/, ""),
 				...item.metadata,
 				content: item.default,
 			};

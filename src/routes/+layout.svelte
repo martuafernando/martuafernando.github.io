@@ -7,7 +7,7 @@
 
 {@render children()}
 <Footer />
-<FloatingBottomNavigationBar class="fixed bottom-4 left-4 right-4 max-w-96 mx-auto" />
+<FloatingBottomNavigationBar class="fixed bottom-4 left-4 right-4 max-w-96 mx-auto z-50" />
 
 <style lang="postcss">
 	@reference "tailwindcss";

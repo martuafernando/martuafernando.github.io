@@ -8,6 +8,7 @@ export async function load() {
 			const projects: any = await importer();
 			return {
 				path,
+				id: RegExp(/[^\\/]+$/).exec(path)?.[0].replace(/\.svx$/, ""),
 				...projects.metadata,
 				content: projects.default,
 			};
