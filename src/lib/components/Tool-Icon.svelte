@@ -20,7 +20,7 @@
 		dart: 'icon-[material-icon-theme--dart]'
 	};
 
-	let iconClass = icons[tool] || 'icon-[simple-icons--code]';
+	const iconClass = icons[tool] ?? '';
 </script>
 
 <span class="{iconClass} {props.class}"></span>

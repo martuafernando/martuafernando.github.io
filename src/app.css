@@ -9,6 +9,12 @@
 
 @layer base {
 
+  body {
+    background-color: theme(--color-background);
+    max-width: 100%;
+		overflow-x: hidden;
+  }
+
   .hover-underline-white-animation,
   .hover-underline-black-animation {
     position: relative;
