@@ -6,12 +6,15 @@
 	export let data;
 </script>
 
-<HeroSection class="w-full h-[calc(100vh-72px)] relative z-10 bg-background rounded-b-[64px] sm:rounded-b-[120px] snap-both" />
-<BrandMarquee experience={[
-	...data.experiences,
-	...data.experiences,
-	...data.experiences,
-	...data.experiences,
-]} class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[120px] overflow-hidden bg-white"/>
-<h2 class="font-bold text-5xl text-black text-center my-16">Selected Projects</h2>
-<ProjectSlider class="snap-center" projects={data.projects} />
+<main class="snap-y snap-mandatory sm:snap-none">
+	<HeroSection class="w-full h-[calc(100vh-72px)] relative z-10 bg-background rounded-b-[64px] sm:rounded-b-[120px] snap-both" />
+	<BrandMarquee experience={[
+		...data.experiences,
+		...data.experiences,
+		...data.experiences,
+		...data.experiences,
+	]} class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[120px] overflow-hidden bg-white"/>
+	
+	<h2 class="font-bold text-5xl text-black text-center my-16">Selected Projects</h2>
+	<ProjectSlider class="snap-center" projects={data.projects} />
+</main>

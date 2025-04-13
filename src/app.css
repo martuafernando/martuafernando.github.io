@@ -8,11 +8,17 @@
 }
 
 @layer base {
-
-  body {
+  html {
     background-color: theme(--color-background);
     max-width: 100%;
-		overflow-x: hidden;
+    overflow-x: hidden;
+    scroll-snap-type: y none;
+  }
+
+  @media only screen and (max-width: 640px) {
+    html {
+      scroll-snap-type: y proximity;
+    }
   }
 
   .hover-underline-white-animation,
