@@ -3,9 +3,11 @@
 </script>
 
 <button
-	class="cursor-pointer px-4 py-2 rounded-full transition-all duration-300 {isActive
-		? 'bg-black text-white'
-		: 'bg-gray-200'} {className}"
+	class="cursor-pointer px-4 py-2 rounded-full transition-all duration-300 {className}"
+	class:bg-black={isActive}
+	class:bg-gray-200={!isActive}
+	class:font-medium={isActive}
+	class:text-white={isActive}
 	{onclick}
 >
 	{label}

@@ -22,10 +22,10 @@
 	</div>
 
 	<div class="flex justify-between items-center mt-2">
-		<p class="text-start text-xl font-semibold">{project.title}</p>
+		<p class="text-start font-semibold">{project.title}</p>
 		<div class="text-end flex gap-1 items-center">
 			{#each project.tools as tool}
-				<ToolIcon {tool} class="text-4xl" />
+				<ToolIcon {tool} class="w-8 h-8" />
 			{/each}
 		</div>
 	</div>

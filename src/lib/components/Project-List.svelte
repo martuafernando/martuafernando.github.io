@@ -39,7 +39,7 @@
 	<div class="flex gap-2 overflow-auto whitespace-nowrap mt-4">
 		{#each categoryList as category}
 			<ButtonChip
-				class="font-semibold"
+				class="text-sm"
 				label={category}
 				isActive={$activeCategory === category}
 				onclick={() => activeCategory.set(category)}
