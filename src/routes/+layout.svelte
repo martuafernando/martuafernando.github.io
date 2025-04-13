@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 	import FloatingBottomNavigationBar from '$lib/components/Floating-Bottom-Navigation-Bar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+  import throttle from 'lodash.throttle'
 	import '../app.css';
 	const { children } = $props();
 	
@@ -13,11 +14,12 @@
     isVisible = currentScrollY < lastScrollY || currentScrollY === 0;
     lastScrollY = currentScrollY;
   };
+  const throllteHandleScroll = throttle(handleScroll, 300)
 
   onMount(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", throllteHandleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throllteHandleScroll);
     };
   });
 </script>
