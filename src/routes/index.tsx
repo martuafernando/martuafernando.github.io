@@ -10,6 +10,7 @@ export default component$(() => {
         <br />
         Happy coding.
       </div>
+      <div class="h-[100vh]">test</div>
     </>
   );
 });
