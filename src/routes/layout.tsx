@@ -1,8 +1,8 @@
 import { $, component$, Slot, useOnWindow, useSignal } from "@builder.io/qwik";
-import _ from "lodash";
 import type { RequestHandler } from "@builder.io/qwik-city";
 import { TabBar } from "~/components/ui/TabBar";
-import { useThrottle } from "~/hooks/useThrottle";
+import { useDebouncer } from "~/hooks/useDebouncer";
+import { Header } from "~/components/ui/Header";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
 	// Control caching for this request for best performance and to reduce hosting costs:
@@ -17,32 +17,49 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
 	const isVisible = useSignal<boolean>(true);
-
+	const isOnTop = useSignal<boolean>(true);
 	// store last Y to get the direction
 	// if current Y > lastScrollY the scroll go down
 	const lastScrollY = useSignal<number>(0);
 
 	useOnWindow(
 		"scroll",
-		useThrottle(
+		useDebouncer(
 			$(() => {
 				const currentY = window.scrollY;
 				isVisible.value = currentY > lastScrollY.value || currentY === 0;
 				lastScrollY.value = currentY;
 			}),
-			300,
+			50,
+		),
+	);
+
+	useOnWindow(
+		"scroll",
+		useDebouncer(
+			$(() => {
+				const currentY = window.scrollY;
+				isOnTop.value = currentY === 0;
+			}),
+			50,
 		),
 	);
 
 	return (
 		<>
+			<Header
+				class={[
+					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out",
+					isOnTop.value ? "bg-none" : "bg-white",
+					isVisible.value ? "top-0" : "-top-24",
+				]}
+			/>
 			<Slot />
 			<TabBar
-				class={{
-					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in": true,
-					"bottom-4": isVisible.value,
-					"-bottom-24": !isVisible.value,
-				}}
+				class={[
+					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in",
+					isVisible.value ? "bottom-4" : "-bottom-24",
+				]}
 			/>
 		</>
 	);
