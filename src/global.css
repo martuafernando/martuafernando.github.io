@@ -1,3 +1,11 @@
 @import "tailwindcss";
 
+@layer components {
+  .hover-underline-animation {
+    @apply relative font-medium text-teal-500 hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-teal-900 after:left-0 after:bottom-[-4px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
+  }
 
+  main {
+    @apply bg-amber-50
+  }
+}

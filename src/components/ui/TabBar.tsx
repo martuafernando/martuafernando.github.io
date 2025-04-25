@@ -18,7 +18,7 @@ export interface TabBarProps {
  * Intended to be placed near the bottom of the screen, usually in mobile or responsive layouts.
  *
  * @component
- * @param {TabBarProps} props - The props for the TabBar component, such as additional CSS classes.
+ * @param {TabBarProps} props The props for the TabBar component, such as additional CSS classes.
  * @returns {JSX.Element} The rendered TabBar component with navigation tabs.
  *
  * @example
