@@ -13,8 +13,14 @@ export interface TabBarProps {
 }
 
 /**
- * A scrollable bottom tab bar for main navigation.
- * 
+ * A scrollable, rounded bottom tab bar component for main navigation.
+ *
+ * Intended to be placed near the bottom of the screen, usually in mobile or responsive layouts.
+ *
+ * @component
+ * @param {TabBarProps} props - The props for the TabBar component, such as additional CSS classes.
+ * @returns {JSX.Element} The rendered TabBar component with navigation tabs.
+ *
  * @example
  * ```tsx
  * <TabBar class="fixed bottom-0 left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in" />

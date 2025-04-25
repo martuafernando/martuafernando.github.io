@@ -1,7 +1,7 @@
 import { $, useSignal, type QRL } from "@builder.io/qwik";
 
 /**
- * useThrottle: simple throttle hook for Qwik
+ * useThrottle: simple throttle hook
  * @param fn   QRL-wrapped function to throttle
  * @param wait Time window in milliseconds
  * @returns    A QRL function that invokes `fn` at most once per `wait` ms

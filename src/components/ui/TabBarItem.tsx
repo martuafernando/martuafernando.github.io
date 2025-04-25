@@ -10,6 +10,13 @@ export interface TabBarItemProps {
 	href: string;
 }
 
+/**
+ * A single item inside the `TabBar` component.
+ *
+ * @component
+ * @param {TabBarItemProps} props - Props for the TabBarItem component.
+ * @returns {JSX.Element} Rendered TabBar item as a button.
+ */
 export const TabBarItem = component$((props: TabBarItemProps) => {
 	const nav = useNavigate();
 	return (
