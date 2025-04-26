@@ -16,7 +16,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-	const isVisible = useSignal<boolean>(true);
+	const isScrollingDown = useSignal<boolean>(true);
 	const isOnTop = useSignal<boolean>(true);
 	// store last Y to get the direction
 	// if current Y > lastScrollY the scroll go down
@@ -27,7 +27,7 @@ export default component$(() => {
 		useDebouncer(
 			$(() => {
 				const currentY = window.scrollY;
-				isVisible.value = currentY > lastScrollY.value || currentY === 0;
+				isScrollingDown.value = currentY > lastScrollY.value;
 				lastScrollY.value = currentY;
 			}),
 			50,
@@ -51,14 +51,14 @@ export default component$(() => {
 				class={[
 					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out",
 					isOnTop.value ? "bg-none" : "bg-white",
-					isVisible.value ? "top-0" : "-top-24",
+					isScrollingDown.value ? "-top-24" : "top-0",
 				]}
 			/>
 			<Slot />
 			<TabBar
 				class={[
 					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in",
-					isVisible.value ? "bottom-4" : "-bottom-24",
+					isScrollingDown.value ? "-bottom-24" : "bottom-4",
 				]}
 			/>
 		</>
