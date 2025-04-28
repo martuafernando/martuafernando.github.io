@@ -16,7 +16,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 };
 
 export default component$(() => {
-	const isScrollingDown = useSignal<boolean>(true);
+	const isScrollingDown = useSignal<boolean>(false);
 	const isOnTop = useSignal<boolean>(true);
 	// store last Y to get the direction
 	// if current Y > lastScrollY the scroll go down
