@@ -54,7 +54,9 @@ export default component$(() => {
 					isScrollingDown.value ? "-top-24" : "top-0",
 				]}
 			/>
-			<Slot />
+			<main>
+				<Slot />
+			</main>
 			<TabBar
 				class={[
 					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in",

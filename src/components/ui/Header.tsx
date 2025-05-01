@@ -9,8 +9,8 @@ export interface HeaderProps {
 }
 
 /**
- * A Header with Navbar 
- * 
+ * A Header with Navbar
+ *
  * @component
  * @param {HeaderProps} The props for the Header component, such as additional CSS classes.
  * @returns {JSX.Element} The rendered Header component with Navbar
@@ -18,10 +18,13 @@ export interface HeaderProps {
 export const Header = component$((props: HeaderProps) => {
 	return (
 		<header class={props.class}>
-			<div class="flex items-center justify-between max-w-5xl px-4 xl:px-0 mx-auto py-2 sm:py-4">
-				<Link class='flex items-center text-xl' href="/">
-					<SvgLogo class='h-auto w-7 pt-1' width={24} height={28} />
-          <span class='font-semibold'>artuaFernando</span>
+			<div class="flex items-center justify-between px-4 xl:px-0 mx-auto py-2 sm:py-4">
+				<Link
+					class="flex items-center text-xl hover-underline-animation"
+					href="/"
+				>
+					<SvgLogo class="h-auto w-7 pt-1" width={24} height={28} />
+					<span class="font-semibold">artuaFernando</span>
 				</Link>
 				<Navbar />
 			</div>
