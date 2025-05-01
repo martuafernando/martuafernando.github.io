@@ -3,6 +3,16 @@
 @theme {
   --color-background: var(--color-gray-100);
   --color-secondary: var(--color-teal-400);
+  --animate-marquee: marquee-scroll linear infinite;
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer components {
@@ -17,4 +27,6 @@
   a span {
     @apply text-teal-500;
   }
+
+
 }
