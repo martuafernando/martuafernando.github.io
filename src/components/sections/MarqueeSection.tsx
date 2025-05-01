@@ -8,7 +8,9 @@ import {
 	useSignal,
 	useStyles$,
 	useTask$,
+	useVisibleTask$,
 } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 import breakpoint from "~/constants/breakpoint";
 
 export interface MarqueeSectionsProps {
@@ -37,7 +39,15 @@ export const MarqueeSection = component$((props: MarqueeSectionsProps) => {
 		itemCount.value = await getItemCount(window.innerWidth);
 	});
 
-	useOnWindow("load", updateItemCount);
+	const loc = useLocation();
+
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(({ track }) => {
+    track(() => loc.url.pathname);
+
+    updateItemCount()
+  });
+
 	useOnWindow("resize", updateItemCount);
 
 	/**
