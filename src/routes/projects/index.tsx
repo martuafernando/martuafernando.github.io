@@ -39,7 +39,7 @@ export default component$(() => {
 				onResolved={(projects) => (
 					<ProjectList
 						projects={[...projects, ...projects, ...projects, ...projects]}
-						class="mx-auto max-w-screen-2xl mt-12 mb-8 px-4 md:px-8"
+						class="mx-auto mt-12 mb-8"
 					/>
 				)}
 			/>

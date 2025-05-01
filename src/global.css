@@ -1,46 +1,41 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
-@import "tailwindcss";
-
-@import "tailwindcss";
-
 @theme {
-  --color-background: var(--color-gray-100);
-  --color-secondary: var(--color-teal-400);
-  --animate-marquee: marquee-scroll linear infinite;
+	--color-background: var(--color-gray-100);
+	--color-secondary: var(--color-teal-400);
+	--animate-marquee: marquee-scroll linear infinite;
 
-  @keyframes marquee-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
+	@keyframes marquee-scroll {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
 }
 
 @layer base {
-  main {
-    @apply mt-16;
-  }
+	main {
+		@apply mt-16;
+	}
 
-  header > div, main {
-    @apply max-w-7xl mx-auto;
-  }
+	header > div,
+	main > * {
+		@apply max-w-7xl mx-auto px-4 md:px-8;
+	}
 }
 
 @layer components {
-  .hover-underline-animation {
-    @apply relative hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-teal-900 after:left-0 after:bottom-[-4px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
-  }
+	.hover-underline-animation {
+		@apply relative hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-teal-900 after:left-0 after:bottom-[-4px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
+	}
 
-  body {
-    @apply bg-background;
-  }
+	body {
+		@apply bg-background;
+	}
 
-  a span {
-    @apply text-teal-500;
-  }
+	a span {
+		@apply text-teal-500;
+	}
 }

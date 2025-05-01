@@ -18,7 +18,7 @@ export interface HeaderProps {
 export const Header = component$((props: HeaderProps) => {
 	return (
 		<header class={props.class}>
-			<div class="flex items-center justify-between px-4 xl:px-0 mx-auto py-2 sm:py-4">
+			<div class="flex items-center justify-between mx-auto py-2 sm:py-4">
 				<Link
 					class="flex items-center text-xl hover-underline-animation"
 					href="/"
