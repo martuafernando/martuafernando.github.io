@@ -2,12 +2,9 @@ import {
 	$,
 	type ClassList,
 	component$,
-	Fragment,
 	useComputed$,
 	useOnWindow,
 	useSignal,
-	useStyles$,
-	useTask$,
 	useVisibleTask$,
 } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";

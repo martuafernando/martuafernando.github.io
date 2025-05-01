@@ -50,25 +50,3 @@ export const ProjectList = component$((props: ProjectListProps) => {
 		</div>
 	);
 });
-
-export const ProjectListSkeleton = component$(() => {
-	return (
-		<div class="animate-pulse">
-			<hr class="container h-1 text-gray-200 mt-4" />
-			<div class="flex gap-2 overflow-auto whitespace-nowrap mt-4">
-				<div class="bg-gray-200 rounded-full h-8 w-16" />
-				<div class="bg-gray-200 rounded-full h-8 w-16" />
-				<div class="bg-gray-200 rounded-full h-8 w-16" />
-			</div>
-
-			<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 mt-6 mx-4">
-				<div class="h-72 bg-gray-200 rounded " />
-				<div class="h-72 bg-gray-200 rounded " />
-				<div class="h-72 bg-gray-200 rounded " />
-				<div class="h-72 bg-gray-200 rounded " />
-				<div class="h-72 bg-gray-200 rounded " />
-				<div class="h-72 bg-gray-200 rounded " />
-			</div>
-		</div>
-	);
-});
