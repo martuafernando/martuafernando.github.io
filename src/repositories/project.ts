@@ -1,7 +1,7 @@
 import type { Component } from "@builder.io/qwik";
 import type Project from "~/domains/Project";
 
-export const modules = import.meta.glob<{
+const modules = import.meta.glob<{
 	frontmatter: Project;
 	default: Component;
 }>("/contents/projects/**/*.mdx", { eager: true });
