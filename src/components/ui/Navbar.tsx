@@ -13,11 +13,11 @@ export const Navbar = component$(() => {
 	const links = [
 		{
 			href: "/projects",
-			label: "Project",
+			label: "Projects",
 		},
 		{
-			href: "/experience",
-			label: "Experience",
+			href: "/experiences",
+			label: "Experiences",
 		},
 	];
 

@@ -6,7 +6,7 @@ const modules = import.meta.glob<{
 	default: Component;
 }>("/contents/experiences/**/*.mdx", { eager: true });
 
-export function getAllProject() {
+export function getAllExperiences() {
 	const projects: Experience[] = Object.entries(modules).map(
 		([filePath, value]) => {
 			const data = value.frontmatter;
