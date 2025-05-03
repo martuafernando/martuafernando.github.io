@@ -33,8 +33,8 @@ export default defineConfig(({ command, mode }): UserConfig => {
       viteStaticCopy({
         targets: [
           {
-            src: 'contents/**/*.{png,jpg,jpeg,svg,webp}',
-            dest: 'contents'
+            src: 'contents',
+            dest: './'
           }
         ]
       }),
