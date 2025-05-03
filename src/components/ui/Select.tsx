@@ -25,7 +25,7 @@ export interface SelectProps {
 export const Select = component$((props: SelectProps) => {
 	return (
 		<SelectUi.Root
-			class={["bg-white rounded-xl select", props.class]}
+			class={["rounded-xl", props.class]}
 			bind:value={props["bind:value"]}
 			value={props.value}
 		>

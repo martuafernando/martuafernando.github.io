@@ -23,7 +23,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 						class="flex items-center outline p-4 rounded-lg bg-black text-white"
 					>
 						<FaEnvelopeSolid />
-						<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-white">
+						<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-white text-white">
 							Email Me <FaUpRightFromSquareSolid />
 						</span>
 					</Link>
@@ -34,7 +34,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://linkedin.com/in/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative hover-underline-animation after:bg-white"
+					class="flex items-center relative hover-underline-animation after:bg-white text-white"
 				>
 					<span>LinkedIn</span>
 					<FaUpRightFromSquareSolid class="ml-2" />
@@ -43,7 +43,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://github.com/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative hover-underline-animation after:bg-white"
+					class="flex items-center relative hover-underline-animation after:bg-white text-white"
 				>
 					<span>GitHub</span>
 					<FaUpRightFromSquareSolid class="ml-2" />
@@ -52,7 +52,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://instagram.com/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative hover-underline-animation after:bg-white"
+					class="flex items-center relative hover-underline-animation after:bg-white text-white"
 				>
 					<span>Instagram</span>
 					<FaUpRightFromSquareSolid class="ml-2" />

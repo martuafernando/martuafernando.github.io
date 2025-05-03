@@ -22,7 +22,7 @@ export default component$(() => {
 				class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[96px] overflow-x-hidden bg-white max-w-none"
 				imageList={experienceImageList}
 			/>
-			<ProjectShowcaseSection class="max-w-none" projects={projects} />
+			<ProjectShowcaseSection class="max-w-none p-0" projects={projects} />
 		</>
 	);
 });

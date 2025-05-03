@@ -36,7 +36,7 @@ export const TabBar = component$((props: TabBarProps) => {
 
 	const activeTab = currentPage.value;
 
-	const tabs = [
+	const TABS = [
 		{ id: "home", label: "Home", icon: FaHouseSolid, href: "/" },
 		{
 			id: "projects",
@@ -59,17 +59,22 @@ export const TabBar = component$((props: TabBarProps) => {
 				props.class,
 			]}
 		>
-			{tabs.map((tab) => (
-				<TabBarItem
-					key={tab.id}
-					id={tab.id}
-					label={tab.label}
-					isActive={activeTab === tab.href}
-					href={tab.href}
-				>
-					<tab.icon q:slot="icon" />
-				</TabBarItem>
-			))}
+			{TABS.map((tab) => {
+				const Icon = tab.icon;
+				const isActive = activeTab === tab.href
+
+				return (
+					<TabBarItem
+						key={tab.id}
+						id={tab.id}
+						label={tab.label}
+						isActive={isActive}
+						href={tab.href}
+					>
+						<Icon q:slot="icon" />
+					</TabBarItem>
+				);
+			})}
 		</div>
 	);
 });

@@ -34,8 +34,6 @@ export const TabBarItem = component$((props: TabBarItemProps) => {
 			<span
 				class={{
 					"text-xs whitespace-nowrap transition-all duration-300": true,
-					"opacity-100 w-auto": props.isActive,
-					"opacity-0 w-0": !props.isActive,
 				}}
 			>
 				{props.label}
