@@ -2,14 +2,18 @@ import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { HeroSection } from "~/components/sections/HeroSection";
 import { MarqueeSection } from "~/components/sections/MarqueeSection";
+import { ProjectShowcaseSection } from "~/components/sections/ProjectShowcaseSection";
 import { getAllExperiences } from "~/repositories/experience";
+import { getAllProject } from "~/repositories/project";
 
 export default component$(() => {
-	const experiences = getAllExperiences()
+	const experiences = getAllExperiences();
 	const experienceImageList = experiences.map((experience) => ({
 		source: experience.companyLogoHorizontalUrl,
 		alt: experience.companyName,
-	}))
+	}));
+
+	const projects = getAllProject();
 
 	return (
 		<>
@@ -18,7 +22,7 @@ export default component$(() => {
 				class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[96px] overflow-x-hidden bg-white max-w-none"
 				imageList={experienceImageList}
 			/>
-			<div class="h-[200vh]" />
+			<ProjectShowcaseSection class="max-w-none" projects={projects} />
 		</>
 	);
 });
