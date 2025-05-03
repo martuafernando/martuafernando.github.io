@@ -13,7 +13,8 @@ export const ProjectShowcaseSection = component$(
 
 		return (
 			<div class={["w-full", props.class]}>
-				<div class="flex items-center overflow-x-auto will-change-scroll horizontal-scrollbar scroll-smooth gap-4 sm:gap-12 p-0 sm:p-4 snap-x snap-mandatory">
+				<h2 class="text-center font-semibold text-5xl">Projects</h2>
+				<div class="mt-12 flex items-center overflow-x-auto will-change-scroll horizontal-scrollbar scroll-smooth gap-4 sm:gap-12 p-0 sm:p-4 snap-x snap-mandatory">
 					{projects.map((project) => (
 						<Link
 							key={project.id}

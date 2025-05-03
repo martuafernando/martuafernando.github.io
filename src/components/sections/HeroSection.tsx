@@ -2,11 +2,9 @@ import { component$ } from "@builder.io/qwik";
 import type { ClassList } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import {
-	FaGithub,
-	FaInstagram,
-	FaLinkedin,
 	FaUpRightFromSquareSolid,
 } from "@qwikest/icons/font-awesome";
+import { SiGithub, SiInstagram, SiLinkedin } from "@qwikest/icons/simpleicons";
 import SvgLogo from "~/media/logo.svg?jsx";
 
 export interface HeroProps {
@@ -29,34 +27,34 @@ export const HeroSection = component$((props: HeroProps) => {
 				<Link
 					key="linkedin"
 					href="https://linkedin.com/in/martuafernando"
-					class="flex items-center"
+					class="flex items-center text-[#0a66c2]"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<FaLinkedin height={36} />
-					<span class="flex items-center ml-2 gap-1">
+					<SiLinkedin height={48} class="h-8 w-auto" />
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
 						LinkedIn <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
 				<Link
 					href="https://github.com/martuafernando"
-					class="flex items-center"
+					class="flex items-center text-[#181717]"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<FaGithub height={36} />
-					<span class="flex items-center ml-2 gap-1">
+					<SiGithub height={48} class="h-8 w-auto" />
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
 						GitHub <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
 				<Link
 					href="https://instagram.com/martuafernando"
-					class="flex items-center"
+					class="flex items-center text-[#FF0069]"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					<FaInstagram height={36} />
-					<span class="flex items-center ml-2 gap-1">
+					<SiInstagram height={48} class="h-8 w-auto" />
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
 						Instagram <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>

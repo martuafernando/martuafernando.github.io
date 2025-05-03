@@ -9,7 +9,7 @@ export default component$(() => {
 		<>
 			<h1 class="text-5xl font-bold text-center mt-8">Projects</h1>
 			<ProjectList
-				projects={projects}
+				projects={[...projects]}
 				class="mx-auto mt-12 mb-8"
 			/>
 		</>

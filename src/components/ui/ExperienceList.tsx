@@ -1,7 +1,6 @@
 import { type ClassList, component$ } from "@builder.io/qwik";
-import Experience from "~/domains/Experience";
-import { getAllExperiences as getAllExperiences } from "~/repositories/experience";
 import { ExperienceItem } from "./ExperienceItem";
+import type Experience from "~/domains/Experience";
 
 export interface ExperienceItemProps {
 	class?: ClassList;

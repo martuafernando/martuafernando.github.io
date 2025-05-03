@@ -30,16 +30,6 @@ export default component$(() => {
 				const currentY = window.scrollY;
 				isScrollingDown.value = currentY > lastScrollY.value;
 				lastScrollY.value = currentY;
-			}),
-			50,
-		),
-	);
-
-	useOnWindow(
-		"scroll",
-		useDebouncer(
-			$(() => {
-				const currentY = window.scrollY;
 				isOnTop.value = currentY === 0;
 			}),
 			50,
@@ -61,7 +51,7 @@ export default component$(() => {
 			<FooterSection />
 			<TabBar
 				class={[
-					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in",
+					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in sm:hidden",
 					isScrollingDown.value ? "-bottom-24" : "bottom-4",
 				]}
 			/>
