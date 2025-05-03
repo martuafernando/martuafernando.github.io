@@ -34,7 +34,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://linkedin.com/in/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+					class="flex items-center relative hover-underline-animation after:bg-white"
 				>
 					<span>LinkedIn</span>
 					<FaUpRightFromSquareSolid class="ml-2" />
@@ -43,7 +43,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://github.com/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+					class="flex items-center relative hover-underline-animation after:bg-white"
 				>
 					<span>GitHub</span>
 					<FaUpRightFromSquareSolid class="ml-2" />
@@ -52,7 +52,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					href="https://instagram.com/martuafernando"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="flex items-center relative after:content-[''] after:absolute after:w-full after:h-[1px] after:bg-white after:left-0 after:bottom-[-2px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-right after:hover:origin-left after:duration-300"
+					class="flex items-center relative hover-underline-animation after:bg-white"
 				>
 					<span>Instagram</span>
 					<FaUpRightFromSquareSolid class="ml-2" />

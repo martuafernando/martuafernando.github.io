@@ -28,6 +28,7 @@ export const Navbar = component$(() => {
 					<li key={link.href}>
 						<Link
 							class={{
+								"hover-underline-animation": true,
 								"after:scale-x-100": pathname === link.href,
 							}}
 							href={link.href}

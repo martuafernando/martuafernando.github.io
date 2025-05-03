@@ -22,30 +22,38 @@ export const ProjectList = component$((props: ProjectListProps) => {
 		"All Technology",
 		...[...new Set(projects.flatMap((it) => it.tools))],
 	];
+	const activeToolsFilterOptions = useSignal<string>(toolsFilterOptions[0]);
+
+	const displayedProjects = projects.filter(
+		(project) =>
+			(activeCategory.value === categoryList[0] ||
+				project.category === activeCategory.value) &&
+			(activeToolsFilterOptions.value === "All Technology" ||
+				project.tools.some((it) => it === activeToolsFilterOptions.value)),
+	);
 
 	return (
 		<div class={props.class}>
 			<div class="flex flex-wrap gap-y-4 items-center justify-between">
-				<Select items={toolsFilterOptions} />
+				<Select
+					placeholder="Technology"
+					items={toolsFilterOptions}
+					bind:value={activeToolsFilterOptions}
+					floating="bottom-start"
+				/>
 				<div class="flex gap-2 overflow-auto whitespace-nowrap py-4">
 					<ToggleGroup items={categoryList} bind:value={activeCategory} />
 				</div>
 			</div>
 
 			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-12 mt-6">
-				{props.projects
-					.filter(
-						(project) =>
-							activeCategory.value === categoryList[0] ||
-							project.category === activeCategory.value,
-					)
-					.map((project) => (
-						<ProjectItem
-							key={project.id}
-							project={project}
-							href={`/projects/${project.id}`}
-						/>
-					))}
+				{displayedProjects.map((project) => (
+					<ProjectItem
+						key={project.id}
+						project={project}
+						href={`/projects/${project.id}`}
+					/>
+				))}
 			</div>
 		</div>
 	);

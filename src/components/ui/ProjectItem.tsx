@@ -29,10 +29,10 @@ export const ProjectItem = component$((props: ProjectItemProps) => {
 			</div>
 
 			<div class="flex justify-between items-center mt-2">
-				<p class="text-start font-semibold">{project.title}</p>
+				<p class="text-start font-semibold text-black">{project.title}</p>
 				<div class="text-end flex gap-1 items-center">
 					{project.tools.map((tool) => (
-						<ToolIcon key={tool} tool={tool} class="w-8 h-8" />
+						<ToolIcon key={tool} tool={tool} class="w-auto h-6" />
 					))}
 				</div>
 			</div>

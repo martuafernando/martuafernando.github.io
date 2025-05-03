@@ -27,7 +27,7 @@ export const ProjectShowcaseSection = component$(
 								title={project.title}
 								src={project.desktopThumbnailUrl}
 								class={
-									"max-w-screen sm:w-sm md:w-md lg:w-lg xl:w-xl rounded-2xl transition-all duration-500 will-change-transform object-cover"
+									"max-w-[70vw] sm:w-sm md:w-md lg:w-lg xl:w-xl rounded-2xl transition-all duration-500 will-change-transform object-cover"
 								}
 							/>
 						</Link>

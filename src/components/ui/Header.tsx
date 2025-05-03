@@ -24,7 +24,7 @@ export const Header = component$((props: HeaderProps) => {
 					href="/"
 				>
 					<SvgLogo class="h-auto w-7 pt-1" width={24} height={28} />
-					<span class="font-semibold">artuaFernando</span>
+					<span class="font-semibold text-black">artuaFernando</span>
 				</Link>
 				<Navbar />
 			</div>

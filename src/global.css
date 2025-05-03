@@ -35,7 +35,8 @@
 		@apply bg-background;
 	}
 
-	a span {
+	a span,
+	a:not(:has(span)) {
 		@apply text-teal-500;
 	}
 
@@ -52,6 +53,6 @@
 
 @layer components {
 	.hover-underline-animation {
-		@apply relative hover:text-teal-900 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-teal-900 after:left-0 after:bottom-[-4px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
+		@apply relative hover:text-teal-800 after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-teal-900 after:left-0 after:bottom-[-4px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
 	}
 }
