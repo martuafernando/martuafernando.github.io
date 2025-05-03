@@ -3,6 +3,7 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 import { TabBar } from "~/components/ui/TabBar";
 import { useDebouncer } from "~/hooks/useDebouncer";
 import { Header } from "~/components/ui/Header";
+import { FooterSection } from "~/components/sections/FooterSection";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
 	// Control caching for this request for best performance and to reduce hosting costs:
@@ -54,9 +55,10 @@ export default component$(() => {
 					isScrollingDown.value ? "-top-24" : "top-0",
 				]}
 			/>
-			<main>
+			<main class="min-h-screen">
 				<Slot />
 			</main>
+			<FooterSection />
 			<TabBar
 				class={[
 					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in",
