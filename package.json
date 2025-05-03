@@ -53,7 +53,8 @@
     "vite-tsconfig-paths": "^4.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "vite-plugin-static-copy": "^2.3.1"
   },
   "nx": {}
 }
