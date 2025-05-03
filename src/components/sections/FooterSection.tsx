@@ -58,7 +58,7 @@ export const FooterSection = component$((props: FooterSectionProps) => {
 					<FaUpRightFromSquareSolid class="ml-2" />
 				</Link>
 			</div>
-			<p class="text-center mt-8">&copy; 2024 Martua Fernando</p>
+			<p class="text-center mt-8">&copy; 2025 Martua Fernando</p>
 		</footer>
 	);
 });

@@ -9,7 +9,7 @@ export interface ProjectShowcaseProps {
 
 export const ProjectShowcaseSection = component$(
 	(props: ProjectShowcaseProps) => {
-		const projects = [...props.projects, ...props.projects, ...props.projects];
+		const projects = props.projects;
 
 		return (
 			<div class={["relative w-full", props.class]}>
