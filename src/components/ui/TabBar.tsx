@@ -71,7 +71,7 @@ export const TabBar = component$((props: TabBarProps) => {
 						isActive={isActive}
 						href={tab.href}
 					>
-						<Icon q:slot="icon" />
+						<Icon />
 					</TabBarItem>
 				);
 			})}

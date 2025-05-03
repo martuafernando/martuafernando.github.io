@@ -30,7 +30,7 @@ export const TabBarItem = component$((props: TabBarItemProps) => {
 			}}
 			onClick$={() => nav(props.href)}
 		>
-			<Slot name="icon" />
+			<Slot />
 			<span
 				class={{
 					"text-xs whitespace-nowrap transition-all duration-300": true,
