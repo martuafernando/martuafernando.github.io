@@ -1,16 +1,20 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Resource, useResource$ } from "@builder.io/qwik";
 import { ProjectList } from "~/components/ui/ProjectList";
-import { getAllProject } from "~/repositories/project";
+import { getProjects } from "~/repositories/projects";
 
 export default component$(() => {
-	const projects = getAllProject();
+	const projects = useResource$(getProjects);
 
 	return (
 		<>
 			<h1 class="text-5xl font-bold text-center mt-8">Projects</h1>
-			<ProjectList
-				projects={[...projects]}
-				class="mx-auto mt-12 mb-8"
+			<Resource
+				value={projects}
+				onResolved={(projects) => {
+					return (
+						<ProjectList projects={[...projects]} class="mx-auto mt-12 mb-8" />
+					);
+				}}
 			/>
 		</>
 	);

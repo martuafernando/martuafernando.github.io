@@ -1,14 +1,20 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Resource, useResource$ } from "@builder.io/qwik";
 import { ExperienceList } from "~/components/ui/ExperienceList";
-import { getAllExperiences } from "~/repositories/experience";
+import { getExperiences } from "~/repositories/experiences";
 
 export default component$(() => {
-	const experiences = getAllExperiences();
+	const experiences = useResource$(getExperiences);
+
 	return (
 		<>
 			<h1 class="text-5xl font-bold text-center">Experience</h1>
 			<div class="mt-8">
-				<ExperienceList experiences={experiences} />
+				<Resource
+					value={experiences}
+					onResolved={(experiences) => (
+						<ExperienceList experiences={experiences} />
+					)}
+				/>
 			</div>
 		</>
 	);
