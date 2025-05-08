@@ -32,7 +32,7 @@ export const HeroSection = component$((props: HeroProps) => {
 					rel="noopener noreferrer"
 				>
 					<SiLinkedin height={48} class="h-8 w-auto" />
-					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-[#0a66c2]">
 						LinkedIn <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
@@ -43,7 +43,7 @@ export const HeroSection = component$((props: HeroProps) => {
 					rel="noopener noreferrer"
 				>
 					<SiGithub height={48} class="h-8 w-auto" />
-					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-[#181717]">
 						GitHub <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
@@ -54,7 +54,7 @@ export const HeroSection = component$((props: HeroProps) => {
 					rel="noopener noreferrer"
 				>
 					<SiInstagram height={48} class="h-8 w-auto" />
-					<span class="flex items-center ml-2 gap-1 hover-underline-animation">
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-[#FF0069]">
 						Instagram <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
