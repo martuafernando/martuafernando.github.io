@@ -49,12 +49,12 @@ export const HeroSection = component$((props: HeroProps) => {
 				</Link>
 				<Link
 					href="https://instagram.com/martuafernando"
-					class="flex items-center text-[#FF0069]"
+					class="flex items-center text-[#CC0055]"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<SiInstagram height={48} class="h-8 w-auto" />
-					<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-[#FF0069]">
+					<span class="flex items-center ml-2 gap-1 hover-underline-animation after:bg-[#CC0055]">
 						Instagram <FaUpRightFromSquareSolid height={12} />
 					</span>
 				</Link>
