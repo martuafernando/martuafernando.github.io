@@ -40,10 +40,10 @@ export const MarqueeSection = component$((props: MarqueeSectionsProps) => {
 
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(({ track }) => {
-    track(() => loc.url.pathname);
+		track(() => loc.url.pathname);
 
-    updateItemCount()
-  });
+		updateItemCount();
+	});
 
 	useOnWindow("resize", updateItemCount);
 
@@ -75,8 +75,8 @@ export const MarqueeSection = component$((props: MarqueeSectionsProps) => {
 					animationDuration: `${imageList.value.length}s`,
 				}}
 			>
-				{imageList.value.map((imagePath) => (
-					<div class="flex-1" key={imagePath.alt}>
+				{imageList.value.map((imagePath, index) => (
+					<div class="flex-1" key={`${imagePath.alt}-${index}`}>
 						<img
 							alt={imagePath.alt}
 							src={imagePath.source}
