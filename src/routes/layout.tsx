@@ -48,7 +48,7 @@ export default component$(() => {
 			<main class="min-h-screen">
 				<Slot />
 			</main>
-			<FooterSection />
+			<FooterSection class="px-4 sm:px-0" />
 			<TabBar
 				class={[
 					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in sm:hidden",
