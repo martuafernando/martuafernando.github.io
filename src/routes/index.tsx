@@ -7,13 +7,14 @@ import { getExperiences } from "~/repositories/experiences";
 import { getProjects } from "~/repositories/projects";
 
 export default component$(() => {
-	const experienceImageList = useResource$(() =>
-		getExperiences().then((it) => {
-			return it.map((experience) => ({
-				source: experience.companyLogoHorizontalUrl,
-				alt: experience.companyName,
-			}));
-		}),
+	const experienceImageList = useResource$(() => {
+		const data = getExperiences()
+
+		return data.map((experience) => ({
+			source: experience.companyLogoHorizontalUrl,
+			alt: experience.companyName,
+		}))
+	}
 	);
 
 	const projects = useResource$(getProjects);

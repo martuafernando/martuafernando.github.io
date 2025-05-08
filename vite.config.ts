@@ -9,8 +9,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
 import tailwindcss from "@tailwindcss/vite";
 import { partytownVite } from "@builder.io/partytown/utils";
-import { join } from "path";
-import { viteStaticCopy } from "vite-plugin-static-copy";
+import { join } from "node:path";
+
 type PkgDep = Record<string, string>;
 const { dependencies = {}, devDependencies = {} } = pkg as any as {
   dependencies: PkgDep;
@@ -30,14 +30,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
       tsconfigPaths(),
       tailwindcss(),
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
-      viteStaticCopy({
-        targets: [
-          {
-            src: 'contents',
-            dest: './'
-          }
-        ]
-      }),
     ],
     // This tells Vite which dependencies to pre-build in dev mode.
     optimizeDeps: {

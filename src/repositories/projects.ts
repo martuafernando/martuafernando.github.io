@@ -1,12 +1,13 @@
 import type Project from "~/domains/Project";
 
-export const getProjects = async (): Promise<Project[]> => {
-	const modules = import.meta.glob<{ frontmatter: Project }>(
-		"/src/routes/projects/**/**/index.mdx",
-	);
+const modules = import.meta.glob<{ frontmatter: Project }>(
+	"/src/routes/projects/**/**/index.mdx", { eager: true }
+);
 
-	const projects = Object.values(modules).map(async (it) => {
-		const value = await it();
+export function getProjects(): Project[] {
+
+	const projects = Object.values(modules).map((it) => {
+		const value = it;
 		const data = value.frontmatter;
 
 		return {
@@ -16,6 +17,6 @@ export const getProjects = async (): Promise<Project[]> => {
 		};
 	});
 
-	const result = await Promise.all(projects);
+	const result = projects;
 	return result;
-};
+}

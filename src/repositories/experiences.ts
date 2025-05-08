@@ -1,12 +1,12 @@
 import type Experience from "~/domains/Experience";
 
-export async function getExperiences() {
-	const modules = import.meta.glob<{
-		frontmatter: Experience;
-	}>("/src/routes/experiences/**/*.mdx");
+const modules = import.meta.glob<{
+	frontmatter: Experience;
+}>("/src/routes/experiences/**/*.mdx", { eager: true });
 
-	const experiences = Object.values(modules).map(async (it) => {
-		const value = await it();
+export function getExperiences() {
+	const experiences = Object.values(modules).map((it) => {
+		const value = it;
 		const data = value.frontmatter;
 
 		return {
@@ -16,7 +16,7 @@ export async function getExperiences() {
 		};
 	});
 
-	const result = await Promise.all(experiences);
+	const result = experiences;
 
 	return result;
 }
