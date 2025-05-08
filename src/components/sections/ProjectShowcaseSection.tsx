@@ -22,6 +22,8 @@ export const ProjectShowcaseSection = component$(
 							href={`/projects/${project.id}`}
 						>
 							<img
+								decoding="async"
+								loading="lazy"
 								width={project.desktopThumbnailWidth}
 								height={project.desktopThumbnailHeight}
 								alt={project.title}

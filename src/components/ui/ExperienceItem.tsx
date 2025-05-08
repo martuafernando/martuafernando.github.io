@@ -48,6 +48,8 @@ export const ExperienceItem = component$((props: ExperienceItemProps) => {
 			>
 				<div class="flex items-center space-x-4">
 					<img
+						decoding="async"
+						loading="lazy"
 						src={experience.companyLogoUrl}
 						alt={`${experience.companyName} logo`}
 						width={48}

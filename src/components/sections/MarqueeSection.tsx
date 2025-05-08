@@ -78,6 +78,8 @@ export const MarqueeSection = component$((props: MarqueeSectionsProps) => {
 				{imageList.value.map((imagePath, index) => (
 					<div class="flex-1" key={`${imagePath.alt}-${index}`}>
 						<img
+							decoding="async"
+							loading="lazy"
 							alt={imagePath.alt}
 							src={imagePath.source}
 							class="w-fit mx-auto h-12 block grayscale hover:grayscale-0 transition-all duration-300"

@@ -19,6 +19,8 @@ export const ProjectItem = component$((props: ProjectItemProps) => {
 				style="padding-top: 75%;"
 			>
 				<img
+					decoding="async"
+					loading="lazy"
 					class="absolute top-0 left-0 w-full h-full object-cover"
 					src={project.desktopThumbnailUrl}
 					width={project.desktopThumbnailWidth}
