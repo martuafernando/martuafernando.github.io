@@ -2,12 +2,12 @@ import { type ClassList, component$ } from "@builder.io/qwik";
 import { ExperienceItem } from "./ExperienceItem";
 import type Experience from "~/domains/Experience";
 
-export interface ExperienceItemProps {
+export interface ExperienceListProps {
 	class?: ClassList;
 	experiences: Array<Experience>;
 }
 
-export const ExperienceList = component$((props: ExperienceItemProps) => {
+export const ExperienceList = component$((props: ExperienceListProps) => {
 	const experiences = props.experiences
 
 	return (

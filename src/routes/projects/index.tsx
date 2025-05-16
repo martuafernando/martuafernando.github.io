@@ -1,5 +1,5 @@
 import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import { ProjectList } from "~/components/ui/ProjectList";
+import { ProjectList } from "~/components/ui";
 import { getProjects } from "~/repositories/projects";
 
 export default component$(() => {

@@ -1,5 +1,5 @@
 import { component$, Resource, useResource$ } from "@builder.io/qwik";
-import { ExperienceList } from "~/components/ui/ExperienceList";
+import { ExperienceList } from "~/components/ui";
 import { getExperiences } from "~/repositories/experiences";
 
 export default component$(() => {

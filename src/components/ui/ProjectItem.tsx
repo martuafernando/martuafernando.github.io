@@ -1,7 +1,7 @@
 import { type ClassList, component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import type Project from "~/domains/Project";
-import { ToolIcon } from "./TooliconGroup";
+import { ToolIcon } from "./ToolIcon";
 
 export interface ProjectItemProps {
 	class?: ClassList;

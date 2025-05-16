@@ -1,8 +1,7 @@
 import { $, component$, Slot, useOnWindow, useSignal } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { TabBar } from "~/components/ui/TabBar";
+import { Header, TabBar } from "~/components/ui";
 import { useDebouncer } from "~/hooks/useDebouncer";
-import { Header } from "~/components/ui/Header";
 import { FooterSection } from "~/components/sections/FooterSection";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
