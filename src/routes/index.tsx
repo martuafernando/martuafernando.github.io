@@ -26,7 +26,7 @@ export default component$(() => {
 				value={experienceImageList}
 				onResolved={(data) => (
 					<MarqueeSection
-						class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[96px] overflow-x-hidden bg-white max-w-none"
+						class="w-full rounded-b-[64px] pt-40 pb-16 relative -top-24 sm:rounded-b-[96px] overflow-x-hidden bg-accent max-w-none"
 						imageList={data}
 					/>
 				)}
@@ -34,7 +34,7 @@ export default component$(() => {
 			<Resource
 				value={projects}
 				onResolved={(projects) => (
-					<ProjectShowcaseSection class="max-w-none p-0" projects={projects} />
+					<ProjectShowcaseSection class="max-w-none px-0" projects={projects} />
 				)}
 			/>
 		</>

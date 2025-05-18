@@ -17,7 +17,6 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
 	const isScrollingDown = useSignal<boolean>(false);
-	const isOnTop = useSignal<boolean>(true);
 	// store last Y to get the direction
 	// if current Y > lastScrollY the scroll go down
 	const lastScrollY = useSignal<number>(0);
@@ -29,7 +28,6 @@ export default component$(() => {
 				const currentY = window.scrollY;
 				isScrollingDown.value = currentY > lastScrollY.value;
 				lastScrollY.value = currentY;
-				isOnTop.value = currentY === 0;
 			}),
 			50,
 		),
@@ -39,12 +37,11 @@ export default component$(() => {
 		<>
 			<Header
 				class={[
-					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out",
-					isOnTop.value ? "bg-none" : "bg-white",
+					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out bg-background",
 					isScrollingDown.value ? "-top-24" : "top-0",
 				]}
 			/>
-			<main class="min-h-screen">
+			<main class="min-h-screen mt-24 mb-48">
 				<Slot />
 			</main>
 			<FooterSection class="px-4 sm:px-0" />

@@ -55,13 +55,13 @@ export const TabBar = component$((props: TabBarProps) => {
 	return (
 		<div
 			class={[
-				"flex items-center overflow-auto bg-black border-background border-2 shadow-lg rounded-full px-4 py-3",
+				"flex gap-1 items-center overflow-auto bg-black border-background border-2 shadow-lg rounded-full px-4 py-3",
 				props.class,
 			]}
 		>
 			{TABS.map((tab) => {
 				const Icon = tab.icon;
-				const isActive = activeTab === tab.href
+				const isActive = activeTab === tab.href;
 
 				return (
 					<TabBarItem

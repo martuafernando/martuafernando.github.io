@@ -37,6 +37,7 @@ export default component$(() => {
 				/>
 				<script
 					type="text/partytown"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 					dangerouslySetInnerHTML={`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function() {

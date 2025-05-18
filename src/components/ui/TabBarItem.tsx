@@ -1,6 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 import type { ClassList } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
+import { Button } from "./basic";
 
 export interface TabBarItemProps {
 	class?: ClassList;
@@ -20,8 +21,8 @@ export interface TabBarItemProps {
 export const TabBarItem = component$((props: TabBarItemProps) => {
 	const nav = useNavigate();
 	return (
-		<button
-			type="button"
+		<Button
+			size="icon"
 			key={props.id}
 			class={{
 				"flex items-center gap-1 px-4 py-2 rounded-full w-full cursor-pointer": true,
@@ -38,6 +39,6 @@ export const TabBarItem = component$((props: TabBarItemProps) => {
 			>
 				{props.label}
 			</span>
-		</button>
+		</Button>
 	);
 });

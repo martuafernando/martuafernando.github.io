@@ -9,3 +9,4 @@ export * from "./TabBar";
 export * from "./TabBarItem";
 export * from "./ToggleGroup";
 export * from "./ToolIcon";
+export * from "./Breadcrumb";

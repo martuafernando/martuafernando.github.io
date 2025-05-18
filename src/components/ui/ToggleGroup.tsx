@@ -32,7 +32,7 @@ export const ToggleGroup = component$((props: ToggleGroupProps) => {
 						key={value}
 						value={value}
 						aria-label={label}
-						class={`min-w-16 px-4 py-2 rounded-full cursor-pointer font-semibold ${isActive ? "bg-gray-200" : "bg-none"}`}
+						class={`min-w-16 px-4 py-2 rounded-full cursor-pointer font-semibold ${isActive ? "bg-accent" : "bg-none"}`}
 					>
 						{label}
 					</ToggleGroupUi.Item>

@@ -1,0 +1,21 @@
+@layer base {
+	body,
+	html {
+		overflow-x: hidden;
+	}
+
+	header,
+	main > * {
+		@apply max-w-7xl mx-auto px-4 md:px-8;
+	}
+
+	.horizontal-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.horizontal-scrollbar::before,
+	.horizontal-scrollbar::after {
+		content: "";
+		flex: 0 0 100%;
+	}
+}

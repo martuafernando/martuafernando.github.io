@@ -36,7 +36,6 @@ export const ProjectList = component$((props: ProjectListProps) => {
 		<div class={props.class}>
 			<div class="flex flex-wrap gap-y-4 items-center justify-between">
 				<Select
-					class="border border-gray-300"
 					placeholder="Technology"
 					items={toolsFilterOptions}
 					bind:value={activeToolsFilterOptions}
