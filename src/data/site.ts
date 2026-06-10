@@ -3,8 +3,8 @@ import type { NavLink, Social, Stat, Value } from "~/domain/site";
 export const profile = {
 	name: "Martua Fernando",
 	mark: "FS",
-	email: "fernandosibarani45@gmail.com",
-	location: "Bandung · Indonesia",
+	email: "martuafernando@proton.me",
+	location: "Indonesia",
 };
 
 export const navLinks: NavLink[] = [

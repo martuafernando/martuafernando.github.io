@@ -42,7 +42,7 @@ export const SiteFooter = component$(() => {
 				</div>
 				<div class="footer-bottom">
 					<span>© 2026 Martua Fernando</span>
-					<span>Designed &amp; built with care · Bandung, ID</span>
+					<span>Designed &amp; built with care · Indonesia</span>
 				</div>
 			</div>
 		</footer>
