@@ -1,7 +1,9 @@
 import { $, component$, useOnWindow, useSignal } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
+import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { navLinks, profile } from "~/data/site";
+import { t, ui, useLang } from "~/i18n";
 
 /**
  * Fixed site header: brand, anchor nav, theme toggle, and mobile menu.
@@ -10,6 +12,7 @@ import { navLinks, profile } from "~/data/site";
  */
 export const SiteHeader = component$(() => {
 	const loc = useLocation();
+	const lang = useLang();
 	const isHome = loc.url.pathname === "/";
 	const menuOpen = useSignal(false);
 	const stuck = useSignal(false);
@@ -47,14 +50,15 @@ export const SiteHeader = component$(() => {
 				<nav class="nav-links" aria-label="Primary">
 					{navLinks.map((l) => (
 						<a key={l.href} href={to(l.href)} onClick$={closeMenu}>
-							{l.label}
+							{t(l.label, lang.value)}
 						</a>
 					))}
 				</nav>
 				<div class="nav-actions">
 					<a class="btn btn-soft nav-cta-desktop" href={to("#contact")}>
-						Get in touch
+						{t(ui.getInTouch, lang.value)}
 					</a>
+					<LangToggle />
 					<ThemeToggle />
 					<button
 						class="menu-btn"

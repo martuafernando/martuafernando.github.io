@@ -1,17 +1,19 @@
+import type { Localized } from "~/i18n";
+
 export interface ImpactCell {
 	value: string;
-	label: string;
+	label: Localized;
 }
 
 export interface CaseSegment {
-	segLabel: string;
-	heading: string;
-	paragraphs?: string[];
-	checks?: string[];
+	segLabel: Localized;
+	heading: Localized;
+	paragraphs?: Localized<string[]>;
+	checks?: Localized<string[]>;
 	impact?: ImpactCell[];
 }
 
-export interface ProjectThumbnail {
+export interface ProjectImage {
 	src: string;
 	alt: string;
 	width: number;
@@ -33,22 +35,22 @@ export interface Project {
 	eyebrow: string;
 	year: string;
 	/** Summary used on the detail page. */
-	summary: string;
+	summary: Localized;
 	/** Shorter summary for the work card (falls back to `summary`). */
-	cardSummary?: string;
+	cardSummary?: Localized;
 	tags: string[];
 	/** Spans the full row in the work grid. */
 	wide?: boolean;
-	/** CSS gradient used for placeholder media. */
-	gradient: string;
-	/** Real image used for the card + cover, when available. */
-	thumbnail?: ProjectThumbnail;
+	/** Card thumbnail + detail cover image. */
+	cover: ProjectImage;
+	/** Detail-page gallery screenshots. */
+	gallery?: ProjectImage[];
 	/** Concept/sample project — shows a "self-directed build" note. */
 	concept?: boolean;
 	role: string;
-	engagement: string;
+	engagement: Localized;
 	stack: string[];
-	delivered: string[];
+	delivered: Localized<string[]>;
 	links: ProjectLinks;
 	caseStudy: CaseSegment[];
 }

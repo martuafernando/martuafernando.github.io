@@ -10,6 +10,7 @@ import {
 	getProjectBySlug,
 	getProjects,
 } from "~/data/projects";
+import { t } from "~/i18n";
 
 export const useProject = routeLoader$(({ params, status }) => {
 	const project = getProjectBySlug(params.slug);
@@ -52,7 +53,9 @@ export const head: DocumentHead = ({ resolveValue }) => {
 		meta: [
 			{
 				name: "description",
-				content: project?.summary ?? "Project case study by Martua Fernando.",
+				content: project
+					? t(project.summary, "en")
+					: "Project case study by Martua Fernando.",
 			},
 		],
 	};

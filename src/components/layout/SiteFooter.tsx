@@ -1,17 +1,20 @@
 import { component$ } from "@builder.io/qwik";
 import { ArrowUpRight, socialIcons } from "../ui/icons";
 import { profile, socials } from "~/data/site";
+import { t, ui, useLang } from "~/i18n";
 
 /** Contact footer — also the `#contact` scroll target for the nav. */
 export const SiteFooter = component$(() => {
+	const lang = useLang();
+	const l = lang.value;
 	return (
 		<footer class="site-footer" id="contact">
 			<div class="wrap">
 				<div class="footer-top">
 					<div class="footer-cta">
-						<span class="eyebrow reveal">Contact</span>
+						<span class="eyebrow reveal">{t(ui.contact, l)}</span>
 						<h2 class="reveal" style="--d:60ms">
-							Let's build something that lasts.
+							{t(ui.footerHeading, l)}
 						</h2>
 						<a
 							class="footer-mail reveal"
@@ -23,7 +26,7 @@ export const SiteFooter = component$(() => {
 						</a>
 					</div>
 					<div class="footer-social reveal" style="--d:160ms">
-						<span class="eyebrow">Elsewhere</span>
+						<span class="eyebrow">{t(ui.elsewhere, l)}</span>
 						{socials.map((s) => {
 							const Icon = socialIcons[s.icon];
 							return (
@@ -42,7 +45,7 @@ export const SiteFooter = component$(() => {
 				</div>
 				<div class="footer-bottom">
 					<span>© 2026 Martua Fernando</span>
-					<span>Designed &amp; built with care · Indonesia</span>
+					<span>{t(ui.footerNote, l)}</span>
 				</div>
 			</div>
 		</footer>

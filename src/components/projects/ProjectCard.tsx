@@ -4,6 +4,7 @@ import { ArrowUpRight } from "../ui/icons";
 import { Tag } from "../ui/Tag";
 import { ProjectMedia } from "./ProjectMedia";
 import type { Project } from "~/domain/project";
+import { t, useLang } from "~/i18n";
 
 interface ProjectCardProps {
 	project: Project;
@@ -15,6 +16,7 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 export const ProjectCard = component$<ProjectCardProps>(
 	({ project, index, total }) => {
+		const lang = useLang();
 		return (
 			<Link
 				href={`/projects/${project.slug}/`}
@@ -36,7 +38,9 @@ export const ProjectCard = component$<ProjectCardProps>(
 						<h3>{project.title}</h3>
 						<span class="year">{project.year}</span>
 					</div>
-					<p class="summary">{project.cardSummary ?? project.summary}</p>
+					<p class="summary">
+						{t(project.cardSummary ?? project.summary, lang.value)}
+					</p>
 					<div class="tags">
 						{project.tags.map((t) => (
 							<Tag key={t}>{t}</Tag>

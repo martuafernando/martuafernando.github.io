@@ -1,14 +1,16 @@
+import type { Localized } from "~/i18n";
+
 export interface SubRole {
-	role: string;
+	role: Localized;
 	meta: string;
 }
 
 export interface TimelineNode {
 	period: string;
-	badge?: string;
-	title: string;
+	badge?: Localized;
+	title: Localized;
 	org: string;
 	current?: boolean;
 	subRoles?: SubRole[];
-	points?: string[];
+	points?: Localized<string[]>;
 }

@@ -24,8 +24,8 @@ export default component$(() => {
 				<meta charset="utf-8" />
 				{/* Set theme before paint to avoid a flash of the wrong theme. */}
 				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme guard
-					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'dark';}catch(e){el.dataset.theme='dark';}})();`}
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme + lang guard
+					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'dark';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='dark';el.lang='en';}})();`}
 				/>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
@@ -65,7 +65,7 @@ export default component$(() => {
 
 				<RouterHead />
 			</head>
-			<body lang="en">
+			<body>
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>

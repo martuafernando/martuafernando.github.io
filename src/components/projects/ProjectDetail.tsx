@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight, GitHubIcon } from "../ui/icons";
 import { Tag } from "../ui/Tag";
 import { ProjectMedia } from "./ProjectMedia";
 import type { Project } from "~/domain/project";
+import { t, ui, useLang } from "~/i18n";
 
 interface ProjectDetailProps {
 	project: Project;
@@ -11,16 +12,17 @@ interface ProjectDetailProps {
 	next: Project | null;
 }
 
-const GALLERY_OPACITY = [0.77, 0.69, 0.61, 0.53];
-
 export const ProjectDetail = component$<ProjectDetailProps>(
 	({ project, prev, next }) => {
+		const lang = useLang();
+		const l = lang.value;
+
 		return (
 			<>
 				<section class="proj-hero">
 					<div class="wrap">
 						<Link class="back-link" href="/#work">
-							<ArrowLeft /> Back to all work
+							<ArrowLeft /> {t(ui.backToWork, l)}
 						</Link>
 						<div class="proj-head">
 							<div class="lead">
@@ -29,36 +31,36 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 									{project.detailTitle}
 								</h1>
 								<p class="summary reveal" style="--d:120ms">
-									{project.summary}
+									{t(project.summary, l)}
 								</p>
 							</div>
 							<div class="side reveal" style="--d:160ms">
 								<div class="fact-row">
 									<div class="fact">
-										<span class="k">Year</span>
+										<span class="k">{t(ui.year, l)}</span>
 										<span class="v">{project.year}</span>
 									</div>
 									<div class="fact">
-										<span class="k">Role</span>
+										<span class="k">{t(ui.role, l)}</span>
 										<span class="v">{project.role}</span>
 									</div>
 								</div>
 								<div class="fact-row">
 									<div class="fact">
-										<span class="k">Engagement</span>
-										<span class="v">{project.engagement}</span>
+										<span class="k">{t(ui.engagement, l)}</span>
+										<span class="v">{t(project.engagement, l)}</span>
 									</div>
 								</div>
 								{project.concept && (
 									<div class="fact">
 										<span class="k" style="color:var(--accent)">
-											Note
+											{t(ui.note, l)}
 										</span>
 										<span
 											class="v"
 											style="font-weight:400;color:var(--text-muted);font-size:.9rem;"
 										>
-											Concept project — a self-directed build.
+											{t(ui.conceptNote, l)}
 										</span>
 									</div>
 								)}
@@ -70,7 +72,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 											target="_blank"
 											rel="noopener"
 										>
-											Live demo
+											{t(ui.liveDemo, l)}
 											<ArrowUpRight />
 										</a>
 									)}
@@ -81,7 +83,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 											target="_blank"
 											rel="noopener"
 										>
-											<GitHubIcon /> Source
+											<GitHubIcon /> {t(ui.source, l)}
 										</a>
 									)}
 								</div>
@@ -100,7 +102,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 					<div class="proj-body">
 						<aside class="sticky-meta">
 							<div class="meta-block">
-								<span class="eyebrow">Tech stack</span>
+								<span class="eyebrow">{t(ui.techStack, l)}</span>
 								<div class="stack-chips">
 									{project.stack.map((s) => (
 										<Tag key={s}>{s}</Tag>
@@ -108,16 +110,16 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 								</div>
 							</div>
 							<div class="meta-block">
-								<span class="eyebrow">Delivered</span>
+								<span class="eyebrow">{t(ui.delivered, l)}</span>
 								<ul>
-									{project.delivered.map((d) => (
+									{t(project.delivered, l).map((d) => (
 										<li key={d}>{d}</li>
 									))}
 								</ul>
 							</div>
 							{(project.links.live || project.links.source) && (
 								<div class="meta-block">
-									<span class="eyebrow">Links</span>
+									<span class="eyebrow">{t(ui.links, l)}</span>
 									<ul class="plain" style="gap:.7rem">
 										{project.links.live && (
 											<li>
@@ -127,7 +129,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 													target="_blank"
 													rel="noopener"
 												>
-													Live demo
+													{t(ui.liveDemo, l)}
 												</a>
 											</li>
 										)}
@@ -139,7 +141,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 													target="_blank"
 													rel="noopener"
 												>
-													Source code
+													{t(ui.sourceCode, l)}
 												</a>
 											</li>
 										)}
@@ -150,47 +152,54 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 
 						<div class="prose">
 							{project.caseStudy.map((seg) => (
-								<div class="reveal" key={seg.segLabel}>
-									<span class="seg-label">{seg.segLabel}</span>
-									<h2>{seg.heading}</h2>
+								<div class="reveal" key={t(seg.segLabel, "en")}>
+									<span class="seg-label">{t(seg.segLabel, l)}</span>
+									<h2>{t(seg.heading, l)}</h2>
 									{seg.impact && (
 										<div class="impact-grid">
 											{seg.impact.map((c) => (
-												<div class="cell" key={c.label}>
+												<div class="cell" key={t(c.label, "en")}>
 													<b>{c.value}</b>
-													<span>{c.label}</span>
+													<span>{t(c.label, l)}</span>
 												</div>
 											))}
 										</div>
 									)}
 									{seg.checks && (
 										<ul class="checks">
-											{seg.checks.map((c) => (
+											{t(seg.checks, l).map((c) => (
 												<li key={c}>{c}</li>
 											))}
 										</ul>
 									)}
-									{seg.paragraphs?.map((para, i) => (
-										<p key={i}>{para}</p>
-									))}
+									{seg.paragraphs &&
+										t(seg.paragraphs, l).map((para, i) => (
+											<p key={i}>{para}</p>
+										))}
 								</div>
 							))}
 						</div>
 					</div>
 
-					<div class="gallery reveal">
-						<span class="eyebrow">Gallery</span>
-						<div class="gallery-grid" style="margin-top:1.4rem">
-							{GALLERY_OPACITY.map((op, i) => (
-								<div class={["shot", i === 0 && "tall"]} key={i}>
-									<div
-										class="ph"
-										style={`background:${project.gradient};opacity:${op}`}
-									/>
-								</div>
-							))}
+					{project.gallery && project.gallery.length > 0 && (
+						<div class="gallery reveal">
+							<span class="eyebrow">{t(ui.gallery, l)}</span>
+							<div class="gallery-grid" style="margin-top:1.4rem">
+								{project.gallery.map((shot, i) => (
+									<div class={["shot", i === 0 && "tall"]} key={i}>
+										<img
+											src={shot.src}
+											alt={shot.alt}
+											width={shot.width}
+											height={shot.height}
+											loading="lazy"
+											decoding="async"
+										/>
+									</div>
+								))}
+							</div>
 						</div>
-					</div>
+					)}
 				</section>
 
 				<nav class="proj-nav" aria-label="Project navigation">
@@ -198,14 +207,14 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 						{prev ? (
 							<Link class="prev" href={`/projects/${prev.slug}/`}>
 								<span class="dir">
-									<ArrowLeft /> Previous
+									<ArrowLeft /> {t(ui.previous, l)}
 								</span>
 								<span class="ttl">{prev.detailTitle}</span>
 							</Link>
 						) : (
 							<a class="prev disabled" aria-disabled="true">
 								<span class="dir">
-									<ArrowLeft /> Previous
+									<ArrowLeft /> {t(ui.previous, l)}
 								</span>
 								<span class="ttl">—</span>
 							</a>
@@ -213,14 +222,14 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 						{next ? (
 							<Link class="next" href={`/projects/${next.slug}/`}>
 								<span class="dir">
-									Next <ArrowRight />
+									{t(ui.next, l)} <ArrowRight />
 								</span>
 								<span class="ttl">{next.detailTitle}</span>
 							</Link>
 						) : (
 							<a class="next disabled" aria-disabled="true">
 								<span class="dir">
-									Next <ArrowRight />
+									{t(ui.next, l)} <ArrowRight />
 								</span>
 								<span class="ttl">—</span>
 							</a>

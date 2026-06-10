@@ -314,6 +314,41 @@ footer[id] {
 	display: none;
 }
 
+/* language toggle */
+.lang-toggle {
+	display: inline-flex;
+	align-items: center;
+	height: 40px;
+	padding: 2px;
+	border: 1px solid var(--border);
+	background: var(--surface);
+	border-radius: 999px;
+	cursor: pointer;
+	overflow: hidden;
+	font-family: var(--font-mono);
+	font-size: 0.74rem;
+	letter-spacing: 0.04em;
+	color: var(--text);
+	transition: border-color 0.3s, background 0.3s;
+}
+.lang-toggle:hover {
+	border-color: var(--accent);
+}
+.lang-toggle span {
+	padding: 0 0.72em;
+	height: 100%;
+	display: grid;
+	place-items: center;
+	border-radius: 999px;
+	color: var(--text-muted);
+	transition: color 0.3s, background 0.3s;
+}
+html[lang="en"] .lang-toggle .l-en,
+html[lang="id"] .lang-toggle .l-id {
+	color: var(--accent-ink);
+	background: var(--accent);
+}
+
 /* mobile menu button */
 .menu-btn {
 	display: none;
@@ -570,6 +605,12 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border-radius: var(--radius-lg);
 	box-shadow: var(--shadow-md);
 	overflow: hidden;
+}
+.about-photo .photo-frame img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
 }
 .about-photo .photo-tag {
 	position: absolute;
