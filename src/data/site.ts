@@ -16,7 +16,11 @@ export const navLinks: NavLink[] = [
 ];
 
 export const socials: Social[] = [
-	{ label: "GitHub", href: "https://github.com/martuafernando", icon: "github" },
+	{
+		label: "GitHub",
+		href: "https://github.com/martuafernando",
+		icon: "github",
+	},
 	{
 		label: "LinkedIn",
 		href: "https://linkedin.com/in/martuafernando",
@@ -32,40 +36,54 @@ export const socials: Social[] = [
 export const skills: string[] = [
 	"TypeScript",
 	"Python",
-	"Kotlin",
-	"Odoo",
-	"System Architecture",
-	"FHIR / HL7",
 	"PostgreSQL",
 	"React",
 	"Node.js",
+	"Docker",
+	"Kubernetes",
+	"Data Engineering",
+	"System Design",
+	"Blockchain",
+	"Bitcoin",
 ];
 
 export const hero = {
 	status: {
-		en: "Available for select work · Remote",
-		id: "Tersedia untuk proyek pilihan · Remote",
+		en: "Open to software engineering opportunities",
+		id: "Terbuka untuk peluang software engineering",
 	} satisfies Localized,
+
 	headlineHtml: {
-		en: 'I architect &amp; build<br />software that <span class="accent">holds up.</span>',
-		id: 'Saya merancang &amp; membangun<br />perangkat lunak yang <span class="accent">andal.</span>',
+		en: 'Building reliable<br />software &amp; <span class="accent">systems.</span>',
+		id: 'Membangun perangkat lunak<br />dan <span class="accent">sistem yang andal.</span>',
 	} satisfies Localized,
+
 	lede: {
-		en: "Martua Fernando — a software architect and fullstack engineer crafting reliable systems across healthcare, education, and enterprise. TypeScript, Python, Kotlin.",
-		id: "Martua Fernando — arsitek perangkat lunak dan fullstack engineer yang membangun sistem andal di bidang kesehatan, pendidikan, dan enterprise. TypeScript, Python, Kotlin.",
+		en: "Fernando is a software engineer focused on backend systems, data engineering, and scalable applications. He enjoys building reliable software and exploring distributed systems, infrastructure, and blockchain technologies.",
+		id: "Fernando adalah software engineer yang berfokus pada sistem backend, data engineering, dan aplikasi yang skalabel. Ia senang membangun perangkat lunak yang andal serta mengeksplorasi sistem terdistribusi, infrastruktur, dan teknologi blockchain.",
 	} satisfies Localized,
+
 	stats: [
 		{
 			value: "3+",
-			label: { en: "years shipping", id: "tahun berkarya" },
+			label: {
+				en: "years building software",
+				id: "tahun membangun software",
+			},
 		},
 		{
-			value: "5",
-			label: { en: "featured projects", id: "proyek unggulan" },
+			value: "5+",
+			label: {
+				en: "projects delivered",
+				id: "proyek diselesaikan",
+			},
 		},
 		{
-			value: "FHIR / HL7",
-			label: { en: "standards-fluent", id: "fasih standar" },
+			value: "Backend",
+			label: {
+				en: "systems-focused",
+				id: "fokus sistem",
+			},
 		},
 	] satisfies Stat[],
 };
@@ -77,47 +95,60 @@ export const about = {
 		width: 1000,
 		height: 1200,
 	} satisfies SiteImage,
+
 	location: {
-		en: "Bandung · Indonesia",
-		id: "Bandung · Indonesia",
+		en: "Indonesia",
+		id: "Indonesia",
 	} satisfies Localized,
+
 	heading: {
-		en: "Engineer first, but I sweat the details others skip.",
-		id: "Engineer sejati, tapi saya cermat pada detail yang sering dilewatkan.",
+		en: "I enjoy building systems that stay simple as they grow.",
+		id: "Saya senang membangun sistem yang tetap sederhana saat berkembang.",
 	} satisfies Localized,
+
 	paragraphs: [
 		{
-			en: "I'm Fernando — I design and build software end to end, from data models and APIs to the interface people actually touch. My work spans <strong>electronic health records</strong> built to the FHIR/HL7 standard, <strong>educational platforms</strong>, and <strong>enterprise systems</strong> on Odoo.",
-			id: "Saya Fernando — saya merancang dan membangun perangkat lunak secara menyeluruh, dari model data dan API hingga antarmuka yang digunakan orang. Pekerjaan saya mencakup <strong>rekam medis elektronik</strong> sesuai standar FHIR/HL7, <strong>platform pendidikan</strong>, dan <strong>sistem enterprise</strong> di Odoo.",
+			en: "I'm Fernando — a software engineer who enjoys building reliable systems from end to end. My experience spans backend services, web applications, data processing, and enterprise software. I care about designing software that is maintainable, observable, and easy to evolve over time.",
+			id: "Saya Fernando — seorang software engineer yang senang membangun sistem yang andal dari awal hingga akhir. Pengalaman saya mencakup layanan backend, aplikasi web, pemrosesan data, dan perangkat lunak enterprise. Saya peduli pada desain software yang mudah dipelihara, mudah dipantau, dan dapat berkembang seiring waktu.",
 		},
 		{
-			en: "I started in product design before moving into engineering, so I think in systems <em>and</em> in users. I care about code that's reviewable, architectures that won't surprise you at 3am, and interfaces that feel quiet and obvious.",
-			id: "Saya memulai dari desain produk sebelum beralih ke engineering, jadi saya berpikir dalam sistem <em>dan</em> pengguna. Saya peduli pada kode yang mudah ditinjau, arsitektur yang tidak mengejutkan di jam 3 pagi, dan antarmuka yang terasa tenang dan jelas.",
+			en: "I enjoy understanding how systems work beneath the surface—from database design and APIs to infrastructure and distributed systems. Outside of work, I spend time exploring technologies such as Kubernetes, data engineering, and Bitcoin infrastructure through personal projects and experiments.",
+			id: "Saya senang memahami cara kerja sistem di balik layar—mulai dari desain database dan API hingga infrastruktur dan sistem terdistribusi. Di luar pekerjaan, saya mengeksplorasi teknologi seperti Kubernetes, data engineering, dan infrastruktur Bitcoin melalui proyek pribadi dan berbagai eksperimen.",
 		},
 	] satisfies Localized[],
+
 	values: [
 		{
 			k: "01",
-			title: { en: "Reliability", id: "Keandalan" },
+			title: {
+				en: "Reliability",
+				id: "Keandalan",
+			},
 			body: {
-				en: "Tested, observable systems that fail loudly and recover gracefully.",
-				id: "Sistem teruji dan terpantau yang gagal dengan jelas dan pulih dengan baik.",
+				en: "Software should behave predictably under real-world conditions.",
+				id: "Perangkat lunak harus bekerja secara konsisten dalam kondisi nyata.",
 			},
 		},
 		{
 			k: "02",
-			title: { en: "Clarity", id: "Kejelasan" },
+			title: {
+				en: "Clarity",
+				id: "Kejelasan",
+			},
 			body: {
-				en: "Code and UI that the next person — including future me — can read.",
-				id: "Kode dan UI yang bisa dibaca orang berikutnya — termasuk saya di masa depan.",
+				en: "Simple designs and readable code scale better than complexity.",
+				id: "Desain sederhana dan kode yang mudah dibaca lebih mudah berkembang dibanding kompleksitas yang tidak perlu.",
 			},
 		},
 		{
 			k: "03",
-			title: { en: "Craft", id: "Ketelitian" },
+			title: {
+				en: "Continuous Learning",
+				id: "Belajar Berkelanjutan",
+			},
 			body: {
-				en: "The last 10% of polish is where good becomes trusted.",
-				id: "10% sentuhan akhir adalah saat 'baik' menjadi 'terpercaya'.",
+				en: "Technology changes quickly, so curiosity and adaptation are essential.",
+				id: "Teknologi berubah dengan cepat, sehingga rasa ingin tahu dan kemampuan beradaptasi sangat penting.",
 			},
 		},
 	] satisfies Value[],
