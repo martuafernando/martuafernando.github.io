@@ -1,5 +1,5 @@
 import { $, component$ } from "@builder.io/qwik";
-import { MoonIcon, SunIcon } from "./icons";
+import { MoonIcon, SunIcon } from "../ui/icons";
 
 /**
  * Theme toggle — flips the `data-theme` attribute on <html> and persists the

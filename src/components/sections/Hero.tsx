@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { ArrowRight, ArrowUpRight } from "../icons";
+import { ArrowRight, ArrowUpRight } from "../ui/icons";
 import { hero, skills } from "~/data/site";
 
 export const Hero = component$(() => {

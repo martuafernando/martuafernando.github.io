@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { PlaceholderArt } from "../ui/PlaceholderArt";
 import { about, profile } from "~/data/site";
 
 export const About = component$(() => {
@@ -7,10 +8,7 @@ export const About = component$(() => {
 			<div class="wrap about-grid">
 				<div class="about-photo reveal">
 					<div class="photo-frame" style={`background:${about.photoGradient}`}>
-						<div class="ph-art">
-							<div class="grid-lines" />
-							<div class="label">{profile.mark}</div>
-						</div>
+						<PlaceholderArt label={profile.mark} />
 					</div>
 					<div class="photo-tag">
 						<span class="ring" /> {profile.location}

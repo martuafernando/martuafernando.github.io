@@ -1,9 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import { Hero } from "~/components/sections/Hero";
-import { About } from "~/components/sections/About";
-import { Work } from "~/components/sections/Work";
-import { Experience } from "~/components/sections/Experience";
+import { About, Experience, Hero, Work } from "~/components/sections";
 
 export default component$(() => {
 	return (
@@ -17,12 +14,12 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-	title: "Fernando Sibarani — Architect & Fullstack Engineer",
+	title: "Martua Fernando — Architect & Fullstack Engineer",
 	meta: [
 		{
 			name: "description",
 			content:
-				"M Fernando Sibarani — software architect and fullstack engineer building reliable systems for healthcare, education, and enterprise.",
+				"Martua Fernando — software architect and fullstack engineer building reliable systems for healthcare, education, and enterprise.",
 		},
 	],
 };

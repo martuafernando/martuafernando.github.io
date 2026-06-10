@@ -4,20 +4,20 @@ import {
 	routeLoader$,
 	type StaticGenerateHandler,
 } from "@builder.io/qwik-city";
-import { ProjectDetail } from "~/components/ProjectDetail";
-import { projects } from "~/data/projects";
+import { ProjectDetail } from "~/components/projects";
+import {
+	getAdjacentProjects,
+	getProjectBySlug,
+	getProjects,
+} from "~/data/projects";
 
 export const useProject = routeLoader$(({ params, status }) => {
-	const index = projects.findIndex((p) => p.slug === params.slug);
-	if (index === -1) {
+	const project = getProjectBySlug(params.slug);
+	if (!project) {
 		status(404);
 		return null;
 	}
-	return {
-		project: projects[index],
-		prev: index > 0 ? projects[index - 1] : null,
-		next: index < projects.length - 1 ? projects[index + 1] : null,
-	};
+	return { project, ...getAdjacentProjects(params.slug) };
 });
 
 export default component$(() => {
@@ -39,7 +39,7 @@ export default component$(() => {
 });
 
 export const onStaticGenerate: StaticGenerateHandler = () => ({
-	params: projects.map((p) => ({ slug: p.slug })),
+	params: getProjects().map((p) => ({ slug: p.slug })),
 });
 
 export const head: DocumentHead = ({ resolveValue }) => {
@@ -47,12 +47,12 @@ export const head: DocumentHead = ({ resolveValue }) => {
 	const project = data?.project;
 	return {
 		title: project
-			? `${project.detailTitle} — Fernando Sibarani`
-			: "Project — Fernando Sibarani",
+			? `${project.detailTitle} — Martua Fernando`
+			: "Project — Martua Fernando",
 		meta: [
 			{
 				name: "description",
-				content: project?.summary ?? "Project case study by Fernando Sibarani.",
+				content: project?.summary ?? "Project case study by Martua Fernando.",
 			},
 		],
 	};

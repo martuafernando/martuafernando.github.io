@@ -1,18 +1,20 @@
+import type { NavLink, Social, Stat, Value } from "~/domain/site";
+
 export const profile = {
-	name: "Fernando Sibarani",
+	name: "Martua Fernando",
 	mark: "FS",
 	email: "fernandosibarani45@gmail.com",
 	location: "Bandung · Indonesia",
 };
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
 	{ href: "#work", label: "Work" },
 	{ href: "#about", label: "About" },
 	{ href: "#experience", label: "Experience" },
 	{ href: "#contact", label: "Contact" },
 ];
 
-export const socials = [
+export const socials: Social[] = [
 	{ label: "GitHub", href: "https://github.com/martuafernando", icon: "github" },
 	{
 		label: "LinkedIn",
@@ -24,9 +26,9 @@ export const socials = [
 		href: "https://instagram.com/martuafernando",
 		icon: "instagram",
 	},
-] as const;
+];
 
-export const skills = [
+export const skills: string[] = [
 	"TypeScript",
 	"Python",
 	"Kotlin",
@@ -40,12 +42,12 @@ export const skills = [
 
 export const hero = {
 	status: "Available for select work · Remote",
-	lede: "M Fernando Sibarani — a software architect and fullstack engineer crafting reliable systems across healthcare, education, and enterprise. TypeScript, Python, Kotlin.",
+	lede: "Martua Fernando — a software architect and fullstack engineer crafting reliable systems across healthcare, education, and enterprise. TypeScript, Python, Kotlin.",
 	stats: [
 		{ value: "3+", label: "years shipping" },
 		{ value: "5", label: "featured projects" },
 		{ value: "FHIR / HL7", label: "standards-fluent" },
-	],
+	] satisfies Stat[],
 };
 
 export const about = {
@@ -71,5 +73,5 @@ export const about = {
 			title: "Craft",
 			body: "The last 10% of polish is where good becomes trusted.",
 		},
-	],
+	] satisfies Value[],
 };

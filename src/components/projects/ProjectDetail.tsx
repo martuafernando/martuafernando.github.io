@@ -1,7 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
-import { ArrowLeft, ArrowRight, ArrowUpRight, GitHubIcon } from "./icons";
-import type { Project } from "~/data/projects";
+import { ArrowLeft, ArrowRight, ArrowUpRight, GitHubIcon } from "../ui/icons";
+import { Tag } from "../ui/Tag";
+import { ProjectMedia } from "./ProjectMedia";
+import type { Project } from "~/domain/project";
 
 interface ProjectDetailProps {
 	project: Project;
@@ -89,24 +91,9 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 				</section>
 
 				<section class="wrap proj-cover reveal">
-					{project.thumbnail ? (
-						<div class="media">
-							<img
-								src={project.thumbnail.src}
-								alt={project.thumbnail.alt}
-								width={1600}
-								height={1000}
-								decoding="async"
-							/>
-						</div>
-					) : (
-						<div class="media" style={`background:${project.gradient}`}>
-							<div class="ph-art">
-								<div class="grid-lines" />
-								<div class="label">{project.detailTitle}</div>
-							</div>
-						</div>
-					)}
+					<div class="media">
+						<ProjectMedia project={project} />
+					</div>
 				</section>
 
 				<section class="section wrap">
@@ -116,9 +103,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 								<span class="eyebrow">Tech stack</span>
 								<div class="stack-chips">
 									{project.stack.map((s) => (
-										<span class="tag" key={s}>
-											{s}
-										</span>
+										<Tag key={s}>{s}</Tag>
 									))}
 								</div>
 							</div>

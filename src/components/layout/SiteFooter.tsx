@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { ArrowUpRight, socialIcons } from "./icons";
+import { ArrowUpRight, socialIcons } from "../ui/icons";
 import { profile, socials } from "~/data/site";
 
 /** Contact footer — also the `#contact` scroll target for the nav. */
@@ -41,7 +41,7 @@ export const SiteFooter = component$(() => {
 					</div>
 				</div>
 				<div class="footer-bottom">
-					<span>© 2026 M Fernando Sibarani</span>
+					<span>© 2026 Martua Fernando</span>
 					<span>Designed &amp; built with care · Bandung, ID</span>
 				</div>
 			</div>

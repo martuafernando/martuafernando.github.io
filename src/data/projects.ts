@@ -1,50 +1,4 @@
-export interface ImpactCell {
-	value: string;
-	label: string;
-}
-
-export interface CaseSegment {
-	segLabel: string;
-	heading: string;
-	paragraphs?: string[];
-	checks?: string[];
-	impact?: ImpactCell[];
-}
-
-export interface ProjectThumbnail {
-	src: string;
-	alt: string;
-}
-
-export interface Project {
-	slug: string;
-	/** Card title (may be longer than the detail headline). */
-	title: string;
-	/** Headline shown on the detail page. */
-	detailTitle: string;
-	/** Small kicker, e.g. "Enterprise · 2024". */
-	eyebrow: string;
-	year: string;
-	/** Summary used on the detail page. */
-	summary: string;
-	/** Shorter summary for the work card (falls back to `summary`). */
-	cardSummary?: string;
-	tags: string[];
-	/** Spans the full row in the work grid. */
-	wide?: boolean;
-	/** CSS gradient used for placeholder media. */
-	gradient: string;
-	/** Real image used for the card + cover, when available. */
-	thumbnail?: ProjectThumbnail;
-	/** Concept/sample project — shows a "swap in your own case study" note. */
-	concept?: boolean;
-	role: string;
-	engagement: string;
-	stack: string[];
-	delivered: string[];
-	links: { live?: string; source?: string };
-	caseStudy: CaseSegment[];
-}
+import type { AdjacentProjects, Project } from "~/domain/project";
 
 export const projects: Project[] = [
 	{
@@ -63,6 +17,8 @@ export const projects: Project[] = [
 		thumbnail: {
 			src: "/projects/buncis-pertamina-kontinental/buncis-desktop-thumbnail.jpg",
 			alt: "BUNCIS Pertamina Kontinental dashboard",
+			width: 1600,
+			height: 1000,
 		},
 		role: "Backend & Web Developer",
 		engagement: "Internship · ~3 months",
@@ -126,6 +82,8 @@ export const projects: Project[] = [
 		thumbnail: {
 			src: "/projects/cari-resto/cari-resto-desktop-thumbnail.jpg",
 			alt: "Cari Resto restaurant discovery app",
+			width: 1600,
+			height: 1000,
 		},
 		role: "Designer & Developer",
 		engagement: "Solo project",
@@ -361,6 +319,18 @@ export const projects: Project[] = [
 	},
 ];
 
-export function getProjectIndex(slug: string): number {
-	return projects.findIndex((p) => p.slug === slug);
+export function getProjects(): Project[] {
+	return projects;
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+	return projects.find((p) => p.slug === slug);
+}
+
+export function getAdjacentProjects(slug: string): AdjacentProjects {
+	const index = projects.findIndex((p) => p.slug === slug);
+	return {
+		prev: index > 0 ? projects[index - 1] : null,
+		next: index >= 0 && index < projects.length - 1 ? projects[index + 1] : null,
+	};
 }

@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { ArrowRight } from "../icons";
+import { ArrowRight } from "../ui/icons";
 import { timeline } from "~/data/experiences";
 
 export const Experience = component$(() => {
