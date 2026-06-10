@@ -1,24 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @import "./styles/color.css";
-@import "./styles/animation.css";
-@import "./styles/layout.css";
-
-@plugin "@tailwindcss/typography";
-
-@layer base {
-	body {
-		@apply bg-background text-foreground;
-	}
-
-	a {
-		@apply text-primary;
-	}
-}
-
-@layer components {
-	.hover-underline-animation {
-		@apply relative after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-primary after:left-0 after:bottom-[-8px] after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left after:hover:origin-left after:duration-300;
-	}
-}
+@import "./styles/components.css";

@@ -1,75 +1,95 @@
-@custom-variant dark (&:where(.dark, .dark *));
+/* ============================================================
+   Fernando Sibarani — Portfolio
+   Design tokens. Light = warm paper. Dark = rich espresso.
+   Single restrained accent (cobalt blue) baked from the
+   design handoff's saved configuration (accent #3b6fe0,
+   default theme dark, "mono" type style).
+   ============================================================ */
 
-@theme {
-	--color-background: hsl(0 0% 100%);
-	--color-foreground: hsl(222.2 47.4% 11.2%);
-	--color-muted: hsl(210 40% 96.1%);
-	--color-muted-foreground: hsl(215.4 16.3% 46.9%);
-	--color-popover: hsl(0 0% 100%);
-	--color-popover-foreground: hsl(222.2 47.4% 11.2%);
-	--color-card: hsl(0 0% 100%);
-	--color-card-foreground: hsl(222.2 47.4% 11.2%);
-	--color-border: hsl(214.3 31.8% 91.4%);
-	--color-input: hsl(214.3 31.8% 91.4%);
-	--color-primary: hsl(215.3 19.3% 34.5%);
-	--color-primary-foreground: hsl(0 0% 100%);
-	--color-secondary: hsl(222.2 47.4% 11.2%);
-	--color-secondary-foreground: hsl(0 0% 100%);
-	--color-accent: hsl(210 40% 96.1%);
-	--color-accent-foreground: hsl(222.2 47.4% 11.2%);
-	--color-alert: hsl(0 84.2% 60.2%);
-	--color-alert-foreground: hsl(210 40% 98%);
-	--color-ring: hsl(222.2 47.4% 11.2%);
-	--border-width: 0px;
-	--border-radius: 0.25rem;
-	--shadow-base: 0 1px 2px rgba(0, 0, 0, 0.01);
-	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-	--shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1);
-	--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px
-		rgba(0, 0, 0, 0.1);
-	--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px
-		rgba(0, 0, 0, 0.1);
-	--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px
-		rgba(0, 0, 0, 0.1);
-	--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 1);
-	--shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.01);
-	--transform-press: scale(0.95);
+/* Tailwind dark variant keys off the [data-theme] attribute the
+   pre-paint script and theme toggle set on <html>. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+	--font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+		sans-serif;
+	--font-grotesk: "Space Grotesk", var(--font-sans);
+	--font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+	/* accent — cobalt blue (baked) */
+	--accent: #3b6fe0;
+	--accent-ink: #ffffff;
+	--accent-soft: color-mix(in oklch, var(--accent) 14%, transparent);
+	--accent-line: color-mix(in oklch, var(--accent) 36%, transparent);
+
+	/* neutrals — warm paper */
+	--bg: #faf8f4;
+	--bg-tint: #f3efe7;
+	--surface: #ffffff;
+	--surface-2: #f6f2ea;
+	--text: #1f1b15;
+	--text-soft: #4b463d;
+	--text-muted: #8c8475;
+	--border: color-mix(in oklch, var(--text) 12%, transparent);
+	--border-strong: color-mix(in oklch, var(--text) 22%, transparent);
+	--shadow-color: 30deg 18% 30%;
+	--shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.06),
+		0 2px 6px hsl(var(--shadow-color) / 0.05);
+	--shadow-md: 0 4px 14px hsl(var(--shadow-color) / 0.08),
+		0 12px 32px hsl(var(--shadow-color) / 0.07);
+	--shadow-lg: 0 10px 30px hsl(var(--shadow-color) / 0.1),
+		0 30px 70px hsl(var(--shadow-color) / 0.1);
+
+	/* rhythm */
+	--maxw: 1160px;
+	--gutter: clamp(20px, 5vw, 72px);
+	--section-y: clamp(72px, 12vh, 150px);
+	--radius: 16px;
+	--radius-sm: 10px;
+	--radius-lg: 26px;
+
+	/* type scale — "mono" style baked in */
+	--display-family: var(--font-grotesk);
+	--display-weight: 600;
+	--display-tracking: -0.03em;
+	--eyebrow-family: var(--font-mono);
+	--hero-size: clamp(2.9rem, 8.5vw, 6.6rem);
+	--h2-size: clamp(2rem, 4.4vw, 3.25rem);
+
+	color-scheme: light;
+
+	/* --- Tailwind @theme bridge (so utility classes still resolve) --- */
+	--color-background: var(--bg);
+	--color-foreground: var(--text);
+	--color-card: var(--surface);
+	--color-border: var(--border);
+	--color-accent: var(--accent);
 }
 
-@layer theme {
-	.dark {
-		--color-background: hsl(222.2 84% 4.9%);
-		--color-foreground: hsl(210 40% 98%);
-		--color-muted: hsl(217.2 32.6% 17.5%);
-		--color-muted-foreground: hsl(215 20.2% 65.1%);
-		--color-popover: hsl(222.2 84% 4.9%);
-		--color-popover-foreground: hsl(210 40% 98%);
-		--color-card: hsl(222.2 84% 4.9%);
-		--color-card-foreground: hsl(210 40% 98%);
-		--color-border: hsl(217.2 32.6% 17.5%);
-		--color-input: hsl(217.2 32.6% 17.5%);
-		--color-primary: hsl(215.3 19.3% 34.5%);
-		--color-primary-foreground: hsl(0 0% 100%);
-		--color-secondary: hsl(210 40% 96.1%);
-		--color-secondary-foreground: hsl(0 0% 0%);
-		--color-accent: hsl(217.2 32.6% 17.5%);
-		--color-accent-foreground: hsl(210 40% 98%);
-		--color-alert: hsl(0 84.2% 60.2%);
-		--color-alert-foreground: hsl(210 40% 98%);
-		--color-ring: hsl(212.7 26.8% 83.9%);
-		--border-width: 0px;
-		--border-radius: 0.25rem;
-		--shadow-base: 0 1px 2px rgba(0, 0, 0, 0.01);
-		--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-		--shadow: 0 1px 4px rgba(0, 0, 0, 0.1), 0 1px 5px rgba(0, 0, 0, 0.1);
-		--shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px
-			rgba(0, 0, 0, 0.1);
-		--shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px
-			rgba(0, 0, 0, 0.1);
-		--shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px
-			rgba(0, 0, 0, 0.1);
-		--shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 1);
-		--shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.01);
-		--transform-press: scale(0.95);
-	}
+/* ---------- Dark / espresso ---------- */
+[data-theme="dark"] {
+	/* accent stays cobalt blue across themes (saved default) */
+	--accent: #3b6fe0;
+	--accent-ink: #ffffff;
+	--accent-soft: color-mix(in oklch, var(--accent) 20%, transparent);
+	--accent-line: color-mix(in oklch, var(--accent) 46%, transparent);
+
+	--bg: #16140f;
+	--bg-tint: #1b1812;
+	--surface: #211d16;
+	--surface-2: #2a251c;
+	--text: #f3ede1;
+	--text-soft: #c9c1b1;
+	--text-muted: #938b7b;
+	--border: color-mix(in oklch, var(--text) 14%, transparent);
+	--border-strong: color-mix(in oklch, var(--text) 26%, transparent);
+	--shadow-color: 28deg 30% 3%;
+	--shadow-sm: 0 1px 2px hsl(var(--shadow-color) / 0.4),
+		0 2px 8px hsl(var(--shadow-color) / 0.35);
+	--shadow-md: 0 6px 20px hsl(var(--shadow-color) / 0.45),
+		0 16px 40px hsl(var(--shadow-color) / 0.4);
+	--shadow-lg: 0 14px 38px hsl(var(--shadow-color) / 0.5),
+		0 40px 90px hsl(var(--shadow-color) / 0.5);
+
+	color-scheme: dark;
 }

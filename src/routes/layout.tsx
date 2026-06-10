@@ -1,56 +1,132 @@
-import { $, component$, Slot, useOnWindow, useSignal } from "@builder.io/qwik";
-import type { RequestHandler } from "@builder.io/qwik-city";
-import { Header, TabBar } from "~/components/ui";
-import { useDebouncer } from "~/hooks/useDebouncer";
-import { FooterSection } from "~/components/sections/FooterSection";
+import { component$, Slot, useVisibleTask$ } from "@builder.io/qwik";
+import { type RequestHandler, useLocation } from "@builder.io/qwik-city";
+import { SiteHeader } from "~/components/SiteHeader";
+import { SiteFooter } from "~/components/SiteFooter";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
-	// Control caching for this request for best performance and to reduce hosting costs:
-	// https://qwik.dev/docs/caching/
 	cacheControl({
-		// Always serve a cached response by default, up to a week stale
 		staleWhileRevalidate: 60 * 60 * 24 * 7,
-		// Max once every 5 seconds, revalidate on the server to get a fresh version of this page
 		maxAge: 5,
 	});
 };
 
 export default component$(() => {
-	const isScrollingDown = useSignal<boolean>(false);
-	// store last Y to get the direction
-	// if current Y > lastScrollY the scroll go down
-	const lastScrollY = useSignal<number>(0);
+	const loc = useLocation();
 
-	useOnWindow(
-		"scroll",
-		useDebouncer(
-			$(() => {
-				const currentY = window.scrollY;
-				isScrollingDown.value = currentY > lastScrollY.value;
-				lastScrollY.value = currentY;
-			}),
-			50,
-		),
-	);
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(({ track, cleanup }) => {
+		// Re-arm motion + observers on every client-side navigation.
+		track(() => loc.url.pathname);
+
+		const reduce = window.matchMedia(
+			"(prefers-reduced-motion: reduce)",
+		).matches;
+
+		document.body.classList.add("page-enter");
+
+		// Hero stagger entrance (transition-based, final state is always visible).
+		const heroEl = document.querySelector(".hero");
+		if (heroEl && !reduce) {
+			heroEl.classList.add("armed");
+			void (heroEl as HTMLElement).offsetWidth;
+			heroEl.classList.add("entered");
+		}
+
+		const reveals = Array.from(
+			document.querySelectorAll<HTMLElement>(".reveal"),
+		);
+
+		// Leave everything visible (the default) when we won't animate.
+		if (reduce || !("IntersectionObserver" in window)) {
+			return;
+		}
+
+		// Opt in to the hidden start state now that JS is running, then reveal
+		// above-the-fold elements immediately and observe the rest on scroll.
+		document.documentElement.classList.add("reveal-ready");
+		void document.documentElement.offsetWidth; // commit hidden state
+
+		const revealIO = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((en) => {
+					if (en.isIntersecting) {
+						en.target.classList.add("in");
+						revealIO.unobserve(en.target);
+					}
+				});
+			},
+			{ threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+		);
+		reveals.forEach((el) => {
+			const r = el.getBoundingClientRect();
+			const inView = r.top < window.innerHeight && r.bottom > 0;
+			if (inView) {
+				el.classList.add("in");
+			} else {
+				revealIO.observe(el);
+			}
+		});
+
+		// Scrollspy — highlight the active section in the nav.
+		const navAnchors = Array.from(
+			document.querySelectorAll<HTMLAnchorElement>('.nav-links a[href*="#"]'),
+		);
+		const sections = navAnchors
+			.map((a) => {
+				const href = a.getAttribute("href") ?? "";
+				const hash = href.slice(href.indexOf("#"));
+				return hash.length > 1 ? document.querySelector(hash) : null;
+			})
+			.filter((el): el is Element => Boolean(el));
+
+		let spy: IntersectionObserver | undefined;
+		if (sections.length) {
+			spy = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((en) => {
+						if (!en.isIntersecting) return;
+						const id = `#${en.target.id}`;
+						navAnchors.forEach((a) =>
+							a.classList.toggle(
+								"active",
+								(a.getAttribute("href") ?? "").endsWith(id),
+							),
+						);
+					});
+				},
+				{ rootMargin: "-45% 0px -50% 0px" },
+			);
+			sections.forEach((s) => spy?.observe(s));
+		}
+
+		// Subtle pointer parallax on the hero orbs.
+		const orbs = Array.from(document.querySelectorAll<HTMLElement>(".hero-orb"));
+		const onMove = (e: PointerEvent) => {
+			const cx = e.clientX / window.innerWidth - 0.5;
+			const cy = e.clientY / window.innerHeight - 0.5;
+			orbs.forEach((o, i) => {
+				const d = (i + 1) * 14;
+				o.style.transform = `translate(${cx * d}px,${cy * d}px)`;
+			});
+		};
+		if (orbs.length) {
+			window.addEventListener("pointermove", onMove, { passive: true });
+		}
+
+		cleanup(() => {
+			revealIO.disconnect();
+			spy?.disconnect();
+			window.removeEventListener("pointermove", onMove);
+		});
+	});
 
 	return (
 		<>
-			<Header
-				class={[
-					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out bg-background",
-					isScrollingDown.value ? "-top-24" : "top-0",
-				]}
-			/>
-			<main class="min-h-screen mt-24 mb-48">
+			<SiteHeader />
+			<main id="top">
 				<Slot />
 			</main>
-			<FooterSection class="px-4 sm:px-0" />
-			<TabBar
-				class={[
-					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in sm:hidden",
-					isScrollingDown.value ? "-bottom-24" : "bottom-4",
-				]}
-			/>
+			<SiteFooter />
 		</>
 	);
 });
