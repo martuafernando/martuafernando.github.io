@@ -1148,9 +1148,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	opacity: 0;
 	transform: translateY(26px);
 }
-.reveal-ready .reveal.in {
-	opacity: 1;
-	transform: none;
+.reveal-ready .reveal[data-revealed="true"] { 
+    opacity: 1; 
+    transform: translateY(0); 
 }
 @media (prefers-reduced-motion: reduce) {
 	.reveal-ready .reveal {

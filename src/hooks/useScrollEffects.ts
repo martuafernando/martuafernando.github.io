@@ -48,7 +48,7 @@ export const useScrollEffects = () => {
 			(entries) => {
 				entries.forEach((en) => {
 					if (en.isIntersecting) {
-						en.target.classList.add("in");
+						en.target.setAttribute("data-revealed", "true");
 						revealIO.unobserve(en.target);
 					}
 				});
@@ -59,7 +59,7 @@ export const useScrollEffects = () => {
 			const r = el.getBoundingClientRect();
 			const inView = r.top < window.innerHeight && r.bottom > 0;
 			if (inView) {
-				el.classList.add("in");
+				el.setAttribute("data-revealed", "true");
 			} else {
 				revealIO.observe(el);
 			}
