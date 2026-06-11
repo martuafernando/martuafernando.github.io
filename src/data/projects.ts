@@ -36,10 +36,12 @@ export const projects: Project[] = [
 			height: 1000
 		},
 		gallery: [
-			placeholder("BUNCIS screenshot 1"),
-			placeholder("BUNCIS screenshot 2"),
-			placeholder("BUNCIS screenshot 3"),
-			placeholder("BUNCIS screenshot 4"),
+			{
+				src: "/images/projects/buncis-pertamina-kontinental/surat-keterangan-project-buncis.webp",
+				alt: "Surat Keterangan project BUNCIS from Pertamina Trans Kontinental",
+				width: 620,
+				height: 802
+			}
 		],
 		role: "Backend & Web Developer",
 		engagement: {
