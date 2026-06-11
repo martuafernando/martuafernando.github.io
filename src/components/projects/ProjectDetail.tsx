@@ -186,7 +186,11 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 							<span class="eyebrow">{t(ui.gallery, l)}</span>
 							<div class="gallery-grid" style="margin-top:1.4rem">
 								{project.gallery.map((shot, i) => (
-									<div class={["shot", i === 0 && "tall"]} key={i}>
+									<div
+										class="shot"
+										style={{ "--ar": `${shot.width} / ${shot.height}` }}
+										key={i}
+									>
 										<img
 											src={shot.src}
 											alt={shot.alt}

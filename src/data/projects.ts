@@ -147,14 +147,28 @@ export const projects: Project[] = [
 		cover: {
 			src: "/images/projects/cari-resto/cover.webp",
 			alt: "Cari Resto app on a phone showing nearby restaurants on a map",
-			width: 1600,
-			height: 1000
+			width: 900,
+			height: 1600
 		},
 		gallery: [
-			placeholder("Cari Resto screenshot 1"),
-			placeholder("Cari Resto screenshot 2"),
-			placeholder("Cari Resto screenshot 3"),
-			placeholder("Cari Resto screenshot 4"),
+			{
+				src: "/images/projects/cari-resto/home-page.webp",
+				alt: "Cari Resto home page showing search and filter UI",
+				width: 900,
+				height: 1600
+			},
+			{
+				src: "/images/projects/cari-resto/detail-page.webp",
+				alt: "Cari Resto detail page showing restaurant information",
+				width: 1600,
+				height: 900
+			},
+			{
+				src: "/images/projects/cari-resto/favorite-page.webp",
+				alt: "Cari Resto favorite page showing saved restaurants",
+				width: 1600,
+				height: 900
+			},
 		],
 		role: "Designer & Developer",
 		engagement: {
