@@ -29,7 +29,12 @@ export const projects: Project[] = [
 		},
 		tags: ["Python", "Odoo", "PostgreSQL", "REST API"],
 		wide: true,
-		cover: placeholder("BUNCIS Pertamina Kontinental dashboard"),
+		cover: {
+			src: "/images/projects/buncis-pertamina-kontinental/cover.webp",
+			alt: "BUNCIS web app on a laptop and Android app on a phone",
+			width: 1600,
+			height: 1000
+		},
 		gallery: [
 			placeholder("BUNCIS screenshot 1"),
 			placeholder("BUNCIS screenshot 2"),
@@ -139,7 +144,12 @@ export const projects: Project[] = [
 			id: "Aplikasi pencari restoran yang cepat tanpa framework — cari, filter, dan petakan tempat makan terdekat, tanpa langkah build dan dengan pemuatan instan.",
 		},
 		tags: ["HTML5", "CSS3", "JavaScript"],
-		cover: placeholder("Cari Resto restaurant discovery app"),
+		cover: {
+			src: "/images/projects/cari-resto/cover.webp",
+			alt: "Cari Resto app on a phone showing nearby restaurants on a map",
+			width: 1600,
+			height: 1000
+		},
 		gallery: [
 			placeholder("Cari Resto screenshot 1"),
 			placeholder("Cari Resto screenshot 2"),
