@@ -54,13 +54,13 @@ export const hero = {
 	} satisfies Localized,
 
 	headlineHtml: {
-		en: 'Building reliable<br />software &amp; <span class="accent">systems.</span>',
-		id: 'Membangun perangkat lunak<br />dan <span class="accent">sistem yang andal.</span>',
+		en: 'Building software and <span class="accent">reliable systems.</span>',
+		id: 'Membangun software dan<br /> <span class="accent">sistem yang andal.</span>',
 	} satisfies Localized,
 
 	lede: {
-		en: "Fernando is a software engineer focused on backend systems, data engineering, and scalable applications. He enjoys building reliable software and exploring distributed systems, infrastructure, and blockchain technologies.",
-		id: "Fernando adalah software engineer yang berfokus pada sistem backend, data engineering, dan aplikasi yang skalabel. Ia senang membangun perangkat lunak yang andal serta mengeksplorasi sistem terdistribusi, infrastruktur, dan teknologi blockchain.",
+		en: "Fernando is a software engineer focused on scalable applications, data, systems, and engineering. He enjoys building reliable software and exploring distributed systems, infrastructure, and new technologies.",
+		id: "Fernando adalah software engineer yang berfokus pada aplikasi, data, sistem, dan engineering yang skalabel. Ia senang membangun perangkat lunak yang andal serta mengeksplorasi sistem terdistribusi, infrastruktur, dan teknologi baru.",
 	} satisfies Localized,
 
 	stats: [
@@ -68,7 +68,7 @@ export const hero = {
 			value: "3+",
 			label: {
 				en: "years building software",
-				id: "tahun membangun software",
+				id: "tahun pengalaman",
 			},
 		},
 		{
@@ -79,7 +79,7 @@ export const hero = {
 			},
 		},
 		{
-			value: "Backend",
+			value: "Fullstack",
 			label: {
 				en: "systems-focused",
 				id: "fokus sistem",
@@ -109,11 +109,11 @@ export const about = {
 	paragraphs: [
 		{
 			en: "I'm Fernando — a software engineer who enjoys building reliable systems from end to end. My experience spans backend services, web applications, data processing, and enterprise software. I care about designing software that is maintainable, observable, and easy to evolve over time.",
-			id: "Saya Fernando — seorang software engineer yang senang membangun sistem yang andal dari awal hingga akhir. Pengalaman saya mencakup layanan backend, aplikasi web, pemrosesan data, dan perangkat lunak enterprise. Saya peduli pada desain software yang mudah dipelihara, mudah dipantau, dan dapat berkembang seiring waktu.",
+			id: "Saya Fernando — seorang software engineer yang senang membangun sistem yang andal secara end-to-end. Pengalaman saya mencakup layanan backend, aplikasi web, pemrosesan data, dan perangkat lunak enterprise. Saya concern pada desain sistem yang mudah dipelihara, mudah dipantau, dan dapat berkembang seiring waktu.",
 		},
 		{
-			en: "I enjoy understanding how systems work beneath the surface—from database design and APIs to infrastructure and distributed systems. Outside of work, I spend time exploring technologies such as Kubernetes, data engineering, and Bitcoin infrastructure through personal projects and experiments.",
-			id: "Saya senang memahami cara kerja sistem di balik layar—mulai dari desain database dan API hingga infrastruktur dan sistem terdistribusi. Di luar pekerjaan, saya mengeksplorasi teknologi seperti Kubernetes, data engineering, dan infrastruktur Bitcoin melalui proyek pribadi dan berbagai eksperimen.",
+			en: "I enjoy understanding how systems work beneath the surface—from database design and APIs to infrastructure and distributed systems. Outside of work, I spend time exploring technologies such as Kubernetes, data engineering, and best practices through personal projects and experiments.",
+			id: "Saya senang memahami cara kerja sistem di balik layar—mulai dari desain database, API hingga infrastruktur dan sistem terdistribusi. Di luar pekerjaan, saya mengeksplorasi teknologi seperti Kubernetes, data engineering, dan best practice melalui proyek pribadi dan berbagai eksperimen.",
 		},
 	] satisfies Localized[],
 
@@ -125,8 +125,8 @@ export const about = {
 				id: "Keandalan",
 			},
 			body: {
-				en: "Software should behave predictably under real-world conditions.",
-				id: "Perangkat lunak harus bekerja secara konsisten dalam kondisi nyata.",
+				en: "Software should work consistently according to what's needed.",
+				id: "Perangkat lunak harus bekerja secara konsisten sesuai kebutuhan.",
 			},
 		},
 		{
@@ -136,7 +136,7 @@ export const about = {
 				id: "Kejelasan",
 			},
 			body: {
-				en: "Simple designs and readable code scale better than complexity.",
+				en: "Simple designs and readable code scale better than unnecessary complexity.",
 				id: "Desain sederhana dan kode yang mudah dibaca lebih mudah berkembang dibanding kompleksitas yang tidak perlu.",
 			},
 		},
