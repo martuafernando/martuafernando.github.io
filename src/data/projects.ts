@@ -17,15 +17,15 @@ export const projects: Project[] = [
 		slug: "buncis-pertamina-kontinental",
 		title: "BUNCIS — Pertamina Kontinental",
 		detailTitle: "BUNCIS",
-		eyebrow: "Enterprise · 2024",
-		year: "2024",
+		eyebrow: "Freelance · 2023",
+		year: "2023",
 		summary: {
-			en: "A Bunker Calculation & Identification System for Pertamina Trans Kontinental — automating Remain-On-Board fuel calculations across web and Android.",
-			id: "Sistem Perhitungan & Identifikasi Bunker untuk Pertamina Trans Kontinental — mengotomatiskan perhitungan bahan bakar Remain-On-Board di web dan Android.",
+			en: "A Bunker Calculation & Identification System for PT Pertamina Trans Kontinental — automating Remain-On-Board fuel calculations on Odoo.",
+			id: "Sistem Perhitungan Bunker untuk PT Pertamina Trans Kontinental — mengotomatiskan perhitungan bahan bakar Remain-On-Board di Odoo.",
 		},
 		cardSummary: {
-			en: "An automated Remain-On-Board (ROB) bunker calculation system built on Odoo for a Pertamina subsidiary, running across web and Android.",
-			id: "Sistem perhitungan bunker Remain-On-Board (ROB) otomatis berbasis Odoo untuk anak perusahaan Pertamina, berjalan di web dan Android.",
+			en: "An automated Remain-On-Board (ROB) bunker calculation system built on Odoo for a Pertamina subsidiary, replacing a slow manual process.",
+			id: "Sistem perhitungan bunker Remain-On-Board (ROB) otomatis berbasis Odoo untuk anak perusahaan Pertamina, menggantikan proses manual yang lambat.",
 		},
 		tags: ["Python", "Odoo", "PostgreSQL", "REST API"],
 		wide: true,
@@ -43,10 +43,10 @@ export const projects: Project[] = [
 				height: 802
 			}
 		],
-		role: "Backend & Web Developer",
+		role: "Back End Developer",
 		engagement: {
-			en: "Internship · ~3 months",
-			id: "Magang · ~3 bulan",
+			en: "Freelance · Aug–Nov 2023 (~4 months)",
+			id: "Freelance · Agu–Nov 2023 (~4 bulan)",
 		},
 		stack: ["Python", "Odoo", "PostgreSQL", "REST API", "QWeb"],
 		delivered: {
@@ -67,13 +67,13 @@ export const projects: Project[] = [
 		caseStudy: [
 			{
 				segLabel: { en: "The problem", id: "Masalahnya" },
-				heading: { en: "Why it needed building", id: "Mengapa perlu dibangun" },
+				heading: { en: "Why it needed building", id: "Latar Belakang" },
 				paragraphs: {
 					en: [
-						"Pertamina Trans Kontinental's Surabaya port needed Remain-On-Board (ROB) bunker fuel figures calculated and reconciled reliably — work that spanned the office and the field, and was slow and error-prone by hand. They needed one system, reachable from both web and Android, that their Odoo stack could grow into.",
+						"PT Pertamina Trans Kontinental's Surabaya port needed Remain-On-Board (ROB) bunker fuel figures calculated and reconciled reliably — work that was slow and error-prone by hand. They needed one system, built on their Odoo stack, to automate the calculation and make it faster and more dependable than the manual method.",
 					],
 					id: [
-						"Pelabuhan Surabaya milik Pertamina Trans Kontinental membutuhkan angka bahan bakar bunker Remain-On-Board (ROB) yang dihitung dan direkonsiliasi dengan andal — pekerjaan yang mencakup kantor dan lapangan, lambat dan rawan kesalahan jika dilakukan manual. Mereka butuh satu sistem, yang dapat diakses dari web maupun Android, yang dapat tumbuh di atas tumpukan Odoo mereka.",
+						"PT Pertamina Trans Kontinental membutuhkan sistem untuk menghitung angka bahan bakar bunker Remain-On-Board (ROB) andal — perhitungan manual menjadi masalah karena tidak efisien dan rawan kesalahan. Mereka membutuhkan sistem untuk mengotomatiskan perhitungan dan membuatnya lebih cepat dan lebih andal daripada metode manual yang kompleks.",
 					],
 				},
 			},
@@ -81,20 +81,20 @@ export const projects: Project[] = [
 				segLabel: { en: "My role", id: "Peran saya" },
 				heading: {
 					en: "What I contributed",
-					id: "Apa yang saya kontribusikan",
+					id: "Kontribusi",
 				},
 				paragraphs: {
 					en: [
-						"As Backend & Web Developer I worked inside Odoo: building the RESTful APIs that back the Android client, crafting the web application, and collaborating with the backend team to keep the system performant across the roughly three-month engagement before deploying it ourselves.",
+						"As a freelance Back End Developer I built the system on Odoo and Python: initiating and implementing the business automation that drives the Remain-On-Board (ROB) calculation, plus the RESTful APIs behind the Android client. The goal was to replace a slow, error-prone manual process with something faster and more reliable — operations software where a wrong number costs more than a missing feature.",
 					],
 					id: [
-						"Sebagai Backend & Web Developer saya bekerja di dalam Odoo: membangun RESTful API yang menopang klien Android, menyusun aplikasi web, dan berkolaborasi dengan tim backend untuk menjaga performa sistem selama keterlibatan sekitar tiga bulan sebelum kami melakukan deployment sendiri.",
+						"Sebagai Back End Developer, saya merancang dan membangun sistem menggunakan Odoo dan Python untuk mengotomatisasi proses bisnis yang dapat melakukan perhitungan Remain-On-Board (ROB), serta membuat RESTful API untuk keperluan aplikasi Android. Tujuannya adalah menggantikan proses manual yang lambat dan rawan kesalahan dengan sistem yang lebih cepat, andal, dan dapat diakses dari beberapa lokasi sekaligus",
 					],
 				},
 			},
 			{
 				segLabel: { en: "The build", id: "Pembangunan" },
-				heading: { en: "What we built", id: "Yang kami bangun" },
+				heading: { en: "What I built", id: "Yang saya bangun" },
 				checks: {
 					en: [
 						"RESTful APIs on Odoo powering the Android client.",
@@ -103,7 +103,7 @@ export const projects: Project[] = [
 						"Backend and web deployed to a VPS.",
 					],
 					id: [
-						"RESTful API di Odoo yang menggerakkan klien Android.",
+						"RESTful API di Odoo untuk support aplikasi Android.",
 						"Aplikasi web untuk perhitungan dan identifikasi bunker.",
 						"Logika perhitungan Remain-On-Board (ROB) otomatis.",
 						"Backend dan web yang di-deploy ke VPS.",
@@ -121,15 +121,15 @@ export const projects: Project[] = [
 							id: "platform (web + Android)",
 						},
 					},
-					{ value: "~3 mo", label: { en: "to delivery", id: "hingga rilis" } },
+					{ value: "~4 mo", label: { en: "to delivery", id: "hingga rilis" } },
 					{ value: "VPS", label: { en: "self-deployed", id: "deploy mandiri" } },
 				],
 				paragraphs: {
 					en: [
-						"Working inside a mature ERP taught me to design with the grain of an existing system rather than against it — extending Odoo's models and respecting its conventions kept the work maintainable. It also sharpened my instinct for data integrity: in operations software, a wrong number is worse than a missing feature.",
+						"This automation significantly speeds up ROB calculations compared to the manual method. Calculations that previously took several minutes can now be performed instantly. The calculation results from the system also produce figures that are 100% consistent with manual calculations, so the system's results can be relied upon for operations.",
 					],
 					id: [
-						"Bekerja di dalam ERP yang matang mengajari saya untuk merancang searah dengan sistem yang ada, bukan melawannya — memperluas model Odoo dan menghormati konvensinya membuat pekerjaan tetap mudah dipelihara. Ini juga mempertajam insting saya soal integritas data: dalam perangkat lunak operasional, angka yang salah lebih buruk daripada fitur yang hilang.",
+						"Otomatisasi ini secara signifikan mempercepat perhitungan ROB dibandingkan metode manual. Perhitungan yang sebelumnya perlu dilakukan selama beberapa menit hingga jaminan kini dapat dilakukan secara instan. Hasil perhitungan dari sistem juga menghasilkan angka yang 100% sesuai dengan perhitungan manual sehingga hasil perhitungan sistem ini dapat diandalkan untuk operasional.",
 					],
 				},
 			},
@@ -199,13 +199,13 @@ export const projects: Project[] = [
 		caseStudy: [
 			{
 				segLabel: { en: "The problem", id: "Masalahnya" },
-				heading: { en: "Why it needed building", id: "Mengapa perlu dibangun" },
+				heading: { en: "Why it needed building", id: "Latar Belakang" },
 				paragraphs: {
 					en: [
-						"Finding a good place to eat nearby usually means juggling several heavy apps. I wanted to see how far a thoughtful, hand-built web app could go with no framework at all — fast to load, easy to use, and honest about what's actually around you.",
+						"Finding a good place to eat nearby usually means switching between several heavy apps. The need for something simple with easy, fast access makes for an interesting case study for implementing and learning about PWAs..",
 					],
 					id: [
-						"Mencari tempat makan yang enak di sekitar biasanya berarti berpindah-pindah beberapa aplikasi berat. Saya ingin melihat sejauh apa aplikasi web buatan tangan yang dipikirkan matang bisa berjalan tanpa framework sama sekali — cepat dimuat, mudah digunakan, dan jujur tentang apa yang benar-benar ada di sekitar Anda.",
+						"Mencari tempat makan yang enak di sekitar biasanya berarti berpindah-pindah beberapa aplikasi berat. Kebutuhan yang sederhana dan akses yang mudah dan cepat menjadi case study menarik untuk implementasi dan mempelajari PWA.",
 					],
 				},
 			},
@@ -217,10 +217,10 @@ export const projects: Project[] = [
 				},
 				paragraphs: {
 					en: [
-						"This was a solo build: I designed the interface and wrote every line of HTML, CSS, and vanilla JavaScript. I focused on a search-and-filter flow that feels instant, a layout that holds up from phone to desktop, and a map view that orients you quickly.",
+						"This is an solo project: I designed the interface and built the website using HTML, CSS, and vanilla JavaScript. I focused on implementing PWA technology and an instant search-and-filter flow, with a responsive layout from mobile to desktop.",
 					],
 					id: [
-						"Ini proyek mandiri: saya merancang antarmuka dan menulis setiap baris HTML, CSS, dan JavaScript murni. Saya fokus pada alur pencarian-dan-filter yang terasa instan, tata letak yang konsisten dari ponsel hingga desktop, dan tampilan peta yang cepat membuat Anda berorientasi.",
+						"Ini proyek mandiri: saya merancang antarmuka dan membangun web dengan menggunakan HTML, CSS, dan vanila JavaScript. Saya fokus pada implementasi teknologi PWA dan alur pencarian-dan-filter yang instan, layout yang responsif dari ponsel hingga desktop.",
 					],
 				},
 			},
@@ -229,15 +229,13 @@ export const projects: Project[] = [
 				heading: { en: "What I built", id: "Yang saya bangun" },
 				checks: {
 					en: [
+						"A Progressive Web App (PWA) with offline support and installability.",
 						"A responsive search + filter interface with no framework overhead.",
-						"Location-aware results using the browser Geolocation API.",
-						"A lightweight map view to place results in context.",
 						"A mobile-first layout that stays fast on slow connections.",
 					],
 					id: [
+						"Progressive Web App (PWA) dengan dukungan offline dan dapat diinstal.",
 						"Antarmuka pencarian + filter responsif tanpa beban framework.",
-						"Hasil yang sadar lokasi menggunakan Geolocation API browser.",
-						"Tampilan peta ringan untuk menempatkan hasil dalam konteks.",
 						"Tata letak mobile-first yang tetap cepat di koneksi lambat.",
 					],
 				},
