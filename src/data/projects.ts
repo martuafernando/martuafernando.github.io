@@ -1,16 +1,4 @@
-import type {
-	AdjacentProjects,
-	Project,
-	ProjectImage,
-} from "~/domain/project";
-
-/** Shared dummy media — swap each `src` for a real asset later. */
-const placeholder = (alt: string): ProjectImage => ({
-	src: "/images/placeholder.svg",
-	alt,
-	width: 1600,
-	height: 1000,
-});
+import type { AdjacentProjects, Project } from "~/domain/project";
 
 export const projects: Project[] = [
 	{
