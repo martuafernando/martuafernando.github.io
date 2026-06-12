@@ -44,5 +44,13 @@
     "vite-tsconfig-paths": "^4.3.2"
   },
   "dependencies": {},
-  "nx": {}
+  "nx": {},
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
+      "esbuild",
+      "nx",
+      "sharp"
+    ]
+  }
 }
