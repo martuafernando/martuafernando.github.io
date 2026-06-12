@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-style="mono">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fernando Sibarani — Architect & Fullstack Engineer</title>
+<meta name="description" content="M Fernando Sibarani — software architect and fullstack engineer building reliable systems for healthcare, education, and enterprise." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="assets/styles.css" />
+<script>
+/* set theme/style/accent before paint to avoid flash */
+(function () {
+  try {
+    var ls = localStorage, el = document.documentElement;
+    var t = ls.getItem('fs-theme');
+    if (!t) { var def = ls.getItem('fs-theme-default') || 'system'; t = def === 'system' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : def; }
+    el.dataset.theme = t;
+    el.setAttribute('lang', ls.getItem('fs-lang') || 'en');
+    var st = ls.getItem('fs-style'); if (st) el.dataset.style = st;
+    var ac = ls.getItem('fs-accent'); if (ac) el.style.setProperty('--accent', ac);
+    var ai = ls.getItem('fs-accent-ink'); if (ai) el.style.setProperty('--accent-ink', ai);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Fernando Sibarani — home">
+      <span class="mark">FS</span>
+      <span>Fernando Sibarani</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#work" data-en="Work" data-id="Karya">Work</a>
+      <a href="#about" data-en="About" data-id="Tentang">About</a>
+      <a href="#experience" data-en="Experience" data-id="Pengalaman">Experience</a>
+      <a href="#contact" data-en="Contact" data-id="Kontak">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-soft nav-cta-desktop" href="#contact" data-en="Get in touch" data-id="Hubungi saya">Get in touch</a>
+      <button class="lang-toggle" type="button" aria-label="Language"><span class="l-en">EN</span><span class="l-id">ID</span></button>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-orb a"></div>
+    <div class="hero-orb b"></div>
+    <div class="wrap">
+      <span class="hero-status" data-enter style="--i:0" data-en-html='<span class="dot"></span> Available for select work · Remote' data-id-html='<span class="dot"></span> Tersedia untuk proyek pilihan · Remote'><span class="dot"></span> Available for select work · Remote</span>
+      <h1 data-enter style="--i:1" data-en-html='I architect &amp; build<br />software that <span class="accent">holds up.</span>' data-id-html='Saya merancang &amp; membangun<br />perangkat lunak yang <span class="accent">andal.</span>'>I architect &amp; build<br />software that <span class="accent">holds up.</span></h1>
+      <p class="hero-lede" data-enter style="--i:2" data-en="M Fernando Sibarani — a software architect and fullstack engineer crafting reliable systems across healthcare, education, and enterprise. TypeScript, Python, Kotlin." data-id="M Fernando Sibarani — arsitek perangkat lunak dan fullstack engineer yang membangun sistem andal di bidang kesehatan, pendidikan, dan enterprise. TypeScript, Python, Kotlin.">M Fernando Sibarani — a software architect and fullstack engineer crafting reliable systems across healthcare, education, and enterprise. TypeScript, Python, Kotlin.</p>
+      <div class="hero-cta" data-enter style="--i:3">
+        <a class="btn btn-primary" href="#work"><span data-en="View Work" data-id="Lihat Karya">View Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="tlink" href="#contact"><span data-en="Or get in touch" data-id="Atau hubungi saya">Or get in touch</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <div class="hero-meta" data-enter style="--i:4">
+        <div class="stat"><b>3+</b><span data-en="years shipping" data-id="tahun berkarya">years shipping</span></div>
+        <div class="stat"><b>5</b><span data-en="featured projects" data-id="proyek unggulan">featured projects</span></div>
+        <div class="stat"><b>FHIR / HL7</b><span data-en="standards-fluent" data-id="fasih standar">standards-fluent</span></div>
+      </div>
+    </div>
+    <div class="marquee" data-enter style="--i:5" aria-hidden="true">
+      <div class="marquee-track">
+        <span>TypeScript</span><span>Python</span><span>Kotlin</span><span>Odoo</span><span>System Architecture</span><span>FHIR / HL7</span><span>PostgreSQL</span><span>React</span><span>Node.js</span>
+        <span>TypeScript</span><span>Python</span><span>Kotlin</span><span>Odoo</span><span>System Architecture</span><span>FHIR / HL7</span><span>PostgreSQL</span><span>React</span><span>Node.js</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="about-photo reveal">
+        <image-slot id="profile-photo" shape="rounded" radius="26" placeholder="Drop your photo" style="background:linear-gradient(150deg,#c98b6d,#7d4a3a);"></image-slot>
+        <div class="photo-tag"><span class="ring"></span> Bandung · Indonesia</div>
+      </div>
+      <div class="about-body">
+        <span class="eyebrow reveal" data-en="About" data-id="Tentang">About</span>
+        <h2 class="reveal" style="--d:60ms" data-en="Engineer first, but I sweat the details others skip." data-id="Engineer sejati, tapi saya cermat pada detail yang sering dilewatkan.">Engineer first, but I sweat the details others skip.</h2>
+        <p class="reveal" style="--d:120ms" data-en-html='I&#39;m Fernando — I design and build software end to end, from data models and APIs to the interface people actually touch. My work spans <strong>electronic health records</strong> built to the FHIR/HL7 standard, <strong>educational platforms</strong>, and <strong>enterprise systems</strong> on Odoo.' data-id-html='Saya Fernando — saya merancang dan membangun perangkat lunak secara menyeluruh, dari model data dan API hingga antarmuka yang digunakan orang. Pekerjaan saya mencakup <strong>rekam medis elektronik</strong> sesuai standar FHIR/HL7, <strong>platform pendidikan</strong>, dan <strong>sistem enterprise</strong> di Odoo.'>I'm Fernando — I design and build software end to end, from data models and APIs to the interface people actually touch. My work spans <strong>electronic health records</strong> built to the FHIR/HL7 standard, <strong>educational platforms</strong>, and <strong>enterprise systems</strong> on Odoo.</p>
+        <p class="reveal" style="--d:180ms" data-en-html='I started in product design before moving into engineering, so I think in systems <em>and</em> in users. I care about code that&#39;s reviewable, architectures that won&#39;t surprise you at 3am, and interfaces that feel quiet and obvious.' data-id-html='Saya memulai dari desain produk sebelum beralih ke engineering, jadi saya berpikir dalam sistem <em>dan</em> pengguna. Saya peduli pada kode yang mudah ditinjau, arsitektur yang tidak mengejutkan di jam 3 pagi, dan antarmuka yang terasa tenang dan jelas.'>I started in product design before moving into engineering, so I think in systems <em>and</em> in users. I care about code that's reviewable, architectures that won't surprise you at 3am, and interfaces that feel quiet and obvious.</p>
+        <div class="values reveal" style="--d:240ms">
+          <div class="value"><div class="vk">01</div><h4 data-en="Reliability" data-id="Keandalan">Reliability</h4><p data-en="Tested, observable systems that fail loudly and recover gracefully." data-id="Sistem teruji dan terpantau yang gagal dengan jelas dan pulih dengan baik.">Tested, observable systems that fail loudly and recover gracefully.</p></div>
+          <div class="value"><div class="vk">02</div><h4 data-en="Clarity" data-id="Kejelasan">Clarity</h4><p data-en="Code and UI that the next person — including future me — can read." data-id="Kode dan UI yang bisa dibaca orang berikutnya — termasuk saya di masa depan.">Code and UI that the next person — including future me — can read.</p></div>
+          <div class="value"><div class="vk">03</div><h4 data-en="Craft" data-id="Ketelitian">Craft</h4><p data-en="The last 10% of polish is where good becomes trusted." data-id="10% sentuhan akhir adalah saat &#39;baik&#39; menjadi &#39;terpercaya&#39;.">The last 10% of polish is where good becomes trusted.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-en="Selected Work" data-id="Karya Pilihan">Selected Work</span>
+        <h2 data-en="Projects I've designed, built, and shipped." data-id="Proyek yang saya rancang, bangun, dan rilis.">Projects I've designed, built, and shipped.</h2>
+        <p class="lede" data-en="A mix of production systems and personal builds. Each one has its own story — open any project for the full case study." data-id="Perpaduan sistem produksi dan proyek pribadi. Masing-masing punya ceritanya — buka proyek mana pun untuk studi kasus lengkap.">A mix of production systems and personal builds. Each one has its own story — open any project for the full case study.</p>
+      </div>
+      <div class="work-grid">
+
+        <!-- 01 BUNCIS — wide -->
+        <a class="pcard card-wide reveal" href="project-buncis.html" aria-label="BUNCIS Pertamina Kontinental case study">
+          <div class="pcard-media">
+            <image-slot id="thumb-buncis" shape="rect" placeholder="Drop BUNCIS thumbnail" style="background:linear-gradient(125deg,#1f5f6e,#0c2b33);">
+            </image-slot>
+            <span class="pcard-index">01 / 05</span>
+            <span class="pcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="pcard-body">
+            <div class="top"><h3>BUNCIS — Pertamina Kontinental</h3><span class="year">2024</span></div>
+            <p class="summary" data-en="An enterprise asset &amp; inventory platform built on Odoo, streamlining how a Pertamina subsidiary tracks operational resources." data-id="Platform aset &amp; inventaris enterprise berbasis Odoo, menyederhanakan cara anak perusahaan Pertamina melacak sumber daya operasional.">An enterprise asset &amp; inventory platform built on Odoo, streamlining how a Pertamina subsidiary tracks operational resources.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Odoo</span><span class="tag">PostgreSQL</span><span class="tag">System Design</span></div>
+          </div>
+        </a>
+
+        <!-- 02 Cari Resto -->
+        <a class="pcard reveal" style="--d:80ms" href="project-cari-resto.html" aria-label="Cari Resto case study">
+          <div class="pcard-media">
+            <image-slot id="thumb-cariresto" shape="rect" placeholder="Drop Cari Resto thumbnail" style="background:linear-gradient(135deg,#d98a4b,#a23b2e);"></image-slot>
+            <span class="pcard-index">02 / 05</span>
+            <span class="pcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="pcard-body">
+            <div class="top"><h3>Cari Resto</h3><span class="year">2023</span></div>
+            <p class="summary" data-en="A fast, no-framework restaurant discovery app — search, filter, and map nearby places to eat." data-id="Aplikasi pencari restoran yang cepat tanpa framework — cari, filter, dan petakan tempat makan terdekat.">A fast, no-framework restaurant discovery app — search, filter, and map nearby places to eat.</p>
+            <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+          </div>
+        </a>
+
+        <!-- 03 Helix -->
+        <a class="pcard reveal" style="--d:140ms" href="project-helix.html" aria-label="Helix Records case study">
+          <div class="pcard-media">
+            <image-slot id="thumb-helix" shape="rect" placeholder="Drop Helix thumbnail" style="background:linear-gradient(135deg,#5566c9,#2a2d63);"></image-slot>
+            <span class="pcard-index">03 / 05</span>
+            <span class="pcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="pcard-body">
+            <div class="top"><h3>Helix Records</h3><span class="year">2024</span></div>
+            <p class="summary" data-en="A FHIR-compliant electronic health record sandbox — modelling patients, encounters, and observations the right way." data-id="Sandbox rekam medis elektronik sesuai FHIR — memodelkan pasien, kunjungan, dan observasi dengan benar.">A FHIR-compliant electronic health record sandbox — modelling patients, encounters, and observations the right way.</p>
+            <div class="tags"><span class="tag">TypeScript</span><span class="tag">Kotlin</span><span class="tag">FHIR / HL7</span></div>
+          </div>
+        </a>
+
+        <!-- 04 Ledger -->
+        <a class="pcard reveal" style="--d:80ms" href="project-ledger.html" aria-label="Ledger case study">
+          <div class="pcard-media">
+            <image-slot id="thumb-ledger" shape="rect" placeholder="Drop Ledger thumbnail" style="background:linear-gradient(135deg,#3f9e7a,#1d4a3c);"></image-slot>
+            <span class="pcard-index">04 / 05</span>
+            <span class="pcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="pcard-body">
+            <div class="top"><h3>Ledger</h3><span class="year">2025</span></div>
+            <p class="summary" data-en="A calm personal-finance dashboard — categorised spending, recurring detection, and honest forecasts." data-id="Dasbor keuangan pribadi yang tenang — kategorisasi pengeluaran, deteksi langganan, dan proyeksi yang jujur.">A calm personal-finance dashboard — categorised spending, recurring detection, and honest forecasts.</p>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">TypeScript</span></div>
+          </div>
+        </a>
+
+        <!-- 05 Atlas -->
+        <a class="pcard reveal" style="--d:140ms" href="project-atlas.html" aria-label="Atlas case study">
+          <div class="pcard-media">
+            <image-slot id="thumb-atlas" shape="rect" placeholder="Drop Atlas thumbnail" style="background:linear-gradient(135deg,#b06fb8,#4a2d63);"></image-slot>
+            <span class="pcard-index">05 / 05</span>
+            <span class="pcard-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </div>
+          <div class="pcard-body">
+            <div class="top"><h3>Atlas</h3><span class="year">2025</span></div>
+            <p class="summary" data-en="A realtime collaborative whiteboard — low-latency multiplayer cursors, drawing, and presence." data-id="Papan tulis kolaboratif realtime — kursor multipemain latensi rendah, menggambar, dan presence.">A realtime collaborative whiteboard — low-latency multiplayer cursors, drawing, and presence.</p>
+            <div class="tags"><span class="tag">Go</span><span class="tag">WebSocket</span><span class="tag">Canvas</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section" id="experience">
+    <div class="wrap xp-layout">
+      <aside class="xp-aside reveal">
+        <span class="eyebrow" data-en="Experience" data-id="Pengalaman">Experience</span>
+        <h2 data-en-html="A short<br />track record." data-id-html="Rekam jejak<br />singkat.">A short<br />track record.</h2>
+        <p data-en="Three years across engineering, teaching, and design — building products and the people around them." data-id="Tiga tahun di bidang engineering, pengajaran, dan desain — membangun produk dan orang-orang di sekitarnya.">Three years across engineering, teaching, and design — building products and the people around them.</p>
+        <div class="xp-actions">
+          <a class="btn btn-primary" href="assets/Fernando-Sibarani-Resume.pdf" download><span data-en="Download Resume (PDF)" data-id="Unduh Resume (PDF)">Download Resume (PDF)</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M5 21h14"/></svg>
+          </a>
+        </div>
+      </aside>
+
+      <div class="timeline">
+        <div class="tnode is-current reveal">
+          <div class="dot"></div>
+          <div class="when"><span>2022 — 2024</span><span class="badge" data-en="2 yrs" data-id="2 thn">2 yrs</span></div>
+          <h3>Software Engineer</h3>
+          <div class="org">eHealth.co.id</div>
+          <div class="sub-roles">
+            <div class="sub"><div class="r">Software Engineer · Freelance</div><div class="meta">Oct 2024 – Dec 2024 · Remote</div></div>
+            <div class="sub"><div class="r" data-en="Software Engineer · Internship" data-id="Software Engineer · Magang">Software Engineer · Internship</div><div class="meta">Mar 2024 – Oct 2024 · Remote</div></div>
+            <div class="sub"><div class="r" data-en="Junior Software Engineer · Internship" data-id="Junior Software Engineer · Magang">Junior Software Engineer · Internship</div><div class="meta">Dec 2022 – Mar 2024 · Remote</div></div>
+          </div>
+          <ul class="role-list">
+            <li data-en="Built and integrated features across a FHIR/HL7 medical-records platform using TypeScript, Python, Kotlin, and Odoo." data-id="Membangun dan mengintegrasikan fitur pada platform rekam medis FHIR/HL7 menggunakan TypeScript, Python, Kotlin, dan Odoo.">Built and integrated features across a FHIR/HL7 medical-records platform using TypeScript, Python, Kotlin, and Odoo.</li>
+            <li data-en="Reviewed pull requests and wrote test cases to safeguard code quality before deployment." data-id="Meninjau pull request dan menulis test case untuk menjaga kualitas kode sebelum deployment.">Reviewed pull requests and wrote test cases to safeguard code quality before deployment.</li>
+            <li data-en="Diagnosed and resolved bugs that improved overall system reliability." data-id="Mendiagnosis dan memperbaiki bug yang meningkatkan keandalan sistem secara keseluruhan.">Diagnosed and resolved bugs that improved overall system reliability.</li>
+          </ul>
+        </div>
+
+        <div class="tnode reveal" style="--d:80ms">
+          <div class="dot"></div>
+          <div class="when"><span>2022 — 2023</span><span class="badge" data-en="Education" data-id="Pendidikan">Education</span></div>
+          <h3 data-en="Practicum Assistant" data-id="Asisten Praktikum">Practicum Assistant</h3>
+          <div class="org">Information Technology, ITS</div>
+          <div class="sub-roles">
+            <div class="sub"><div class="r" data-en="Computer Networking" data-id="Jaringan Komputer">Computer Networking</div><div class="meta">Aug 2023 – Dec 2023</div></div>
+            <div class="sub"><div class="r" data-en="Operating Systems" data-id="Sistem Operasi">Operating Systems</div><div class="meta">Feb 2023 – Jun 2023</div></div>
+            <div class="sub"><div class="r" data-en="Data Structures" data-id="Struktur Data">Data Structures</div><div class="meta">Aug 2022 – Dec 2022</div></div>
+          </div>
+          <ul class="role-list">
+            <li data-en="Authored practicum modules and taught core CS material to undergraduate students." data-id="Menyusun modul praktikum dan mengajar materi inti ilmu komputer untuk mahasiswa S1.">Authored practicum modules and taught core CS material to undergraduate students.</li>
+            <li data-en="Collaborated with the teaching team to deliver consistent, effective lab sessions." data-id="Berkolaborasi dengan tim pengajar untuk menyampaikan sesi lab yang konsisten dan efektif.">Collaborated with the teaching team to deliver consistent, effective lab sessions.</li>
+          </ul>
+        </div>
+
+        <div class="tnode reveal" style="--d:140ms">
+          <div class="dot"></div>
+          <div class="when"><span>2022 — 2023</span><span class="badge" data-en="Design" data-id="Desain">Design</span></div>
+          <h3 data-en="Product Design Assistant" data-id="Asisten Desain Produk">Product Design Assistant</h3>
+          <div class="org">Paideia Educational Solutions</div>
+          <ul class="role-list">
+            <li data-en="Redesigned UI components in Figma to improve usability and visual consistency." data-id="Mendesain ulang komponen UI di Figma untuk meningkatkan kegunaan dan konsistensi visual.">Redesigned UI components in Figma to improve usability and visual consistency.</li>
+            <li data-en="Shaped flows for new features and iterated through design-review feedback." data-id="Merancang alur untuk fitur baru dan beriterasi melalui umpan balik review desain.">Shaped flows for new features and iterated through design-review feedback.</li>
+          </ul>
+        </div>
+
+        <div class="tnode reveal" style="--d:200ms">
+          <div class="dot"></div>
+          <div class="when"><span data-en="Education" data-id="Pendidikan">Education</span></div>
+          <h3 data-en="Information Technology" data-id="Teknologi Informasi">Information Technology</h3>
+          <div class="org">Institut Teknologi Sepuluh Nopember (ITS)</div>
+          <ul class="role-list">
+            <li data-en="Focus on cyber security, IoT, system integration, and cloud computing." data-id="Fokus pada keamanan siber, IoT, integrasi sistem, dan komputasi awan.">Focus on cyber security, IoT, system integration, and cloud computing.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-cta">
+        <span class="eyebrow reveal" data-en="Contact" data-id="Kontak">Contact</span>
+        <h2 class="reveal" style="--d:60ms" data-en="Let's build something that lasts." data-id="Mari bangun sesuatu yang bertahan.">Let's build something that lasts.</h2>
+        <a class="footer-mail reveal" style="--d:120ms" href="mailto:fernandosibarani45@gmail.com">
+          <span class="u">fernandosibarani45@gmail.com</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+      <div class="footer-social reveal" style="--d:160ms">
+        <span class="eyebrow" data-en="Elsewhere" data-id="Tautan lain">Elsewhere</span>
+        <a href="https://github.com/martuafernando" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.34c.85 0 1.71.12 2.5.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://linkedin.com/in/martuafernando" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34v-7.2H6.06v7.2h2.28zM7.2 10.1a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zm11.14 8.24v-3.95c0-2.11-.45-3.74-2.92-3.74-1.19 0-1.98.65-2.31 1.27h-.03v-1.07h-2.19v7.2h2.28v-3.56c0-.94.18-1.85 1.34-1.85 1.15 0 1.16 1.07 1.16 1.91v3.5h2.27z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://instagram.com/martuafernando" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 M Fernando Sibarani</span>
+      <span data-en="Designed &amp; built with care · Bandung, ID" data-id="Dirancang &amp; dibuat dengan cermat · Bandung, ID">Designed &amp; built with care · Bandung, ID</span>
+    </div>
+  </div>
+</footer>
+
+<!-- tweaks mount -->
+<div id="tweaks-root"></div>
+
+<script src="assets/image-slot.js"></script>
+<script src="assets/site.js"></script>
+
+<!-- Tweaks panel (React) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="assets/tweaks-panel.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "visualStyle": "minimal",
+  "accent": [
+    "#3b6fe0",
+    "#ffffff"
+  ],
+  "themeDefault": "dark"
+}/*EDITMODE-END*/;
+
+const ACCENTS = [
+  ["#c75d3c", "#ffffff"], // clay
+  ["#3b6fe0", "#ffffff"], // blue
+  ["#2f8f6f", "#ffffff"], // emerald
+  ["#6d5bd0", "#ffffff"], // violet
+  ["#1f1b15", "#faf8f4"]  // ink
+];
+
+function PortfolioTweaks() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const firstRun = React.useRef(true);
+
+  // accent + visual style: safe to apply on every render
+  React.useEffect(() => {
+    const accent = Array.isArray(t.accent) ? t.accent : [t.accent, "#ffffff"];
+    window.__applyTweaks({
+      style: t.visualStyle,
+      accent: accent[0],
+      accentInk: accent[1],
+      themeDefault: t.themeDefault
+    });
+  }, [t.visualStyle, t.accent, t.themeDefault]);
+
+  // theme default: only act when the USER changes it (skip initial mount so we
+  // never stomp the toggle / the user's stored preference on every load)
+  React.useEffect(() => {
+    if (firstRun.current) { firstRun.current = false; return; }
+    if (t.themeDefault === 'light' || t.themeDefault === 'dark') {
+      window.__setTheme(t.themeDefault);
+    } else {
+      // system: clear stored choice and reflect current system preference now
+      try { localStorage.removeItem('fs-theme'); } catch (e) {}
+      window.__setTheme(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    }
+  }, [t.themeDefault]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection label="Visual style" />
+      <TweakRadio label="Aesthetic" value={t.visualStyle}
+        options={[{value:'minimal',label:'Swiss'},{value:'mono',label:'Mono'},{value:'editorial',label:'Editorial'}]}
+        onChange={(v) => setTweak('visualStyle', v)} />
+      <TweakSection label="Accent" />
+      <TweakColor label="Color" value={t.accent} options={ACCENTS}
+        onChange={(v) => setTweak('accent', v)} />
+      <TweakSection label="Theme" />
+      <TweakRadio label="Default" value={t.themeDefault}
+        options={[{value:'light',label:'Light'},{value:'dark',label:'Dark'},{value:'system',label:'System'}]}
+        onChange={(v) => setTweak('themeDefault', v)} />
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<PortfolioTweaks />);
+</script>
+
+</body>
+</html>

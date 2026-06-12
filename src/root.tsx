@@ -22,6 +22,21 @@ export default component$(() => {
 		<QwikCityProvider>
 			<head>
 				<meta charset="utf-8" />
+				{/* Set theme before paint to avoid a flash of the wrong theme. */}
+				<script
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme + lang guard
+					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'dark';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='dark';el.lang='en';}})();`}
+				/>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link
+					rel="preconnect"
+					href="https://fonts.gstatic.com"
+					crossOrigin=""
+				/>
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+				/>
 				{!isDev && (
 					<link
 						rel="manifest"
@@ -50,7 +65,7 @@ export default component$(() => {
 
 				<RouterHead />
 			</head>
-			<body lang="en">
+			<body>
 				<RouterOutlet />
 				{!isDev && <ServiceWorkerRegister />}
 			</body>

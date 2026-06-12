@@ -1,12 +1,2 @@
-export * from "./ExperienceItem";
-export * from "./ExperienceList";
-export * from "./Header";
-export * from "./Navbar";
-export * from "./ProjectItem";
-export * from "./ProjectList";
-export * from "./Select";
-export * from "./TabBar";
-export * from "./TabBarItem";
-export * from "./ToggleGroup";
-export * from "./ToolIcon";
-export * from "./Breadcrumb";
+export * from "./icons";
+export { Tag } from "./Tag";

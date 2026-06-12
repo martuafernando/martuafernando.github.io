@@ -1,56 +1,48 @@
-import { $, component$, Slot, useOnWindow, useSignal } from "@builder.io/qwik";
+import {
+	component$,
+	Slot,
+	useContextProvider,
+	useSignal,
+	useVisibleTask$,
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
-import { Header, TabBar } from "~/components/ui";
-import { useDebouncer } from "~/hooks/useDebouncer";
-import { FooterSection } from "~/components/sections/FooterSection";
+import { SiteFooter, SiteHeader } from "~/components/layout";
+import { useScrollEffects } from "~/hooks/useScrollEffects";
+import { type Lang, LangContext } from "~/i18n";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
-	// Control caching for this request for best performance and to reduce hosting costs:
-	// https://qwik.dev/docs/caching/
 	cacheControl({
-		// Always serve a cached response by default, up to a week stale
 		staleWhileRevalidate: 60 * 60 * 24 * 7,
-		// Max once every 5 seconds, revalidate on the server to get a fresh version of this page
 		maxAge: 5,
 	});
 };
 
 export default component$(() => {
-	const isScrollingDown = useSignal<boolean>(false);
-	// store last Y to get the direction
-	// if current Y > lastScrollY the scroll go down
-	const lastScrollY = useSignal<number>(0);
+	useScrollEffects();
 
-	useOnWindow(
-		"scroll",
-		useDebouncer(
-			$(() => {
-				const currentY = window.scrollY;
-				isScrollingDown.value = currentY > lastScrollY.value;
-				lastScrollY.value = currentY;
-			}),
-			50,
-		),
-	);
+	// Reactive language, shared with every component via context. The visible
+	// task syncs the initial value from the stored preference (the pre-paint
+	// script in root.tsx has already set <html lang> to match).
+	const lang = useSignal<Lang>("en");
+	useContextProvider(LangContext, lang);
+
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(() => {
+		try {
+			const stored = localStorage.getItem("fs-lang");
+			if (stored === "id" || stored === "en") lang.value = stored;
+		} catch {
+			/* ignore storage failures */
+		}
+	});
 
 	return (
 		<>
-			<Header
-				class={[
-					"fixed left-0 right-0 h-fit z-50 transition-all duration-300 ease-in-out bg-background",
-					isScrollingDown.value ? "-top-24" : "top-0",
-				]}
-			/>
-			<main class="min-h-screen mt-24 mb-48">
+			<SiteHeader />
+			<main id="top">
 				<Slot />
 			</main>
-			<FooterSection class="px-4 sm:px-0" />
-			<TabBar
-				class={[
-					"fixed left-4 right-4 max-w-96 mx-auto z-50 transition-all duration-300 ease-in sm:hidden",
-					isScrollingDown.value ? "-bottom-24" : "bottom-4",
-				]}
-			/>
+			<SiteFooter />
 		</>
 	);
 });
