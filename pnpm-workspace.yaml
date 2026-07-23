@@ -3,3 +3,8 @@ allowBuilds:
   esbuild: true
   nx: true
   sharp: true
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - nx
+  - sharp
