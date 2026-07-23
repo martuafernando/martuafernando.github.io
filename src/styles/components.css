@@ -242,19 +242,6 @@ footer[id] {
 	letter-spacing: -0.02em;
 	font-size: 1.06rem;
 }
-.brand .mark {
-	width: 30px;
-	height: 30px;
-	border-radius: 9px;
-	display: grid;
-	place-items: center;
-	background: var(--accent);
-	color: var(--accent-ink);
-	font-family: var(--font-grotesk);
-	font-weight: 700;
-	font-size: 0.92rem;
-	box-shadow: var(--shadow-sm);
-}
 .nav-links {
 	display: flex;
 	align-items: center;

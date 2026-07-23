@@ -3,7 +3,6 @@ import type { Localized } from "~/i18n";
 
 export const profile = {
 	name: "Martua Fernando",
-	mark: "FS",
 	email: "martuafernando@proton.me",
 	location: "Indonesia",
 };
@@ -90,7 +89,7 @@ export const hero = {
 
 export const about = {
 	photo: {
-		src: "/images/placeholder.svg",
+		src: "/images/martuafernando.svg",
 		alt: "Martua Fernando",
 		width: 1000,
 		height: 1200,

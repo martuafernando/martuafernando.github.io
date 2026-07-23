@@ -44,7 +44,6 @@ export const SiteHeader = component$(() => {
 					href={isHome ? "#top" : "/"}
 					aria-label={`${profile.name} — home`}
 				>
-					<span class="mark">{profile.mark}</span>
 					<span>{profile.name}</span>
 				</a>
 				<nav class="nav-links" aria-label="Primary">

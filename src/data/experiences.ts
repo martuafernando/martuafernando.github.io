@@ -2,7 +2,7 @@ import type { TimelineNode } from "~/domain/experience";
 
 export const timeline: TimelineNode[] = [
 	{
-		period: "2024 — present",
+		period: "2025 — present",
 		badge: { en: "1 year +", id: "1 thn +" },
 		title: { en: "Data Engineer", id: "Data Engineer" },
 		org: "Bank Negara Indonesia",
@@ -20,7 +20,7 @@ export const timeline: TimelineNode[] = [
 					en: "Officer Development Program · Contract",
 					id: "Officer Development Program · Kontrak",
 				},
-				meta: "Feb 2025 - Feb 2026 · Full Time",
+				meta: "Feb 2025 - Feb 2026 · Contract",
 			},
 		],
 		points: {
