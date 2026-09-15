@@ -74,6 +74,18 @@ export const ui = {
 	gallery: { en: "Gallery", id: "Galeri" },
 	previous: { en: "Previous", id: "Sebelumnya" },
 	next: { en: "Next", id: "Berikutnya" },
+	// Legal / privacy policy
+	backToHome: { en: "Back to home", id: "Kembali ke beranda" },
+	policyEffective: { en: "Effective", id: "Berlaku sejak" },
+	policyAtAGlance: { en: "At a glance", id: "Sekilas" },
+	policyContactHeading: {
+		en: "Questions about this policy?",
+		id: "Ada pertanyaan tentang kebijakan ini?",
+	},
+	policyContactLede: {
+		en: "Write to me and I'll answer directly — there's no support desk in between.",
+		id: "Kirim pesan ke saya dan akan saya jawab langsung — tidak ada meja bantuan di antaranya.",
+	},
 	// Footer
 	contact: { en: "Contact", id: "Kontak" },
 	footerHeading: {
