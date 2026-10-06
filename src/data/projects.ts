@@ -9,11 +9,11 @@ export const projects: Project[] = [
 		year: "2023",
 		summary: {
 			en: "A Bunker Calculation & Identification System for PT Pertamina Trans Kontinental — automating Remain-On-Board fuel calculations on Odoo.",
-			id: "Sistem Perhitungan Bunker untuk PT Pertamina Trans Kontinental — mengotomatiskan perhitungan bahan bakar Remain-On-Board di Odoo.",
+			id: "Sistem Perhitungan Bunker untuk PT Pertamina Trans Kontinental — mengotomatiskan hitungan bahan bakar Remain-On-Board di Odoo.",
 		},
 		cardSummary: {
 			en: "Automated fuel calculations for a Pertamina subsidiary — minutes of manual work, now instant.",
-			id: "Perhitungan bahan bakar otomatis untuk anak usaha Pertamina — dari menit, kini instan.",
+			id: "Hitung bahan bakar otomatis buat anak usaha Pertamina — yang dulu butuh beberapa menit, sekarang langsung jadi.",
 		},
 		tags: ["Python", "Odoo", "PostgreSQL", "REST API"],
 		wide: true,
@@ -34,7 +34,7 @@ export const projects: Project[] = [
 		role: "Back End Developer",
 		engagement: {
 			en: "Freelance · Aug–Nov 2023 (~4 months)",
-			id: "Freelance · Agu–Nov 2023 (~4 bulan)",
+			id: "Freelance · Agu–Nov 2023 (±4 bulan)",
 		},
 		stack: ["Python", "Odoo", "PostgreSQL", "REST API", "QWeb"],
 		delivered: {
@@ -45,10 +45,10 @@ export const projects: Project[] = [
 				"VPS deployment",
 			],
 			id: [
-				"RESTful API untuk Android",
-				"Aplikasi web perhitungan bunker",
-				"Logika perhitungan ROB",
-				"Deployment VPS",
+				"RESTful API buat aplikasi Android",
+				"Aplikasi web hitung bunker",
+				"Logika hitung ROB",
+				"Deploy ke VPS",
 			],
 		},
 		links: { source: "https://github.com/martuafernando" },
@@ -61,7 +61,7 @@ export const projects: Project[] = [
 						"PT Pertamina Trans Kontinental's Surabaya port needed Remain-On-Board (ROB) bunker fuel figures calculated and reconciled reliably — work that was slow and error-prone by hand. They needed one system, built on their Odoo stack, to automate the calculation and make it faster and more dependable than the manual method.",
 					],
 					id: [
-						"PT Pertamina Trans Kontinental membutuhkan sistem untuk menghitung angka bahan bakar bunker Remain-On-Board (ROB) andal — perhitungan manual menjadi masalah karena tidak efisien dan rawan kesalahan. Mereka membutuhkan sistem untuk mengotomatiskan perhitungan dan membuatnya lebih cepat dan lebih andal daripada metode manual yang kompleks.",
+						"PT Pertamina Trans Kontinental butuh cara yang andal buat menghitung bahan bakar bunker Remain-On-Board (ROB). Kalau dihitung manual, prosesnya lama dan gampang salah. Jadi mereka butuh sistem yang mengotomatiskan hitungan ini — lebih cepat dan lebih bisa dipercaya daripada cara manual yang ribet.",
 					],
 				},
 			},
@@ -69,19 +69,19 @@ export const projects: Project[] = [
 				segLabel: { en: "My role", id: "Peran saya" },
 				heading: {
 					en: "What I contributed",
-					id: "Kontribusi",
+					id: "Yang aku kerjakan",
 				},
 				paragraphs: {
 					en: [
 						"As a freelance Back End Developer I built the system on Odoo and Python: initiating and implementing the business automation that drives the Remain-On-Board (ROB) calculation, plus the RESTful APIs behind the Android client. The goal was to replace a slow, error-prone manual process with something faster and more reliable — operations software where a wrong number costs more than a missing feature.",
 					],
 					id: [
-						"Sebagai Back End Developer, saya merancang dan membangun sistem menggunakan Odoo dan Python untuk mengotomatisasi proses bisnis yang dapat melakukan perhitungan Remain-On-Board (ROB), serta membuat RESTful API untuk keperluan aplikasi Android. Tujuannya adalah menggantikan proses manual yang lambat dan rawan kesalahan dengan sistem yang lebih cepat, andal, dan dapat diakses dari beberapa lokasi sekaligus",
+						"Sebagai Back End Developer, aku merancang dan membangun sistem pakai Odoo dan Python untuk mengotomatiskan proses bisnis yang menghitung Remain-On-Board (ROB), plus bikin RESTful API buat aplikasi Android. Tujuannya: mengganti proses manual yang lambat dan gampang salah dengan sistem yang lebih cepat, andal, dan bisa diakses dari banyak lokasi sekaligus.",
 					],
 				},
 			},
 			{
-				segLabel: { en: "The build", id: "Pembangunan" },
+				segLabel: { en: "The build", id: "Proses Pembuatan" },
 				heading: { en: "What I built", id: "Yang saya bangun" },
 				checks: {
 					en: [
@@ -91,9 +91,9 @@ export const projects: Project[] = [
 						"Backend and web deployed to a VPS.",
 					],
 					id: [
-						"RESTful API di Odoo untuk support aplikasi Android.",
-						"Aplikasi web untuk perhitungan dan identifikasi bunker.",
-						"Logika perhitungan Remain-On-Board (ROB) otomatis.",
+						"RESTful API di Odoo yang jadi backend aplikasi Android.",
+						"Aplikasi web buat hitung dan identifikasi bunker.",
+						"Logika hitung Remain-On-Board (ROB) otomatis.",
 						"Backend dan web yang di-deploy ke VPS.",
 					],
 				},
@@ -109,10 +109,10 @@ export const projects: Project[] = [
 							id: "platform (web + Android)",
 						},
 					},
-					{ value: "~4 mo", label: { en: "to delivery", id: "hingga rilis" } },
+					{ value: "~4 mo", label: { en: "to delivery", id: "sampai rilis" } },
 					{
 						value: "VPS",
-						label: { en: "self-deployed", id: "deploy mandiri" },
+						label: { en: "self-deployed", id: "deploy sendiri" },
 					},
 				],
 				paragraphs: {
@@ -120,7 +120,7 @@ export const projects: Project[] = [
 						"This automation significantly speeds up ROB calculations compared to the manual method. Calculations that previously took several minutes can now be performed instantly. The calculation results from the system also produce figures that are 100% consistent with manual calculations, so the system's results can be relied upon for operations.",
 					],
 					id: [
-						"Otomatisasi ini secara signifikan mempercepat perhitungan ROB dibandingkan metode manual. Perhitungan yang sebelumnya perlu dilakukan selama beberapa menit hingga jaminan kini dapat dilakukan secara instan. Hasil perhitungan dari sistem juga menghasilkan angka yang 100% sesuai dengan perhitungan manual sehingga hasil perhitungan sistem ini dapat diandalkan untuk operasional.",
+						"Otomatisasi ini bikin hitungan ROB jauh lebih cepat dibanding cara manual. Hitungan yang dulu butuh beberapa menit sekarang langsung jadi. Hasilnya juga 100% sama dengan hitungan manual, jadi angkanya aman dipakai buat operasional.",
 					],
 				},
 			},
@@ -134,11 +134,11 @@ export const projects: Project[] = [
 		year: "2023",
 		summary: {
 			en: "A fast, framework-free restaurant discovery app — search, filter, and map nearby places to eat, with zero build step and instant loads.",
-			id: "Aplikasi pencari restoran yang cepat tanpa framework — cari, filter, dan petakan tempat makan terdekat, tanpa langkah build dan dengan pemuatan instan.",
+			id: "Aplikasi cari restoran yang ngebut tanpa framework — cari, filter, dan lihat tempat makan terdekat di peta, tanpa build step dan langsung kebuka.",
 		},
 		cardSummary: {
 			en: "Find, filter, and map nearby places to eat. Zero dependencies.",
-			id: "Cari, filter, dan petakan tempat makan terdekat. Tanpa dependensi.",
+			id: "Cari, filter, dan lihat tempat makan terdekat di peta. Tanpa dependency.",
 		},
 		tags: ["HTML5", "CSS3", "JavaScript"],
 		cover: {
@@ -183,7 +183,7 @@ export const projects: Project[] = [
 			id: [
 				"UI pencarian & filter",
 				"Integrasi peta",
-				"Tata letak responsif",
+				"Layout responsif",
 				"Build tanpa framework",
 			],
 		},
@@ -200,7 +200,7 @@ export const projects: Project[] = [
 						"Finding a good place to eat nearby usually means switching between several heavy apps. The need for something simple with easy, fast access makes for an interesting case study for implementing and learning about PWAs..",
 					],
 					id: [
-						"Mencari tempat makan yang enak di sekitar biasanya berarti berpindah-pindah beberapa aplikasi berat. Kebutuhan yang sederhana dan akses yang mudah dan cepat menjadi case study menarik untuk implementasi dan mempelajari PWA.",
+						"Nyari tempat makan enak di sekitar biasanya harus bolak-balik buka beberapa aplikasi yang berat. Kebutuhan akan sesuatu yang simpel, gampang diakses, dan cepat ini jadi studi kasus menarik buat belajar dan menerapkan PWA.",
 					],
 				},
 			},
@@ -208,19 +208,19 @@ export const projects: Project[] = [
 				segLabel: { en: "My role", id: "Peran saya" },
 				heading: {
 					en: "What I contributed",
-					id: "Apa yang saya kontribusikan",
+					id: "Yang aku kerjakan",
 				},
 				paragraphs: {
 					en: [
 						"This is an solo project: I designed the interface and built the website using HTML, CSS, and vanilla JavaScript. I focused on implementing PWA technology and an instant search-and-filter flow, with a responsive layout from mobile to desktop.",
 					],
 					id: [
-						"Ini proyek mandiri: saya merancang antarmuka dan membangun web dengan menggunakan HTML, CSS, dan vanila JavaScript. Saya fokus pada implementasi teknologi PWA dan alur pencarian-dan-filter yang instan, layout yang responsif dari ponsel hingga desktop.",
+						"Ini proyek solo: aku merancang tampilannya dan membangun webnya pakai HTML, CSS, dan vanilla JavaScript. Fokusku di penerapan PWA, alur cari-dan-filter yang instan, dan layout responsif dari HP sampai desktop.",
 					],
 				},
 			},
 			{
-				segLabel: { en: "The build", id: "Pembangunan" },
+				segLabel: { en: "The build", id: "Proses Pembuatan" },
 				heading: { en: "What I built", id: "Yang saya bangun" },
 				checks: {
 					en: [
@@ -229,9 +229,9 @@ export const projects: Project[] = [
 						"A mobile-first layout that stays fast on slow connections.",
 					],
 					id: [
-						"Progressive Web App (PWA) dengan dukungan offline dan dapat diinstal.",
-						"Antarmuka pencarian + filter responsif tanpa beban framework.",
-						"Tata letak mobile-first yang tetap cepat di koneksi lambat.",
+						"Progressive Web App (PWA) yang bisa dipakai offline dan diinstal.",
+						"Tampilan cari + filter yang responsif, tanpa beban framework.",
+						"Layout mobile-first yang tetap ngebut walau koneksi lemot.",
 					],
 				},
 			},
@@ -239,8 +239,8 @@ export const projects: Project[] = [
 				segLabel: { en: "Outcome", id: "Hasil" },
 				heading: { en: "Impact", id: "Dampak" },
 				impact: [
-					{ value: "0", label: { en: "dependencies", id: "dependensi" } },
-					{ value: "<1s", label: { en: "first paint", id: "paint pertama" } },
+					{ value: "0", label: { en: "dependencies", id: "dependency" } },
+					{ value: "<1s", label: { en: "first paint", id: "first paint" } },
 					{ value: "100%", label: { en: "responsive", id: "responsif" } },
 				],
 				paragraphs: {
@@ -248,7 +248,7 @@ export const projects: Project[] = [
 						"Building without a framework forced me to understand what frameworks actually buy you — and where they're overkill. I came away with sharper fundamentals in the DOM, state, and CSS layout, and a real appreciation for how much you can ship with the platform alone when performance matters.",
 					],
 					id: [
-						"Membangun tanpa framework memaksa saya memahami apa yang sebenarnya diberikan framework — dan di mana itu berlebihan. Saya keluar dengan fondasi yang lebih tajam dalam DOM, state, dan tata letak CSS, serta apresiasi nyata terhadap seberapa banyak yang bisa dirilis hanya dengan platform ketika performa penting.",
+						"Bikin tanpa framework bikin aku paham apa sebenarnya yang ditawarkan framework — dan kapan itu malah berlebihan. Hasilnya, fondasiku di DOM, state, dan layout CSS jadi lebih kuat, dan aku makin sadar betapa banyak yang bisa dirilis cuma dengan fitur bawaan browser kalau performa memang penting.",
 					],
 				},
 			},
