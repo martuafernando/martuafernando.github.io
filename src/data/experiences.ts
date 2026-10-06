@@ -3,7 +3,7 @@ import type { TimelineNode } from "~/domain/experience";
 export const timeline: TimelineNode[] = [
 	{
 		period: "2025 — present",
-		badge: { en: "1 year +", id: "1 thn +" },
+		badge: { en: "1 year +", id: "1 tahun +" },
 		title: { en: "Data Engineer", id: "Data Engineer" },
 		org: "Bank Negara Indonesia",
 		current: true,
@@ -11,7 +11,7 @@ export const timeline: TimelineNode[] = [
 			{
 				role: {
 					en: "Software Engineer · Fulltime",
-					id: "Software Engineer · Penuh Waktu",
+					id: "Software Engineer · Karyawan Tetap",
 				},
 				meta: "Feb 2026 - Present · Full Time",
 			},
@@ -28,13 +28,13 @@ export const timeline: TimelineNode[] = [
 				"Initiated superset as a data visualization tool and built custom plugins to integrate it with data pipelines.",
 			],
 			id: [
-				"Menginisiasi Superset sebagai alat visualisasi data dan membangun plugin kustom untuk mengintegrasikannya dengan pipeline data.",
+				"Memprakarsai Superset sebagai tool visualisasi data, lalu bikin plugin custom supaya terhubung ke data pipeline.",
 			],
 		},
 	},
 	{
 		period: "2022 — 2024",
-		badge: { en: "2 years", id: "2 thn" },
+		badge: { en: "2 years", id: "2 tahun" },
 		title: { en: "Software Engineer", id: "Software Engineer" },
 		org: "eHealth.co.id",
 		current: true,
@@ -68,15 +68,15 @@ export const timeline: TimelineNode[] = [
 				"Diagnosed and resolved bugs that improved overall system reliability.",
 			],
 			id: [
-				"Membangun dan mengintegrasikan fitur pada platform rekam medis FHIR/HL7 menggunakan TypeScript, Python, Kotlin, dan Odoo.",
-				"Meninjau pull request dan menulis test case untuk menjaga kualitas kode sebelum deployment.",
-				"Mendiagnosis dan memperbaiki bug yang meningkatkan keandalan sistem secara keseluruhan.",
+				"Membangun dan mengintegrasikan fitur di platform rekam medis FHIR/HL7 pakai TypeScript, Python, Kotlin, dan Odoo.",
+				"Mereview pull request dan nulis test case supaya kualitas kode terjaga sebelum deploy.",
+				"Mencari penyebab dan memperbaiki bug sehingga sistem jadi lebih stabil.",
 			],
 		},
 	},
 	{
 		period: "2022 — 2023",
-		badge: { en: "1 year", id: "1 thn" },
+		badge: { en: "1 year", id: "1 tahun" },
 		title: { en: "Practicum Assistant", id: "Asisten Praktikum" },
 		org: "Information Technology, ITS",
 		subRoles: [
@@ -99,14 +99,14 @@ export const timeline: TimelineNode[] = [
 				"Collaborated with the teaching team to deliver consistent, effective lab sessions.",
 			],
 			id: [
-				"Menyusun modul praktikum dan mengajar materi inti ilmu komputer untuk mahasiswa S1.",
-				"Berkolaborasi dengan tim pengajar untuk menyampaikan sesi lab yang konsisten dan efektif.",
+				"Menyusun modul praktikum dan mengajar materi inti ilmu komputer ke mahasiswa S1.",
+				"Kerja bareng tim pengajar supaya sesi lab berjalan konsisten dan efektif.",
 			],
 		},
 	},
 	{
 		period: "2022 — 2023",
-		badge: { en: "1 year", id: "1 thn" },
+		badge: { en: "1 year", id: "1 tahun" },
 		title: { en: "Product Design Assistant", id: "Asisten Desain Produk" },
 		org: "Paideia Educational Solutions",
 		points: {
@@ -115,8 +115,8 @@ export const timeline: TimelineNode[] = [
 				"Shaped flows for new features and iterated through design-review feedback.",
 			],
 			id: [
-				"Mendesain ulang komponen UI di Figma untuk meningkatkan kegunaan dan konsistensi visual.",
-				"Merancang alur untuk fitur baru dan beriterasi melalui umpan balik review desain.",
+				"Mendesain ulang komponen UI di Figma biar lebih gampang dipakai dan tampilannya lebih konsisten.",
+				"Merancang alur fitur baru dan terus memperbaikinya berdasarkan masukan dari review desain.",
 			],
 		},
 	},

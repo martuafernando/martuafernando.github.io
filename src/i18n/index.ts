@@ -25,21 +25,21 @@ export const useLang = (): Signal<Lang> => useContext(LangContext);
  */
 export const ui = {
 	// Header / nav
-	getInTouch: { en: "Get in touch", id: "Hubungi saya" },
+	getInTouch: { en: "Get in touch", id: "Yuk, ngobrol" },
 	// Hero
-	viewWork: { en: "View Work", id: "Lihat Karya" },
-	orGetInTouch: { en: "Or get in touch", id: "Atau hubungi saya" },
+	viewWork: { en: "View Work", id: "Lihat Proyek" },
+	orGetInTouch: { en: "Or get in touch", id: "Atau langsung ngobrol aja" },
 	// Work
-	selectedWork: { en: "Selected Work", id: "Karya Pilihan" },
+	selectedWork: { en: "Selected Work", id: "Proyek Pilihan" },
 	workHeading: {
 		en: "Things I've built.",
-		id: "Yang sudah saya bangun.",
+		id: "Yang udah aku bikin.",
 	},
 	workLede: {
 		en: "Tap a project for the case study.",
-		id: "Ketuk proyek untuk studi kasus.",
+		id: "Ketuk proyek buat lihat studi kasusnya.",
 	},
-	moreOnGithub: { en: "More on GitHub", id: "Lainnya di GitHub" },
+	moreOnGithub: { en: "More on GitHub", id: "Lainnya ada di GitHub" },
 	moreOnGithubSub: {
 		en: "Experiments & side projects",
 		id: "Eksperimen & proyek sampingan",
@@ -54,25 +54,25 @@ export const ui = {
 	},
 	experienceLede: {
 		en: "Engineering, teaching, design.",
-		id: "Engineering, mengajar, desain.",
+		id: "Ngoding, ngajar, desain.",
 	},
 	details: { en: "Details", id: "Detail" },
 	// Project detail
-	backToWork: { en: "Back to all work", id: "Kembali ke semua karya" },
+	backToWork: { en: "Back to all work", id: "Balik ke semua proyek" },
 	year: { en: "Year", id: "Tahun" },
 	role: { en: "Role", id: "Peran" },
-	engagement: { en: "Engagement", id: "Keterlibatan" },
+	engagement: { en: "Engagement", id: "Status kerja" },
 	note: { en: "Note", id: "Catatan" },
 	conceptNote: {
 		en: "Concept project — a self-directed build.",
-		id: "Proyek konsep — dibuat secara mandiri.",
+		id: "Proyek konsep — dikerjakan sendiri.",
 	},
-	techStack: { en: "Tech stack", id: "Tumpukan teknologi" },
-	delivered: { en: "Delivered", id: "Hasil kerja" },
+	techStack: { en: "Tech stack", id: "Teknologi yang dipakai" },
+	delivered: { en: "Delivered", id: "Yang dikerjakan" },
 	links: { en: "Links", id: "Tautan" },
-	liveDemo: { en: "Live demo", id: "Demo langsung" },
-	source: { en: "Source", id: "Kode sumber" },
-	sourceCode: { en: "Source code", id: "Kode sumber" },
+	liveDemo: { en: "Live demo", id: "Coba demo" },
+	source: { en: "Source", id: "Source code" },
+	sourceCode: { en: "Source code", id: "Source code" },
 	gallery: { en: "Gallery", id: "Galeri" },
 	previous: { en: "Previous", id: "Sebelumnya" },
 	next: { en: "Next", id: "Berikutnya" },
@@ -92,11 +92,11 @@ export const ui = {
 	contact: { en: "Contact", id: "Kontak" },
 	footerHeading: {
 		en: "Let's build something that lasts.",
-		id: "Mari bangun sesuatu yang bertahan.",
+		id: "Yuk, bikin sesuatu yang awet.",
 	},
 	elsewhere: { en: "Elsewhere", id: "Tautan lain" },
 	footerNote: {
 		en: "Designed & built with care · Indonesia",
-		id: "Dirancang & dibuat dengan cermat · Indonesia",
+		id: "Dirancang & dibuat sepenuh hati · Indonesia",
 	},
 } satisfies Record<string, Localized>;
