@@ -3,7 +3,7 @@ import { useLocation } from "@builder.io/qwik-city";
 import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { navLinks, profile } from "~/data/site";
-import { t, ui, useLang } from "~/i18n";
+import { t, useLang } from "~/i18n";
 
 /**
  * Fixed site header: brand, anchor nav, theme toggle, and mobile menu.
@@ -54,9 +54,6 @@ export const SiteHeader = component$(() => {
 					))}
 				</nav>
 				<div class="nav-actions">
-					<a class="btn btn-soft nav-cta-desktop" href={to("#contact")}>
-						{t(ui.getInTouch, lang.value)}
-					</a>
 					<LangToggle />
 					<ThemeToggle />
 					<button

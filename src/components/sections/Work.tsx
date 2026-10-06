@@ -18,7 +18,7 @@ export const Work = component$(() => {
 					<h2>{t(ui.workHeading, l)}</h2>
 					<p class="lede">{t(ui.workLede, l)}</p>
 				</div>
-				<div class="work-grid">
+				<div class="work-list">
 					{projects.map((project, i) => (
 						<ProjectCard
 							key={project.slug}
@@ -28,17 +28,20 @@ export const Work = component$(() => {
 						/>
 					))}
 					<a
-						class="pcard pcard-more reveal"
-						style={`--d:${projects.length * 70}ms`}
+						class="prow reveal"
+						style={`--d:${projects.length * 50}ms`}
 						href={socials[0].href}
 						target="_blank"
 						rel="noopener"
 					>
-						<span class="more-ico">
+						<span class="year" />
+						<div class="prow-main">
+							<h3>{t(ui.moreOnGithub, l)}</h3>
+							<p class="summary">{t(ui.moreOnGithubSub, l)}</p>
+						</div>
+						<span class="prow-arrow">
 							<ArrowUpRight />
 						</span>
-						<h3>{t(ui.moreOnGithub, l)}</h3>
-						<p>{t(ui.moreOnGithubSub, l)}</p>
 					</a>
 				</div>
 			</div>

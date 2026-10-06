@@ -65,18 +65,6 @@ export const hero = {
 		id: "Software engineer yang fokus di data, aplikasi yang scalable, dan sistem yang nggak gampang down.",
 	} satisfies Localized,
 
-	/** Floating cards around the hero portrait. */
-	cards: [
-		{
-			label: { en: "Now", id: "Sekarang" },
-			value: "Data Engineer · BNI",
-		},
-		{
-			label: { en: "Focus", id: "Fokus" },
-			value: "Systems · Data · Reliability",
-		},
-	] satisfies { label: Localized; value: string }[],
-
 	stats: [
 		{
 			value: "3+",

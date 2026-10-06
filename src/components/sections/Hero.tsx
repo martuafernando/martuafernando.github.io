@@ -9,8 +9,6 @@ export const Hero = component$(() => {
 
 	return (
 		<section class="hero">
-			<div class="hero-orb a" />
-			<div class="hero-orb b" />
 			<div class="wrap hero-grid">
 				<div class="hero-copy">
 					<span class="hero-status" data-enter="" style="--i:0">
@@ -54,20 +52,14 @@ export const Hero = component$(() => {
 							decoding="async"
 						/>
 					</div>
-					{hero.cards.map((c, i) => (
-						<div class={`hv-card c${i + 1}`} key={c.value}>
-							<span>{t(c.label, l)}</span>
-							<b>{c.value}</b>
-						</div>
-					))}
 				</div>
 			</div>
-			<div class="marquee" data-enter="" style="--i:5" aria-hidden="true">
-				<div class="marquee-track">
-					{[...skills, ...skills].map((s, i) => (
-						<span key={`${s}-${i}`}>{s}</span>
+			<div class="wrap">
+				<ul class="skill-row" data-enter="" style="--i:5" aria-label="Skills">
+					{skills.map((s) => (
+						<li key={s}>{s}</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</section>
 	);

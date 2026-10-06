@@ -2,8 +2,8 @@ import { useVisibleTask$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 
 /**
- * Wires up the page's motion behaviours: page-enter, the hero stagger
- * entrance, scroll-reveal, nav scrollspy, and hero-orb pointer parallax.
+ * Wires up the page's motion behaviours: the hero stagger entrance,
+ * scroll-reveal, and nav scrollspy.
  *
  * Content is visible by default; the hidden start state is only opted into
  * (via the `reveal-ready` class) once this runs, so nothing can be stranded
@@ -19,8 +19,6 @@ export const useScrollEffects = () => {
 		const reduce = window.matchMedia(
 			"(prefers-reduced-motion: reduce)",
 		).matches;
-
-		document.body.classList.add("page-enter");
 
 		// Hero stagger entrance (transition-based; final state is always visible).
 		const heroEl = document.querySelector(".hero");
@@ -97,24 +95,9 @@ export const useScrollEffects = () => {
 			sections.forEach((s) => spy?.observe(s));
 		}
 
-		// Subtle pointer parallax on the hero orbs.
-		const orbs = Array.from(document.querySelectorAll<HTMLElement>(".hero-orb"));
-		const onMove = (e: PointerEvent) => {
-			const cx = e.clientX / window.innerWidth - 0.5;
-			const cy = e.clientY / window.innerHeight - 0.5;
-			orbs.forEach((o, i) => {
-				const d = (i + 1) * 14;
-				o.style.transform = `translate(${cx * d}px,${cy * d}px)`;
-			});
-		};
-		if (orbs.length) {
-			window.addEventListener("pointermove", onMove, { passive: true });
-		}
-
 		cleanup(() => {
 			revealIO.disconnect();
 			spy?.disconnect();
-			window.removeEventListener("pointermove", onMove);
 		});
 	});
 };
