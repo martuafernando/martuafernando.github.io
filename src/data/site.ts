@@ -61,9 +61,21 @@ export const hero = {
 	} satisfies Localized,
 
 	lede: {
-		en: "Software engineer that focused on scalable applications, data, systems, and engineering. He enjoys building reliable software and exploring distributed systems, infrastructure, and new technologies.",
-		id: "software engineer yang berfokus pada aplikasi, data, sistem, dan engineering yang skalabel. Senang membangun perangkat lunak yang andal serta eksplorasi sistem terdistribusi, infrastruktur, dan teknologi baru.",
+		en: "Software engineer focused on data, scalable apps, and systems that don't break.",
+		id: "Software engineer yang fokus pada data, aplikasi skalabel, dan sistem yang andal.",
 	} satisfies Localized,
+
+	/** Floating cards around the hero portrait. */
+	cards: [
+		{
+			label: { en: "Now", id: "Saat ini" },
+			value: "Data Engineer · BNI",
+		},
+		{
+			label: { en: "Focus", id: "Fokus" },
+			value: "Systems · Data · Reliability",
+		},
+	] satisfies { label: Localized; value: string }[],
 
 	stats: [
 		{
@@ -97,14 +109,14 @@ export const about = {
 	} satisfies Localized,
 
 	heading: {
-		en: "I enjoy building systems that stay simple as they grow.",
-		id: "Senang membangun sistem yang sederhana dan mudah dipelihara.",
+		en: "Systems that stay simple as they grow.",
+		id: "Sistem yang tetap sederhana saat tumbuh.",
 	} satisfies Localized,
 
 	paragraphs: [
 		{
-			en: "I'm Fernando — a software engineer who enjoys building reliable systems from end to end. My experience spans backend services, web applications, data processing, and enterprise software. I care about designing software that is maintainable, observable, and easy to evolve over time.",
-			id: "Saya Fernando — seorang software engineer yang senang membangun sistem yang andal secara end-to-end. Pengalaman saya mencakup layanan backend, aplikasi web, pemrosesan data, dan perangkat lunak enterprise. Saya concern pada desain sistem yang mudah dipelihara, mudah dipantau, dan dapat berkembang seiring waktu.",
+			en: "I'm Fernando — I build reliable systems end to end, from <strong>backend</strong> and <strong>data pipelines</strong> to enterprise software.",
+			id: "Saya Fernando — membangun sistem andal end-to-end, dari <strong>backend</strong> dan <strong>pipeline data</strong> hingga software enterprise.",
 		},
 	] satisfies Localized[],
 
@@ -116,8 +128,8 @@ export const about = {
 				id: "Keandalan",
 			},
 			body: {
-				en: "Software should work consistently according to what's needed.",
-				id: "Perangkat lunak harus bekerja secara konsisten sesuai kebutuhan.",
+				en: "Works the same, every time.",
+				id: "Bekerja konsisten, setiap saat.",
 			},
 		},
 		{
@@ -127,8 +139,8 @@ export const about = {
 				id: "Kejelasan",
 			},
 			body: {
-				en: "Simple designs and readable code scale better than unnecessary complexity.",
-				id: "Desain sederhana dan kode yang mudah dibaca lebih mudah berkembang dibanding kompleksitas yang tidak perlu.",
+				en: "Simple design scales better.",
+				id: "Desain sederhana lebih mudah tumbuh.",
 			},
 		},
 		{
@@ -138,8 +150,8 @@ export const about = {
 				id: "Belajar Berkelanjutan",
 			},
 			body: {
-				en: "Technology changes quickly, so curiosity and adaptation are essential.",
-				id: "Teknologi berubah dengan cepat, sehingga rasa ingin tahu dan kemampuan beradaptasi sangat penting.",
+				en: "Tech moves fast. Stay curious.",
+				id: "Teknologi cepat berubah. Tetap penasaran.",
 			},
 		},
 	] satisfies Value[],

@@ -39,22 +39,30 @@ export const Experience = component$(() => {
 							</div>
 							<h3>{t(n.title, l)}</h3>
 							<div class="org">{n.org}</div>
-							{n.subRoles && (
-								<div class="sub-roles">
-									{n.subRoles.map((s) => (
-										<div class="sub" key={t(s.role, "en")}>
-											<div class="r">{t(s.role, l)}</div>
-											<div class="meta">{s.meta}</div>
+							{n.points && <p class="xp-line">{t(n.points, l)[0]}</p>}
+							{(n.subRoles || (n.points && n.points.en.length > 1)) && (
+								<details class="xp-more">
+									<summary>{t(ui.details, l)}</summary>
+									{n.subRoles && (
+										<div class="sub-roles">
+											{n.subRoles.map((s) => (
+												<div class="sub" key={t(s.role, "en")}>
+													<div class="r">{t(s.role, l)}</div>
+													<div class="meta">{s.meta}</div>
+												</div>
+											))}
 										</div>
-									))}
-								</div>
-							)}
-							{n.points && (
-								<ul class="role-list">
-									{t(n.points, l).map((pt) => (
-										<li key={pt}>{pt}</li>
-									))}
-								</ul>
+									)}
+									{n.points && t(n.points, l).length > 1 && (
+										<ul class="role-list">
+											{t(n.points, l)
+												.slice(1)
+												.map((pt) => (
+													<li key={pt}>{pt}</li>
+												))}
+										</ul>
+									)}
+								</details>
 							)}
 						</div>
 					))}
