@@ -23,7 +23,8 @@ body {
 	letter-spacing: -0.006em;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+	transition:
+		background 0.5s cubic-bezier(0.4, 0, 0.2, 1),
 		color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 	overflow-x: hidden;
 }
@@ -130,8 +131,12 @@ footer[id] {
 	border: 1px solid transparent;
 	cursor: pointer;
 	position: relative;
-	transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.3s,
-		color 0.3s, border-color 0.3s, box-shadow 0.3s;
+	transition:
+		transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+		background 0.3s,
+		color 0.3s,
+		border-color 0.3s,
+		box-shadow 0.3s;
 	white-space: nowrap;
 }
 .btn svg {
@@ -217,7 +222,10 @@ footer[id] {
 	position: fixed;
 	inset: 0 0 auto 0;
 	z-index: 100;
-	transition: background 0.4s, border-color 0.4s, backdrop-filter 0.4s,
+	transition:
+		background 0.4s,
+		border-color 0.4s,
+		backdrop-filter 0.4s,
 		box-shadow 0.4s;
 	border-bottom: 1px solid transparent;
 }
@@ -254,7 +262,9 @@ footer[id] {
 	padding: 0.5em 0.85em;
 	border-radius: 999px;
 	position: relative;
-	transition: color 0.25s, background 0.25s;
+	transition:
+		color 0.25s,
+		background 0.25s;
 }
 .nav-links a:hover {
 	color: var(--text);
@@ -279,8 +289,11 @@ footer[id] {
 	background: var(--surface);
 	color: var(--text);
 	cursor: pointer;
-	transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s,
-		background 0.3s, color 0.3s;
+	transition:
+		transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+		border-color 0.3s,
+		background 0.3s,
+		color 0.3s;
 }
 .theme-toggle:hover {
 	transform: rotate(-18deg);
@@ -316,7 +329,9 @@ footer[id] {
 	font-size: 0.74rem;
 	letter-spacing: 0.04em;
 	color: var(--text);
-	transition: border-color 0.3s, background 0.3s;
+	transition:
+		border-color 0.3s,
+		background 0.3s;
 }
 .lang-toggle:hover {
 	border-color: var(--accent);
@@ -328,7 +343,9 @@ footer[id] {
 	place-items: center;
 	border-radius: 999px;
 	color: var(--text-muted);
-	transition: color 0.3s, background 0.3s;
+	transition:
+		color 0.3s,
+		background 0.3s;
 }
 html[lang="en"] .lang-toggle .l-en,
 html[lang="id"] .lang-toggle .l-id {
@@ -353,7 +370,9 @@ html[lang="id"] .lang-toggle .l-id {
 	height: 1.6px;
 	background: currentColor;
 	margin: 4px auto;
-	transition: transform 0.3s, opacity 0.3s;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
 }
 body.menu-open .menu-btn span:nth-child(1) {
 	transform: translateY(5.6px) rotate(45deg);
@@ -380,7 +399,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 		transform: translateY(-12px);
 		opacity: 0;
 		pointer-events: none;
-		transition: transform 0.35s, opacity 0.35s;
+		transition:
+			transform 0.35s,
+			opacity 0.35s;
 	}
 	body.menu-open .nav-links {
 		transform: translateY(0);
@@ -692,7 +713,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	overflow: hidden;
 	position: relative;
 	box-shadow: var(--shadow-sm);
-	transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s,
+	transition:
+		transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+		box-shadow 0.5s,
 		border-color 0.4s;
 }
 .pcard:hover {
@@ -763,8 +786,11 @@ body.menu-open .menu-btn span:nth-child(3) {
 	box-shadow: var(--shadow-sm);
 	transform: scale(0.7) rotate(-30deg);
 	opacity: 0;
-	transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s,
-		background 0.3s, color 0.3s;
+	transition:
+		transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+		opacity 0.45s,
+		background 0.3s,
+		color 0.3s;
 }
 .pcard:hover .pcard-arrow {
 	transform: scale(1) rotate(0);
@@ -821,7 +847,10 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border: 1px solid var(--border);
 	border-radius: 999px;
 	padding: 0.34em 0.78em;
-	transition: background 0.3s, color 0.3s, border-color 0.3s;
+	transition:
+		background 0.3s,
+		color 0.3s,
+		border-color 0.3s;
 }
 .pcard:hover .tag {
 	border-color: var(--border-strong);
@@ -920,7 +949,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border: 1.5px solid var(--border-strong);
 	display: grid;
 	place-items: center;
-	transition: border-color 0.3s, background 0.3s;
+	transition:
+		border-color 0.3s,
+		background 0.3s;
 }
 .tnode .dot::after {
 	content: "";
@@ -928,7 +959,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	height: 7px;
 	border-radius: 50%;
 	background: var(--text-muted);
-	transition: background 0.3s, transform 0.3s;
+	transition:
+		background 0.3s,
+		transform 0.3s;
 }
 .tnode.is-current .dot {
 	border-color: var(--accent);
@@ -1003,7 +1036,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	background: var(--surface);
 	border: 1px solid var(--border);
 	border-radius: var(--radius-sm);
-	transition: border-color 0.3s, transform 0.3s;
+	transition:
+		border-color 0.3s,
+		transform 0.3s;
 }
 .tnode .sub:hover {
 	border-color: var(--accent-line);
@@ -1091,7 +1126,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: 0.7rem;
 	color: var(--text-soft);
 	font-weight: 450;
-	transition: color 0.3s, transform 0.3s;
+	transition:
+		color 0.3s,
+		transform 0.3s;
 	width: max-content;
 }
 .footer-social a:hover {
@@ -1126,7 +1163,8 @@ body.menu-open .menu-btn span:nth-child(3) {
    reveal script is delayed or fails. The hidden start state only applies
    once the layout's visible-task adds `reveal-ready` to <html>. */
 .reveal {
-	transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+	transition:
+		opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
 		transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	transition-delay: var(--d, 0ms);
 	will-change: opacity, transform;
@@ -1135,9 +1173,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	opacity: 0;
 	transform: translateY(26px);
 }
-.reveal-ready .reveal[data-revealed="true"] { 
-    opacity: 1; 
-    transform: translateY(0); 
+.reveal-ready .reveal[data-revealed="true"] {
+	opacity: 1;
+	transform: translateY(0);
 }
 @media (prefers-reduced-motion: reduce) {
 	.reveal-ready .reveal {
@@ -1167,7 +1205,8 @@ body.menu-open .menu-btn span:nth-child(3) {
 
 /* hero stagger entrance */
 .hero [data-enter] {
-	transition: opacity 0.9s cubic-bezier(0.2, 0.85, 0.25, 1),
+	transition:
+		opacity 0.9s cubic-bezier(0.2, 0.85, 0.25, 1),
 		transform 0.9s cubic-bezier(0.2, 0.85, 0.25, 1);
 	transition-delay: calc(var(--i, 0) * 85ms + 80ms);
 }
@@ -1194,7 +1233,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	color: var(--text-soft);
 	font-weight: 500;
 	margin-bottom: 2rem;
-	transition: color 0.3s, gap 0.3s;
+	transition:
+		color 0.3s,
+		gap 0.3s;
 }
 .back-link:hover {
 	color: var(--accent);
@@ -1539,4 +1580,196 @@ body.menu-open .menu-btn span:nth-child(3) {
 	.proj-nav a.prev {
 		padding-right: 0;
 	}
+}
+
+/* ---------- Redesign: hero split, bento work, compact timeline ---------- */
+.hero-grid {
+	display: grid;
+	grid-template-columns: 1.15fr 0.85fr;
+	gap: clamp(2rem, 5vw, 4rem);
+	align-items: center;
+}
+.hero-grid .hero-lede {
+	max-width: 30ch;
+}
+.hero-visual {
+	position: relative;
+	justify-self: end;
+	width: min(100%, 400px);
+}
+.hv-frame {
+	aspect-ratio: 4 / 5;
+	border-radius: 200px 200px var(--radius-lg) var(--radius-lg);
+	overflow: hidden;
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	box-shadow: var(--shadow-lg);
+}
+.hv-frame img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.hv-card {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	padding: 0.75rem 1rem;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 14px;
+	box-shadow: var(--shadow-md);
+	font-family: var(--font-mono);
+	animation: float 6s ease-in-out infinite;
+}
+.hv-card span {
+	font-size: 0.68rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.hv-card b {
+	font-size: 0.82rem;
+	font-weight: 500;
+	white-space: nowrap;
+}
+.hv-card.c1 {
+	left: -12%;
+	top: 14%;
+}
+.hv-card.c2 {
+	right: -6%;
+	bottom: 10%;
+	animation-delay: -3s;
+}
+@keyframes float {
+	50% {
+		translate: 0 -8px;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.hv-card {
+		animation: none;
+	}
+}
+@media (max-width: 860px) {
+	.hero-grid {
+		grid-template-columns: 1fr;
+	}
+	.hero-visual {
+		justify-self: start;
+		width: min(78%, 320px);
+		margin-top: 1rem;
+	}
+	.hv-card.c1 {
+		left: auto;
+		right: -14%;
+		top: 8%;
+	}
+	.hv-card.c2 {
+		right: auto;
+		left: -6%;
+	}
+}
+
+/* about */
+.values {
+	grid-template-columns: repeat(3, 1fr);
+}
+.values .value h4 {
+	margin-top: 0.4rem;
+	font-size: 1.1rem;
+}
+@media (max-width: 520px) {
+	.values {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* work: tighter section head, "more" tile */
+.work-grid .pcard-body .summary {
+	font-size: 0.97rem;
+}
+.pcard-more {
+	align-items: flex-start;
+	justify-content: center;
+	gap: 0.6rem;
+	padding: 2rem;
+	min-height: 260px;
+	border-style: dashed;
+	border-color: var(--border-strong);
+	background: transparent;
+	box-shadow: none;
+}
+.pcard-more h3 {
+	font-family: var(--font-grotesk);
+	font-size: 1.5rem;
+}
+.pcard-more p {
+	color: var(--text-muted);
+}
+.pcard-more .more-ico {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: var(--accent-soft);
+	color: var(--accent);
+	margin-bottom: 0.6rem;
+	transition:
+		transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1),
+		background 0.3s,
+		color 0.3s;
+}
+.pcard-more:hover .more-ico {
+	transform: rotate(45deg);
+	background: var(--accent);
+	color: var(--accent-ink);
+}
+.pcard-more .more-ico svg {
+	width: 20px;
+	height: 20px;
+}
+
+/* experience: one-line highlight + expandable details */
+.xp-line {
+	margin-top: 0.7rem;
+	color: var(--text-soft);
+	font-size: 0.98rem;
+	line-height: 1.5;
+	max-width: 56ch;
+}
+.xp-more {
+	margin-top: 0.8rem;
+}
+.xp-more summary {
+	list-style: none;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	font-family: var(--font-mono);
+	font-size: 0.74rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+.xp-more summary::-webkit-details-marker {
+	display: none;
+}
+.xp-more summary::after {
+	content: "+";
+	display: inline-grid;
+	place-items: center;
+	width: 18px;
+	height: 18px;
+	border: 1px solid var(--accent-line);
+	border-radius: 50%;
+	line-height: 1;
+	transition: transform 0.3s;
+}
+.xp-more[open] summary::after {
+	transform: rotate(45deg);
 }

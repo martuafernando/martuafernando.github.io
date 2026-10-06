@@ -42,7 +42,7 @@ export const ProjectCard = component$<ProjectCardProps>(
 						{t(project.cardSummary ?? project.summary, lang.value)}
 					</p>
 					<div class="tags">
-						{project.tags.map((t) => (
+						{project.tags.slice(0, 3).map((t) => (
 							<Tag key={t}>{t}</Tag>
 						))}
 					</div>

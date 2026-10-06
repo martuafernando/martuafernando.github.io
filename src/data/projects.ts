@@ -12,8 +12,8 @@ export const projects: Project[] = [
 			id: "Sistem Perhitungan Bunker untuk PT Pertamina Trans Kontinental — mengotomatiskan perhitungan bahan bakar Remain-On-Board di Odoo.",
 		},
 		cardSummary: {
-			en: "An automated Remain-On-Board (ROB) bunker calculation system built on Odoo for a Pertamina subsidiary, replacing a slow manual process.",
-			id: "Sistem perhitungan bunker Remain-On-Board (ROB) otomatis berbasis Odoo untuk anak perusahaan Pertamina, menggantikan proses manual yang lambat.",
+			en: "Automated fuel calculations for a Pertamina subsidiary — minutes of manual work, now instant.",
+			id: "Perhitungan bahan bakar otomatis untuk anak usaha Pertamina — dari menit, kini instan.",
 		},
 		tags: ["Python", "Odoo", "PostgreSQL", "REST API"],
 		wide: true,
@@ -21,15 +21,15 @@ export const projects: Project[] = [
 			src: "/images/projects/buncis-pertamina-kontinental/cover.webp",
 			alt: "BUNCIS web app on a laptop and Android app on a phone",
 			width: 1600,
-			height: 1000
+			height: 1000,
 		},
 		gallery: [
 			{
 				src: "/images/projects/buncis-pertamina-kontinental/surat-keterangan-project-buncis.webp",
 				alt: "Surat Keterangan project BUNCIS from Pertamina Trans Kontinental",
 				width: 620,
-				height: 802
-			}
+				height: 802,
+			},
 		],
 		role: "Back End Developer",
 		engagement: {
@@ -110,7 +110,10 @@ export const projects: Project[] = [
 						},
 					},
 					{ value: "~4 mo", label: { en: "to delivery", id: "hingga rilis" } },
-					{ value: "VPS", label: { en: "self-deployed", id: "deploy mandiri" } },
+					{
+						value: "VPS",
+						label: { en: "self-deployed", id: "deploy mandiri" },
+					},
 				],
 				paragraphs: {
 					en: [
@@ -133,31 +136,35 @@ export const projects: Project[] = [
 			en: "A fast, framework-free restaurant discovery app — search, filter, and map nearby places to eat, with zero build step and instant loads.",
 			id: "Aplikasi pencari restoran yang cepat tanpa framework — cari, filter, dan petakan tempat makan terdekat, tanpa langkah build dan dengan pemuatan instan.",
 		},
+		cardSummary: {
+			en: "Find, filter, and map nearby places to eat. Zero dependencies.",
+			id: "Cari, filter, dan petakan tempat makan terdekat. Tanpa dependensi.",
+		},
 		tags: ["HTML5", "CSS3", "JavaScript"],
 		cover: {
 			src: "/images/projects/cari-resto/cover.webp",
 			alt: "Cari Resto app on a phone showing nearby restaurants on a map",
 			width: 900,
-			height: 1600
+			height: 1600,
 		},
 		gallery: [
 			{
 				src: "/images/projects/cari-resto/home-page.webp",
 				alt: "Cari Resto home page showing search and filter UI",
 				width: 900,
-				height: 1600
+				height: 1600,
 			},
 			{
 				src: "/images/projects/cari-resto/detail-page.webp",
 				alt: "Cari Resto detail page showing restaurant information",
 				width: 1600,
-				height: 900
+				height: 900,
 			},
 			{
 				src: "/images/projects/cari-resto/favorite-page.webp",
 				alt: "Cari Resto favorite page showing saved restaurants",
 				width: 1600,
-				height: 900
+				height: 900,
 			},
 		],
 		role: "Designer & Developer",
@@ -261,6 +268,7 @@ export function getAdjacentProjects(slug: string): AdjacentProjects {
 	const index = projects.findIndex((p) => p.slug === slug);
 	return {
 		prev: index > 0 ? projects[index - 1] : null,
-		next: index >= 0 && index < projects.length - 1 ? projects[index + 1] : null,
+		next:
+			index >= 0 && index < projects.length - 1 ? projects[index + 1] : null,
 	};
 }

@@ -1,8 +1,4 @@
-import {
-	createContextId,
-	type Signal,
-	useContext,
-} from "@builder.io/qwik";
+import { createContextId, type Signal, useContext } from "@builder.io/qwik";
 
 /** Supported interface languages. */
 export type Lang = "en" | "id";
@@ -36,25 +32,31 @@ export const ui = {
 	// Work
 	selectedWork: { en: "Selected Work", id: "Karya Pilihan" },
 	workHeading: {
-		en: "Projects I've designed, built, and shipped.",
-		id: "Proyek yang saya rancang, bangun, dan rilis.",
+		en: "Things I've built.",
+		id: "Yang sudah saya bangun.",
 	},
 	workLede: {
-		en: "A mix of production systems and personal builds. Each one has its own story — open any project for the full case study.",
-		id: "Perpaduan sistem produksi dan proyek pribadi. Masing-masing punya ceritanya — buka proyek mana pun untuk studi kasus lengkap.",
+		en: "Tap a project for the case study.",
+		id: "Ketuk proyek untuk studi kasus.",
+	},
+	moreOnGithub: { en: "More on GitHub", id: "Lainnya di GitHub" },
+	moreOnGithubSub: {
+		en: "Experiments & side projects",
+		id: "Eksperimen & proyek sampingan",
 	},
 	// About
 	about: { en: "About", id: "Tentang" },
 	// Experience
 	experience: { en: "Experience", id: "Pengalaman" },
 	experienceHeadingHtml: {
-		en: "A short<br />track record.",
-		id: "Rekam jejak<br />singkat.",
+		en: "Track<br />record.",
+		id: "Rekam<br />jejak.",
 	},
 	experienceLede: {
-		en: "Three years across engineering, teaching, and design — building products and the people around them.",
-		id: "Tiga tahun di bidang engineering, pengajaran, dan desain — membangun produk dan orang-orang di sekitarnya.",
+		en: "Engineering, teaching, design.",
+		id: "Engineering, mengajar, desain.",
 	},
+	details: { en: "Details", id: "Detail" },
 	// Project detail
 	backToWork: { en: "Back to all work", id: "Kembali ke semua karya" },
 	year: { en: "Year", id: "Tahun" },

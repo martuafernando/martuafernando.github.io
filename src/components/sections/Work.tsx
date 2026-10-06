@@ -1,5 +1,7 @@
 import { component$ } from "@builder.io/qwik";
+import { ArrowUpRight } from "../ui/icons";
 import { ProjectCard } from "../projects";
+import { socials } from "~/data/site";
 import { getProjects } from "~/data/projects";
 import { t, ui, useLang } from "~/i18n";
 
@@ -25,6 +27,19 @@ export const Work = component$(() => {
 							total={projects.length}
 						/>
 					))}
+					<a
+						class="pcard pcard-more reveal"
+						style={`--d:${projects.length * 70}ms`}
+						href={socials[0].href}
+						target="_blank"
+						rel="noopener"
+					>
+						<span class="more-ico">
+							<ArrowUpRight />
+						</span>
+						<h3>{t(ui.moreOnGithub, l)}</h3>
+						<p>{t(ui.moreOnGithubSub, l)}</p>
+					</a>
 				</div>
 			</div>
 		</section>
