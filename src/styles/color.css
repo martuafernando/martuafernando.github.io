@@ -29,10 +29,23 @@
 	--shadow-md: none;
 	--shadow-lg: none;
 
-	/* rhythm */
+	/* spacing scale (4px base) — every gap, margin and padding uses these */
+	--s-1: 0.25rem;
+	--s-2: 0.5rem;
+	--s-3: 0.75rem;
+	--s-4: 1rem;
+	--s-5: 1.5rem;
+	--s-6: 2rem;
+	--s-7: 3rem;
+	--s-8: 4rem;
+	--s-9: 6rem;
+
+	/* rhythm: related items sit close, groups sit apart */
+	--block: clamp(var(--s-5), 4vw, var(--s-6)); /* heading → content */
+	--col: clamp(var(--s-5), 5vw, var(--s-8)); /* grid column gap */
 	--maxw: 1160px;
 	--gutter: clamp(20px, 5vw, 72px);
-	--section-y: clamp(56px, 9vh, 96px);
+	--section-y: clamp(var(--s-6), 6vw, var(--s-8));
 	--radius: 8px;
 	--radius-sm: 6px;
 	--radius-lg: 12px;

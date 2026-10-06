@@ -9,7 +9,7 @@ export const Hero = component$(() => {
 
 	return (
 		<section class="hero">
-			<div class="wrap hero-grid">
+			<div class="wrap">
 				<div class="hero-copy">
 					<span class="hero-status" data-enter="" style="--i:0">
 						<span class="dot" /> {t(hero.status, l)}
@@ -40,17 +40,6 @@ export const Hero = component$(() => {
 								<span>{t(s.label, l)}</span>
 							</div>
 						))}
-					</div>
-				</div>
-				<div class="hero-visual" data-enter="" style="--i:2" aria-hidden="true">
-					<div class="hv-frame">
-						<img
-							src="/images/martuafernando.svg"
-							alt=""
-							width={1000}
-							height={1200}
-							decoding="async"
-						/>
 					</div>
 				</div>
 			</div>
