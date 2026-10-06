@@ -7,7 +7,7 @@ export const About = component$(() => {
 	const l = lang.value;
 
 	return (
-		<section class="section" id="about">
+		<section class="section section-tint" id="about">
 			<div class="wrap about-grid">
 				<div class="about-photo reveal">
 					<div class="photo-frame">

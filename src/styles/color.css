@@ -44,6 +44,8 @@
 	--block: clamp(var(--s-5), 4vw, var(--s-6)); /* heading → content */
 	--col: clamp(var(--s-5), 5vw, var(--s-8)); /* grid column gap */
 	--maxw: 1160px;
+	--nav-h: 60px;
+	--tap: 2.75rem; /* minimum touch target (44px) */
 	--gutter: clamp(20px, 5vw, 72px);
 	--section-y: clamp(var(--s-6), 6vw, var(--s-8));
 	--radius: 8px;
@@ -55,8 +57,8 @@
 	--display-weight: 600;
 	--display-tracking: -0.03em;
 	--eyebrow-family: var(--font-mono);
-	--hero-size: clamp(2.4rem, 5.5vw, 3.75rem);
-	--h2-size: clamp(1.6rem, 3vw, 2.25rem);
+	--hero-size: clamp(2.25rem, 1.4rem + 4.2vw, 3.75rem);
+	--h2-size: clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
 
 	color-scheme: light;
 
