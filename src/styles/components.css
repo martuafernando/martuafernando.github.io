@@ -834,8 +834,10 @@ body.menu-open .menu-btn span:nth-child(3) {
 	.tnode {
 		grid-template-columns: 1fr;
 	}
-	.tnode .when {
+	.tnode > * {
 		grid-column: 1;
+	}
+	.tnode .when {
 		grid-row: auto;
 		flex-direction: row;
 		align-items: center;
