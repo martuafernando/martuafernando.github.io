@@ -28,6 +28,7 @@ export const ui = {
 	getInTouch: { en: "Get in touch", id: "Yuk, ngobrol" },
 	// Hero
 	viewWork: { en: "View Work", id: "Lihat Proyek" },
+	now: { en: "Now", id: "Sekarang" },
 	orGetInTouch: { en: "Or get in touch", id: "Atau langsung ngobrol aja" },
 	// Work
 	selectedWork: { en: "Selected Work", id: "Proyek Pilihan" },
@@ -94,6 +95,8 @@ export const ui = {
 		en: "Let's build something that lasts.",
 		id: "Yuk, bikin sesuatu yang awet.",
 	},
+	copyEmail: { en: "Copy", id: "Salin" },
+	copied: { en: "Copied", id: "Tersalin" },
 	elsewhere: { en: "Elsewhere", id: "Tautan lain" },
 	footerNote: {
 		en: "Designed & built with care · Indonesia",

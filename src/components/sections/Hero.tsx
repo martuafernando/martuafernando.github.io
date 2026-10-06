@@ -1,11 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import { ArrowRight, ArrowUpRight } from "../ui/icons";
+import { timeline } from "~/data/experiences";
 import { hero, skills } from "~/data/site";
 import { t, ui, useLang } from "~/i18n";
 
 export const Hero = component$(() => {
 	const lang = useLang();
 	const l = lang.value;
+	const current = timeline[0];
 
 	return (
 		<section class="hero">
@@ -33,7 +35,13 @@ export const Hero = component$(() => {
 							<ArrowUpRight />
 						</a>
 					</div>
-					<div class="hero-meta" data-enter="" style="--i:4">
+					<p class="hero-proof" data-enter="" style="--i:4">
+						<span class="k">{t(ui.now, l)}</span>
+						<span>
+							{t(current.title, l)} · {current.org}
+						</span>
+					</p>
+					<div class="hero-meta" data-enter="" style="--i:5">
 						{hero.stats.map((s) => (
 							<div class="stat" key={t(s.label, "en")}>
 								<b>{s.value}</b>
@@ -44,7 +52,7 @@ export const Hero = component$(() => {
 				</div>
 			</div>
 			<div class="wrap">
-				<ul class="skill-row" data-enter="" style="--i:5" aria-label="Skills">
+				<ul class="skill-row" data-enter="" style="--i:6" aria-label="Skills">
 					{skills.map((s) => (
 						<li key={s}>{s}</li>
 					))}

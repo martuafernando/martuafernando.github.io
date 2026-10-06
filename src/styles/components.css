@@ -420,6 +420,20 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border-radius: 50%;
 	background: #3fae6b;
 }
+@media (prefers-reduced-motion: no-preference) {
+	.hero-status .dot {
+		animation: live 2.4s ease-out infinite;
+	}
+}
+@keyframes live {
+	0% {
+		box-shadow: 0 0 0 0 color-mix(in oklch, #3fae6b 55%, transparent);
+	}
+	70%,
+	100% {
+		box-shadow: 0 0 0 7px transparent;
+	}
+}
 .hero h1 {
 	font-size: var(--hero-size);
 	margin-bottom: var(--s-4);
@@ -441,6 +455,22 @@ body.menu-open .menu-btn span:nth-child(3) {
 	column-gap: var(--s-5);
 	flex-wrap: wrap;
 }
+.hero-proof {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: var(--s-1) var(--s-3);
+	margin-top: var(--s-5);
+	color: var(--text-soft);
+	font-size: 0.95rem;
+}
+.hero-proof .k {
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
 .hero-meta {
 	margin-top: var(--block);
 	display: flex;
@@ -453,8 +483,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: var(--s-1);
 }
 .hero-meta .stat b {
-	font-family: var(--font-grotesk);
-	font-size: 1.5rem;
+	font-family: var(--font-mono);
+	font-variant-numeric: tabular-nums;
+	font-size: 1.75rem;
 	font-weight: 600;
 	letter-spacing: -0.02em;
 	line-height: 1.1;
@@ -829,6 +860,32 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .footer-mail:hover svg {
 	transform: translate(2px, -2px);
+}
+.footer-mail-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--s-2) var(--s-4);
+}
+.copy-btn {
+	min-height: var(--tap);
+	padding: 0 var(--s-4);
+	font-family: var(--font-mono);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--text-soft);
+	background: transparent;
+	border: 1px solid var(--border-strong);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition:
+		color 0.2s,
+		border-color 0.2s;
+}
+.copy-btn:hover {
+	color: var(--accent);
+	border-color: var(--accent);
 }
 .footer-social {
 	display: flex;
@@ -1372,5 +1429,60 @@ body.menu-open .menu-btn span:nth-child(3) {
 		top: calc(var(--nav-h) + var(--s-6));
 		flex-direction: column;
 		gap: var(--s-6);
+	}
+}
+
+/* ==========================================================================
+   Progressive enhancements
+   ========================================================================== */
+
+/* hover feedback: an accent bar grows on the row being considered */
+.prow::before,
+.tnode::before {
+	content: "";
+	position: absolute;
+	left: calc(var(--s-4) * -1);
+	top: var(--s-5);
+	bottom: var(--s-5);
+	width: 2px;
+	background: var(--accent);
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: transform 0.25s ease-out;
+}
+.tnode {
+	position: relative;
+}
+@media (hover: hover) and (min-width: 640px) {
+	.prow:hover::before,
+	.tnode:hover::before {
+		transform: scaleY(1);
+	}
+}
+
+/* reading progress: a thin accent line under the header, driven by scroll */
+@supports (animation-timeline: scroll()) {
+	.site-header::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+		height: 2px;
+		background: var(--accent);
+		transform: scaleX(0);
+		transform-origin: left;
+		animation: read-progress linear both;
+		animation-timeline: scroll(root block);
+	}
+	@keyframes read-progress {
+		to {
+			transform: scaleX(1);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.site-header::after {
+			display: none;
+		}
 	}
 }
