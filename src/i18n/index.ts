@@ -33,7 +33,7 @@ export const ui = {
 	selectedWork: { en: "Selected Work", id: "Proyek Pilihan" },
 	workHeading: {
 		en: "Things I've built.",
-		id: "Yang udah aku bikin.",
+		id: "Proyek yang telah dibangun.",
 	},
 	workLede: {
 		en: "Tap a project for the case study.",
@@ -86,7 +86,7 @@ export const ui = {
 	},
 	policyContactLede: {
 		en: "Write to me and I'll answer directly — there's no support desk in between.",
-		id: "Kirim pesan ke saya dan akan saya jawab langsung — tidak ada meja bantuan di antaranya.",
+		id: "Kirim pesan dan langsung dibalas oleh orangnya sendiri — tanpa meja bantuan di antaranya.",
 	},
 	// Footer
 	contact: { en: "Contact", id: "Kontak" },

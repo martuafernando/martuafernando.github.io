@@ -66,23 +66,23 @@ export const projects: Project[] = [
 				},
 			},
 			{
-				segLabel: { en: "My role", id: "Peran saya" },
+				segLabel: { en: "My role", id: "Peran" },
 				heading: {
 					en: "What I contributed",
-					id: "Yang aku kerjakan",
+					id: "Yang dikerjakan",
 				},
 				paragraphs: {
 					en: [
 						"As a freelance Back End Developer I built the system on Odoo and Python: initiating and implementing the business automation that drives the Remain-On-Board (ROB) calculation, plus the RESTful APIs behind the Android client. The goal was to replace a slow, error-prone manual process with something faster and more reliable — operations software where a wrong number costs more than a missing feature.",
 					],
 					id: [
-						"Sebagai Back End Developer, aku merancang dan membangun sistem pakai Odoo dan Python untuk mengotomatiskan proses bisnis yang menghitung Remain-On-Board (ROB), plus bikin RESTful API buat aplikasi Android. Tujuannya: mengganti proses manual yang lambat dan gampang salah dengan sistem yang lebih cepat, andal, dan bisa diakses dari banyak lokasi sekaligus.",
+						"Sebagai Back End Developer, merancang dan membangun sistem dengan Odoo dan Python untuk mengotomatiskan proses bisnis yang menghitung Remain-On-Board (ROB), plus membuat RESTful API untuk aplikasi Android. Tujuannya: mengganti proses manual yang lambat dan rawan salah dengan sistem yang lebih cepat, andal, dan bisa diakses dari banyak lokasi sekaligus.",
 					],
 				},
 			},
 			{
 				segLabel: { en: "The build", id: "Proses Pembuatan" },
-				heading: { en: "What I built", id: "Yang saya bangun" },
+				heading: { en: "What I built", id: "Yang dibangun" },
 				checks: {
 					en: [
 						"RESTful APIs on Odoo powering the Android client.",
@@ -205,23 +205,23 @@ export const projects: Project[] = [
 				},
 			},
 			{
-				segLabel: { en: "My role", id: "Peran saya" },
+				segLabel: { en: "My role", id: "Peran" },
 				heading: {
 					en: "What I contributed",
-					id: "Yang aku kerjakan",
+					id: "Yang dikerjakan",
 				},
 				paragraphs: {
 					en: [
 						"This is an solo project: I designed the interface and built the website using HTML, CSS, and vanilla JavaScript. I focused on implementing PWA technology and an instant search-and-filter flow, with a responsive layout from mobile to desktop.",
 					],
 					id: [
-						"Ini proyek solo: aku merancang tampilannya dan membangun webnya pakai HTML, CSS, dan vanilla JavaScript. Fokusku di penerapan PWA, alur cari-dan-filter yang instan, dan layout responsif dari HP sampai desktop.",
+						"Ini proyek solo: tampilan dirancang dan web dibangun sendiri dengan HTML, CSS, dan vanilla JavaScript, dengan fokus pada penerapan PWA, alur cari-dan-filter yang instan, dan layout responsif dari ponsel sampai desktop.",
 					],
 				},
 			},
 			{
 				segLabel: { en: "The build", id: "Proses Pembuatan" },
-				heading: { en: "What I built", id: "Yang saya bangun" },
+				heading: { en: "What I built", id: "Yang dibangun" },
 				checks: {
 					en: [
 						"A Progressive Web App (PWA) with offline support and installability.",
@@ -248,7 +248,7 @@ export const projects: Project[] = [
 						"Building without a framework forced me to understand what frameworks actually buy you — and where they're overkill. I came away with sharper fundamentals in the DOM, state, and CSS layout, and a real appreciation for how much you can ship with the platform alone when performance matters.",
 					],
 					id: [
-						"Bikin tanpa framework bikin aku paham apa sebenarnya yang ditawarkan framework — dan kapan itu malah berlebihan. Hasilnya, fondasiku di DOM, state, dan layout CSS jadi lebih kuat, dan aku makin sadar betapa banyak yang bisa dirilis cuma dengan fitur bawaan browser kalau performa memang penting.",
+						"Membangun tanpa framework membuat jelas apa sebenarnya yang ditawarkan framework — dan kapan itu malah berlebihan. Hasilnya, fondasi di DOM, state, dan layout CSS jadi lebih kuat, dan makin terasa betapa banyak yang bisa dirilis cuma dengan fitur bawaan browser kalau performa memang penting.",
 					],
 				},
 			},
