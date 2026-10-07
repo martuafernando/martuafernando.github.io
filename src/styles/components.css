@@ -559,6 +559,10 @@ body.menu-open .menu-btn span:nth-child(3) {
 	padding: var(--s-4) 0;
 	border-bottom: 1px solid var(--border);
 }
+.values .value:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
 .values .value .vk {
 	font-family: var(--font-sans);
 	font-size: 0.72rem;
@@ -593,6 +597,10 @@ body.menu-open .menu-btn span:nth-child(3) {
 	padding: var(--s-5) 0;
 	border-bottom: 1px solid var(--border);
 	position: relative;
+}
+.prow:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
 }
 .prow .year {
 	grid-column: 1 / -1;
