@@ -1384,6 +1384,12 @@ body.menu-open .menu-btn span:nth-child(3) {
 		position: sticky;
 		top: calc(var(--nav-h) + var(--s-6));
 	}
+	.timeline {
+		border-top: 0;
+	}
+	.tnode:first-child {
+		padding-top: var(--s-1);
+	}
 
 	.proj-head {
 		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
