@@ -104,7 +104,7 @@ export const about = {
 	paragraphs: [
 		{
 			en: "I'm Fernando — I build reliable systems end to end, from <strong>backend</strong> and <strong>data pipelines</strong> to enterprise software.",
-			id: "Aku Fernando — bikin sistem yang andal dari ujung ke ujung, mulai dari <strong>backend</strong> dan <strong>data pipeline</strong> sampai software enterprise.",
+			id: "Fernando — membangun sistem andal secara end-to-end, mulai dari <strong>backend</strong> dan <strong>data pipeline</strong> sampai software enterprise.",
 		},
 	] satisfies Localized[],
 
