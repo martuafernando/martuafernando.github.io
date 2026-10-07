@@ -240,7 +240,7 @@ footer[id] {
 	display: inline-flex;
 	align-items: center;
 	min-height: var(--tap);
-	font-family: var(--font-grotesk);
+	font-family: var(--font-sans);
 	font-weight: 600;
 	letter-spacing: -0.02em;
 	font-size: 1.05rem;
@@ -343,7 +343,7 @@ body.menu-open .nav-links {
 	border-radius: var(--radius-sm);
 	cursor: pointer;
 	overflow: hidden;
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	letter-spacing: 0.04em;
 	color: var(--text);
@@ -409,7 +409,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	display: inline-flex;
 	align-items: flex-start;
 	gap: var(--s-2);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.8rem;
 	line-height: 1.4;
 	color: var(--text-soft);
@@ -472,7 +472,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.95rem;
 }
 .hero-proof .k {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.72rem;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
@@ -490,7 +490,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: var(--s-1);
 }
 .hero-meta .stat b {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-variant-numeric: tabular-nums;
 	font-size: 1.75rem;
 	font-weight: 600;
@@ -500,7 +500,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 .hero-meta .stat span {
 	font-size: 0.8rem;
 	color: var(--text-muted);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 }
 .skill-row {
 	list-style: none;
@@ -510,7 +510,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--s-1) var(--s-5);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.8rem;
 	color: var(--text-muted);
 }
@@ -545,7 +545,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border: 1px solid var(--border);
 	border-radius: var(--radius-sm);
 	padding: var(--s-1) var(--s-3);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	display: flex;
 	align-items: center;
@@ -563,6 +563,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	max-width: 24ch;
 }
 .about-body p {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
+	line-height: 1.7;
 	color: var(--text-soft);
 	margin-bottom: var(--s-4);
 	max-width: 60ch;
@@ -580,7 +583,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border-bottom: 1px solid var(--border);
 }
 .values .value .vk {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.72rem;
 	color: var(--accent);
 	letter-spacing: 0.12em;
@@ -594,6 +597,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	letter-spacing: -0.01em;
 }
 .values .value p {
+	font-family: var(--font-sans);
 	font-size: 0.95rem;
 	color: var(--text-muted);
 	margin: 0;
@@ -616,7 +620,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .prow .year {
 	grid-column: 1 / -1;
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.8rem;
 	color: var(--text-muted);
 }
@@ -668,7 +672,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	padding-top: var(--s-1);
 }
 .tag {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	color: var(--text-soft);
 	background: var(--surface-2);
@@ -710,7 +714,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	align-items: center;
 	gap: var(--s-2) var(--s-3);
 	margin-bottom: var(--s-2);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.78rem;
 	color: var(--text-muted);
 }
@@ -754,7 +758,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	align-items: center;
 	gap: var(--s-2);
 	min-height: var(--tap);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -818,7 +822,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.95rem;
 }
 .tnode .sub .meta {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	color: var(--text-muted);
 	margin-top: var(--s-1);
@@ -840,7 +844,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	margin: var(--s-3) 0 var(--s-4);
 }
 .footer-mail {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-sans);
 	font-size: clamp(1.05rem, 4.6vw, 1.4rem);
 	font-weight: 500;
 	color: var(--text);
@@ -877,7 +881,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 .copy-btn {
 	min-height: var(--tap);
 	padding: 0 var(--s-4);
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
@@ -926,7 +930,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: var(--s-1);
 	color: var(--text-muted);
 	font-size: 0.8rem;
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 }
 
 /* ---------- Motion ----------
@@ -1034,7 +1038,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	min-width: 0;
 }
 .fact .k {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.72rem;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
@@ -1117,12 +1121,12 @@ body.menu-open .menu-btn span:nth-child(3) {
 	margin-top: var(--s-7);
 }
 .prose h2 {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-sans);
 	font-size: clamp(1.35rem, 4.5vw, 1.75rem);
 	margin: 0 0 var(--s-3);
 }
 .prose .seg-label {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
@@ -1131,6 +1135,8 @@ body.menu-open .menu-btn span:nth-child(3) {
 	display: block;
 }
 .prose p {
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
 	color: var(--text-soft);
 	line-height: 1.7;
 	margin-bottom: var(--s-4);
@@ -1150,6 +1156,8 @@ body.menu-open .menu-btn span:nth-child(3) {
 .prose ul.checks li {
 	position: relative;
 	padding-left: var(--s-6);
+	font-family: var(--font-serif);
+	font-size: 1.0625rem;
 	color: var(--text-soft);
 	line-height: 1.55;
 }
@@ -1188,7 +1196,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .impact-grid .cell b {
 	display: block;
-	font-family: var(--font-grotesk);
+	font-family: var(--font-sans);
 	font-size: 1.7rem;
 	font-weight: 600;
 	letter-spacing: -0.02em;
@@ -1244,7 +1252,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	border-top: 1px solid var(--border);
 }
 .proj-nav a .dir {
-	font-family: var(--font-mono);
+	font-family: var(--font-sans);
 	font-size: 0.75rem;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
@@ -1254,7 +1262,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: var(--s-2);
 }
 .proj-nav a .ttl {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-sans);
 	font-size: clamp(1.2rem, 4.5vw, 1.6rem);
 	font-weight: 600;
 	letter-spacing: -0.02em;
