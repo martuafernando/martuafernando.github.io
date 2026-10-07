@@ -157,7 +157,7 @@ footer[id] {
 }
 .btn-ghost:hover {
 	border-color: var(--accent);
-	color: var(--accent);
+	color: var(--accent-text);
 }
 
 .tlink {
@@ -270,7 +270,7 @@ body.menu-open .nav-links {
 	color: var(--text);
 }
 .nav-links a.active {
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .nav-actions {
 	display: flex;
@@ -297,7 +297,7 @@ body.menu-open .nav-links {
 .theme-toggle:hover,
 .menu-btn:hover {
 	border-color: var(--accent);
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .theme-toggle svg {
 	width: 19px;
@@ -425,7 +425,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	max-width: 20ch;
 }
 .hero h1 .accent {
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .hero-lede {
 	font-size: 1.1rem;
@@ -454,7 +454,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.72rem;
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .hero-meta {
 	margin-top: var(--block);
@@ -562,7 +562,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 .values .value .vk {
 	font-family: var(--font-sans);
 	font-size: 0.72rem;
-	color: var(--accent);
+	color: var(--accent-text);
 	letter-spacing: 0.12em;
 	text-transform: uppercase;
 }
@@ -635,7 +635,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .prow:hover h3,
 .prow:hover .prow-arrow {
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .prow:hover .prow-arrow {
 	transform: translate(2px, -2px);
@@ -697,7 +697,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	white-space: nowrap;
 }
 .tnode .when .badge {
-	color: var(--accent);
+	color: var(--accent-text);
 	border: 1px solid var(--accent-line);
 	border-radius: var(--radius-sm);
 	padding: 0.1em 0.5em;
@@ -737,7 +737,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.75rem;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .xp-more summary::-webkit-details-marker {
 	display: none;
@@ -869,7 +869,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 		border-color 0.2s;
 }
 .copy-btn:hover {
-	color: var(--accent);
+	color: var(--accent-text);
 	border-color: var(--accent);
 }
 .footer-social {
@@ -889,7 +889,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	transition: color 0.2s;
 }
 .footer-social a:hover {
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .footer-social a svg {
 	width: 18px;
@@ -964,7 +964,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 		gap 0.2s;
 }
 .back-link:hover {
-	color: var(--accent);
+	color: var(--accent-text);
 	gap: var(--s-3);
 }
 .back-link svg {
@@ -1070,7 +1070,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .meta-block ul li::before {
 	content: "→";
-	color: var(--accent);
+	color: var(--accent-text);
 	font-size: 0.85rem;
 }
 .meta-block ul.plain li::before {
@@ -1099,7 +1099,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.75rem;
 	letter-spacing: 0.14em;
 	text-transform: uppercase;
-	color: var(--accent);
+	color: var(--accent-text);
 	margin-bottom: var(--s-2);
 	display: block;
 }
@@ -1237,7 +1237,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	overflow-wrap: break-word;
 }
 .proj-nav a:hover .ttl {
-	color: var(--accent);
+	color: var(--accent-text);
 }
 .proj-nav a .dir svg {
 	width: 1em;
