@@ -3,9 +3,10 @@
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 :root {
-	--font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
-		"Segoe UI", sans-serif;
-	--font-mono: "Space Mono", ui-monospace, "SF Mono", Menlo, monospace;
+	--font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+		sans-serif;
+	--font-grotesk: "Space Grotesk", var(--font-sans);
+	--font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
 	/* accent — cobalt blue (baked) */
 	--accent: #3b6fe0;
@@ -52,12 +53,12 @@
 	--radius-lg: 12px;
 
 	/* type scale — "mono" style baked in */
-	--display-family: var(--font-mono);
-	--display-weight: 700;
-	--display-tracking: -0.02em;
+	--display-family: var(--font-grotesk);
+	--display-weight: 600;
+	--display-tracking: -0.03em;
 	--eyebrow-family: var(--font-mono);
-	--hero-size: clamp(2rem, 1.2rem + 3.6vw, 3.25rem);
-	--h2-size: clamp(1.4rem, 1rem + 1.6vw, 2rem);
+	--hero-size: clamp(2.25rem, 1.4rem + 4.2vw, 3.75rem);
+	--h2-size: clamp(1.5rem, 1.1rem + 2vw, 2.25rem);
 
 	color-scheme: light;
 
