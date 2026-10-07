@@ -240,7 +240,7 @@ footer[id] {
 	display: inline-flex;
 	align-items: center;
 	min-height: var(--tap);
-	font-family: var(--font-grotesk);
+	font-family: var(--font-mono);
 	font-weight: 600;
 	letter-spacing: -0.02em;
 	font-size: 1.05rem;
@@ -587,7 +587,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	text-transform: uppercase;
 }
 .values .value h4 {
-	font-family: var(--font-sans);
 	font-size: 1.05rem;
 	font-weight: 600;
 	margin: var(--s-1) 0;
@@ -630,7 +629,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	min-width: 0;
 }
 .prow h3 {
-	font-family: var(--font-sans);
 	font-size: 1.15rem;
 	font-weight: 600;
 	letter-spacing: -0.01em;
@@ -727,7 +725,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	text-transform: uppercase;
 }
 .tnode h3 {
-	font-family: var(--font-sans);
 	font-size: 1.1rem;
 	font-weight: 600;
 	letter-spacing: -0.01em;
@@ -840,7 +837,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	margin: var(--s-3) 0 var(--s-4);
 }
 .footer-mail {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-mono);
 	font-size: clamp(1.05rem, 4.6vw, 1.4rem);
 	font-weight: 500;
 	color: var(--text);
@@ -1117,7 +1114,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	margin-top: var(--s-7);
 }
 .prose h2 {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-mono);
 	font-size: clamp(1.35rem, 4.5vw, 1.75rem);
 	margin: 0 0 var(--s-3);
 }
@@ -1188,7 +1185,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 .impact-grid .cell b {
 	display: block;
-	font-family: var(--font-grotesk);
+	font-family: var(--font-mono);
 	font-size: 1.7rem;
 	font-weight: 600;
 	letter-spacing: -0.02em;
@@ -1254,7 +1251,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	gap: var(--s-2);
 }
 .proj-nav a .ttl {
-	font-family: var(--font-grotesk);
+	font-family: var(--font-mono);
 	font-size: clamp(1.2rem, 4.5vw, 1.6rem);
 	font-weight: 600;
 	letter-spacing: -0.02em;

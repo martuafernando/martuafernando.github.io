@@ -10,7 +10,7 @@ import "./global.css";
 import { QwikPartytown } from "./components/partytown/partytown";
 
 export default component$(() => {
-  const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID
+	const googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 	/**
 	 * The root of a QwikCity site always start with the <QwikCityProvider> component,
 	 * immediately followed by the document's <head> and <body>.
@@ -35,7 +35,7 @@ export default component$(() => {
 				/>
 				<link
 					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
 				/>
 				{!isDev && (
 					<link
