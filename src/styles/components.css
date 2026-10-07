@@ -370,12 +370,18 @@ html[lang="id"] .lang-toggle .l-id {
 }
 
 /* mobile menu button */
+.menu-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+}
 .menu-btn span {
 	display: block;
 	width: 17px;
 	height: 1.6px;
 	background: currentColor;
-	margin: 2px auto;
 	transition:
 		transform 0.2s,
 		opacity 0.2s;
