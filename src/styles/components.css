@@ -1,16 +1,3 @@
-/* ==========================================================================
-   Mobile-first. The base styles describe a single column that works at any
-   width; wider layouts are added with `min-width` queries only (640 / 900).
-
-   Rules that keep this robust:
-   - No grid-column / grid-row placement in base styles. Explicit placement
-     lives inside the query that creates the columns it refers to.
-   - Text tracks are `minmax(0, 1fr)`; icon tracks have a fixed size, never `auto`.
-   - Dates and badges don't wrap; meta rows use flex-wrap.
-   - Interactive targets are at least --tap (44px) tall.
-   ========================================================================== */
-
-/* ---------- Base ---------- */
 * {
 	box-sizing: border-box;
 }
@@ -81,7 +68,6 @@ svg {
 	border-radius: 4px;
 }
 
-/* anchor targets clear the fixed header */
 section[id],
 footer[id] {
 	scroll-margin-top: calc(var(--nav-h) + var(--s-2));
@@ -101,7 +87,6 @@ footer[id] {
 	border-block: 1px solid var(--border);
 }
 
-/* eyebrow / kicker */
 .eyebrow {
 	font-family: var(--eyebrow-family);
 	font-size: 0.75rem;
@@ -129,7 +114,6 @@ footer[id] {
 	max-width: 52ch;
 }
 
-/* ---------- Buttons & links ---------- */
 .btn {
 	display: inline-flex;
 	align-items: center;
@@ -176,7 +160,6 @@ footer[id] {
 	color: var(--accent);
 }
 
-/* text link with animated underline */
 .tlink {
 	position: relative;
 	color: var(--text-soft);
@@ -215,7 +198,6 @@ footer[id] {
 	transform: translateX(2px);
 }
 
-/* ---------- Header / Nav (mobile: dropdown menu) ---------- */
 .site-header {
 	position: fixed;
 	inset: 0 0 auto 0;
@@ -296,7 +278,6 @@ body.menu-open .nav-links {
 	gap: var(--s-2);
 }
 
-/* theme toggle */
 .theme-toggle,
 .menu-btn {
 	width: var(--tap);
@@ -332,7 +313,6 @@ body.menu-open .nav-links {
 	display: none;
 }
 
-/* language toggle */
 .lang-toggle {
 	display: inline-flex;
 	align-items: center;
@@ -369,7 +349,6 @@ html[lang="id"] .lang-toggle .l-id {
 	background: var(--accent);
 }
 
-/* mobile menu button */
 .menu-btn {
 	display: flex;
 	flex-direction: column;
@@ -397,7 +376,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	transform: translateY(-6px) rotate(-45deg);
 }
 
-/* ---------- Hero ---------- */
 .hero {
 	padding-top: calc(var(--nav-h) + var(--s-7));
 	padding-bottom: var(--section-y);
@@ -515,7 +493,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	color: var(--text-muted);
 }
 
-/* ---------- About ---------- */
 .about-grid {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
@@ -604,7 +581,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	line-height: 1.5;
 }
 
-/* ---------- Work list ---------- */
 .work-list {
 	border-top: 1px solid var(--border);
 }
@@ -682,7 +658,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	white-space: nowrap;
 }
 
-/* ---------- Experience ---------- */
 .xp-layout {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr);
@@ -828,7 +803,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	margin-top: var(--s-1);
 }
 
-/* ---------- Footer ---------- */
 .site-footer {
 	border-top: 1px solid var(--border);
 	padding-block: var(--s-7) var(--s-5);
@@ -933,10 +907,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-family: var(--font-sans);
 }
 
-/* ---------- Motion ----------
-   Content is visible by default so it can never be stranded if the reveal
-   script is delayed or fails. The hidden start state only applies once the
-   layout's visible-task adds `reveal-ready` to <html>. */
+/* Visible by default; hidden start state applies only once JS adds `reveal-ready`. */
 .reveal {
 	transition:
 		opacity 0.5s ease-out,
@@ -959,7 +930,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	}
 }
 
-/* hero stagger entrance */
 .hero [data-enter] {
 	transition:
 		opacity 0.5s ease-out,
@@ -977,7 +947,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	transform: none;
 }
 
-/* ---------- Project detail (and privacy policy) ---------- */
 .proj-hero {
 	padding-top: calc(var(--nav-h) + var(--s-6));
 	padding-bottom: var(--block);
@@ -1210,7 +1179,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 .gallery {
 	margin-top: var(--s-8);
 }
-/* masonry: items flow down each column, keeping their true aspect-ratio */
 .gallery-grid {
 	--gap: var(--s-4);
 	column-count: 1;
@@ -1232,7 +1200,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	object-fit: cover;
 }
 
-/* prev / next nav */
 .proj-nav {
 	border-top: 1px solid var(--border);
 	margin-top: var(--section-y);
@@ -1288,9 +1255,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	pointer-events: none;
 }
 
-/* ==========================================================================
-   ≥ 640px — tablets and large phones in landscape
-   ========================================================================== */
 @media (min-width: 360px) {
 	.brand-surname {
 		display: inline;
@@ -1298,7 +1262,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 }
 
 @media (min-width: 640px) {
-	/* about values: number | content */
 	.values .value {
 		display: grid;
 		grid-template-columns: 3rem minmax(0, 1fr);
@@ -1313,7 +1276,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 		padding-top: 0.3rem;
 	}
 
-	/* work: year | content | arrow */
 	.prow {
 		grid-template-columns: 4.5rem minmax(0, 1fr) 1.25rem;
 		column-gap: var(--s-5);
@@ -1326,7 +1288,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 		display: block;
 	}
 
-	/* experience: period | content */
 	.tnode {
 		display: grid;
 		grid-template-columns: 8rem minmax(0, 1fr);
@@ -1383,11 +1344,7 @@ body.menu-open .menu-btn span:nth-child(3) {
 	}
 }
 
-/* ==========================================================================
-   ≥ 900px — desktop: inline nav, side-by-side layouts
-   ========================================================================== */
 @media (min-width: 900px) {
-	/* header: inline nav, no menu button */
 	.menu-btn {
 		display: none;
 	}
@@ -1447,11 +1404,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	}
 }
 
-/* ==========================================================================
-   Progressive enhancements
-   ========================================================================== */
-
-/* hover feedback: an accent bar grows on the row being considered */
 .prow::before,
 .tnode::before {
 	content: "";
@@ -1475,7 +1427,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	}
 }
 
-/* reading progress: a thin accent line under the header, driven by scroll */
 @supports (animation-timeline: scroll()) {
 	.site-header::after {
 		content: "";

@@ -27,7 +27,7 @@ export const CopyEmail = component$<{ email: string }>(({ email }) => {
 					ok = document.execCommand("copy");
 					box.remove();
 				}
-				if (!ok) return; // the mailto link next to it still works
+				if (!ok) return;
 				copied.value = true;
 				setTimeout(() => {
 					copied.value = false;
