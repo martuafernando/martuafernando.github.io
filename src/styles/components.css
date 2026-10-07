@@ -1390,6 +1390,10 @@ body.menu-open .menu-btn span:nth-child(3) {
 	.tnode:first-child {
 		padding-top: var(--s-1);
 	}
+	.tnode:last-child {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
 
 	.proj-head {
 		grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
