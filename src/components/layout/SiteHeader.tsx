@@ -3,7 +3,7 @@ import { useLocation } from "@builder.io/qwik-city";
 import { LangToggle } from "./LangToggle";
 import { ThemeToggle } from "./ThemeToggle";
 import { navLinks, profile } from "~/data/site";
-import { t, ui, useLang } from "~/i18n";
+import { t, useLang } from "~/i18n";
 
 /**
  * Fixed site header: brand, anchor nav, theme toggle, and mobile menu.
@@ -44,7 +44,13 @@ export const SiteHeader = component$(() => {
 					href={isHome ? "#top" : "/"}
 					aria-label={`${profile.name} — home`}
 				>
-					<span>{profile.name}</span>
+					<span>
+						{profile.name.split(" ")[0]}
+						<span class="brand-surname">
+							{" "}
+							{profile.name.split(" ").slice(1).join(" ")}
+						</span>
+					</span>
 				</a>
 				<nav class="nav-links" aria-label="Primary">
 					{navLinks.map((l) => (
@@ -54,9 +60,6 @@ export const SiteHeader = component$(() => {
 					))}
 				</nav>
 				<div class="nav-actions">
-					<a class="btn btn-soft nav-cta-desktop" href={to("#contact")}>
-						{t(ui.getInTouch, lang.value)}
-					</a>
 					<LangToggle />
 					<ThemeToggle />
 					<button

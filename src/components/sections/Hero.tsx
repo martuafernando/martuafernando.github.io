@@ -1,17 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import { ArrowRight, ArrowUpRight } from "../ui/icons";
+import { timeline } from "~/data/experiences";
 import { hero, skills } from "~/data/site";
 import { t, ui, useLang } from "~/i18n";
 
 export const Hero = component$(() => {
 	const lang = useLang();
 	const l = lang.value;
+	const current = timeline[0];
 
 	return (
 		<section class="hero">
-			<div class="hero-orb a" />
-			<div class="hero-orb b" />
-			<div class="wrap hero-grid">
+			<div class="wrap">
 				<div class="hero-copy">
 					<span class="hero-status" data-enter="" style="--i:0">
 						<span class="dot" /> {t(hero.status, l)}
@@ -35,7 +35,13 @@ export const Hero = component$(() => {
 							<ArrowUpRight />
 						</a>
 					</div>
-					<div class="hero-meta" data-enter="" style="--i:4">
+					<p class="hero-proof" data-enter="" style="--i:4">
+						<span class="k">{t(ui.now, l)}</span>
+						<span>
+							{t(current.title, l)} · {current.org}
+						</span>
+					</p>
+					<div class="hero-meta" data-enter="" style="--i:5">
 						{hero.stats.map((s) => (
 							<div class="stat" key={t(s.label, "en")}>
 								<b>{s.value}</b>
@@ -44,30 +50,13 @@ export const Hero = component$(() => {
 						))}
 					</div>
 				</div>
-				<div class="hero-visual" data-enter="" style="--i:2" aria-hidden="true">
-					<div class="hv-frame">
-						<img
-							src="/images/martuafernando.svg"
-							alt=""
-							width={1000}
-							height={1200}
-							decoding="async"
-						/>
-					</div>
-					{hero.cards.map((c, i) => (
-						<div class={`hv-card c${i + 1}`} key={c.value}>
-							<span>{t(c.label, l)}</span>
-							<b>{c.value}</b>
-						</div>
-					))}
-				</div>
 			</div>
-			<div class="marquee" data-enter="" style="--i:5" aria-hidden="true">
-				<div class="marquee-track">
-					{[...skills, ...skills].map((s, i) => (
-						<span key={`${s}-${i}`}>{s}</span>
+			<div class="wrap">
+				<ul class="skill-row" data-enter="" style="--i:6" aria-label="Skills">
+					{skills.map((s) => (
+						<li key={s}>{s}</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</section>
 	);

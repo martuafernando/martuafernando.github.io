@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { CopyEmail } from "./CopyEmail";
 import { ArrowUpRight, socialIcons } from "../ui/icons";
 import { profile, socials } from "~/data/site";
 import { t, ui, useLang } from "~/i18n";
@@ -16,26 +17,20 @@ export const SiteFooter = component$(() => {
 						<h2 class="reveal" style="--d:60ms">
 							{t(ui.footerHeading, l)}
 						</h2>
-						<a
-							class="footer-mail reveal"
-							style="--d:120ms"
-							href={`mailto:${profile.email}`}
-						>
-							<span class="u">{profile.email}</span>
-							<ArrowUpRight />
-						</a>
+						<div class="footer-mail-row reveal" style="--d:120ms">
+							<a class="footer-mail" href={`mailto:${profile.email}`}>
+								<span class="u">{profile.email}</span>
+								<ArrowUpRight />
+							</a>
+							<CopyEmail email={profile.email} />
+						</div>
 					</div>
 					<div class="footer-social reveal" style="--d:160ms">
 						<span class="eyebrow">{t(ui.elsewhere, l)}</span>
 						{socials.map((s) => {
 							const Icon = socialIcons[s.icon];
 							return (
-								<a
-									key={s.label}
-									href={s.href}
-									target="_blank"
-									rel="noopener"
-								>
+								<a key={s.label} href={s.href} target="_blank" rel="noopener">
 									<Icon />
 									{s.label}
 								</a>
