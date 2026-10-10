@@ -8,7 +8,7 @@ export const Experience = component$(() => {
 	const l = lang.value;
 
 	return (
-		<section class="section section-tint" id="experience">
+		<section class="section" id="experience">
 			<div class="wrap xp-layout">
 				<aside class="xp-aside reveal">
 					<span class="eyebrow">{t(ui.experience, l)}</span>

@@ -38,8 +38,14 @@ export const About = component$(() => {
 							dangerouslySetInnerHTML={t(p, l)}
 						/>
 					))}
-					<div class="values reveal" style="--d:240ms">
-						{about.values.map((v) => (
+					<p class="about-stack reveal" style="--d:240ms">
+						<span>{t(about.stackLabel, l)}</span> {about.stack.join(", ")}
+					</p>
+					<p class="values-label reveal" style="--d:280ms">
+						{t(about.focusLabel, l)}
+					</p>
+					<div class="values reveal" style="--d:300ms">
+						{about.focus.map((v) => (
 							<div class="value" key={v.k}>
 								<div class="vk">{v.k}</div>
 								<h4>{t(v.title, l)}</h4>

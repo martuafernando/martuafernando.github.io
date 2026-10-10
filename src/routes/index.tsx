@@ -6,20 +6,20 @@ export default component$(() => {
 	return (
 		<>
 			<Hero />
-			<About />
 			<Work />
+			<About />
 			<Experience />
 		</>
 	);
 });
 
 export const head: DocumentHead = {
-	title: "Martua Fernando — Architect & Fullstack Engineer",
+	title: "Martua Fernando — Software Engineer",
 	meta: [
 		{
 			name: "description",
 			content:
-				"Martua Fernando — software architect and fullstack engineer building reliable systems for healthcare, education, and enterprise.",
+				"Martua Fernando — software engineer building data pipelines and enterprise systems, with a background in healthcare software.",
 		},
 	],
 };
