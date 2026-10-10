@@ -117,37 +117,6 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 									))}
 								</ul>
 							</div>
-							{(project.links.live || project.links.source) && (
-								<div class="meta-block">
-									<span class="eyebrow">{t(ui.links, l)}</span>
-									<ul class="plain" style="gap:.7rem">
-										{project.links.live && (
-											<li>
-												<a
-													class="tlink"
-													href={project.links.live}
-													target="_blank"
-													rel="noopener"
-												>
-													{t(ui.liveDemo, l)}
-												</a>
-											</li>
-										)}
-										{project.links.source && (
-											<li>
-												<a
-													class="tlink"
-													href={project.links.source}
-													target="_blank"
-													rel="noopener"
-												>
-													{t(ui.sourceCode, l)}
-												</a>
-											</li>
-										)}
-									</ul>
-								</div>
-							)}
 						</aside>
 
 						<div class="prose">
@@ -187,7 +156,7 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 							<div class="gallery-grid" style="margin-top:1.4rem">
 								{project.gallery.map((shot, i) => (
 									<div
-										class="shot"
+										class={["shot", shot.height > shot.width && "portrait"]}
 										style={{ "--ar": `${shot.width} / ${shot.height}` }}
 										key={i}
 									>
@@ -208,35 +177,21 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 
 				<nav class="proj-nav" aria-label="Project navigation">
 					<div class="wrap">
-						{prev ? (
+						{prev && (
 							<Link class="prev" href={`/projects/${prev.slug}/`}>
 								<span class="dir">
 									<ArrowLeft /> {t(ui.previous, l)}
 								</span>
 								<span class="ttl">{prev.detailTitle}</span>
 							</Link>
-						) : (
-							<a class="prev disabled" aria-disabled="true">
-								<span class="dir">
-									<ArrowLeft /> {t(ui.previous, l)}
-								</span>
-								<span class="ttl">—</span>
-							</a>
 						)}
-						{next ? (
+						{next && (
 							<Link class="next" href={`/projects/${next.slug}/`}>
 								<span class="dir">
 									{t(ui.next, l)} <ArrowRight />
 								</span>
 								<span class="ttl">{next.detailTitle}</span>
 							</Link>
-						) : (
-							<a class="next disabled" aria-disabled="true">
-								<span class="dir">
-									{t(ui.next, l)} <ArrowRight />
-								</span>
-								<span class="ttl">—</span>
-							</a>
 						)}
 					</div>
 				</nav>

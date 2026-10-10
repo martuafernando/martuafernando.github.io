@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import { ArrowUpRight } from "../ui/icons";
+import { ProjectMedia } from "./ProjectMedia";
 import { Tag } from "../ui/Tag";
 import type { Project } from "~/domain/project";
 import { t, useLang } from "~/i18n";
@@ -17,13 +18,19 @@ export const ProjectCard = component$<ProjectCardProps>(
 		return (
 			<Link
 				href={`/projects/${project.slug}/`}
-				class="prow reveal"
-				style={`--d:${index * 50}ms`}
+				class="pcard reveal"
+				style={`--d:${index * 80}ms`}
 				aria-label={`${project.title} case study`}
 			>
-				<span class="year">{project.year}</span>
-				<div class="prow-main">
-					<h3>{project.title}</h3>
+				<div class="pcard-media">
+					<ProjectMedia project={project} />
+				</div>
+				<div class="pcard-body">
+					<span class="year">{project.year}</span>
+					<h3>
+						{project.title}
+						<ArrowUpRight />
+					</h3>
 					<p class="summary">
 						{t(project.cardSummary ?? project.summary, lang.value)}
 					</p>
@@ -33,9 +40,6 @@ export const ProjectCard = component$<ProjectCardProps>(
 						))}
 					</div>
 				</div>
-				<span class="prow-arrow">
-					<ArrowUpRight />
-				</span>
 			</Link>
 		);
 	},

@@ -28,7 +28,9 @@ export const ui = {
 	getInTouch: { en: "Get in touch", id: "Yuk, ngobrol" },
 	// Hero
 	viewWork: { en: "View Work", id: "Lihat Proyek" },
+	workedWith: { en: "Experience at", id: "Pengalaman di" },
 	now: { en: "Now", id: "Sekarang" },
+	downloadCv: { en: "Download CV", id: "Unduh CV" },
 	orGetInTouch: { en: "Or get in touch", id: "Atau langsung ngobrol aja" },
 	// Work
 	selectedWork: { en: "Selected Work", id: "Proyek Pilihan" },
@@ -37,8 +39,8 @@ export const ui = {
 		id: "Proyek yang telah dibangun.",
 	},
 	workLede: {
-		en: "Tap a project for the case study.",
-		id: "Ketuk proyek buat lihat studi kasusnya.",
+		en: "Each one has a short case study.",
+		id: "Masing-masing punya studi kasus singkat.",
 	},
 	moreOnGithub: { en: "More on GitHub", id: "Lainnya ada di GitHub" },
 	moreOnGithubSub: {
@@ -57,7 +59,8 @@ export const ui = {
 		en: "Engineering, teaching, design.",
 		id: "Ngoding, ngajar, desain.",
 	},
-	details: { en: "Details", id: "Detail" },
+	showDetails: { en: "Show details", id: "Lihat detail" },
+	hideDetails: { en: "Hide details", id: "Sembunyikan detail" },
 	// Project detail
 	backToWork: { en: "Back to all work", id: "Balik ke semua proyek" },
 	year: { en: "Year", id: "Tahun" },
@@ -94,6 +97,10 @@ export const ui = {
 	footerHeading: {
 		en: "Let's build something that lasts.",
 		id: "Yuk, bikin sesuatu yang awet.",
+	},
+	footerLede: {
+		en: "Open to software engineering opportunities. Send me a note.",
+		id: "Lagi terbuka buat peluang di software engineering. Kirim pesan aja.",
 	},
 	copyEmail: { en: "Copy", id: "Salin" },
 	copied: { en: "Copied", id: "Tersalin" },

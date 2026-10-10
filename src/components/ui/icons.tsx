@@ -30,6 +30,12 @@ export const ArrowLeft = component$<IconProps>((p) => (
 	</svg>
 ));
 
+export const DownloadIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} {...stroke}>
+		<path d="M12 4v11M7 11l5 5 5-5M5 20h14" />
+	</svg>
+));
+
 export const MoonIcon = component$<IconProps>((p) => (
 	<svg viewBox="0 0 24 24" class={p.class} {...stroke} stroke-width={1.8}>
 		<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />

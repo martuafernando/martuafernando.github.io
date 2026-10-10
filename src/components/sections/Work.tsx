@@ -28,20 +28,19 @@ export const Work = component$(() => {
 						/>
 					))}
 					<a
-						class="prow reveal"
-						style={`--d:${projects.length * 50}ms`}
+						class="pcard pcard-more reveal"
+						style={`--d:${projects.length * 80}ms`}
 						href={socials[0].href}
 						target="_blank"
 						rel="noopener"
 					>
-						<span class="year" />
-						<div class="prow-main">
-							<h3>{t(ui.moreOnGithub, l)}</h3>
+						<div class="pcard-body">
+							<h3>
+								{t(ui.moreOnGithub, l)}
+								<ArrowUpRight />
+							</h3>
 							<p class="summary">{t(ui.moreOnGithubSub, l)}</p>
 						</div>
-						<span class="prow-arrow">
-							<ArrowUpRight />
-						</span>
 					</a>
 				</div>
 			</div>

@@ -8,7 +8,7 @@ export const Experience = component$(() => {
 	const l = lang.value;
 
 	return (
-		<section class="section section-tint" id="experience">
+		<section class="section" id="experience">
 			<div class="wrap xp-layout">
 				<aside class="xp-aside reveal">
 					<span class="eyebrow">{t(ui.experience, l)}</span>
@@ -42,7 +42,10 @@ export const Experience = component$(() => {
 							{n.points && <p class="xp-line">{t(n.points, l)[0]}</p>}
 							{(n.subRoles || (n.points && n.points.en.length > 1)) && (
 								<details class="xp-more">
-									<summary>{t(ui.details, l)}</summary>
+									<summary>
+										<span class="xp-closed">{t(ui.showDetails, l)}</span>
+										<span class="xp-open">{t(ui.hideDetails, l)}</span>
+									</summary>
 									{n.subRoles && (
 										<div class="sub-roles">
 											{n.subRoles.map((s) => (

@@ -24,6 +24,13 @@ export interface Value {
 	body: Localized;
 }
 
+/** An organisation shown in the hero credibility strip. */
+export interface TrustedOrg {
+	name: string;
+	/** Optional logo; without one the name is set as plain text. */
+	logo?: SiteImage;
+}
+
 /** A photo/media slot rendered as an <img>. */
 export interface SiteImage {
 	src: string;

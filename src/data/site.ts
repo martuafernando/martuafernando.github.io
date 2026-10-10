@@ -1,10 +1,22 @@
-import type { NavLink, SiteImage, Social, Stat, Value } from "~/domain/site";
+import type {
+	NavLink,
+	SiteImage,
+	Social,
+	Stat,
+	TrustedOrg,
+	Value,
+} from "~/domain/site";
 import type { Localized } from "~/i18n";
 
 export const profile = {
 	name: "Martua Fernando",
 	email: "martuafernando@proton.me",
 	location: "Indonesia",
+	/** Replace the file at this path with the real CV (keep the name, or edit it here). */
+	cv: {
+		href: "/files/martua-fernando-cv.pdf",
+		filename: "Martua-Fernando-CV.pdf",
+	},
 };
 
 export const navLinks: NavLink[] = [
@@ -32,21 +44,31 @@ export const socials: Social[] = [
 	},
 ];
 
-export const skills: string[] = [
-	"System Design",
-	"Data Engineering",
-	"Code Readability",
-	"Software Reliability",
-	"Software Architecture",
-	"TypeScript",
-	"Python",
-	"PostgreSQL",
-	"Oracle",
-	"React",
-	"Node.js",
-	"Docker",
-	"Podman",
-	"Blockchain",
+/**
+ * Hero credibility strip, newest first. Logos are drawn as one-colour
+ * silhouettes; add a `logo` to an entry to replace its plain-text name.
+ */
+export const trusted: TrustedOrg[] = [
+	{ name: "Bank Negara Indonesia" },
+	{
+		name: "eHealth.co.id",
+		logo: {
+			src: "/images/logos/ehealth.svg",
+			alt: "eHealth.co.id",
+			width: 250,
+			height: 61,
+		},
+	},
+	{ name: "Information Technology, ITS" },
+	{
+		name: "Paideia Educational Solutions",
+		logo: {
+			src: "/images/logos/paideia.png",
+			alt: "Paideia Educational Solutions",
+			width: 281,
+			height: 80,
+		},
+	},
 ];
 
 export const hero = {
@@ -61,8 +83,8 @@ export const hero = {
 	} satisfies Localized,
 
 	lede: {
-		en: "Software engineer focused on data, scalable apps, and systems that don't break.",
-		id: "Software engineer yang fokus di data, aplikasi yang scalable, dan sistem yang nggak gampang down.",
+		en: "Software engineer who builds data pipelines and enterprise systems, with a background in healthcare software.",
+		id: "Software engineer yang membangun data pipeline dan sistem enterprise, dengan latar belakang software kesehatan.",
 	} satisfies Localized,
 
 	stats: [
@@ -85,10 +107,10 @@ export const hero = {
 
 export const about = {
 	photo: {
-		src: "/images/martuafernando.svg",
-		alt: "Martua Fernando",
-		width: 1000,
-		height: 1200,
+		src: "/images/about/martua.jpg",
+		alt: "Portrait of Martua Fernando",
+		width: 640,
+		height: 800,
 	} satisfies SiteImage,
 
 	location: {
@@ -106,40 +128,51 @@ export const about = {
 			en: "I'm Fernando — I build reliable systems end to end, from <strong>backend</strong> and <strong>data pipelines</strong> to enterprise software.",
 			id: "Fernando — membangun sistem andal secara end-to-end, mulai dari <strong>backend</strong> dan <strong>data pipeline</strong> sampai software enterprise.",
 		},
+		{
+			en: "Today I work on data pipelines at <strong>Bank Negara Indonesia</strong>. Before that I built features on a <strong>FHIR/HL7</strong> medical-records platform at eHealth, and ran practicum sessions in networking, operating systems, and data structures at ITS.",
+			id: "Sekarang mengerjakan data pipeline di <strong>Bank Negara Indonesia</strong>. Sebelumnya membangun fitur di platform rekam medis <strong>FHIR/HL7</strong> di eHealth, dan mengampu praktikum jaringan komputer, sistem operasi, serta struktur data di ITS.",
+		},
 	] satisfies Localized[],
 
-	values: [
+	stackLabel: { en: "Day to day", id: "Sehari-hari" } satisfies Localized,
+	stack: [
+		"TypeScript",
+		"Python",
+		"PostgreSQL",
+		"Oracle",
+		"React",
+		"Node.js",
+		"Docker",
+	],
+
+	focusLabel: {
+		en: "What I work on",
+		id: "Yang saya kerjakan",
+	} satisfies Localized,
+
+	focus: [
 		{
 			k: "01",
-			title: {
-				en: "Reliability",
-				id: "Bisa Diandalkan",
-			},
+			title: { en: "Data engineering", id: "Data engineering" },
 			body: {
-				en: "Works the same, every time.",
-				id: "Hasilnya konsisten, setiap saat.",
+				en: "Introduced Superset at Bank Negara Indonesia and built custom plugins that connect it to the data pipelines.",
+				id: "Memprakarsai Superset di Bank Negara Indonesia dan membuat plugin custom yang menghubungkannya ke data pipeline.",
 			},
 		},
 		{
 			k: "02",
-			title: {
-				en: "Clarity",
-				id: "Jelas",
-			},
+			title: { en: "Healthcare software", id: "Software kesehatan" },
 			body: {
-				en: "Simple design scales better.",
-				id: "Desain yang simpel lebih gampang dikembangkan.",
+				en: "Features on a FHIR/HL7 medical-records platform, in TypeScript, Python, Kotlin, and Odoo.",
+				id: "Fitur di platform rekam medis FHIR/HL7 dengan TypeScript, Python, Kotlin, dan Odoo.",
 			},
 		},
 		{
 			k: "03",
-			title: {
-				en: "Continuous Learning",
-				id: "Terus Belajar",
-			},
+			title: { en: "Backend & enterprise", id: "Backend & enterprise" },
 			body: {
-				en: "Tech moves fast. Stay curious.",
-				id: "Teknologi cepat berubah. Tetap penasaran.",
+				en: "REST APIs and calculation logic on Odoo and PostgreSQL for a Pertamina subsidiary.",
+				id: "REST API dan logika perhitungan di Odoo dan PostgreSQL untuk anak usaha Pertamina.",
 			},
 		},
 	] satisfies Value[],
