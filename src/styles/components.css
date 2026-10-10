@@ -951,19 +951,44 @@ body.menu-open .menu-btn span:nth-child(3) {
 .xp-more summary::-webkit-details-marker {
 	display: none;
 }
+/* Chevron drawn with borders; it flips when the section is open. */
 .xp-more summary::after {
-	content: "+";
-	display: inline-grid;
-	place-items: center;
-	width: 1.25rem;
-	height: 1.25rem;
-	border: 1px solid var(--accent-line);
-	border-radius: 50%;
-	line-height: 1;
-	transition: transform 0.2s;
+	content: "";
+	width: 0.5rem;
+	height: 0.5rem;
+	margin-top: -0.2rem;
+	border-right: 2px solid currentColor;
+	border-bottom: 2px solid currentColor;
+	transform: rotate(45deg);
+	transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .xp-more[open] summary::after {
-	transform: rotate(45deg);
+	margin-top: 0.2rem;
+	transform: rotate(-135deg);
+}
+.xp-more .xp-open,
+.xp-more[open] .xp-closed {
+	display: none;
+}
+.xp-more[open] .xp-open {
+	display: inline;
+}
+.xp-more[open] > :not(summary) {
+	animation: xp-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes xp-in {
+	from {
+		opacity: 0;
+		transform: translateY(-4px);
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.xp-more[open] > :not(summary) {
+		animation: none;
+	}
+	.xp-more summary::after {
+		transition: none;
+	}
 }
 .tnode .role-list {
 	margin: var(--s-2) 0 0;
@@ -989,27 +1014,46 @@ body.menu-open .menu-btn span:nth-child(3) {
 	height: 1px;
 	background: var(--text-muted);
 }
+/* Earlier roles at the same organisation: a quiet rail with one dot per role. */
 .tnode .sub-roles {
 	margin-top: var(--s-2);
+	padding-left: var(--s-4);
+	border-left: 2px solid var(--border);
 	display: flex;
 	flex-direction: column;
-	gap: var(--s-3);
+	gap: var(--s-4);
 }
 .tnode .sub {
-	padding: var(--s-3) var(--s-4);
-	background: var(--surface);
-	border: 1px solid var(--border);
-	border-radius: var(--radius-sm);
+	position: relative;
+}
+.tnode .sub::before {
+	content: "";
+	position: absolute;
+	left: calc(var(--s-4) * -1 - 6px);
+	top: 0.4rem;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--bg);
+	border: 2px solid var(--border-strong);
+}
+.tnode .sub:first-child::before {
+	background: var(--accent);
+	border-color: var(--accent);
 }
 .tnode .sub .r {
 	font-weight: 600;
-	font-size: 0.95rem;
+	font-size: 1rem;
+	line-height: 1.4;
+}
+.tnode .sub-roles + .role-list {
+	margin-top: var(--s-4);
 }
 .tnode .sub .meta {
 	font-family: var(--font-sans);
-	font-size: 0.875rem;
+	font-size: 0.9375rem;
 	color: var(--text-muted);
-	margin-top: var(--s-1);
+	margin-top: 2px;
 }
 
 .site-footer {

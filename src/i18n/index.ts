@@ -59,7 +59,8 @@ export const ui = {
 		en: "Engineering, teaching, design.",
 		id: "Ngoding, ngajar, desain.",
 	},
-	details: { en: "Details", id: "Detail" },
+	showDetails: { en: "Show details", id: "Lihat detail" },
+	hideDetails: { en: "Hide details", id: "Sembunyikan detail" },
 	// Project detail
 	backToWork: { en: "Back to all work", id: "Balik ke semua proyek" },
 	year: { en: "Year", id: "Tahun" },
