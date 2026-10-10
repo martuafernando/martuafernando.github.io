@@ -540,6 +540,16 @@ body.menu-open .menu-btn span:nth-child(3) {
 	font-size: 0.9375rem;
 	color: var(--text-muted);
 }
+/* One faint wash behind the Work heading so it isn't plainer than the hero. */
+#work {
+	/* Centre sits below the top edge and the radius stops short of it, so the
+	   wash fades to nothing before the section starts (no visible seam). */
+	background: radial-gradient(
+		50rem 20rem at 14% 17rem,
+		color-mix(in oklch, var(--accent) 5.5%, transparent),
+		transparent 70%
+	);
+}
 .trusted {
 	margin-top: var(--s-8);
 	padding-top: var(--s-6);
