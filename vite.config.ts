@@ -7,7 +7,6 @@ import { qwikVite } from "@builder.io/qwik/optimizer";
 import { qwikCity } from "@builder.io/qwik-city/vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import pkg from "./package.json";
-import tailwindcss from "@tailwindcss/vite";
 import { partytownVite } from "@builder.io/partytown/utils";
 import { join } from "node:path";
 
@@ -28,7 +27,6 @@ export default defineConfig(({ command, mode }): UserConfig => {
       qwikCity(),
       qwikVite(),
       tsconfigPaths(),
-      tailwindcss(),
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
     ],
     // This tells Vite which dependencies to pre-build in dev mode.

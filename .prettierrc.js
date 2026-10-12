@@ -1,6 +1,5 @@
 // Source files are tab-indented; JSON, Markdown and YAML stay on spaces.
 export default {
-	plugins: ["prettier-plugin-tailwindcss"],
 	useTabs: true,
 	overrides: [
 		{
