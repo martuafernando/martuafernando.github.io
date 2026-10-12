@@ -1,8 +1,8 @@
 name: CI
 
 on:
+  # No branch filter: stacked PRs (whose base is another feature branch) need CI too.
   pull_request:
-    branches: ["main"]
   workflow_dispatch:
 
 permissions:
