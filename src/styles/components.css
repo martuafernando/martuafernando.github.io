@@ -555,10 +555,48 @@ body.menu-open .menu-btn span:nth-child(3) {
 	padding-top: var(--s-6);
 	border-top: 1px solid var(--border);
 }
+.trusted-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--s-4);
+	margin-bottom: var(--s-4);
+}
 .trusted-label {
-	margin-bottom: var(--s-5);
 	font-size: 0.9375rem;
 	color: var(--text-muted);
+}
+/* WCAG 2.2.2: moving content that lasts over 5 seconds needs a way to stop it. */
+.trusted-toggle {
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	background: var(--surface);
+	color: var(--text-soft);
+	cursor: pointer;
+	box-shadow: var(--shadow-sm);
+	transition:
+		box-shadow 0.25s,
+		color 0.2s,
+		transform 0.2s;
+}
+.trusted-toggle svg {
+	width: 1rem;
+	height: 1rem;
+}
+.trusted-toggle:hover {
+	color: var(--text);
+	box-shadow: var(--shadow-md);
+}
+.trusted-toggle:active {
+	transform: scale(0.94);
+}
+.trusted-marquee.is-paused .trusted-track {
+	animation-play-state: paused;
 }
 .trusted-marquee {
 	overflow: hidden;
@@ -604,6 +642,9 @@ body.menu-open .menu-btn span:nth-child(3) {
 	flex: none;
 }
 @media (prefers-reduced-motion: reduce) {
+	.trusted-toggle {
+		display: none;
+	}
 	.trusted-marquee {
 		-webkit-mask-image: none;
 		mask-image: none;

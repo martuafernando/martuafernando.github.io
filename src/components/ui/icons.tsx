@@ -49,6 +49,18 @@ export const CheckIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
+export const PauseIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} aria-hidden="true">
+		<path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" />
+	</svg>
+));
+
+export const PlayIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} aria-hidden="true">
+		<path d="M8 5.5v13l11-6.5z" fill="currentColor" />
+	</svg>
+));
+
 export const MoonIcon = component$<IconProps>((p) => (
 	<svg viewBox="0 0 24 24" class={p.class} {...stroke} stroke-width={1.8}>
 		<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />

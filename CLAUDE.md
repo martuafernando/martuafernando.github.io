@@ -56,7 +56,7 @@ All content is typed TypeScript, not MDX. Keep it as literal entries; components
 ### Behaviour and performance
 
 - **Motion:** hero entrance, scroll reveal and nav scrollspy live in `src/hooks/useScrollEffects.ts`. Content is visible by default; the hidden start state is only applied once the hook runs, and reduced-motion is respected.
-- **Marquee** ("Experience at") is CSS-only: four identical copies, shifted by 25% on a loop, paused on hover, static for reduced motion.
+- **Marquee** ("Experience at") is CSS-driven: four identical copies, shifted by 25% on a loop; it pauses on hover and has a pause/play button (WCAG 2.2.2) for keyboard and touch users, and is a static list for reduced motion. Only the button's state is JS.
 - **Caching:** the root layout sets `cacheControl` (5s max-age, 7-day stale-while-revalidate).
 - **Partytown:** Google Analytics runs off the main thread via `src/components/partytown/`.
 
