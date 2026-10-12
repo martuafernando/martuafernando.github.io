@@ -1,5 +1,11 @@
-import { component$ } from "@builder.io/qwik";
-import { ArrowRight, ArrowUpRight, DownloadIcon } from "../ui/icons";
+import { component$, useSignal } from "@builder.io/qwik";
+import {
+	ArrowRight,
+	ArrowUpRight,
+	DownloadIcon,
+	PauseIcon,
+	PlayIcon,
+} from "../ui/icons";
 import { timeline } from "~/data/experiences";
 import { hero, profile, trusted } from "~/data/site";
 import { t, ui, useLang } from "~/i18n";
@@ -8,6 +14,8 @@ export const Hero = component$(() => {
 	const lang = useLang();
 	const l = lang.value;
 	const current = timeline[0];
+	// Lets people stop the logo marquee (hover pauses it too, but touch and keyboard cannot hover).
+	const logosPaused = useSignal(false);
 
 	return (
 		<section class="hero">
@@ -19,7 +27,7 @@ export const Hero = component$(() => {
 					<h1
 						data-enter=""
 						style="--i:1"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted static copy with inline accent markup
+						// trusted static copy with inline accent markup
 						dangerouslySetInnerHTML={t(hero.headlineHtml, l)}
 					/>
 					<p class="hero-lede" data-enter="" style="--i:2">
@@ -61,8 +69,24 @@ export const Hero = component$(() => {
 					</div>
 				</div>
 				<div class="trusted" data-enter="" style="--i:5">
-					<p class="trusted-label">{t(ui.workedWith, l)}</p>
-					<div class="trusted-marquee">
+					<div class="trusted-head">
+						<p class="trusted-label">{t(ui.workedWith, l)}</p>
+						<button
+							type="button"
+							class="trusted-toggle"
+							aria-pressed={logosPaused.value}
+							aria-label={t(
+								logosPaused.value ? ui.playLogos : ui.pauseLogos,
+								l,
+							)}
+							onClick$={() => {
+								logosPaused.value = !logosPaused.value;
+							}}
+						>
+							{logosPaused.value ? <PlayIcon /> : <PauseIcon />}
+						</button>
+					</div>
+					<div class={["trusted-marquee", logosPaused.value && "is-paused"]}>
 						<div class="trusted-track">
 							{[0, 1, 2, 3].map((copy) => (
 								<ul

@@ -27,8 +27,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install PNPM
-        run: npm i -g pnpm
+      # The pnpm version comes from "packageManager" in package.json.
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -37,7 +38,7 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         env:

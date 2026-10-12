@@ -2,10 +2,11 @@
   "name": "my-qwik-empty-starter",
   "description": "Blank project with routing included",
   "engines": {
-    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
   "private": true,
+  "packageManager": "pnpm@12.9.1",
   "type": "module",
   "scripts": {
     "build": "qwik build",
@@ -13,6 +14,8 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/static/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
+    "check.images": "node scripts/check-image-budget.mjs",
+    "test.smoke": "node tests/smoke/run.mjs",
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
@@ -27,22 +30,18 @@
     "@builder.io/partytown": "^0.8.2",
     "@builder.io/qwik": "^1.20.2",
     "@builder.io/qwik-city": "^1.20.2",
-    "@tailwindcss/vite": "^4.1.7",
-    "@types/eslint": "8.56.10",
-    "@types/node": "20.14.11",
-    "@typescript-eslint/eslint-plugin": "7.16.1",
-    "@typescript-eslint/parser": "7.16.1",
-    "eslint": "8.57.0",
+    "@eslint/js": "^9.39.5",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "@fontsource-variable/source-serif-4": "^5.3.1",
+    "@types/node": "^22.20.5",
+    "eslint": "^9.39.5",
     "eslint-plugin-qwik": "^1.20.2",
-    "nx": "^20.8.1",
+    "globals": "^17.13.0",
     "prettier": "3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.1.7",
-    "typescript": "5.4.5",
-    "undici": "^7.9.0",
-    "vite": "5.3.5",
-    "vite-tsconfig-paths": "^4.3.2"
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.71.1",
+    "vite": "^7.3.7",
+    "vite-tsconfig-paths": "^6.1.1"
   },
-  "dependencies": {},
-  "nx": {}
+  "dependencies": {}
 }

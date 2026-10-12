@@ -42,8 +42,6 @@ lerna-debug.log*
 !.yarn/releases
 
 
-.nx/cache
-.nx/workspace-data
 
 # Local scratch and design-handoff bundles
 /tmp

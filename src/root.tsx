@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import sansLatin from "@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url";
 import { QwikPartytown } from "./components/partytown/partytown";
 
 export default component$(() => {
@@ -24,18 +25,16 @@ export default component$(() => {
 				<meta charset="utf-8" />
 				{/* Set theme before paint to avoid a flash of the wrong theme. */}
 				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme + lang guard
+					// pre-paint theme + lang guard
 					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'light';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='light';el.lang='en';}})();`}
 				/>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				{/* Latin subset of the UI font: needed on every page, so fetch it early. */}
 				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
+					rel="preload"
+					href={sansLatin}
+					as="font"
+					type="font/woff2"
 					crossOrigin=""
-				/>
-				<link
-					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
 				/>
 				{!isDev && (
 					<link
@@ -43,17 +42,19 @@ export default component$(() => {
 						href={`${import.meta.env.BASE_URL}manifest.json`}
 					/>
 				)}
-				<QwikPartytown forward={["gtag", "dataLayer.push"]} />
-
-				<script
-					async
-					type="text/partytown"
-					src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-				/>
-				<script
-					type="text/partytown"
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-					dangerouslySetInnerHTML={`
+				{/* Analytics only when an ID is configured; otherwise builds would request gtag/js?id=undefined. */}
+				{googleAnalyticsId && (
+					<>
+						<QwikPartytown forward={["gtag", "dataLayer.push"]} />
+						<script
+							async
+							type="text/partytown"
+							src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+						/>
+						<script
+							type="text/partytown"
+							// inline gtag bootstrap, executed by Partytown
+							dangerouslySetInnerHTML={`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function() {
               dataLayer.push(arguments);
@@ -61,7 +62,9 @@ export default component$(() => {
             gtag('js', new Date());
             gtag('config', '${googleAnalyticsId}');
           `}
-				/>
+						/>
+					</>
+				)}
 
 				<RouterHead />
 			</head>

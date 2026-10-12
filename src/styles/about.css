@@ -1,0 +1,139 @@
+.about-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	gap: var(--col);
+}
+
+.about-photo {
+	position: relative;
+	width: min(100%, 12rem);
+}
+
+.about-photo::before {
+	content: "";
+	position: absolute;
+	inset: 0.9rem -0.9rem -0.9rem 0.9rem;
+	border-radius: var(--radius-lg);
+	background: var(--accent-soft);
+	border: 1px solid var(--accent-line);
+}
+
+.about-photo .photo-frame {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 4/5;
+	box-shadow: var(--shadow-sm);
+	border-radius: var(--radius-lg);
+	border: 1px solid var(--border);
+	overflow: hidden;
+}
+
+.about-photo .photo-frame img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.about-photo .photo-tag {
+	z-index: 1;
+	box-shadow: var(--shadow-sm);
+	position: absolute;
+	left: var(--s-3);
+	bottom: var(--s-3);
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: var(--s-1) var(--s-3);
+	font-family: var(--font-sans);
+	font-weight: 500;
+	font-size: 0.9375rem;
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+}
+
+.about-photo .photo-tag .ring {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	border: 2.5px solid var(--accent);
+}
+
+.about-body h2 {
+	font-size: var(--h2-size);
+	margin: var(--s-3) 0 var(--s-5);
+	max-width: 22ch;
+}
+
+.about-body p {
+	font-family: var(--font-sans);
+	font-size: 1.125rem;
+	line-height: 1.7;
+	color: var(--text-soft);
+	margin-bottom: var(--s-4);
+	max-width: 58ch;
+}
+
+.about-body p strong {
+	color: var(--text);
+	font-weight: 600;
+}
+
+.about-body .about-stack {
+	margin: var(--s-6) 0 0;
+	font-size: 1rem;
+	color: var(--text-soft);
+}
+
+.about-body .about-stack span {
+	display: block;
+	margin-bottom: var(--s-1);
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--text);
+}
+
+.about-body .values-label {
+	margin: var(--s-7) 0 0;
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--accent-text);
+}
+
+.values {
+	margin-top: var(--s-3);
+	border-top: 1px solid var(--border);
+}
+
+.values .value {
+	padding: var(--s-4) 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.values .value:last-child {
+	padding-bottom: 0;
+	border-bottom: 0;
+}
+
+.values .value .vk {
+	font-family: var(--font-sans);
+	font-size: 0.9375rem;
+	font-weight: 600;
+	color: var(--accent-text);
+}
+
+.values .value h4 {
+	font-family: var(--font-sans);
+	font-size: 1.05rem;
+	font-weight: 600;
+	margin: var(--s-1) 0;
+	letter-spacing: -0.01em;
+}
+
+.values .value p {
+	font-family: var(--font-sans);
+	font-size: 1rem;
+	color: var(--text-muted);
+	margin: 0;
+	line-height: 1.55;
+}
