@@ -43,17 +43,19 @@ export default component$(() => {
 						href={`${import.meta.env.BASE_URL}manifest.json`}
 					/>
 				)}
-				<QwikPartytown forward={["gtag", "dataLayer.push"]} />
-
-				<script
-					async
-					type="text/partytown"
-					src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-				/>
-				<script
-					type="text/partytown"
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-					dangerouslySetInnerHTML={`
+				{/* Analytics only when an ID is configured; otherwise builds would request gtag/js?id=undefined. */}
+				{googleAnalyticsId && (
+					<>
+						<QwikPartytown forward={["gtag", "dataLayer.push"]} />
+						<script
+							async
+							type="text/partytown"
+							src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+						/>
+						<script
+							type="text/partytown"
+							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+							dangerouslySetInnerHTML={`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function() {
               dataLayer.push(arguments);
@@ -61,7 +63,9 @@ export default component$(() => {
             gtag('js', new Date());
             gtag('config', '${googleAnalyticsId}');
           `}
-				/>
+						/>
+					</>
+				)}
 
 				<RouterHead />
 			</head>
