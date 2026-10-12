@@ -1,7 +1,7 @@
 /*
  * Reset: the subset of Tailwind's Preflight this site relies on, kept here when
  * Tailwind was removed (no utility classes were in use). Everything sits in
- * @layer base so any unlayered rule in components.css still overrides it, which
+ * @layer base so any unlayered rule in the section stylesheets still overrides it, which
  * is how the cascade behaved before.
  */
 @layer base {

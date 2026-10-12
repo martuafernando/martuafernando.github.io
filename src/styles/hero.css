@@ -1,0 +1,333 @@
+.hero {
+	position: relative;
+	isolation: isolate;
+	padding-top: calc(var(--nav-h) + clamp(3.5rem, 9vw, 7rem));
+	padding-bottom: var(--section-y);
+	overflow: hidden;
+}
+
+/* Decoration: a pale accent glow plus a dot grid that fades out downward. */
+
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(
+			52rem 28rem at 85% -4%,
+			color-mix(in oklch, var(--accent) 16%, transparent),
+			transparent 70%
+		),
+		radial-gradient(
+				circle at 1px 1px,
+				color-mix(in oklch, var(--text) 16%, transparent) 1px,
+				transparent 0
+			)
+			0 0 / 24px 24px;
+	-webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+	mask-image: linear-gradient(to bottom, #000 0%, transparent 72%);
+}
+
+/* A second, softer wash on the opposite side keeps the glow from feeling lopsided. */
+
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background: radial-gradient(
+		44rem 30rem at 4% 58%,
+		color-mix(in oklch, var(--accent) 7%, transparent),
+		transparent 70%
+	);
+}
+
+.hero > .wrap {
+	position: relative;
+}
+
+.hero-copy {
+	max-width: 46rem;
+}
+
+.hero-status {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--s-2);
+	font-size: 0.9375rem;
+	font-weight: 500;
+	line-height: 1.4;
+	color: var(--text-soft);
+	padding: 0.4rem var(--s-4) 0.4rem var(--s-3);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	background: var(--surface);
+	margin-bottom: var(--s-6);
+}
+
+.hero-status .dot {
+	flex: none;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #22a06b;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.hero-status .dot {
+		animation: live 2.4s ease-out infinite;
+	}
+}
+
+@keyframes live {
+	0% {
+		box-shadow: 0 0 0 0 color-mix(in oklch, #22a06b 55%, transparent);
+	}
+	70%,
+	100% {
+		box-shadow: 0 0 0 7px transparent;
+	}
+}
+
+.hero h1 {
+	font-size: var(--hero-size);
+	line-height: 1.04;
+	letter-spacing: -0.04em;
+	margin-bottom: var(--s-5);
+}
+
+.hero h1 .accent {
+	color: var(--accent-text);
+}
+
+.hero-lede {
+	font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+	color: var(--text-soft);
+	max-width: 36em;
+	line-height: 1.6;
+	margin-bottom: var(--s-6);
+}
+
+.hero-cta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: var(--s-3);
+}
+
+.hero-cta .tlink {
+	margin-left: var(--s-2);
+}
+
+@media (max-width: 639px) {
+	.hero-cta .btn {
+		padding-inline: var(--s-4);
+	}
+}
+
+.hero-facts {
+	margin-top: var(--s-8);
+	display: grid;
+	gap: var(--s-5) var(--s-7);
+	grid-template-columns: repeat(2, minmax(0, auto));
+	justify-content: start;
+}
+
+.hero-proof {
+	grid-column: 1 / -1;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	color: var(--text);
+	font-weight: 500;
+}
+
+.hero-proof .k {
+	font-size: 0.9375rem;
+	font-weight: 400;
+	color: var(--text-muted);
+}
+
+.hero-meta {
+	display: contents;
+}
+
+.hero-meta .stat {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-1);
+}
+
+.hero-meta .stat b {
+	font-variant-numeric: tabular-nums;
+	font-size: 2.5rem;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 1;
+}
+
+.hero-meta .stat span {
+	font-size: 0.9375rem;
+	color: var(--text-muted);
+}
+
+.trusted {
+	margin-top: var(--s-8);
+	padding-top: var(--s-6);
+	border-top: 1px solid var(--border);
+}
+
+.trusted-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--s-4);
+	margin-bottom: var(--s-4);
+}
+
+.trusted-label {
+	font-size: 0.9375rem;
+	color: var(--text-muted);
+}
+
+/* WCAG 2.2.2: moving content that lasts over 5 seconds needs a way to stop it. */
+
+.trusted-toggle {
+	display: grid;
+	place-items: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0;
+	border: 1px solid var(--border);
+	border-radius: 50%;
+	background: var(--surface);
+	color: var(--text-soft);
+	cursor: pointer;
+	box-shadow: var(--shadow-sm);
+	transition:
+		box-shadow 0.25s,
+		color 0.2s,
+		transform 0.2s;
+}
+
+.trusted-toggle svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+.trusted-toggle:hover {
+	color: var(--text);
+	box-shadow: var(--shadow-md);
+}
+
+.trusted-toggle:active {
+	transform: scale(0.94);
+}
+
+.trusted-marquee.is-paused .trusted-track {
+	animation-play-state: paused;
+}
+
+.trusted-marquee {
+	overflow: hidden;
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		transparent,
+		#000 8%,
+		#000 92%,
+		transparent
+	);
+	mask-image: linear-gradient(
+		90deg,
+		transparent,
+		#000 8%,
+		#000 92%,
+		transparent
+	);
+}
+
+/* Four identical copies; shifting by one copy (25%) loops seamlessly. */
+
+.trusted-track {
+	display: flex;
+	width: max-content;
+	animation: trusted-scroll 48s linear infinite;
+}
+
+.trusted-marquee:hover .trusted-track {
+	animation-play-state: paused;
+}
+
+@keyframes trusted-scroll {
+	to {
+		transform: translateX(-25%);
+	}
+}
+
+.trusted-row {
+	flex: none;
+	display: flex;
+	align-items: center;
+	gap: var(--s-8);
+	margin: 0;
+	padding: 0 var(--s-8) 0 0;
+	list-style: none;
+}
+
+.trusted-row li {
+	flex: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.trusted-toggle {
+		display: none;
+	}
+	.trusted-marquee {
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+	.trusted-track {
+		width: auto;
+		animation: none;
+	}
+	.trusted-row {
+		flex-wrap: wrap;
+		gap: var(--s-5) var(--s-8);
+		padding-right: 0;
+	}
+	.trusted-row[aria-hidden="true"] {
+		display: none;
+	}
+}
+
+/* One-colour silhouettes so mixed-colour source logos read as a set. */
+
+.trusted-row img {
+	height: 1.75rem;
+	width: auto;
+	filter: brightness(0);
+	opacity: 0.6;
+}
+
+[data-theme="dark"] .trusted-row img {
+	filter: brightness(0) invert(1);
+	opacity: 0.7;
+}
+
+.trusted-name {
+	display: block;
+	white-space: nowrap;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.25;
+	color: var(--text-muted);
+}
+
+@media (min-width: 640px) {
+	.trusted-name {
+		font-size: 1.125rem;
+	}
+}
