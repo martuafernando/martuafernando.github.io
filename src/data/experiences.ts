@@ -37,7 +37,6 @@ export const timeline: TimelineNode[] = [
 		badge: { en: "2 years", id: "2 tahun" },
 		title: { en: "Software Engineer", id: "Software Engineer" },
 		org: "eHealth.co.id",
-		current: true,
 		subRoles: [
 			{
 				role: {

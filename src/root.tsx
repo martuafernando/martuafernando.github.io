@@ -25,7 +25,7 @@ export default component$(() => {
 				{/* Set theme before paint to avoid a flash of the wrong theme. */}
 				<script
 					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme + lang guard
-					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'dark';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='dark';el.lang='en';}})();`}
+					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'light';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='light';el.lang='en';}})();`}
 				/>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
@@ -35,7 +35,7 @@ export default component$(() => {
 				/>
 				<link
 					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@400;600&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
 				/>
 				{!isDev && (
 					<link
