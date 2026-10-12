@@ -102,7 +102,7 @@ export const ui = {
 		en: "Open to software engineering opportunities. Send me a note.",
 		id: "Lagi terbuka buat peluang di software engineering. Kirim pesan aja.",
 	},
-	copyEmail: { en: "Copy", id: "Salin" },
+	copyEmail: { en: "Copy email address", id: "Salin alamat email" },
 	copied: { en: "Copied", id: "Tersalin" },
 	elsewhere: { en: "Elsewhere", id: "Tautan lain" },
 	footerNote: {

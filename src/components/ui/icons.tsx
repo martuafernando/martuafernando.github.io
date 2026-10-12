@@ -36,6 +36,19 @@ export const DownloadIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
+export const CopyIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} {...stroke}>
+		<rect x="9" y="9" width="11" height="11" rx="2" />
+		<path d="M5 15V6a2 2 0 0 1 2-2h9" />
+	</svg>
+));
+
+export const CheckIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} {...stroke}>
+		<path d="m5 12.5 4.5 4.5L19 7.5" />
+	</svg>
+));
+
 export const MoonIcon = component$<IconProps>((p) => (
 	<svg viewBox="0 0 24 24" class={p.class} {...stroke} stroke-width={1.8}>
 		<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
