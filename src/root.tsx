@@ -7,6 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import sansLatin from "@fontsource-variable/plus-jakarta-sans/files/plus-jakarta-sans-latin-wght-normal.woff2?url";
 import { QwikPartytown } from "./components/partytown/partytown";
 
 export default component$(() => {
@@ -27,15 +28,13 @@ export default component$(() => {
 					// pre-paint theme + lang guard
 					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'light';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='light';el.lang='en';}})();`}
 				/>
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				{/* Latin subset of the UI font: needed on every page, so fetch it early. */}
 				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
+					rel="preload"
+					href={sansLatin}
+					as="font"
+					type="font/woff2"
 					crossOrigin=""
-				/>
-				<link
-					rel="stylesheet"
-					href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
 				/>
 				{!isDev && (
 					<link

@@ -25,7 +25,10 @@ export default defineConfig(({ command, mode }): UserConfig => {
   return {
     plugins: [
       qwikCity(),
-      qwikVite(),
+      // Qwik would otherwise preload every font file in the build, including the
+      // Cyrillic/Greek/italic subsets nobody downloads. The one font every page
+      // needs is preloaded by hand in src/root.tsx.
+      qwikVite({ disableFontPreload: true }),
       tsconfigPaths(),
       partytownVite({ dest: join(__dirname, "dist", "~partytown") }),
     ],

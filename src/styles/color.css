@@ -1,9 +1,9 @@
 :root {
-	--font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
-		"Segoe UI", sans-serif;
+	--font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", ui-sans-serif,
+		system-ui, -apple-system, "Segoe UI", sans-serif;
 	/* Long-form reading text (case-study bodies) only; UI and headings stay sans. */
-	--font-prose: "Source Serif 4", Charter, "Iowan Old Style",
-		"Palatino Linotype", Georgia, serif;
+	--font-prose: "Source Serif 4 Variable", "Source Serif 4", Charter,
+		"Iowan Old Style", "Palatino Linotype", Georgia, serif;
 
 	--accent: #2545d8;
 	--accent-ink: #ffffff;
