@@ -27,6 +27,7 @@ npx prettier --use-tabs --check <files>
 ### Routing
 
 File-based routing under `src/routes/`:
+
 - `index.tsx` — homepage: Hero, Work, About, Experience (section order matches the nav)
 - `layout.tsx` — root layout: header, footer, cache control, language context, scroll effects
 - `projects/[slug]/index.tsx` — project detail; pages are generated from `getProjects()` via `onStaticGenerate`

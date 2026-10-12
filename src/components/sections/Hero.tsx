@@ -19,7 +19,7 @@ export const Hero = component$(() => {
 					<h1
 						data-enter=""
 						style="--i:1"
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted static copy with inline accent markup
+						// trusted static copy with inline accent markup
 						dangerouslySetInnerHTML={t(hero.headlineHtml, l)}
 					/>
 					<p class="hero-lede" data-enter="" style="--i:2">

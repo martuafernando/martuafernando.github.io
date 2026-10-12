@@ -88,10 +88,7 @@ export const InstagramIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
-export const socialIcons: Record<
-	string,
-	typeof GitHubIcon
-> = {
+export const socialIcons: Record<string, typeof GitHubIcon> = {
 	github: GitHubIcon,
 	linkedin: LinkedInIcon,
 	instagram: InstagramIcon,

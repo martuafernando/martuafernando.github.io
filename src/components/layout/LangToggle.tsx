@@ -25,9 +25,7 @@ export const LangToggle = component$(() => {
 			class="lang-toggle"
 			type="button"
 			aria-label={
-				lang.value === "en"
-					? "Ganti ke Bahasa Indonesia"
-					: "Switch to English"
+				lang.value === "en" ? "Ganti ke Bahasa Indonesia" : "Switch to English"
 			}
 			onClick$={toggle}
 		>

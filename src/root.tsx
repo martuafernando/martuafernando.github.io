@@ -24,7 +24,7 @@ export default component$(() => {
 				<meta charset="utf-8" />
 				{/* Set theme before paint to avoid a flash of the wrong theme. */}
 				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: pre-paint theme + lang guard
+					// pre-paint theme + lang guard
 					dangerouslySetInnerHTML={`(function(){var el=document.documentElement;try{el.dataset.theme=localStorage.getItem('fs-theme')||'light';el.lang=localStorage.getItem('fs-lang')||'en';}catch(e){el.dataset.theme='light';el.lang='en';}})();`}
 				/>
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,7 +54,7 @@ export default component$(() => {
 						/>
 						<script
 							type="text/partytown"
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+							// inline gtag bootstrap, executed by Partytown
 							dangerouslySetInnerHTML={`
             window.dataLayer = window.dataLayer || [];
             window.gtag = function() {
