@@ -66,6 +66,10 @@ All content is typed TypeScript, not MDX. Keep it as literal entries; components
 - Logos for the hero strip: add a `logo` to an entry in `trusted` and put the file in `public/images/logos/`; entries without one render the name as text.
 - New project: add `src/data/projects/<slug>.ts`, then import it and add it to the list in `src/data/projects/index.ts`.
 
+## Dependencies
+
+Everything is a `devDependency` (the site is static; there are no runtime npm dependencies). Vite is on 7.x and ESLint on 9.x with a flat config in `eslint.config.js`. `pnpm-workspace.yaml` carries `overrides` that force patched versions of a few transitive packages (brace-expansion, flatted, shell-quote, svgo, valibot, sharp, …) so `pnpm audit` stays clean; each entry is commented and can be dropped once its parent requires the fixed version.
+
 ## Environment
 
 Copy `.env.example` to `.env.local` and set `GOOGLE_ANALYTICS_ID` if you need analytics locally.

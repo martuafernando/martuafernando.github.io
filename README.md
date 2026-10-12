@@ -4,6 +4,8 @@ Personal portfolio of Martua Fernando — a bilingual (English / Indonesian), li
 
 ## Run it
 
+Requires Node 20.19+ (or 22.12+) and pnpm; the exact pnpm version is pinned in `package.json` (`packageManager`).
+
 ```bash
 pnpm install
 pnpm dev        # http://localhost:5173

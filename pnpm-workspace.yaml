@@ -8,3 +8,19 @@ minimumReleaseAgeExclude:
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+# Patched versions of transitive dependencies that their parents allow but the
+# lockfile had pinned below the fix. Each entry names the audit finding it closes;
+# drop an entry once its parent ships a release that already requires it.
+overrides:
+  "brace-expansion@1": 1.1.21
+  "brace-expansion@5": 5.0.12
+  flatted: ^3.4.4
+  mdast-util-to-hast: ^13.2.1
+  shell-quote: ^1.12.0
+  source-map-js: ^1.2.2
+  svgo: ^3.3.5
+  valibot: ">=1.4.2 <2"
+  # vite-imagetools asks for ^0.34; 0.35.5 is the first release without the
+  # advisories. The image-optimisation plugin is not used by this site.
+  sharp: 0.35.5
