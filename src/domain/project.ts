@@ -39,14 +39,10 @@ export interface Project {
 	/** Shorter summary for the work card (falls back to `summary`). */
 	cardSummary?: Localized;
 	tags: string[];
-	/** Spans the full row in the work grid. */
-	wide?: boolean;
 	/** Card thumbnail + detail cover image. */
 	cover: ProjectImage;
 	/** Detail-page gallery screenshots. */
 	gallery?: ProjectImage[];
-	/** Concept/sample project — shows a "self-directed build" note. */
-	concept?: boolean;
 	role: string;
 	engagement: Localized;
 	stack: string[];

@@ -1,71 +1,28 @@
-# Qwik City App ⚡️
+# martuafernando.github.io
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+Personal portfolio of Martua Fernando — a bilingual (English / Indonesian), light-first static site with a dark theme, built with [Qwik City](https://qwik.dev/) and deployed to GitHub Pages.
 
----
+## Run it
 
-## Project Structure
-
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
-
-Inside your project, you'll see the following directory structure:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
+```bash
+pnpm install
+pnpm dev        # http://localhost:5173
+pnpm build      # type check + lint + static build into ./dist
+pnpm preview    # serve the production build
 ```
 
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
+Copy `.env.example` to `.env.local` and set `GOOGLE_ANALYTICS_ID` if you want analytics locally.
 
-- `src/components`: Recommended directory for components.
+## Editing content
 
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
+Everything shown on the site is plain TypeScript under `src/data/` (profile and copy in `site.ts`, jobs in `experiences.ts`, one file per project in `projects/`). Each string has an English and an Indonesian version.
 
-## Add Integrations and deployment
+- **CV:** replace `public/files/martua-fernando-cv.pdf`.
+- **Photo:** replace `public/images/about/martua.jpg`.
+- **Add a project:** create `src/data/projects/<slug>.ts` and register it in `src/data/projects/index.ts`.
 
-Use the `pnpm qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
+See [CLAUDE.md](./CLAUDE.md) for the architecture, conventions and formatting notes.
 
-```shell
-pnpm qwik add # or `pnpm qwik add`
-```
+## Deployment
 
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
-
-```shell
-npm start # or `pnpm start`
-```
-
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
-
-## Preview
-
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
-
-```shell
-pnpm preview # or `pnpm preview`
-```
-
-## Production
-
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
-
-```shell
-pnpm build # or `pnpm build`
-```
-
-## Static Site Generator (Node.js)
-
-```shell
-pnpm build.server
-```
+Pushes to `main` build and publish the site through `.github/workflows/deploy.yml`.
