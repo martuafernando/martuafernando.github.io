@@ -10,6 +10,7 @@ pnpm build        # Full production build: client + static pre-render + type che
 pnpm preview      # Preview the production build locally
 pnpm lint         # ESLint (src/**/*.ts*)
 pnpm build.types  # TypeScript type check only
+pnpm check.images # Fail if any file in public/images is over 300 KB
 ```
 
 `pnpm build` is the one check that matters before opening a PR: `qwik build` runs the client build, the static-adapter pre-render (GitHub Pages), the type check and ESLint.

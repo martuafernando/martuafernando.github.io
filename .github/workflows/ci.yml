@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Image budget
+        run: pnpm run check.images
+
       # `qwik build` type-checks and lints in parallel with the client and
       # static-site builds, so this one step covers all four checks.
       - name: Build (type check + lint + static site)
