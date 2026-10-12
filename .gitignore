@@ -44,3 +44,7 @@ lerna-debug.log*
 
 .nx/cache
 .nx/workspace-data
+
+# Local scratch and design-handoff bundles
+/tmp
+/.handoff
