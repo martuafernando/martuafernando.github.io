@@ -9,7 +9,6 @@ import { t, useLang } from "~/i18n";
 interface ProjectCardProps {
 	project: Project;
 	index: number;
-	total: number;
 }
 
 export const ProjectCard = component$<ProjectCardProps>(

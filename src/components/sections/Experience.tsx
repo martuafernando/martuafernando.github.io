@@ -32,7 +32,6 @@ export const Experience = component$(() => {
 							class={["tnode reveal", n.current && "is-current"]}
 							style={`--d:${i * 70}ms`}
 						>
-							<div class="dot" />
 							<div class="when">
 								<span>{n.period}</span>
 								{n.badge && <span class="badge">{t(n.badge, l)}</span>}

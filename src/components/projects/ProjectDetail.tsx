@@ -51,19 +51,6 @@ export const ProjectDetail = component$<ProjectDetailProps>(
 										<span class="v">{t(project.engagement, l)}</span>
 									</div>
 								</div>
-								{project.concept && (
-									<div class="fact">
-										<span class="k" style="color:var(--accent)">
-											{t(ui.note, l)}
-										</span>
-										<span
-											class="v"
-											style="font-weight:400;color:var(--text-muted);font-size:.9rem;"
-										>
-											{t(ui.conceptNote, l)}
-										</span>
-									</div>
-								)}
 								<div class="proj-actions">
 									{project.links.live && (
 										<a

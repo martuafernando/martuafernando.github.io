@@ -15,7 +15,6 @@ export const buncisPertaminaKontinental: Project = {
 		id: "Hitung bahan bakar otomatis buat anak usaha Pertamina — yang dulu butuh beberapa menit, sekarang langsung jadi.",
 	},
 	tags: ["Python", "Odoo", "PostgreSQL", "REST API"],
-	wide: true,
 	cover: {
 		src: "/images/projects/buncis-pertamina-kontinental/cover.webp",
 		alt: "BUNCIS web app on a laptop and Android app on a phone",

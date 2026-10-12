@@ -891,9 +891,6 @@ body.menu-open .menu-btn span:nth-child(3) {
 	padding: var(--s-6) 0;
 	border-bottom: 1px solid var(--border);
 }
-.tnode .dot {
-	display: none;
-}
 .tnode .when {
 	display: flex;
 	flex-wrap: wrap;

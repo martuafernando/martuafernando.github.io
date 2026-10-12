@@ -20,12 +20,7 @@ export const Work = component$(() => {
 				</div>
 				<div class="work-list">
 					{projects.map((project, i) => (
-						<ProjectCard
-							key={project.slug}
-							project={project}
-							index={i}
-							total={projects.length}
-						/>
+						<ProjectCard key={project.slug} project={project} index={i} />
 					))}
 					<a
 						class="pcard pcard-more reveal"
