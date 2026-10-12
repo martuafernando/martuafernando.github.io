@@ -11,6 +11,7 @@ pnpm preview      # Preview the production build locally
 pnpm lint         # ESLint (src/**/*.ts*)
 pnpm build.types  # TypeScript type check only
 pnpm check.images # Fail if any file in public/images is over 300 KB
+pnpm test.smoke   # After `pnpm build`: drive dist/ in headless Firefox (needs Firefox; FIREFOX_BIN to override)
 ```
 
 `pnpm build` is the one check that matters before opening a PR: `qwik build` runs the client build, the static-adapter pre-render (GitHub Pages), the type check and ESLint.

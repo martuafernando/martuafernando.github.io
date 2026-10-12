@@ -39,3 +39,8 @@ jobs:
       # static-site builds, so this one step covers all four checks.
       - name: Build (type check + lint + static site)
         run: pnpm run build
+
+      # Serves dist/ and drives it in headless Firefox (preinstalled on the
+      # runner): hydration, marquee, toggles, fonts, third-party requests, console.
+      - name: Browser smoke test
+        run: pnpm run test.smoke
