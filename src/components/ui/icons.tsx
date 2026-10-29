@@ -49,6 +49,18 @@ export const CheckIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
+export const PauseIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} aria-hidden="true">
+		<path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" />
+	</svg>
+));
+
+export const PlayIcon = component$<IconProps>((p) => (
+	<svg viewBox="0 0 24 24" class={p.class} aria-hidden="true">
+		<path d="M8 5.5v13l11-6.5z" fill="currentColor" />
+	</svg>
+));
+
 export const MoonIcon = component$<IconProps>((p) => (
 	<svg viewBox="0 0 24 24" class={p.class} {...stroke} stroke-width={1.8}>
 		<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
@@ -68,13 +80,13 @@ export const GitHubIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
-export const LinkedInIcon = component$<IconProps>((p) => (
+const LinkedInIcon = component$<IconProps>((p) => (
 	<svg viewBox="0 0 24 24" class={p.class} fill="currentColor">
 		<path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34v-7.2H6.06v7.2h2.28zM7.2 10.1a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64zm11.14 8.24v-3.95c0-2.11-.45-3.74-2.92-3.74-1.19 0-1.98.65-2.31 1.27h-.03v-1.07h-2.19v7.2h2.28v-3.56c0-.94.18-1.85 1.34-1.85 1.15 0 1.16 1.07 1.16 1.91v3.5h2.27z" />
 	</svg>
 ));
 
-export const InstagramIcon = component$<IconProps>((p) => (
+const InstagramIcon = component$<IconProps>((p) => (
 	<svg
 		viewBox="0 0 24 24"
 		class={p.class}
@@ -88,10 +100,7 @@ export const InstagramIcon = component$<IconProps>((p) => (
 	</svg>
 ));
 
-export const socialIcons: Record<
-	string,
-	typeof GitHubIcon
-> = {
+export const socialIcons: Record<string, typeof GitHubIcon> = {
 	github: GitHubIcon,
 	linkedin: LinkedInIcon,
 	instagram: InstagramIcon,

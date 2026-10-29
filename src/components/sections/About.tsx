@@ -36,7 +36,7 @@ export const About = component$(() => {
 							key={i}
 							class="reveal"
 							style={`--d:${120 + i * 60}ms`}
-							// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted static copy with inline emphasis
+							// trusted static copy with inline emphasis
 							dangerouslySetInnerHTML={t(p, l)}
 						/>
 					))}

@@ -1,0 +1,196 @@
+.site-footer {
+	border-top: 1px solid var(--border);
+	padding-block: var(--section-y) var(--s-6);
+	background: radial-gradient(
+		64rem 20rem at 50% 118%,
+		color-mix(in oklch, var(--accent) 10%, transparent),
+		transparent 72%
+	);
+}
+
+.footer-top {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-6);
+}
+
+.footer-cta h2 {
+	font-size: var(--h2-size);
+	max-width: 18ch;
+	margin: var(--s-3) 0 var(--s-3);
+}
+
+.footer-lede {
+	max-width: 40ch;
+	margin-bottom: var(--s-5);
+	color: var(--text-soft);
+}
+
+.footer-mail {
+	font-family: var(--font-sans);
+	font-size: clamp(1.2rem, 4.8vw, 1.75rem);
+	font-weight: 600;
+	letter-spacing: -0.025em;
+	color: var(--text);
+	display: inline-flex;
+	align-items: center;
+	gap: var(--s-2);
+	min-height: var(--tap);
+	max-width: 100%;
+	overflow-wrap: anywhere;
+}
+
+.footer-mail .u {
+	background: linear-gradient(var(--accent), var(--accent)) left bottom / 0% 2px
+		no-repeat;
+	transition: background-size 0.3s;
+	padding-bottom: 3px;
+}
+
+.footer-mail:hover .u {
+	background-size: 100% 2px;
+}
+
+.footer-mail svg {
+	width: 0.9em;
+	height: 0.9em;
+	transition: transform 0.2s;
+}
+
+.footer-mail:hover svg {
+	transform: translate(2px, -2px);
+}
+
+.footer-mail-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--s-2) var(--s-4);
+}
+
+/* On narrow screens drop the arrow so the copy button stays on the same line. */
+
+@media (max-width: 420px) {
+	.footer-mail svg {
+		display: none;
+	}
+}
+
+.copy-btn {
+	position: relative;
+	display: inline-grid;
+	place-items: center;
+	width: var(--tap);
+	height: var(--tap);
+	padding: 0;
+	color: var(--text-soft);
+	background: var(--surface);
+	border: 1px solid var(--border-strong);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition:
+		color 0.2s,
+		border-color 0.2s;
+}
+
+.copy-btn svg {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.copy-btn:hover {
+	color: var(--accent-text);
+	border-color: var(--accent);
+}
+
+.copy-btn .icon-check,
+.copy-btn.is-copied .icon-copy {
+	display: none;
+}
+
+.copy-btn.is-copied {
+	color: var(--accent-text);
+	border-color: var(--accent);
+}
+
+.copy-btn.is-copied .icon-check {
+	display: block;
+}
+
+/* Visible confirmation; floats above the button so nothing reflows. */
+
+.copy-tip {
+	position: absolute;
+	bottom: calc(100% + 0.5rem);
+	left: 50%;
+	padding: 0.25rem 0.65rem;
+	border-radius: 6px;
+	background: var(--btn);
+	color: var(--btn-ink);
+	font-size: 0.875rem;
+	font-weight: 500;
+	line-height: 1.3;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transform: translate(-50%, 4px);
+	transition:
+		opacity 0.2s,
+		transform 0.2s;
+}
+
+.copy-btn.is-copied .copy-tip {
+	opacity: 1;
+	transform: translate(-50%, 0);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.footer-social {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-1);
+}
+
+.footer-social a {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--s-3);
+	min-height: var(--tap);
+	color: var(--text-soft);
+	font-weight: 450;
+	width: max-content;
+	max-width: 100%;
+	transition: color 0.2s;
+}
+
+.footer-social a:hover {
+	color: var(--accent-text);
+}
+
+.footer-social a svg {
+	width: 18px;
+	height: 18px;
+}
+
+.footer-bottom {
+	margin-top: var(--s-8);
+	padding-top: var(--s-5);
+	border-top: 1px solid var(--border);
+	display: flex;
+	flex-direction: column;
+	gap: var(--s-1);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+	font-family: var(--font-sans);
+}

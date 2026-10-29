@@ -13,7 +13,7 @@ export const Experience = component$(() => {
 				<aside class="xp-aside reveal">
 					<span class="eyebrow">{t(ui.experience, l)}</span>
 					<h2
-						// biome-ignore lint/security/noDangerouslySetInnerHtml: trusted static copy with inline line break
+						// trusted static copy with inline line break
 						dangerouslySetInnerHTML={t(ui.experienceHeadingHtml, l)}
 					/>
 					<p>{t(ui.experienceLede, l)}</p>

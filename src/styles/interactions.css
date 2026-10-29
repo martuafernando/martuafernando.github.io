@@ -1,0 +1,48 @@
+/* Clickable surfaces carry a soft shadow that deepens on hover. */
+
+.btn-primary,
+.btn-ghost,
+.theme-toggle,
+.menu-btn,
+.lang-toggle,
+.copy-btn,
+.pcard-more,
+.pcard-media {
+	box-shadow: var(--shadow-sm);
+	transition:
+		box-shadow 0.25s,
+		transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+		background 0.2s,
+		color 0.2s,
+		border-color 0.2s;
+}
+
+.btn-primary:hover,
+.btn-ghost:hover,
+.theme-toggle:hover,
+.menu-btn:hover,
+.lang-toggle:hover,
+.copy-btn:hover,
+.pcard-more:hover,
+.pcard:hover .pcard-media {
+	box-shadow: var(--shadow-md);
+}
+
+@media (hover: hover) {
+	.btn:hover,
+	.theme-toggle:hover,
+	.menu-btn:hover,
+	.copy-btn:hover,
+	.pcard:hover .pcard-media,
+	.pcard-more:hover {
+		transform: translateY(-2px);
+	}
+}
+
+.btn:active,
+.theme-toggle:active,
+.menu-btn:active,
+.copy-btn:active {
+	transform: scale(0.98);
+	box-shadow: var(--shadow-sm);
+}

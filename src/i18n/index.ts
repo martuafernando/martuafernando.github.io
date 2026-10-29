@@ -29,6 +29,11 @@ export const ui = {
 	// Hero
 	viewWork: { en: "View Work", id: "Lihat Proyek" },
 	workedWith: { en: "Experience at", id: "Pengalaman di" },
+	pauseLogos: { en: "Pause scrolling logos", id: "Jeda logo yang bergulir" },
+	playLogos: {
+		en: "Resume scrolling logos",
+		id: "Lanjutkan logo yang bergulir",
+	},
 	now: { en: "Now", id: "Sekarang" },
 	downloadCv: { en: "Download CV", id: "Unduh CV" },
 	orGetInTouch: { en: "Or get in touch", id: "Atau langsung ngobrol aja" },
