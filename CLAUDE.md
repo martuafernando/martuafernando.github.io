@@ -5,54 +5,69 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-pnpm dev          # Start dev server (client-only rendering)
-pnpm build        # Full production build (type-check + SSG)
+pnpm dev          # Dev server (vite --mode ssr)
+pnpm build        # Full production build: client + static pre-render + type check + lint
 pnpm preview      # Preview the production build locally
-pnpm lint         # Run ESLint
-pnpm fmt          # Format with Prettier
-pnpm fmt.check    # Check formatting without writing
+pnpm lint         # ESLint (src/**/*.ts*)
 pnpm build.types  # TypeScript type check only
 ```
 
-The `build` command runs `build.client` then `build.server` (static adapter pre-rendering for GitHub Pages).
+`pnpm build` is the one check that matters before opening a PR: `qwik build` runs the client build, the static-adapter pre-render (GitHub Pages), the type check and ESLint.
+
+**Formatting:** all source is tab-indented, but `.prettierrc.js` only configures the Tailwind plugin (Prettier's default is spaces). So `pnpm fmt` / `pnpm fmt.check` do not match the code and would rewrite almost every file. Check only the files you touched, with tabs:
+
+```bash
+npx prettier --use-tabs --check <files>
+```
 
 ## Architecture
 
-**Qwik + QwikCity** static site (SSG) deployed to `https://martuafernando.github.io`. Uses the static adapter in `adapters/static/vite.config.ts`.
+**Qwik + Qwik City** static site (SSG) deployed to `https://martuafernando.github.io` through `.github/workflows/deploy.yml`. Uses the static adapter in `adapters/static/vite.config.ts`.
 
 ### Routing
 
-File-based routing under `src/routes/`. Key routes:
-- `src/routes/index.tsx` — homepage
-- `src/routes/layout.tsx` — root layout (header, footer, tab bar, cache control)
-- `src/routes/experiences/` — experience pages (MDX content)
-- `src/routes/projects/(project)/` — project pages (MDX content, optional catch-all)
+File-based routing under `src/routes/`:
+- `index.tsx` — homepage: Hero, Work, About, Experience (section order matches the nav)
+- `layout.tsx` — root layout: header, footer, cache control, language context, scroll effects
+- `projects/[slug]/index.tsx` — project detail; pages are generated from `getProjects()` via `onStaticGenerate`
+- `catat-uang/privacy-policy/` — standalone privacy-policy page
+- `service-worker.ts` — Qwik City prefetching (not an offline cache)
 
-### Data Layer
+### Data layer
 
-Content lives as MDX files inside `src/routes/`. Repositories in `src/repositories/` load them via Vite's `import.meta.glob()` with eager loading:
+All content is typed TypeScript, not MDX. Keep it as literal entries; components should never build or derive copy.
 
-```ts
-import.meta.glob('/src/routes/**/*.mdx', { eager: true, query: '?jsx' })
-```
+- `src/data/site.ts` — profile (email, CV path), nav, socials, hero copy and stats, the "Experience at" logo strip (`trusted`), About copy, tech stack and focus rows
+- `src/data/experiences.ts` — experience timeline
+- `src/data/projects/` — **one file per project**; `index.ts` lists them (that order is the display order) and exposes `getProjects`, `getProjectBySlug`, `getAdjacentProjects`
+- `src/data/catat-uang-privacy.ts` — privacy-policy content
+- Types live in `src/domain/` (`project.ts`, `experience.ts`, `site.ts`)
 
-`getProjects()` and `getExperiences()` parse frontmatter from these MDX files. Pages fetch data with `useResource$()` and render it with `<Resource>`.
+### i18n
 
-### Domains & Types
-
-TypeScript interfaces for `Project`, `Experience`, and `Position` are in `src/domains/`.
+`src/i18n/index.ts` defines `Localized<T>` (`{ en, id }`), `t(value, lang)`, the shared `ui` strings, and `LangContext` (provided in `layout.tsx`, persisted in `localStorage` as `fs-lang`). **Every user-facing string needs both `en` and `id`**; the Indonesian copy is casual ("bikin", "nggak", "Yuk").
 
 ### Styling
 
-Tailwind CSS 4 with custom CSS variables in `src/styles/` (`color.css`, `animation.css`, `layout.css`). Path alias `~/*` maps to `src/*`.
+- `src/styles/color.css` — design tokens: colours, spacing, radii, shadows, fonts. Light is the default; dark is `[data-theme="dark"]` (set before paint by the inline script in `root.tsx`, stored as `fs-theme`).
+- `src/styles/components.css` — everything else. Prefer editing an existing selector over adding an override at the end of the file.
+- Fonts: Plus Jakarta Sans for UI and headings; Source Serif 4 (`--font-prose`) **only** for case-study body text.
+- Tailwind 4 is imported in `src/global.css` (its reset applies) but no utility classes are used in the markup. Path alias `~/*` maps to `src/*`.
 
-### Performance Patterns
+### Behaviour and performance
 
-- **Caching**: Root layout sets `cacheControl` with 5s max-age and 7-day stale-while-revalidate.
-- **Partytown**: Google Analytics runs off the main thread via `src/components/partytown/`.
-- **Service worker**: Registered on non-dev builds for offline caching.
-- **Scroll-aware UI**: Header and TabBar hide on scroll-down using `useOnWindow` + `useDebouncer` hook.
+- **Motion:** hero entrance, scroll reveal and nav scrollspy live in `src/hooks/useScrollEffects.ts`. Content is visible by default; the hidden start state is only applied once the hook runs, and reduced-motion is respected.
+- **Marquee** ("Experience at") is CSS-only: four identical copies, shifted by 25% on a loop, paused on hover, static for reduced motion.
+- **Caching:** the root layout sets `cacheControl` (5s max-age, 7-day stale-while-revalidate).
+- **Partytown:** Google Analytics runs off the main thread via `src/components/partytown/`.
+
+## Things the owner replaces
+
+- CV: overwrite `public/files/martua-fernando-cv.pdf` (path and download name are in `profile.cv`). It is currently a placeholder page.
+- Portrait: `public/images/about/martua.jpg` (referenced by `about.photo`).
+- Logos for the hero strip: add a `logo` to an entry in `trusted` and put the file in `public/images/logos/`; entries without one render the name as text.
+- New project: add `src/data/projects/<slug>.ts`, then import it and add it to the list in `src/data/projects/index.ts`.
 
 ## Environment
 
-Copy `.env.example` to `.env.local` and set `GOOGLE_ANALYTICS_ID` before running locally if you need analytics to work.
+Copy `.env.example` to `.env.local` and set `GOOGLE_ANALYTICS_ID` if you need analytics locally.

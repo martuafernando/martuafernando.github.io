@@ -24,11 +24,13 @@ export const About = component$(() => {
 						<span class="ring" /> {t(about.location, l)}
 					</div>
 				</div>
-				<div class="about-body">
+				<div class="about-head">
 					<span class="eyebrow reveal">{t(ui.about, l)}</span>
 					<h2 class="reveal" style="--d:60ms">
 						{t(about.heading, l)}
 					</h2>
+				</div>
+				<div class="about-body">
 					{about.paragraphs.map((p, i) => (
 						<p
 							key={i}
@@ -38,8 +40,14 @@ export const About = component$(() => {
 							dangerouslySetInnerHTML={t(p, l)}
 						/>
 					))}
-					<div class="values reveal" style="--d:240ms">
-						{about.values.map((v) => (
+					<p class="about-stack reveal" style="--d:240ms">
+						<span>{t(about.stackLabel, l)}</span> {about.stack.join(", ")}
+					</p>
+					<p class="values-label reveal" style="--d:280ms">
+						{t(about.focusLabel, l)}
+					</p>
+					<div class="values reveal" style="--d:300ms">
+						{about.focus.map((v) => (
 							<div class="value" key={v.k}>
 								<div class="vk">{v.k}</div>
 								<h4>{t(v.title, l)}</h4>

@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { CopyEmail } from "./CopyEmail";
-import { ArrowUpRight, socialIcons } from "../ui/icons";
+import { ArrowUpRight, DownloadIcon, socialIcons } from "../ui/icons";
 import { profile, socials } from "~/data/site";
 import { t, ui, useLang } from "~/i18n";
 
@@ -17,7 +17,10 @@ export const SiteFooter = component$(() => {
 						<h2 class="reveal" style="--d:60ms">
 							{t(ui.footerHeading, l)}
 						</h2>
-						<div class="footer-mail-row reveal" style="--d:120ms">
+						<p class="footer-lede reveal" style="--d:100ms">
+							{t(ui.footerLede, l)}
+						</p>
+						<div class="footer-mail-row reveal" style="--d:140ms">
 							<a class="footer-mail" href={`mailto:${profile.email}`}>
 								<span class="u">{profile.email}</span>
 								<ArrowUpRight />
@@ -36,6 +39,10 @@ export const SiteFooter = component$(() => {
 								</a>
 							);
 						})}
+						<a href={profile.cv.href} download={profile.cv.filename}>
+							<DownloadIcon />
+							{t(ui.downloadCv, l)}
+						</a>
 					</div>
 				</div>
 				<div class="footer-bottom">
