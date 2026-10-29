@@ -24,11 +24,13 @@ export const About = component$(() => {
 						<span class="ring" /> {t(about.location, l)}
 					</div>
 				</div>
-				<div class="about-body">
+				<div class="about-head">
 					<span class="eyebrow reveal">{t(ui.about, l)}</span>
 					<h2 class="reveal" style="--d:60ms">
 						{t(about.heading, l)}
 					</h2>
+				</div>
+				<div class="about-body">
 					{about.paragraphs.map((p, i) => (
 						<p
 							key={i}
