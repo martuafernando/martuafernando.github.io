@@ -73,33 +73,33 @@ export const trusted: TrustedOrg[] = [
 
 export const hero = {
 	status: {
-		en: "Open to software engineering opportunities",
-		id: "Lagi terbuka buat peluang di software engineering",
+		en: "Open to volunteer software engineering projects",
+		id: "Terbuka untuk proyek volunteer di bidang software engineering",
 	} satisfies Localized,
 
 	headlineHtml: {
-		en: 'Building software and <span class="accent">reliable systems.</span>',
-		id: 'Bikin software dan<br /> <span class="accent">sistem yang bisa diandalkan.</span>',
+		en: 'Building software <span class="accent">you can rely on.</span>',
+		id: 'Membangun software yang <span class="accent">bisa diandalkan.</span>',
 	} satisfies Localized,
 
 	lede: {
-		en: "Software engineer who builds data pipelines and enterprise systems, with a background in healthcare software.",
-		id: "Software engineer yang membangun data pipeline dan sistem enterprise, dengan latar belakang software kesehatan.",
+		en: "I build data pipelines and enterprise systems, with healthcare software in my background.",
+		id: "Saya membangun data pipeline dan sistem enterprise, dengan bekal pengalaman di software kesehatan.",
 	} satisfies Localized,
 
 	stats: [
 		{
 			value: "3+",
 			label: {
-				en: "years experience",
-				id: "tahun pengalaman",
+				en: "years building software",
+				id: "tahun membangun software",
 			},
 		},
 		{
 			value: "5+",
 			label: {
-				en: "projects delivered",
-				id: "proyek selesai",
+				en: "projects shipped",
+				id: "proyek dirilis",
 			},
 		},
 	] satisfies Stat[],
@@ -119,22 +119,22 @@ export const about = {
 	} satisfies Localized,
 
 	heading: {
-		en: "Systems that stay simple as they grow.",
-		id: "Sistem yang tetap simpel walau makin besar.",
+		en: "I keep systems simple as they grow.",
+		id: "Saya menjaga sistem tetap simpel seiring tumbuh.",
 	} satisfies Localized,
 
 	paragraphs: [
 		{
-			en: "I'm Fernando — I build reliable systems end to end, from <strong>backend</strong> and <strong>data pipelines</strong> to enterprise software.",
-			id: "Fernando — membangun sistem andal secara end-to-end, mulai dari <strong>backend</strong> dan <strong>data pipeline</strong> sampai software enterprise.",
+			en: "I'm Fernando. I build reliable systems end to end, from <strong>backend</strong> and <strong>data pipelines</strong> to enterprise software.",
+			id: "Saya Fernando. Saya membangun sistem andal dari ujung ke ujung, mulai dari <strong>backend</strong> dan <strong>data pipeline</strong> sampai software enterprise.",
 		},
 		{
-			en: "Today I work on data pipelines at <strong>Bank Negara Indonesia</strong>. Before that I built features on a <strong>FHIR/HL7</strong> medical-records platform at eHealth, and ran practicum sessions in networking, operating systems, and data structures at ITS.",
-			id: "Sekarang mengerjakan data pipeline di <strong>Bank Negara Indonesia</strong>. Sebelumnya membangun fitur di platform rekam medis <strong>FHIR/HL7</strong> di eHealth, dan mengampu praktikum jaringan komputer, sistem operasi, serta struktur data di ITS.",
+			en: "Right now I'm building data pipelines at <strong>Bank Negara Indonesia</strong>. Before that, I shipped features on a <strong>FHIR/HL7</strong> medical-records platform at eHealth, and taught practicums in networking, operating systems, and data structures at ITS.",
+			id: "Saat ini saya membangun data pipeline di <strong>Bank Negara Indonesia</strong>. Sebelumnya, saya merilis fitur di platform rekam medis <strong>FHIR/HL7</strong> di eHealth, dan mengampu praktikum jaringan komputer, sistem operasi, serta struktur data di ITS.",
 		},
 	] satisfies Localized[],
 
-	stackLabel: { en: "Day to day", id: "Sehari-hari" } satisfies Localized,
+	stackLabel: { en: "My daily toolkit", id: "Perkakas harian saya" } satisfies Localized,
 	stack: [
 		"TypeScript",
 		"Python",
@@ -146,8 +146,8 @@ export const about = {
 	],
 
 	focusLabel: {
-		en: "What I work on",
-		id: "Yang saya kerjakan",
+		en: "What I focus on",
+		id: "Fokus saya",
 	} satisfies Localized,
 
 	focus: [
@@ -155,24 +155,24 @@ export const about = {
 			k: "01",
 			title: { en: "Data engineering", id: "Data engineering" },
 			body: {
-				en: "Introduced Superset at Bank Negara Indonesia and built custom plugins that connect it to the data pipelines.",
-				id: "Memprakarsai Superset di Bank Negara Indonesia dan membuat plugin custom yang menghubungkannya ke data pipeline.",
+				en: "I introduced Superset at Bank Negara Indonesia and built the custom plugins that connect it to the data pipelines.",
+				id: "Saya memprakarsai Superset di Bank Negara Indonesia dan membangun plugin custom yang menghubungkannya ke data pipeline.",
 			},
 		},
 		{
 			k: "02",
 			title: { en: "Healthcare software", id: "Software kesehatan" },
 			body: {
-				en: "Features on a FHIR/HL7 medical-records platform, in TypeScript, Python, Kotlin, and Odoo.",
-				id: "Fitur di platform rekam medis FHIR/HL7 dengan TypeScript, Python, Kotlin, dan Odoo.",
+				en: "I built features on a FHIR/HL7 medical-records platform with TypeScript, Python, Kotlin, and Odoo.",
+				id: "Saya membangun fitur di platform rekam medis FHIR/HL7 dengan TypeScript, Python, Kotlin, dan Odoo.",
 			},
 		},
 		{
 			k: "03",
 			title: { en: "Backend & enterprise", id: "Backend & enterprise" },
 			body: {
-				en: "REST APIs and calculation logic on Odoo and PostgreSQL for a Pertamina subsidiary.",
-				id: "REST API dan logika perhitungan di Odoo dan PostgreSQL untuk anak usaha Pertamina.",
+				en: "I wrote the REST APIs and calculation logic on Odoo and PostgreSQL for a Pertamina subsidiary.",
+				id: "Saya menulis REST API dan logika perhitungan di Odoo dan PostgreSQL untuk anak usaha Pertamina.",
 			},
 		},
 	] satisfies Value[],
